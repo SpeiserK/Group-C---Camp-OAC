@@ -12,6 +12,9 @@ There are 3 user groups for this software:
 
 <img width="491" alt="Screen Shot 2022-09-30 at 6 29 44 PM" src="https://user-images.githubusercontent.com/99511208/193378273-5965d93d-6a76-425a-a4ab-4a8391bbdd12.png">
 
+### Level 1 DFD
+
+<img width="472" alt="Screen Shot 2022-09-30 at 7 13 52 PM" src="https://user-images.githubusercontent.com/99511208/193379117-3be811a4-b5bb-4cc4-9683-e4090727fd36.png">
 
 ## Milestone timeline
 
