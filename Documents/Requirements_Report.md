@@ -1,18 +1,44 @@
 # Camp OAC - C Requirements report
 
 ## Software Description
-There are 3 user groups for this software:
-- People: purchasing the firewood, and viewing the location once the 
-- admins/staff: manage stock and view purchase history
-- devs: make changes to the website when required
+The product will be a website that allows customers to purchase firewood from Camp OAC, and receive a pickup location after the purchase has been completed. The firewood stock will then be automatically updated. The objective is to automate the process which has been performed manually for 2 years.
+There are 2 user groups for this software:
+- Customers: will navigate the website, and enter payment details into the system to purchase firewood, ideally there is no login for customers, only entering contact details to receive the payment confirmation and pickup location.
+- admin/staff: will need to login to the website to maintain security, staff will be able to manually adjust stock levels, and choose which locations will be selling firewood at any given time.
 
 ## System Architecture (DFD)
+
+### Level 0 DFD
+
+<img width="491" alt="Screen Shot 2022-09-30 at 6 29 44 PM" src="https://user-images.githubusercontent.com/99511208/193378273-5965d93d-6a76-425a-a4ab-4a8391bbdd12.png">
+
+The level 0 DFD depicts our system as a single process and the connections from the customer and administrators to the system.
+
+### Level 1 DFD
+
+<img width="472" alt="Screen Shot 2022-09-30 at 7 13 52 PM" src="https://user-images.githubusercontent.com/99511208/193379117-3be811a4-b5bb-4cc4-9683-e4090727fd36.png">
+
+The level 1 DFD shows the main functions of our system. The main process is broken down into the important processes that are necessary for our system.
 
 ## Milestone timeline
 
 ### Functional requirements
+*Requirements Report & Presentation*
+
+*Video Demo & Peer-testing I*
+
+*Video Demo & Peer-testing II*
+
+*Final report & Presentation of Finished Product*
 
 ### Non-Functional requirements
+*Requirements Report & Presentation*
+
+*Video Demo & Peer-testing I*
+
+*Video Demo & Peer-testing II*
+
+*Final report & Presentation of Finished Product*
 
 ## Tech Stack
 ### Front-End:<br />
