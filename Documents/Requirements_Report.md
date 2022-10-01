@@ -10,12 +10,12 @@ There are 3 user groups for this software:
 
 ## Milestone timeline
 
-###Functional requirements
+### Functional requirements
 
 ###Non-Functional requirements
 
 ## Tech Stack
-###Front-End:###
+### Front-End:<br />
 -Javascript<br />
 -CSS<br />
 -HTML<br />
@@ -86,7 +86,7 @@ Possible HTML and CSS toolkits:<br />
 -New toolkit: Bulma’s final version is still yet to release, so its community and documentation may not be as comprehensive as its competition.<br />
 -CSS Only: Bulma does not include inbuilt JavaScript or jQuery like Bootstrap does.<br />
 
-###Back-End:###<br />
+### Back-End:<br />
 Languages:<br />
 
 Frameworks:<br />
