@@ -10,11 +10,5 @@ This automation process looks like: <br />
 (5) Payment is processed Receipt is generated automatically. <br />
 (6) instructs purchaser on address where firewood is available for pickup;
 
-## Week of 26/09 tasks
-- Create requirements.md and add to github repo
-- Write high level software description, and target user group in requirements.md
-- discuss dfd
-- Create Milestone.md
-- Updating backlog and meeting minutes
-- ~~upload meeting minutes for client and scrum meeting~~
+
 
