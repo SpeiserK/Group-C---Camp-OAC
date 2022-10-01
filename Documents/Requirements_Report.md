@@ -12,7 +12,7 @@ There are 3 user groups for this software:
 
 ### Functional requirements
 
-###Non-Functional requirements
+### Non-Functional requirements
 
 ## Tech Stack
 ### Front-End:<br />
