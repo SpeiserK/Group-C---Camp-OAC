@@ -10,15 +10,15 @@ There are 3 user groups for this software:
 
 ## Milestone timeline
 
-### Functional requirements
+###Functional requirements
 
-### Non-Functional requirements
+###Non-Functional requirements
 
 ## Tech Stack
-Front-End:
--Javascript
--CSS
--HTML
+###Front-End:###
+-Javascript<br />
+-CSS<br />
+-HTML<br />
 
 Possible JavaScript frameworks:
 
@@ -69,7 +69,12 @@ Possible HTML and CSS toolkits:<br />
 **Foundation**<br />
 *Pros:*<br />
 -Better customization: Foundation offers a better customization function that allows most projects using Foundation to have a unique look.<br />
+-Great browser support: Like Bootstrap, Foundation is compatible with Chrome, Safari, Firefox, and Opera. Foundations supports newer versions of Internet Explorer than Bootstrap.<br />
+-Flexible grid system: Foundation offers more grid-related features when it comes to managing a grid system.<br />
 *Cons:*<br />
+-Learning curve: It will take more time for team members to familiarize themselves with the framework.<br />
+-Lack of support: Due to Bootstraps overwhelming usage, its support on Twitter and for troubleshooting in general is much better than Foundation’s.<br />
+
 
 **Bulma:**<br />
 *Pros:*<br />
@@ -79,6 +84,16 @@ Possible HTML and CSS toolkits:<br />
 -Framework is lightweight.<br />
 *Cons:*<br />
 -New toolkit: Bulma’s final version is still yet to release, so its community and documentation may not be as comprehensive as its competition.<br />
+-CSS Only: Bulma does not include inbuilt JavaScript or jQuery like Bootstrap does.<br />
+
+###Back-End:###<br />
+Languages:<br />
+
+Frameworks:<br />
+
+Web servers:<br />
+
+Databases:<br />
 
 ## Testing
 
