@@ -1,10 +1,10 @@
 # Camp OAC - C Requirements report
 
 ## Software Description
-There are 3 user groups for this software:
-- People: purchasing the firewood, and viewing the location once the 
-- admins/staff: manage stock and view purchase history
-- devs: make changes to the website when required
+The product will be a website that allows customers to purchase firewood from Camp OAC, and receive a pickup location after the purchase has been completed. The firewood stock will then be automatically updated.
+There are 2 user groups for this software:
+- Customers: will navigate the website, and enter payment details into the system to purchase firewood, ideally there is no login for customers, only entering contact details to receive the payment confirmation and pickup location.
+- admin/staff: will need to login to the website to maintain security, staff will be able to manually adjust stock levels, and choose which locations will be selling firewood at any given time.
 
 ## System Architecture (DFD)
 
