@@ -19,8 +19,22 @@ There are 3 user groups for this software:
 ## Milestone timeline
 
 ### Functional requirements
+*Requirements Report & Presentation*
+
+*Video Demo & Peer-testing I*
+
+*Video Demo & Peer-testing II*
+
+*Final report & Presentation of Finished Product*
 
 ### Non-Functional requirements
+*Requirements Report & Presentation*
+
+*Video Demo & Peer-testing I*
+
+*Video Demo & Peer-testing II*
+
+*Final report & Presentation of Finished Product*
 
 ## Tech Stack
 ### Front-End:<br />
