@@ -114,12 +114,16 @@ Possible HTML and CSS toolkits:<br />
 
 ### Back-End:<br />
 Languages:<br />
+Possible languages: Java, Python, PHP<br />
 
 Frameworks:<br />
+Look into possible tool kits for Java and PHP.
 
 Web servers:<br />
 
+
 Databases:<br />
+MySQL<br />
 
 ## Testing
 
