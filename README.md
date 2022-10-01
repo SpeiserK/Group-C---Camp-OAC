@@ -10,5 +10,13 @@ This automation process looks like: <br />
 (5) Payment is processed Receipt is generated automatically. <br />
 (6) instructs purchaser on address where firewood is available for pickup;
 
+<br />
+Group Members:
+<br />
+Zach Prenovost<br />
+Aidan Murphy<br />
+Cam Wilson<br />
+Karlen Speiser<br />
+
 
 
