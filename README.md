@@ -11,7 +11,7 @@ This automation process looks like: <br />
 (6) instructs purchaser on address where firewood is available for pickup;
 
 <br />
-Group Members:
+## Group Members:
 <br />
 Zach Prenovost<br />
 Aidan Murphy<br />
