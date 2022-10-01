@@ -8,6 +8,11 @@ There are 3 user groups for this software:
 
 ## System Architecture (DFD)
 
+### Level 0 DFD
+
+<img width="491" alt="Screen Shot 2022-09-30 at 6 29 44 PM" src="https://user-images.githubusercontent.com/99511208/193378273-5965d93d-6a76-425a-a4ab-4a8391bbdd12.png">
+
+
 ## Milestone timeline
 
 ### Functional requirements
