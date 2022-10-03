@@ -26,11 +26,19 @@ The level 1 DFD shows the main * functions * of our system. The main process is 
 *Requirements Report & Presentation*
 
 *Video Demo & Peer-testing I*
-
+- Front End Working (based on DFD lvl. 1)
+1. Enter contact details
+2. Select pick-up  location
+3. Select payment option
+4. Send location-information
 *Video Demo & Peer-testing II*
-
+- Back end working
+1. Inventory check
+2. payment with square
+3. send payment receipt
+4. Customer info db
 *Final report & Presentation of Finished Product*
-
+- Everything working
 ### Non-Functional requirements
 *Requirements Report & Presentation*
 
