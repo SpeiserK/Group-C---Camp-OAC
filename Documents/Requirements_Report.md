@@ -41,7 +41,7 @@ The level 1 DFD shows the main * functions * of our system. The main process is 
 - Everything working
 ### Non-Functional requirements
 *Requirements Report & Presentation*
-
+- plan for db and website cost+limit
 *Video Demo & Peer-testing I*
 
 *Video Demo & Peer-testing II*
