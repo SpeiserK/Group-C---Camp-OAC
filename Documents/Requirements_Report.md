@@ -113,17 +113,76 @@ Possible HTML and CSS toolkits:<br />
 -CSS Only: Bulma does not include inbuilt JavaScript or jQuery like Bootstrap does.<br />
 
 ### Back-End:<br />
-Languages:<br />
-Possible languages: Java, Python, PHP<br />
+
+Chosen language for backend: Javascript <br />
+Why? <br/>
+Because we are already using it for front end and can use it for backend </br>
+
+
 
 Frameworks:<br />
-Look into possible tool kits for Java and PHP.
+
+Node.js <br />
+
+Express.js <br />
+- requires Node.JS
+
+- these two should have everything we need
 
 Web servers:<br />
 
 
-Databases:<br />
-MySQL<br />
+## **Databases:** <br />
+
+SQL vs NOSQL <br />
+
+### SQL: **S**tructured **Q**uery **L**anguage <br />
+- Used for relational databases like mySQL <br />
+- Very strict requirements for data (Clear Schema) <br />
+    - all records must follow this Schema <br />
+- uses relations like one - one, one to many, etc. <br />
+
+#### Summary:  <br />
+*data is stored across multiple tables that are connected with relations and queried with SQL* <br />
+
+### NOSQL: Different than SQL <br />
+#### MONGODB <br />
+- Collections instead of tables<br />
+- Documents instead of rows <br />
+- Documents dont have a strict schema (different structure in each one) <br />
+- advantage is super flexible in case of shifting requirements <br />
+- no relations (relational data needs to be merged manually) <br />
+- collections should contain all neccecary data for querying, no joins possible <br/>
+- duplicate data would be an issue, as would need to write same info multiple times <br/>
+- collections can be merged <br/>
+
+
+*we need to decide what tables / fields we need. whether we can keep it in one collection or multiple* <br/>
+- if one: then MONGODB may be best <br/>
+- if multiple: then SQL could be better<br/>
+- if requirements change or we want flexibility in what is stored MONGO is best<br/>
+- if requirements are fairly predictable sql would be fine<br/>
+
+Scaling: Harder for SQL way easier for NOSQL. so mongo could have some better longevity after we have left if the database continues to grow. <br/>
+
+## MONGODB EXAMPLE: <br/>
+### How would this work with our data? <br/>
+1. Orders collection <br/>
+    - customer info; <br/>
+    - order id; <br/>
+    - location id; <br/>
+    - qty ordered; <br/>
+    - etc. <br/>
+
+2. Location collection <br/>
+    - stock of wood; <br/>
+    - location id; <br/>
+
+3. customer collection: (optional / likely not recommended) <br/>
+    - when an order is placed check if customerID exists and if NULL then ADD <br/>
+    - could be redundant if possible to query by customer id from orders and remove duplicates (Very Possible)  <br/>
+
+When a user makes an order we query a **location id** from **Location Collection** that has the stock of wood available, then we update **location id** with new stock. we also seperately update the **Orders Collection** and add a new order with the order information.  <br/>
 
 ## Testing
 
