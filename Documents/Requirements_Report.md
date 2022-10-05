@@ -1,7 +1,7 @@
 # Camp OAC - C Requirements report
 
 ## Software Description
-The product will be a website that allows customers to purchase firewood from Camp OAC, and receive a pickup location after the purchase has been completed. The firewood stock will then be automatically updated. The objective is to automate the process which has been performed manually for 2 years.
+The product will be a website that allows customers to purchase firewood from Camp OAC, and receive a pickup location after the purchase has been completed. The firewood stock will then be automatically updated. The objective is to automate the process which has been performed manually for 2 years. The website will have a button on the homepage which leads to the purchasing page where the customer fills in a preferred contact method, the amount of firewood they would like, and the area they would like to pick up the firewood from. They then click next, and the page contents change to the square payment method. After this is done, and the purchase is confirmed the exact pickup location will be given to them, and they can go and pickup their firewood. The admin/staff will receive the new order on the same website, (they can confirm the purchase maybe) and then they will prepare the order and confirm that the stock for the order has been removed, this will update a database(?) containing the stock information.
 There are 2 user groups for this software:
 - Customers: will navigate the website, and enter payment details into the system to purchase firewood, ideally there is no login for customers, only entering contact details to receive the payment confirmation and pickup location.
 - admin/staff: will need to login to the website to maintain security, staff will be able to manually adjust stock levels, and choose which locations will be selling firewood at any given time.
@@ -18,7 +18,7 @@ The level 0 DFD depicts our system as a single process and the connections from 
 
 <img width="472" alt="Screen Shot 2022-09-30 at 7 13 52 PM" src="https://user-images.githubusercontent.com/99511208/193379117-3be811a4-b5bb-4cc4-9683-e4090727fd36.png">
 
-The level 1 DFD shows the main functions of our system. The main process is broken down into the important processes that are necessary for our system.
+The level 1 DFD shows the main * functions * of our system. The main process is broken down into the important processes that are necessary for our system.
 
 ## Milestone timeline
 
@@ -113,13 +113,76 @@ Possible HTML and CSS toolkits:<br />
 -CSS Only: Bulma does not include inbuilt JavaScript or jQuery like Bootstrap does.<br />
 
 ### Back-End:<br />
-Languages:<br />
+
+Chosen language for backend: Javascript <br />
+Why? <br/>
+Because we are already using it for front end and can use it for backend </br>
+
+
 
 Frameworks:<br />
 
+Node.js <br />
+
+Express.js <br />
+- requires Node.JS
+
+- these two should have everything we need
+
 Web servers:<br />
 
-Databases:<br />
+
+## **Databases:** <br />
+
+SQL vs NOSQL <br />
+
+### SQL: **S**tructured **Q**uery **L**anguage <br />
+- Used for relational databases like mySQL <br />
+- Very strict requirements for data (Clear Schema) <br />
+    - all records must follow this Schema <br />
+- uses relations like one - one, one to many, etc. <br />
+
+#### Summary:  <br />
+*data is stored across multiple tables that are connected with relations and queried with SQL* <br />
+
+### NOSQL: Different than SQL <br />
+#### MONGODB <br />
+- Collections instead of tables<br />
+- Documents instead of rows <br />
+- Documents dont have a strict schema (different structure in each one) <br />
+- advantage is super flexible in case of shifting requirements <br />
+- no relations (relational data needs to be merged manually) <br />
+- collections should contain all neccecary data for querying, no joins possible <br/>
+- duplicate data would be an issue, as would need to write same info multiple times <br/>
+- collections can be merged <br/>
+
+
+*we need to decide what tables / fields we need. whether we can keep it in one collection or multiple* <br/>
+- if one: then MONGODB may be best <br/>
+- if multiple: then SQL could be better<br/>
+- if requirements change or we want flexibility in what is stored MONGO is best<br/>
+- if requirements are fairly predictable sql would be fine<br/>
+
+Scaling: Harder for SQL way easier for NOSQL. so mongo could have some better longevity after we have left if the database continues to grow. <br/>
+
+## MONGODB EXAMPLE: <br/>
+### How would this work with our data? <br/>
+1. Orders collection <br/>
+    - customer info; <br/>
+    - order id; <br/>
+    - location id; <br/>
+    - qty ordered; <br/>
+    - etc. <br/>
+
+2. Location collection <br/>
+    - stock of wood; <br/>
+    - location id; <br/>
+
+3. customer collection: (optional / likely not recommended) <br/>
+    - when an order is placed check if customerID exists and if NULL then ADD <br/>
+    - could be redundant if possible to query by customer id from orders and remove duplicates (Very Possible)  <br/>
+
+When a user makes an order we query a **location id** from **Location Collection** that has the stock of wood available, then we update **location id** with new stock. we also seperately update the **Orders Collection** and add a new order with the order information.  <br/>
 
 ## Testing
 
