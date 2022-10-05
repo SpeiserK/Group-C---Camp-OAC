@@ -20,6 +20,9 @@ The level 0 DFD depicts our system as a single process and the connections from 
 
 The level 1 DFD shows the main * functions * of our system. The main process is broken down into the important processes that are necessary for our system.
 
+The 'sign in' process, firewood request amount, and the location selection feature will be completed for our 2nd milestone: Peer Testing I.<br /> Also, we will complete the front-end development for the payment selection, generation for confirmation receipts, and location information receipts.<br />
+For our 3rd milestone: Peer Testing II, we will construct confirmation features to be used by our administrators. There will be a measurement feature to check if inventory stock is available, an independent process used to communicate with customers that are paying by cash/e-trasfer, and a manual process used to verify inventory stock.<br />For the 4th milestone: Finished Product, we will have implemented the use of our database. This database will store collections of payment transactions and inventory stock by location. Also, our payment processes will be sorted, including the use of online payment using SQAURE.<br />
+
 ## Milestone timeline
 
 ### Functional requirements
