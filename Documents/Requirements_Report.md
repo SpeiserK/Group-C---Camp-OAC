@@ -131,8 +131,6 @@ Chosen language for backend: Javascript <br />
 Why? <br/>
 Because we are already using it for front end and can use it for backend </br>
 
-
-
 Frameworks:<br />
 
 **Node.js** <br />
@@ -141,7 +139,6 @@ Not a framework, but a runtime environment. Needs a framework.
 -Open source: Free and available to anyone who needs an environment to run JavaScript.<br />
 -Fast-processing: Uses Chrome's V8 JavaScript engine, resulting in very fast execution times.<br. />
 -Event-based model: Due to node.js's asynchronous, non-blocking, single-threaded nature, node.js is great for web apps that have constant updates.<br />
-
 *Cons:*<br />
 -Single threaded: Since node is single threaded, CPU heavy tasks tend to decrease performance.(Mulit-threading is remains experimental)<br />
 -Callbacks: Node.js uses callbacks when executing multiple tasks, which can become complex affecting performance if not managed properly.<br />
@@ -150,20 +147,19 @@ Not a framework, but a runtime environment. Needs a framework.
 *Pros:*<br />
 -Easy to learn: Only uses JavaScript, which is necessary for front end anyway.<br />
 -Supports Node.js.<br />
--Supported by google V8 engine: High performance using a new(er) engine from Google.<br. />
+-Supported by google V8 engine: High performance using a new(er) engine from Google.<br />
 -Supports caching: Allows webpages to load even faster for people who have visited before.<br />
 *Cons:*<br />
 -Can have callbacks issues.<br />
 
-
 Web servers:<br />
 -Will figure out at a later date. When testing becomes applicable. We will run a local server for testing, and look into web server options when we reach that point in the project.
 
-## **Databases:** <br />
+## Databases:
 
-SQL vs NOSQL <br />
+### SQL vs NOSQL <br />
 
-### SQL: **S**tructured **Q**uery **L**anguage <br />
+SQL: **S**tructured **Q**uery **L**anguage <br />
 - Used for relational databases like mySQL <br />
 - Very strict requirements for data (Clear Schema) <br />
     - all records must follow this Schema <br />
