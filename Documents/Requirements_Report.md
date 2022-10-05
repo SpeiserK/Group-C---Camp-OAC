@@ -56,19 +56,20 @@ The level 1 DFD shows the main * functions * of our system. The main process is 
 
 Possible JavaScript frameworks:
 
-**AngularJS**<br />
+**Angular**<br />
 *Pros:*<br />
--Two way data-binding: Data binding is straightforward in AngularJS. It ensures that any changes made to the view/presentation(HTML) layer immediately updates the project data model.<br />
+-Two way data-binding: Data binding is straightforward in Angular. It ensures that any changes made to the view/presentation(HTML) layer immediately updates the project data model.<br />
 -Open source: available for anyone to incorporate into a project.<br />
 -Easy to test: Allows for simplified end-to-end testing, simplifying tests and debugging.<br />
 -Improved server performance: reduces the burden on server CPUs because AngularJS supports caching and other useful processes.<br />
 *Cons:*<br />
 -Javascript support mandatory: Users would need a javascript enabled device to access the website.<br />
 -Difficult to learn: AngularJS has minimal documentation, with complex scopes that may  prove challenging to understand.<br />
+-Large size: Angular's file size is much larger than React or Vue.<br />
 
 **React**<br />
 *Pros:*<br />
--Can create cross-platform applications: Can easily create web apps, can also use React-Native which is used to develop apps from iOS and/or Android devices in React  using the same syntax.<br />
+-Can create cross-platform applications: Can easily create web apps, can also use React-Native which is used to develop apps for iOS and/or Android devices in React  using the same syntax.<br />
 -Open source and popular:  Free to use and has a large user base, which is great for troubleshooting problems.<br />
 -Reusable components: Let’s developers reuse pieces of UI in any project and combine them into a larger UI system.<br />
 -Backward compatibility: React API remains unchanged after updates. Allowing for prolonged functionality of React without requiring much code maintenance.<br />
@@ -85,8 +86,9 @@ Possible JavaScript frameworks:
 -Compatibility with mobile devices:  Vue can be used for building apps for iOS and Android using NativeScript, Ionic, or other UI frameworks.<br />
 -Compatible with Electron framework for desktop development.<br />
 *Cons:*<br />
--Limited resources: Not as many available libraries to work with compared to Vue.js and AngularJS.<br />
+-Limited resources: Not as many available libraries to work with compared to AngularJS.<br />
 -Lack of support for large-scale projects: Vue still has a relatively small dev team and community, so it's better to use it in smaller projects.<br />
+-Not fully stable: 90% of API remains the same after updates.<br /> 
 
 Possible HTML and CSS toolkits:<br />
 
@@ -130,15 +132,29 @@ Because we are already using it for front end and can use it for backend </br>
 
 Frameworks:<br />
 
-Node.js <br />
+**Node.js** <br />
+Not a framework, but a runtime environment. Needs a framework.
+*Pros:*<br />
+-Open source: Free and available to anyone who needs an environment to run JavaScript.<br />
+-Fast-processing: Uses Chrome's V8 JavaScript engine, resulting in very fast execution times.<br. />
+-Event-based model: Due to node.js's asynchronous, non-blocking, single-threaded nature, node.js is great for web apps that have constant updates.<br />
 
-Express.js <br />
-- requires Node.JS
+*Cons:*<br />
+-Single threaded: Since node is single threaded, CPU heavy tasks tend to decrease performance.(Mulit-threading is remains experimental)<br />
+-Callbacks: Node.js uses callbacks when executing multiple tasks, which can become complex affecting performance if not managed properly.<br />
 
-- these two should have everything we need
+**Express.js** <br />
+*Pros:*<br />
+-Easy to learn: Only uses JavaScript, which is necessary for front end anyway.<br />
+-Supports Node.js.<br />
+-Supported by google V8 engine: High performance using a new(er) engine from Google.<br. />
+-Supports caching: Allows webpages to load even faster for people who have visited before.<br />
+*Cons:*<br />
+-Can have callbacks issues.<br />
+
 
 Web servers:<br />
-
+-Will figure out at a later date. When testing becomes applicable. We will run a local server for testing, and look into web server options when we reach that point in the project.
 
 ## **Databases:** <br />
 
