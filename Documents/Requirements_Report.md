@@ -16,7 +16,9 @@ The level 0 DFD depicts our system as a single process and the connections from 
 
 ### Level 1 DFD
 
-<img width="472" alt="Screen Shot 2022-09-30 at 7 13 52 PM" src="https://user-images.githubusercontent.com/99511208/193379117-3be811a4-b5bb-4cc4-9683-e4090727fd36.png">
+
+
+<img width="472" alt="Screen Shot 2022-09-30 at 7 13 52 PM" src="Camp OAC DFD lvl1.jpeg">
 
 The level 1 DFD shows the main * functions * of our system. The main process is broken down into the important processes that are necessary for our system.
 
