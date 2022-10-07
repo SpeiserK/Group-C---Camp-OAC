@@ -44,10 +44,19 @@ For our 3rd milestone: Peer Testing II, we will construct confirmation features 
 4. Customer info db
 *Final report & Presentation of Finished Product*
 - Everything working
+
 ### Non-Functional requirements
 *Requirements Report & Presentation*
+
 - plan for db and website cost+limit
+
 *Video Demo & Peer-testing I*
+
+- Usability: With our user group having such a wide range, the web application needs to be easy to learn and use. We will do this using React.js, optimizing UX by minimizing actions needed and increasing efficiency using the frameworks functions.
+
+-Scalability: Using MongoDB's NoSQL style database, the database will be very flexible and horizontally scalable. This will smoother changes if they are needed in the future.
+
+-Error-handling: UI will be programmed such that it is difficult to make invalid actions. Order of operations should be clear to the user and error prevention will be implemented. 
 
 *Video Demo & Peer-testing II*
 
@@ -131,7 +140,8 @@ Possible HTML and CSS toolkits:<br />
 
 Chosen language for backend: Javascript <br />
 Why? <br/>
-Because we are already using it for front end and can use it for backend </br>
+Because we are already using it for frontend and can use it for backend. JavaScript has the ability to be employed on the frontend and backend. By using JavaScript on both ends, the overall flexibility and efficiency of the project can be increased. </br>
+
 
 Frameworks:<br />
 
@@ -188,7 +198,7 @@ SQL: **S**tructured **Q**uery **L**anguage <br />
 - if requirements change or we want flexibility in what is stored MONGO is best<br/>
 - if requirements are fairly predictable sql would be fine<br/>
 
-Scaling: Harder for SQL way easier for NOSQL. so mongo could have some better longevity after we have left if the database continues to grow. <br/>
+Scaling: Harder for SQL way easier for NOSQL. Mongo could have some better longevity after we have left if the database continues to grow. <br/>
 
 ## MONGODB EXAMPLE: <br/>
 ### How would this work with our data? <br/>
@@ -208,6 +218,8 @@ Scaling: Harder for SQL way easier for NOSQL. so mongo could have some better lo
     - could be redundant if possible to query by customer id from orders and remove duplicates (Very Possible)  <br/>
 
 When a user makes an order we query a **location id** from **Location Collection** that has the stock of wood available, then we update **location id** with new stock. we also seperately update the **Orders Collection** and add a new order with the order information.  <br/>
+
+After carefully considering all the options above, the MERN stack proves to be the most suitable tech stack using; MongoDB, ExpressJS, ReactJS, and Node.js. <br />
 
 ## Testing
 
