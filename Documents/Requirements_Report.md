@@ -20,20 +20,31 @@ The level 0 DFD depicts our system as a single process and the connections from 
 
 The level 1 DFD shows the main * functions * of our system. The main process is broken down into the important processes that are necessary for our system.
 
+For our 2nd milestone: Peer Testing I, the 'sign in' process, firewood request amount, and the location selection feature will be completed. Also, we will complete the front-end development for the payment selection as well as generation for confirmation receipts and location information receipts.<br />
+For our 3rd milestone: Peer Testing II, we will construct confirmation features to be used by our administrators. There will be a measurement feature to check if inventory stock is available, an independent process used to communicate with customers that are paying by cash/e-trasfer, and a manual process used to verify inventory stock.<br />For the 4th milestone: Finished Product, we will have implemented the use of our database. This database will store collections of payment transactions and inventory stock by location. Also, our payment processes will be sorted, including the use of online payment using SQAURE.<br />
+
 ## Milestone timeline
 
 ### Functional requirements
 *Requirements Report & Presentation*
 
 *Video Demo & Peer-testing I*
-
+- Front End Working (based on DFD lvl. 1)
+1. Enter contact details
+2. Select pick-up  location
+3. Select payment option
+4. Send location-information
 *Video Demo & Peer-testing II*
-
+- Back end working
+1. Inventory check
+2. payment with square
+3. send payment receipt
+4. Customer info db
 *Final report & Presentation of Finished Product*
-
+- Everything working
 ### Non-Functional requirements
 *Requirements Report & Presentation*
-
+- plan for db and website cost+limit
 *Video Demo & Peer-testing I*
 
 *Video Demo & Peer-testing II*
@@ -48,19 +59,20 @@ The level 1 DFD shows the main * functions * of our system. The main process is 
 
 Possible JavaScript frameworks:
 
-**AngularJS**<br />
+**Angular**<br />
 *Pros:*<br />
--Two way data-binding: Data binding is straightforward in AngularJS. It ensures that any changes made to the view/presentation(HTML) layer immediately updates the project data model.<br />
+-Two way data-binding: Data binding is straightforward in Angular. It ensures that any changes made to the view/presentation(HTML) layer immediately updates the project data model.<br />
 -Open source: available for anyone to incorporate into a project.<br />
 -Easy to test: Allows for simplified end-to-end testing, simplifying tests and debugging.<br />
 -Improved server performance: reduces the burden on server CPUs because AngularJS supports caching and other useful processes.<br />
 *Cons:*<br />
 -Javascript support mandatory: Users would need a javascript enabled device to access the website.<br />
 -Difficult to learn: AngularJS has minimal documentation, with complex scopes that may  prove challenging to understand.<br />
+-Large size: Angular's file size is much larger than React or Vue.<br />
 
 **React**<br />
 *Pros:*<br />
--Can create cross-platform applications: Can easily create web apps, can also use React-Native which is used to develop apps from iOS and/or Android devices in React  using the same syntax.<br />
+-Can create cross-platform applications: Can easily create web apps, can also use React-Native which is used to develop apps for iOS and/or Android devices in React  using the same syntax.<br />
 -Open source and popular:  Free to use and has a large user base, which is great for troubleshooting problems.<br />
 -Reusable components: Let’s developers reuse pieces of UI in any project and combine them into a larger UI system.<br />
 -Backward compatibility: React API remains unchanged after updates. Allowing for prolonged functionality of React without requiring much code maintenance.<br />
@@ -77,8 +89,9 @@ Possible JavaScript frameworks:
 -Compatibility with mobile devices:  Vue can be used for building apps for iOS and Android using NativeScript, Ionic, or other UI frameworks.<br />
 -Compatible with Electron framework for desktop development.<br />
 *Cons:*<br />
--Limited resources: Not as many available libraries to work with compared to Vue.js and AngularJS.<br />
+-Limited resources: Not as many available libraries to work with compared to AngularJS.<br />
 -Lack of support for large-scale projects: Vue still has a relatively small dev team and community, so it's better to use it in smaller projects.<br />
+-Not fully stable: 90% of API remains the same after updates.<br /> 
 
 Possible HTML and CSS toolkits:<br />
 
@@ -118,25 +131,35 @@ Chosen language for backend: Javascript <br />
 Why? <br/>
 Because we are already using it for front end and can use it for backend </br>
 
-
-
 Frameworks:<br />
 
-Node.js <br />
+**Node.js** <br />
+Not a framework, but a runtime environment. Needs a framework.
+*Pros:*<br />
+-Open source: Free and available to anyone who needs an environment to run JavaScript.<br />
+-Fast-processing: Uses Chrome's V8 JavaScript engine, resulting in very fast execution times.<br. />
+-Event-based model: Due to node.js's asynchronous, non-blocking, single-threaded nature, node.js is great for web apps that have constant updates.<br />
+*Cons:*<br />
+-Single threaded: Since node is single threaded, CPU heavy tasks tend to decrease performance.(Mulit-threading is remains experimental)<br />
+-Callbacks: Node.js uses callbacks when executing multiple tasks, which can become complex affecting performance if not managed properly.<br />
 
-Express.js <br />
-- requires Node.JS
-
-- these two should have everything we need
+**Express.js** <br />
+*Pros:*<br />
+-Easy to learn: Only uses JavaScript, which is necessary for front end anyway.<br />
+-Supports Node.js.<br />
+-Supported by google V8 engine: High performance using a new(er) engine from Google.<br />
+-Supports caching: Allows webpages to load even faster for people who have visited before.<br />
+*Cons:*<br />
+-Can have callbacks issues.<br />
 
 Web servers:<br />
+-Will figure out at a later date. When testing becomes applicable. We will run a local server for testing, and look into web server options when we reach that point in the project.
 
+## Databases:
 
-## **Databases:** <br />
+### SQL vs NOSQL <br />
 
-SQL vs NOSQL <br />
-
-### SQL: **S**tructured **Q**uery **L**anguage <br />
+SQL: **S**tructured **Q**uery **L**anguage <br />
 - Used for relational databases like mySQL <br />
 - Very strict requirements for data (Clear Schema) <br />
     - all records must follow this Schema <br />
