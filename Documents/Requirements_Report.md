@@ -10,7 +10,8 @@ There are 2 user groups for this software:
 
 ### Level 0 DFD
 
-<img width="491" alt="Screen Shot 2022-09-30 at 6 29 44 PM" src="https://user-images.githubusercontent.com/99511208/193378273-5965d93d-6a76-425a-a4ab-4a8391bbdd12.png">
+<img width="779" alt="Screen Shot 2022-10-10 at 12 57 07 PM" src="https://user-images.githubusercontent.com/99511208/194943467-ce6c9eb3-63a1-4304-a07d-0e575ac13985.png">
+
 
 The level 0 DFD depicts our system as a single process and the connections from the customer and administrators to the system.
 
