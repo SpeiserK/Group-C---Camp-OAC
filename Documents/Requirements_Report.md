@@ -147,10 +147,10 @@ Because we are already using it for frontend and can use it for backend. JavaScr
 Frameworks:<br />
 
 **Node.js** <br />
-Not a framework, but a runtime environment. Needs a framework.
+Not a framework, but a runtime environment. Needs a framework.<br />
 *Pros:*<br />
 -Open source: Free and available to anyone who needs an environment to run JavaScript.<br />
--Fast-processing: Uses Chrome's V8 JavaScript engine, resulting in very fast execution times.<br. />
+-Fast-processing: Uses Chrome's V8 JavaScript engine, resulting in very fast execution times.<br />
 -Event-based model: Due to node.js's asynchronous, non-blocking, single-threaded nature, node.js is great for web apps that have constant updates.<br />
 *Cons:*<br />
 -Single threaded: Since node is single threaded, CPU heavy tasks tend to decrease performance.(Mulit-threading is remains experimental)<br />
