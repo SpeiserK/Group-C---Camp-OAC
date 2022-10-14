@@ -222,4 +222,15 @@ When a user makes an order we query a **location id** from **Location Collection
 After carefully considering all the options above, the MERN stack proves to be the most suitable tech stack using; MongoDB, ExpressJS, ReactJS, and Node.js. <br />
 
 ## Testing
+Testing will consist of:
+- unit testing
+- regression testing
+- integration testing (where appropriate)
 
+All unit test should be written before development on the relevant feature, and retained throughout the project's development.
+
+We plan to use the JEST framework for unit testing, this a framework developed by facebook and is widely used, making it easier to resolve issues and create tests.
+
+For fegression testing we will be using the test-all procedure: we will run all previous tests whenever integrating a new feature. The scale of this project is small, so this is an achievable and sensible regression testing method.
+
+Integration testing will be making sure the database and website communicate as intended, for stock checks and staff login.
