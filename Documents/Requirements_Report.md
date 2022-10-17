@@ -234,3 +234,12 @@ We plan to use the JEST framework for unit testing, this a framework developed b
 For fegression testing we will be using the test-all procedure: we will run all previous tests whenever integrating a new feature. The scale of this project is small, so this is an achievable and sensible regression testing method.
 
 Integration testing will be making sure the database and website communicate as intended, for stock checks and staff login.
+
+## Pull requests
+A team member cannot merge their own pull requests
+
+2 other team members must review a pull request before it is merged. If the review approves the pull request they will comment, approved on the pull request
+
+Reviewing a pull request consists of:
+- running all unit tests, and passing
+- inspecting code to ensure proper preservation of previous developments
