@@ -229,17 +229,9 @@ Testing will consist of:
 
 All unit test should be written before development on the relevant feature, and retained throughout the project's development.
 
-We plan to use the JEST framework for unit testing, this a framework developed by facebook and is widely used, making it easier to resolve issues and create tests.
+We plan to use the JEST framework for unit testing, this a framework developed by facebook and is widely used, making it easier to resolve issues and create tests. It is easy to download and install, and easy to learn to use. click [here](https://jestjs.io/docs/getting-started) for basic info on how to use jest to test javascript functions. It also makes the test-all testing procedure easy to perform.
 
-For fegression testing we will be using the test-all procedure: we will run all previous tests whenever integrating a new feature. The scale of this project is small, so this is an achievable and sensible regression testing method.
+For regression testing we will be using the test-all procedure: we will run all previous tests whenever integrating a new feature. The scale of this project is small, so this is an achievable and sensible regression testing method. Again jest allows running of multiple tests in isolated environments, making testing efficient and fast.
 
-Integration testing will be making sure the database and website communicate as intended, for stock checks and staff login.
+Integration testing will ensure the database and website communicate as intended, for stock checks and staff login.
 
-## Pull requests
-A team member cannot merge their own pull requests
-
-2 other team members must review a pull request before it is merged. If the review approves the pull request they will comment, approved on the pull request
-
-Reviewing a pull request consists of:
-- running all unit tests, and passing
-- inspecting code to ensure proper preservation of previous developments
