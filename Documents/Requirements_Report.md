@@ -34,16 +34,21 @@ The level 1 DFD shows the main functions of our system in a more in-depth form. 
 ### Functional requirements
 *Requirements Report & Presentation*
 
+
 *Milestone 2: Peer-testing I*
 - Front End Working
 1. Enter contact details
 2. Select pick-up location
 3. Select payment option
 4. Receipt generation
+
+
 *Milestone 3: Peer-testing II*
 - Back end working
 1. Payment with square
 2. Database integration
+
+
 *Milestone 4: Finished Product*
 - Everything completed
 1. Administrator portal
