@@ -1,10 +1,11 @@
 # Camp OAC - C Requirements report
 
 ## Software Description
-The product will be a website that allows customers to purchase firewood from Camp OAC, and receive a pickup location after the purchase has been completed. The firewood stock will then be automatically updated. The objective is to automate the process which has been performed manually for 2 years. The website will have a button on the homepage which leads to the purchasing page where the customer fills in a preferred contact method, the amount of firewood they would like, and the area they would like to pick up the firewood from. They then click next, and the page contents change to the square payment method. After this is done, and the purchase is confirmed the exact pickup location will be given to them, and they can go and pickup their firewood. The admin/staff will receive the new order on the same website, (they can confirm the purchase maybe) and then they will prepare the order and confirm that the stock for the order has been removed, this will update a database(?) containing the stock information.
+The product will be a website that allows customers to purchase firewood from Camp OAC, and receive a pick-up location after the order has been processed. The firewood stock will be automatically updated when an order is placed. The objective is to automate the process which has been performed manually in the past. The website will have two buttons on the homepage, one of which leads to the firewood ordering page, while the other leads to an administrator portal. The firewood ordering page is where the customer fills in their contact information, the amount of firewood they would like, and the preffered pick-up location. Next, the page contents change to inquire what type of payment method the customer would prefer, and options for Credit Card, E-transfer, and Cash are available. After this is done, and the purchase is confirmed the exact pick-up location will be given to them. If the customer selects cash/e-transfer payment there will be an additional step where staff contacts the customer to confirm the payment is processed. The admin/staff can view the order on the administrator portal, here they can approve cash/e-transfer orders, and prepare the order for pick-up.
+
 There are 2 user groups for this software:
-- Customers: will navigate the website, and enter payment details into the system to purchase firewood, ideally there is no login for customers, only entering contact details to receive the payment confirmation and pickup location.
-- admin/staff: will need to login to the website to maintain security, staff will be able to manually adjust stock levels, and choose which locations will be selling firewood at any given time.
+- Customers: Will navigate the website, and enter payment details into the system to purchase firewood, ideally there is no login for customers, only entering contact details to receive the payment confirmation and pickup location.
+- Admin/staff: Will need to login to the admin portal, staff will be able to manually adjust stock levels, and choose which locations will be selling firewood at any given time. Staff will also be able to approve e-transfer and cash orders.
 
 ## System Architecture (DFD)
 
@@ -243,17 +244,9 @@ Testing will consist of:
 
 All unit test should be written before development on the relevant feature, and retained throughout the project's development.
 
-We plan to use the JEST framework for unit testing, this a framework developed by facebook and is widely used, making it easier to resolve issues and create tests.
+We plan to use the JEST framework for unit testing, this a framework developed by facebook and is widely used, making it easier to resolve issues and create tests. It is easy to download and install, and easy to learn to use. click [here](https://jestjs.io/docs/getting-started) for basic info on how to use jest to test javascript functions. It also makes the test-all testing procedure easy to perform.
 
-For fegression testing we will be using the test-all procedure: we will run all previous tests whenever integrating a new feature. The scale of this project is small, so this is an achievable and sensible regression testing method.
+For regression testing we will be using the test-all procedure: we will run all previous tests whenever integrating a new feature. The scale of this project is small, so this is an achievable and sensible regression testing method. Again jest allows running of multiple tests in isolated environments, making testing efficient and fast.
 
-Integration testing will be making sure the database and website communicate as intended, for stock checks and staff login.
+Integration testing will ensure the database and website communicate as intended, for stock checks and staff login.
 
-## Pull requests
-A team member cannot merge their own pull requests
-
-2 other team members must review a pull request before it is merged. If the review approves the pull request they will comment, approved on the pull request
-
-Reviewing a pull request consists of:
-- running all unit tests, and passing
-- inspecting code to ensure proper preservation of previous developments
