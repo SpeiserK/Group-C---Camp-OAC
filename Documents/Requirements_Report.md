@@ -76,7 +76,7 @@ The level 1 DFD shows the main functions of our system in a more in-depth form. 
 
 Client was flexible in choice of tech stack. We decided to look into three different tech stacks to help us achieve our goals: MEAN, LAMP, and MERN.<br />
 
-TABLE GOES HERE <br />
+<img width="750" alt="Screen Shot 2022-10-10 at 3 37 58 PM" src="https://github.com/SpeiserK/Group-C---Camp-OAC/blob/requireRepoK/Media/images/TechStackTable.png">
 
 Since our goal is to build a responsive and agile web application, we decided to focus our research between the MEAN and MERN stacks. Below is the information and the frameworks/libraries used in each stack. We included a few CSS toolkits incase it is needed for future use.<br />
 
