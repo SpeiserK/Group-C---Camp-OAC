@@ -14,37 +14,46 @@ There are 2 user groups for this software:
 <img width="779" alt="Screen Shot 2022-10-10 at 12 57 07 PM" src="https://user-images.githubusercontent.com/99511208/194943467-ce6c9eb3-63a1-4304-a07d-0e575ac13985.png">
 
 
-The level 0 DFD depicts our system as a single process and the connections from the customer and administrators to the system.
+The level 0 DFD depicts our system as a single process and the connections from the customer and administrators to the system. This process begins with the customer placing an order request with our firewood purchasing system. This request will be tracked through our database and staff will be able to view live orders. Staff will have permission to update stock and approve orders. When orders have been confirmed the customer will receive a receipt with pick-up location information attached.
 
 ### Level 1 DFD
 
 <img width="750" alt="Screen Shot 2022-10-10 at 3 37 58 PM" src="https://user-images.githubusercontent.com/99511208/195465999-06f877ea-ee50-4b61-bc44-e2a1806c2211.png">
 
 
-The level 1 DFD shows the main * functions * of our system. The main process is broken down into the important processes that are necessary for our system.
+The level 1 DFD shows the main functions of our system in a more in-depth form. Customers will input contact information, a quantity of firewood, and select their preferred pick-up location. There will then be an inventory check before orders are approved to ensure quantity is available. Next the customer can choose their payment option: if they want to pay with debit or credit, their transaction will be processed using Square. If the case is the customer wants to pay by cash/e-transfer then this will require staff verification, staff will have to contact the customer to arrange the payment. Once payment has been approved the customer will receive a purchase receipt with location information attached. We will then log the transaction information in our customer information database.
 
-For our 2nd milestone: Peer Testing I, the 'sign in' process, firewood request amount, and the location selection feature will be completed. Also, we will complete the front-end development for the payment selection as well as generation for confirmation receipts and location information receipts.<br />
-For our 3rd milestone: Peer Testing II, we will construct confirmation features to be used by our administrators. There will be a measurement feature to check if inventory stock is available, an independent process used to communicate with customers that are paying by cash/e-trasfer, and a manual process used to verify inventory stock.<br />For the 4th milestone: Finished Product, we will have implemented the use of our database. This database will store collections of payment transactions and inventory stock by location. Also, our payment processes will be sorted, including the use of online payment using SQAURE.<br />
+**Milestone 2 Peer testing I:** Customers will be able to input all necessary order information. Customers will be able to view payment options available. Also, we will complete the front-end development for the website as well as generation of receipts.<br />
+
+**Milestone 3 Peer Testing II:** Our database will be implemented, allowing for inventory checks to take place and for automatic stock updates. The database will also store order transaction information. Payment with SQUARE will be integrated.<br />
+
+**Milestone 4 Finished Product:** The administrator portal will be created allowing for staff to login, and manage orders, stock, and payments on our website. Notifications will be created to notify vendors when there is cash/ e-transfer payments. <br />
 
 ## Milestone timeline
 
 ### Functional requirements
 *Requirements Report & Presentation*
 
-*Video Demo & Peer-testing I*
-- Front End Working (based on DFD lvl. 1)
+
+*Milestone 2: Peer-testing I*
+- Front End Working
 1. Enter contact details
-2. Select pick-up  location
+2. Select pick-up location
 3. Select payment option
-4. Send location-information
-*Video Demo & Peer-testing II*
+4. Receipt generation
+
+
+*Milestone 3: Peer-testing II*
 - Back end working
-1. Inventory check
-2. payment with square
-3. send payment receipt
-4. Customer info db
-*Final report & Presentation of Finished Product*
-- Everything working
+1. Payment with square
+2. Database integration
+
+
+*Milestone 4: Finished Product*
+- Everything completed
+1. Administrator portal
+2. Staff notifications for cash/ e-trasnfer payments
+3. Usability of website is polished
 
 ### Non-Functional requirements
 *Requirements Report & Presentation*
