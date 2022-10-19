@@ -73,6 +73,13 @@ The level 1 DFD shows the main functions of our system in a more in-depth form. 
 *Final report & Presentation of Finished Product*
 
 ## Tech Stack
+
+Client was flexible in choice of tech stack. We decided to look into three different tech stacks to help us achieve our goals: MEAN, LAMP, and MERN.<br />
+
+TABLE GOES HERE <br />
+
+Since our goal is to build a responsive and agile web application, we decided to focus our research between the MEAN and MERN stacks. Below is the information and the frameworks/libraries used in each stack. We included a few CSS toolkits incase it is needed for future use.<br />
+
 ### Front-End:<br />
 -Javascript<br />
 -CSS<br />
@@ -187,7 +194,6 @@ SQL: **S**tructured **Q**uery **L**anguage <br />
     - all records must follow this Schema <br />
 - uses relations like one - one, one to many, etc. <br />
 
-#### Summary:  <br />
 *data is stored across multiple tables that are connected with relations and queried with SQL* <br />
 
 ### NOSQL: Different than SQL <br />
@@ -229,7 +235,15 @@ Scaling: Harder for SQL way easier for NOSQL. Mongo could have some better longe
 
 When a user makes an order we query a **location id** from **Location Collection** that has the stock of wood available, then we update **location id** with new stock. we also seperately update the **Orders Collection** and add a new order with the order information.  <br/>
 
-After carefully considering all the options above, the MERN stack proves to be the most suitable tech stack using; MongoDB, ExpressJS, ReactJS, and Node.js. <br />
+#### Summary:  <br />
+
+After considering all the options above, the MERN stack proves to be the most suitable tech stack. The MERN and MEAN stack both offer advantages when it comes to building a robust web application. When comparing these stacks to the LAMP stack, both offer highly responsive web applications, that are much better at dealing with smaller amounts of non-relational data. Furthermore, both MEAN and MERN allow us to use JavaScript, an extremely powerful web scripting language with a variety of open source libraries. The differences between MEAN and MERN are slim, mainly concerning the Front-End library. Between Angular and React, we decided React was the appropriate library,  mainly due to virtual DOM(Document Object Model) to speed up performance, re-useable software components for smoother development, also has less of a learning curve compared to Angular with a fast growing community.<br />
+
+
+
+Therefore we will be using MERN: MongoDB, ExpressJS, ReactJS, and Node.js. <br />
+
+
 
 ## Testing
 Testing will consist of:
