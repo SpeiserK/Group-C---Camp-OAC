@@ -38,8 +38,7 @@ The level 1 DFD shows the main functions of our system in a more in-depth form. 
 
 - Usability: With our user group having such a wide range, the web application needs to be easy to learn and use. We will do this using React.js, optimizing UX by minimizing actions needed and increasing efficiency using the frameworks functions. The UI will be programmed such that it is difficult to make invalid actions. Order of operations should be clear to the user and error prevention will be implemented.
 
-
-
+- Privacy and Security: We will not store data for longer than it is required, and we will not store credit card or other purchase information.
 
 ## Tech Stack
 
