@@ -1,10 +1,11 @@
 # Camp OAC - C Requirements report
 
 ## Software Description
-The product will be a website that allows customers to purchase firewood from Camp OAC, and receive a pickup location after the purchase has been completed. The firewood stock will then be automatically updated. The objective is to automate the process which has been performed manually for 2 years. The website will have a button on the homepage which leads to the purchasing page where the customer fills in a preferred contact method, the amount of firewood they would like, and the area they would like to pick up the firewood from. They then click next, and the page contents change to the square payment method. After this is done, and the purchase is confirmed the exact pickup location will be given to them, and they can go and pickup their firewood. The admin/staff will receive the new order on the same website, (they can confirm the purchase maybe) and then they will prepare the order and confirm that the stock for the order has been removed, this will update a database(?) containing the stock information.
+The product will be a website that allows customers to purchase firewood from Camp OAC, and receive a pick-up location after the order has been processed. The firewood stock will be automatically updated when an order is placed. The objective is to automate the process which has been performed manually in the past. The website will have two buttons on the homepage, one of which leads to the firewood ordering page, while the other leads to an administrator portal. The firewood ordering page is where the customer fills in their contact information, the amount of firewood they would like, and the preffered pick-up location. Next, the page contents change to inquire what type of payment method the customer would prefer, and options for Credit Card, E-transfer, and Cash are available. After this is done, and the purchase is confirmed the exact pick-up location will be given to them. If the customer selects cash/e-transfer payment there will be an additional step where staff contacts the customer to confirm the payment is processed. The admin/staff can view the order on the administrator portal, here they can approve cash/e-transfer orders, and prepare the order for pick-up.
+
 There are 2 user groups for this software:
-- Customers: will navigate the website, and enter payment details into the system to purchase firewood, ideally there is no login for customers, only entering contact details to receive the payment confirmation and pickup location.
-- admin/staff: will need to login to the website to maintain security, staff will be able to manually adjust stock levels, and choose which locations will be selling firewood at any given time.
+- Customers: Will navigate the website, and enter payment details into the system to purchase firewood, ideally there is no login for customers, only entering contact details to receive the payment confirmation and pickup location.
+- Admin/staff: Will need to login to the admin portal, staff will be able to manually adjust stock levels, and choose which locations will be selling firewood at any given time. Staff will also be able to approve e-transfer and cash orders.
 
 ## System Architecture (DFD)
 
@@ -13,44 +14,26 @@ There are 2 user groups for this software:
 <img width="779" alt="Screen Shot 2022-10-10 at 12 57 07 PM" src="https://user-images.githubusercontent.com/99511208/194943467-ce6c9eb3-63a1-4304-a07d-0e575ac13985.png">
 
 
-The level 0 DFD depicts our system as a single process and the connections from the customer and administrators to the system.
+The level 0 DFD depicts our system as a single process and the connections from the customer and administrators to the system. This process begins with the customer placing an order request with our firewood purchasing system. This request will be tracked through our database and staff will be able to view live orders. Staff will have permission to update stock and approve orders. When orders have been confirmed the customer will receive a receipt with pick-up location information attached.
 
 ### Level 1 DFD
 
 <img width="750" alt="Screen Shot 2022-10-10 at 3 37 58 PM" src="https://user-images.githubusercontent.com/99511208/195465999-06f877ea-ee50-4b61-bc44-e2a1806c2211.png">
 
 
-The level 1 DFD shows the main * functions * of our system. The main process is broken down into the important processes that are necessary for our system.
+The level 1 DFD shows the main functions of our system in a more in-depth form. Customers will input contact information, a quantity of firewood, and select their preferred pick-up location. There will then be an inventory check before orders are approved to ensure quantity is available. Next the customer can choose their payment option: if they want to pay with debit or credit, their transaction will be processed using Square. If the case is the customer wants to pay by cash/e-transfer then this will require staff verification, staff will have to contact the customer to arrange the payment. Once payment has been approved the customer will receive a purchase receipt with location information attached. We will then log the transaction information in our customer information database.
 
-For our 2nd milestone: Peer Testing I, the 'sign in' process, firewood request amount, and the location selection feature will be completed. Also, we will complete the front-end development for the payment selection as well as generation for confirmation receipts and location information receipts.<br />
-For our 3rd milestone: Peer Testing II, we will construct confirmation features to be used by our administrators. There will be a measurement feature to check if inventory stock is available, an independent process used to communicate with customers that are paying by cash/e-trasfer, and a manual process used to verify inventory stock.<br />For the 4th milestone: Finished Product, we will have implemented the use of our database. This database will store collections of payment transactions and inventory stock by location. Also, our payment processes will be sorted, including the use of online payment using SQAURE.<br />
+### Milestones and Functional Requirements
 
-## Milestone timeline
+**Milestone 2 Peer testing I:** Customers will be able to input all necessary order information. Customers will be able to view payment options available. Also, we will complete the front-end development for the website as well as generation of receipts.<br />
 
-### Functional requirements
-*Requirements Report & Presentation*
+**Milestone 3 Peer Testing II:** Our database will be implemented, allowing for inventory checks to take place and for automatic stock updates. The database will also store order transaction information. Payment with SQUARE will be integrated.<br />
 
-*Video Demo & Peer-testing I*
-- Front End Working (based on DFD lvl. 1)
-1. Enter contact details
-2. Select pick-up  location
-3. Select payment option
-4. Send location-information
-*Video Demo & Peer-testing II*
-- Back end working
-1. Inventory check
-2. payment with square
-3. send payment receipt
-4. Customer info db
-*Final report & Presentation of Finished Product*
-- Everything working
+**Milestone 4 Finished Product:** The administrator portal will be created allowing for staff to login, and manage orders, stock, and payments on our website. Notifications will be created to notify vendors when there is cash/ e-transfer payments. <br />
+
 
 ### Non-Functional requirements
-*Requirements Report & Presentation*
 
-- plan for db and website cost+limit
-
-*Video Demo & Peer-testing I*
 
 - Usability: With our user group having such a wide range, the web application needs to be easy to learn and use. We will do this using React.js, optimizing UX by minimizing actions needed and increasing efficiency using the frameworks functions.
 
@@ -58,11 +41,15 @@ For our 3rd milestone: Peer Testing II, we will construct confirmation features 
 
 -Error-handling: UI will be programmed such that it is difficult to make invalid actions. Order of operations should be clear to the user and error prevention will be implemented. 
 
-*Video Demo & Peer-testing II*
-
-*Final report & Presentation of Finished Product*
 
 ## Tech Stack
+
+Client was flexible in choice of tech stack. We decided to look into three different tech stacks to help us achieve our goals: MEAN, LAMP, and MERN.<br />
+
+<img width="750" alt="Screen Shot 2022-10-10 at 3 37 58 PM" src="https://github.com/SpeiserK/Group-C---Camp-OAC/blob/requireRepoK/Media/images/TechStackTable.png">
+
+Since our goal is to build a responsive and agile web application, we decided to focus our research between the MEAN and MERN stacks. Below is the information and the frameworks/libraries used in each stack. We included a few CSS toolkits incase it is needed for future use.<br />
+
 ### Front-End:<br />
 -Javascript<br />
 -CSS<br />
@@ -167,9 +154,9 @@ Not a framework, but a runtime environment. Needs a framework.<br />
 Web servers:<br />
 -Will figure out at a later date. When testing becomes applicable. We will run a local server for testing, and look into web server options when we reach that point in the project.
 
-## Databases:
+### Databases:
 
-### SQL vs NOSQL <br />
+#### SQL vs NOSQL <br />
 
 SQL: **S**tructured **Q**uery **L**anguage <br />
 - Used for relational databases like mySQL <br />
@@ -177,7 +164,6 @@ SQL: **S**tructured **Q**uery **L**anguage <br />
     - all records must follow this Schema <br />
 - uses relations like one - one, one to many, etc. <br />
 
-#### Summary:  <br />
 *data is stored across multiple tables that are connected with relations and queried with SQL* <br />
 
 ### NOSQL: Different than SQL <br />
@@ -200,8 +186,8 @@ SQL: **S**tructured **Q**uery **L**anguage <br />
 
 Scaling: Harder for SQL way easier for NOSQL. Mongo could have some better longevity after we have left if the database continues to grow. <br/>
 
-## MONGODB EXAMPLE: <br/>
-### How would this work with our data? <br/>
+### MONGODB EXAMPLE: <br/>
+#### How would this work with our data? <br/>
 1. Orders collection <br/>
     - customer info; <br/>
     - order id; <br/>
@@ -219,7 +205,15 @@ Scaling: Harder for SQL way easier for NOSQL. Mongo could have some better longe
 
 When a user makes an order we query a **location id** from **Location Collection** that has the stock of wood available, then we update **location id** with new stock. we also seperately update the **Orders Collection** and add a new order with the order information.  <br/>
 
-After carefully considering all the options above, the MERN stack proves to be the most suitable tech stack using; MongoDB, ExpressJS, ReactJS, and Node.js. <br />
+#### Summary:  <br />
+
+After considering all the options above, the MERN stack proves to be the most suitable tech stack. The MERN and MEAN stack both offer advantages when it comes to building a robust web application. When comparing these stacks to the LAMP stack, both offer highly responsive web applications, that are much better at dealing with smaller amounts of non-relational data. Furthermore, both MEAN and MERN allow us to use JavaScript, an extremely powerful web scripting language with a variety of open source libraries. The differences between MEAN and MERN are slim, mainly concerning the Front-End library. Between Angular and React, we decided React was the appropriate library,  mainly due to virtual DOM(Document Object Model) to speed up performance, re-useable software components for smoother development, also has less of a learning curve compared to Angular with a fast growing community.<br />
+
+
+
+Therefore we will be using MERN: MongoDB, ExpressJS, ReactJS, and Node.js. <br />
+
+
 
 ## Testing
 Testing will consist of:
@@ -229,17 +223,8 @@ Testing will consist of:
 
 All unit test should be written before development on the relevant feature, and retained throughout the project's development.
 
-We plan to use the JEST framework for unit testing, this a framework developed by facebook and is widely used, making it easier to resolve issues and create tests.
+We plan to use the JEST framework for unit testing, this a framework developed by facebook and is widely used, making it easier to resolve issues and create tests. It is easy to download and install, and easy to learn to use. click [here](https://jestjs.io/docs/getting-started) for basic info on how to use jest to test javascript functions. It also makes the test-all testing procedure easy to perform.
 
-For fegression testing we will be using the test-all procedure: we will run all previous tests whenever integrating a new feature. The scale of this project is small, so this is an achievable and sensible regression testing method.
+For regression testing we will be using the test-all procedure: we will run all previous tests whenever integrating a new feature. The scale of this project is small, so this is an achievable and sensible regression testing method. Again jest allows running of multiple tests in isolated environments, making testing efficient and fast.
 
-Integration testing will be making sure the database and website communicate as intended, for stock checks and staff login.
-
-## Pull requests
-A team member cannot merge their own pull requests
-
-2 other team members must review a pull request before it is merged. If the review approves the pull request they will comment, approved on the pull request
-
-Reviewing a pull request consists of:
-- running all unit tests, and passing
-- inspecting code to ensure proper preservation of previous developments
+Integration testing will ensure the database and website communicate as intended, for stock checks and staff login.
