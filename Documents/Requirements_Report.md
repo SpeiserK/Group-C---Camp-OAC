@@ -31,16 +31,14 @@ The level 1 DFD shows the main functions of our system in a more in-depth form. 
 
 **Milestone 4 Finished Product:** The administrator portal will be created allowing for staff to login, and manage orders, stock, and payments on our website. Notifications will be created to notify vendors when there is cash/ e-transfer payments. <br />
 
-
 ### Non-Functional requirements
+- Concurrent users: The website should be able to handle concurrent users, this also applies to the database.
 
+- Low maintenace and upkeep costs: The website should be low cost to maintain and update; in accordance with this the database and website desing should be flexible, so that if large changes are required it is easy to integrate those changes.
 
-- Usability: With our user group having such a wide range, the web application needs to be easy to learn and use. We will do this using React.js, optimizing UX by minimizing actions needed and increasing efficiency using the frameworks functions.
+- Usability: With our user group having such a wide range, the web application needs to be easy to learn and use. We will do this using React.js, optimizing UX by minimizing actions needed and increasing efficiency using the frameworks functions. The UI will be programmed such that it is difficult to make invalid actions. Order of operations should be clear to the user and error prevention will be implemented.
 
--Scalability: Using MongoDB's NoSQL style database, the database will be very flexible and horizontally scalable. This will smoother changes if they are needed in the future.
-
--Error-handling: UI will be programmed such that it is difficult to make invalid actions. Order of operations should be clear to the user and error prevention will be implemented. 
-
+- Privacy and Security: We will not store data for longer than it is required, and we will not store credit card or other purchase information.
 
 ## Tech Stack
 
