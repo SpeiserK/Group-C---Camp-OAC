@@ -23,44 +23,17 @@ The level 0 DFD depicts our system as a single process and the connections from 
 
 The level 1 DFD shows the main functions of our system in a more in-depth form. Customers will input contact information, a quantity of firewood, and select their preferred pick-up location. There will then be an inventory check before orders are approved to ensure quantity is available. Next the customer can choose their payment option: if they want to pay with debit or credit, their transaction will be processed using Square. If the case is the customer wants to pay by cash/e-transfer then this will require staff verification, staff will have to contact the customer to arrange the payment. Once payment has been approved the customer will receive a purchase receipt with location information attached. We will then log the transaction information in our customer information database.
 
+### Milestones and Functional Requirements
+
 **Milestone 2 Peer testing I:** Customers will be able to input all necessary order information. Customers will be able to view payment options available. Also, we will complete the front-end development for the website as well as generation of receipts.<br />
 
 **Milestone 3 Peer Testing II:** Our database will be implemented, allowing for inventory checks to take place and for automatic stock updates. The database will also store order transaction information. Payment with SQUARE will be integrated.<br />
 
 **Milestone 4 Finished Product:** The administrator portal will be created allowing for staff to login, and manage orders, stock, and payments on our website. Notifications will be created to notify vendors when there is cash/ e-transfer payments. <br />
 
-## Milestone timeline
-
-### Functional requirements
-*Requirements Report & Presentation*
-
-
-*Milestone 2: Peer-testing I*
-- Front End Working
-1. Enter contact details
-2. Select pick-up location
-3. Select payment option
-4. Receipt generation
-
-
-*Milestone 3: Peer-testing II*
-- Back end working
-1. Payment with square
-2. Database integration
-
-
-*Milestone 4: Finished Product*
-- Everything completed
-1. Administrator portal
-2. Staff notifications for cash/ e-trasnfer payments
-3. Usability of website is polished
 
 ### Non-Functional requirements
-*Requirements Report & Presentation*
 
-- plan for db and website cost+limit
-
-*Video Demo & Peer-testing I*
 
 - Usability: With our user group having such a wide range, the web application needs to be easy to learn and use. We will do this using React.js, optimizing UX by minimizing actions needed and increasing efficiency using the frameworks functions.
 
@@ -68,9 +41,6 @@ The level 1 DFD shows the main functions of our system in a more in-depth form. 
 
 -Error-handling: UI will be programmed such that it is difficult to make invalid actions. Order of operations should be clear to the user and error prevention will be implemented. 
 
-*Video Demo & Peer-testing II*
-
-*Final report & Presentation of Finished Product*
 
 ## Tech Stack
 
@@ -184,9 +154,9 @@ Not a framework, but a runtime environment. Needs a framework.<br />
 Web servers:<br />
 -Will figure out at a later date. When testing becomes applicable. We will run a local server for testing, and look into web server options when we reach that point in the project.
 
-## Databases:
+### Databases:
 
-### SQL vs NOSQL <br />
+#### SQL vs NOSQL <br />
 
 SQL: **S**tructured **Q**uery **L**anguage <br />
 - Used for relational databases like mySQL <br />
@@ -216,8 +186,8 @@ SQL: **S**tructured **Q**uery **L**anguage <br />
 
 Scaling: Harder for SQL way easier for NOSQL. Mongo could have some better longevity after we have left if the database continues to grow. <br/>
 
-## MONGODB EXAMPLE: <br/>
-### How would this work with our data? <br/>
+### MONGODB EXAMPLE: <br/>
+#### How would this work with our data? <br/>
 1. Orders collection <br/>
     - customer info; <br/>
     - order id; <br/>
