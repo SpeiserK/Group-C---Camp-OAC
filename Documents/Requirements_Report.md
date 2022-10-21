@@ -46,17 +46,13 @@ For our 3rd milestone: Peer Testing II, we will construct confirmation features 
 - Everything working
 
 ### Non-Functional requirements
-*Requirements Report & Presentation*
+- Concurrent users: The website should be able to handle concurrent users, this also applies to the database.
 
-- plan for db and website cost+limit
+- Low maintenace and upkeep costs: The website should be low cost to maintain and update; in accordance with this the database and website desing should be flexible, so that if large changes are required it is easy to integrate those changes.
 
-*Video Demo & Peer-testing I*
+- Usability: With our user group having such a wide range, the web application needs to be easy to learn and use. We will do this using React.js, optimizing UX by minimizing actions needed and increasing efficiency using the frameworks functions. The UI will be programmed such that it is difficult to make invalid actions. Order of operations should be clear to the user and error prevention will be implemented.
 
-- Usability: With our user group having such a wide range, the web application needs to be easy to learn and use. We will do this using React.js, optimizing UX by minimizing actions needed and increasing efficiency using the frameworks functions.
 
--Scalability: Using MongoDB's NoSQL style database, the database will be very flexible and horizontally scalable. This will smoother changes if they are needed in the future.
-
--Error-handling: UI will be programmed such that it is difficult to make invalid actions. Order of operations should be clear to the user and error prevention will be implemented. 
 
 *Video Demo & Peer-testing II*
 
