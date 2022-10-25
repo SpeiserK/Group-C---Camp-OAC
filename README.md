@@ -7,9 +7,9 @@ This automation process looks like: <br />
 (3) chooses their general location ie. West Kelowna, Mission, Rutland etc... and number of bags of firewood desired; <br />
 (4) purchaser an invoice that is produced based on pricing and quantity desired,  <br />
 (5) Payment is processed Receipt is generated automatically. <br />
-(6) instructs purchaser on address where firewood is available for pickup;
+(6) instructs purchaser on address where firewood is available for pickup;<br />
 
-<br />
+
 ## Group Members:
 <br />
 Zach Prenovost<br />
@@ -17,5 +17,17 @@ Aidan Murphy<br />
 Cam Wilson<br />
 Karlen Speiser<br />
 
+## Tech Stack Installation
+Download Node.js from [here](https://nodejs.org/en/download/)
+
+In your backend Node server file, create new package.json file with: npm init -y
+Use npm to install the following dependencies: npm install express cors mongoose dotenv
+Express: middleware for MERN stack, provides robust functions for Node.js
+Cors: permits AJAX requests from the remote host
+Mongoose: helps node server interact with MongoDB
+Dotenv: help loading environment variables
+
+Install nodemon, which auto restarts node app during development:
+npm install -g nodemon
 
 
