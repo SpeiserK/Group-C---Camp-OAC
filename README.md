@@ -11,7 +11,7 @@ This automation process looks like: <br />
 
 
 
-<br />
+---
 
 ## Group Members:
 <br />
@@ -20,20 +20,25 @@ Aidan Murphy<br />
 Cam Wilson<br />
 Karlen Speiser<br />
 
-
+---
 ## Tech Stack Installation:
 
-### Jest:
-- click [here](https://jestjs.io/docs/getting-started) for info from developers
+### ***Jest***:
+click [here](https://jestjs.io/docs/getting-started) for info from developers
+
 1. 
 ```
 npm install --save-dev jest
 ```
-2. create test files using naming convention:
+
+2. 
+create test files using naming convention:
 ```
 name.test.js
 ```
-3. format package.json file appropriately
+
+3. 
+format package.json file appropriately
 ```
 {
   "scripts": {
@@ -41,4 +46,5 @@ name.test.js
   }
 }
 ```
-4. run `npm test` in code directory
+4.
+run `npm test` in code directory
