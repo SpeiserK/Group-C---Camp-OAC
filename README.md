@@ -11,7 +11,6 @@ This automation process looks like: <br />
 
 
 ## Group Members:
-<br />
 Zach Prenovost<br />
 Aidan Murphy<br />
 Cam Wilson<br />
@@ -20,14 +19,14 @@ Karlen Speiser<br />
 ## Tech Stack Installation
 Download Node.js from [here](https://nodejs.org/en/download/)
 
-In your backend Node server file, create new package.json file with: npm init -y
-Use npm to install the following dependencies: npm install express cors mongoose dotenv
-Express: middleware for MERN stack, provides robust functions for Node.js
-Cors: permits AJAX requests from the remote host
-Mongoose: helps node server interact with MongoDB
-Dotenv: help loading environment variables
+In your backend Node server file, create new package.json file with: npm init -y <br />
+Use npm to install the following dependencies: npm install express cors mongoose dotenv<br />
+Express: middleware for MERN stack, provides robust functions for Node.js<br />
+Cors: permits AJAX requests from the remote host<br />
+Mongoose: helps node server interact with MongoDB<br />
+Dotenv: help loading environment variables<br />
 
-Install nodemon, which auto restarts node app during development:
-npm install -g nodemon
+Install nodemon, which auto restarts node app during development:<br />
+npm install -g nodemon<br />
 
 
