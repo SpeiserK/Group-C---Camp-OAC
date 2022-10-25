@@ -43,4 +43,22 @@ npm install -g nodemon
 ```
 See MERN Scripts/backend for use of the libraries<br />
 
+### ***React***:
+
+1.
+In your main project folder, create React.js application:
+```
+npx create-react-app mern-emsystem
+```
+2.
+Navigate to mern-emsystem directory, start the web server:
+```
+npm start
+```
+
+### ***MongoDB***:
+
+To link the database to your Node.js server, create a .env in the Node server file<br />
+Use the connection string with the appropriate username and password to connect<br />
+See MERN Scripts/backend/.env 
 
