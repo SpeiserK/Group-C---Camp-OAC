@@ -16,17 +16,31 @@ Aidan Murphy<br />
 Cam Wilson<br />
 Karlen Speiser<br />
 
-## Tech Stack Installation
+## Tech Stack Installation:
+
+### ***Node.js***:
 Download Node.js from [here](https://nodejs.org/en/download/)
 
-In your backend Node server file, create new package.json file with: npm init -y <br />
-Use npm to install the following dependencies: npm install express cors mongoose dotenv<br />
+1.
+In your Node server file, create new package.json file with: 
+```
+npm init -y
+```
+2.
+Use npm to install the following dependencies: 
+```
+npm install express cors mongoose dotenv
+```
 Express: middleware for MERN stack, provides robust functions for Node.js<br />
 Cors: permits AJAX requests from the remote host<br />
 Mongoose: helps node server interact with MongoDB<br />
 Dotenv: help loading environment variables<br />
 
-Install nodemon, which auto restarts node app during development:<br />
-npm install -g nodemon<br />
+3.
+Install nodemon, which auto restarts node app during development:
+```
+npm install -g nodemon
+```
+See MERN Scripts/backend for use of the libraries<br />
 
 
