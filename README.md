@@ -22,7 +22,7 @@ Karlen Speiser<br />
 Download Node.js from [here](https://nodejs.org/en/download/)
 
 1.
-In your Node server file, create new package.json file with: 
+In your Node server file(backend), create new package.json file with: 
 ```
 npm init -y
 ```
@@ -46,7 +46,7 @@ See MERN Scripts/backend for use of the libraries<br />
 ### ***React***:
 
 1.
-In your main project folder, create React.js application:
+In your main project folder(MERN Scripts), create React.js application:
 ```
 npx create-react-app mern-emsystem
 ```
