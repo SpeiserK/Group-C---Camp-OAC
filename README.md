@@ -9,7 +9,6 @@ This automation process looks like: <br />
 (5) Payment is processed Receipt is generated automatically. <br />
 (6) instructs purchaser on address where firewood is available for pickup;<br />
 
-
 ## Group Members:
 Zach Prenovost<br />
 Aidan Murphy<br />
@@ -62,3 +61,28 @@ To link the database to your Node.js server, create a .env in the Node server fi
 Use the connection string with the appropriate username and password to connect<br />
 See MERN Scripts/backend/.env 
 
+### ***Jest***:
+click [here](https://jestjs.io/docs/getting-started) for info from developers
+
+1. 
+```
+npm install --save-dev jest
+```
+
+2. 
+create test files using naming convention:
+```
+name.test.js
+```
+
+3. 
+format package.json file appropriately
+```
+{
+  "scripts": {
+    "test": "jest"
+  }
+}
+```
+4.
+run `npm test` in code directory
