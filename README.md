@@ -9,21 +9,12 @@ This automation process looks like: <br />
 (5) Payment is processed Receipt is generated automatically. <br />
 (6) instructs purchaser on address where firewood is available for pickup;<br />
 
-
-<<<<<<< HEAD
-=======
-
-
----
-
->>>>>>> origin
 ## Group Members:
 Zach Prenovost<br />
 Aidan Murphy<br />
 Cam Wilson<br />
 Karlen Speiser<br />
 
-<<<<<<< HEAD
 ## Tech Stack Installation:
 
 ### ***Node.js***:
@@ -68,14 +59,9 @@ npm start
 
 To link the database to your Node.js server, create a .env in the Node server file<br />
 Use the connection string with the appropriate username and password to connect<br />
-See MERN Scripts/backend/.env 
-=======
----
-## Tech Stack Installation:
 
 ### ***Jest***:
 click [here](https://jestjs.io/docs/getting-started) for info from developers
->>>>>>> origin
 
 1. 
 ```
