@@ -9,20 +9,8 @@ function App() {
         <p>
           This is our logo
         </p>
-
-        <a
-          className="App-link"
-          //href="https://reactjs.org"
-          href="index.js"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-
-     
+        </header>
+      </div>
   );
 }
 
