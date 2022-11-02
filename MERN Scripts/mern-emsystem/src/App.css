@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+<<<<<<< Updated upstream
+=======
+.textbox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.quantity {
+  display: flex;
+  background-color: #f7a81b;
+}
+>>>>>>> Stashed changes
