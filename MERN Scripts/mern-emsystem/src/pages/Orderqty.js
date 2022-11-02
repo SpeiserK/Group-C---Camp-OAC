@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from "react-router-dom";
 import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
+import Locations_List from '../components/Locations_List.js';
 
 function Orderqty(){
     return(
@@ -15,6 +16,7 @@ function Orderqty(){
                 </header>
             </div>
             <p>Select firewood quantity.</p>
+            <Locations_List /> 
             <Link to="/">Click here to go back</Link>
         </div>
         <div className="footer">
