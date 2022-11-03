@@ -16,8 +16,7 @@ function Startpage(){
             </div>
             <div className="container">
                 <Textbox />
-                <Link to="order">Click here to view order page</Link><br/>
-                <Link to="location">Click here to view Location page</Link><br/>
+                <Link to="order">Click here to view Order page</Link><br/>
             </div>
             <div className="footer">
                 <footer className="App-footer">
