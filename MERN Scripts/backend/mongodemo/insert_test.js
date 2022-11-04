@@ -8,6 +8,7 @@ MongoClient.connect(url, function(err, db) {
   
   //db name
   var dbo = db.db("mydb");
+  //can specify an array if multiple objects are to be inserted simultaneously, also need to use 'insertMany', instead of 'insertOne'
   var myobj = { name: "Microsoft", address: "Sydney Rd" };
   
   //collection name
