@@ -15,6 +15,10 @@ Aidan Murphy<br />
 Cam Wilson<br />
 Karlen Speiser<br />
 
+## Task Prioritization List
+
+Check out our Gantt chart [here](https://docs.google.com/spreadsheets/d/18zKV2q8-GVcxCED7rnHJwNiDU7VvHJ5I/edit?usp=sharing&ouid=106485498433338308480&rtpof=true&sd=true)
+
 ## Tech Stack Installation:
 
 ### ***Node.js***:

@@ -1,0 +1,31 @@
+import { Link } from "react-router-dom";
+import React from 'react'
+import Textbox from "../components/Textbox";
+import Logo from '../components/Logo.js'
+import Navbar from '../components/Navbar.js';
+
+
+function Startpage(){
+    return(
+        <div className="main">
+            <div className="App">
+                <header className="App-header">
+                <h1>Camp OAC</h1>
+                <Logo />
+                </header>
+            </div>
+            <div className="container">
+                <Textbox />
+                <Link to="order">Click here to view order page</Link><br/>
+                <Link to="location">Click here to view Location page</Link><br/>
+            </div>
+            <div className="footer">
+                <footer className="App-footer">
+                    <Navbar />
+                </footer>
+            </div>
+        </div>
+    );
+}
+
+export default Startpage;
