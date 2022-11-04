@@ -27,7 +27,7 @@ function Orderqty(){
                     </label>
                 </form>
                 <br></br>
-            <Locations_List /> 
+            <LocationsList /> 
 
             <Link to="/">Click here to go back</Link>
         </div>
