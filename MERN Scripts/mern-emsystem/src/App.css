@@ -64,3 +64,9 @@
   display: flex;
   background-color: #f7a81b;
 }
+
+.progBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
