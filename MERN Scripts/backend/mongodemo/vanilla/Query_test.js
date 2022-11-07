@@ -1,5 +1,7 @@
+require('dotenv').config({ path: '../../.env' });
+
 var MongoClient = require('mongodb').MongoClient;
-var url = "mongodb+srv://OACgroupC:Q2NuEWhwR7ohRZOE@cluster0.mwpch7j.mongodb.net/?retryWrites=true&w=majority";
+var url = process.env.ATLAS_URI;
 
 MongoClient.connect(url, function(err, db) {
   if (err) throw err;
