@@ -18,13 +18,14 @@ function Orderqty(){
             </div>
 
             <p>Input the number of firewood bundles you would like to purchase.</p>
+            <p id="email">Logged in as:</p>
              <form>
-                    <label for="quantity">
-                        Number of bundles:     
-                        <input type="text" id="quantity" name="quantity" />
-                        <input type="submit" value="Next" />
-                        <br></br>
-                    </label>
+                <label for="quantity">
+                    Number of bundles:     
+                    <input type="text" id="quantity" name="quantity" autoComplete="off"/>
+                    <input type="submit" value="Next" />
+                    <br></br>
+                </label>
                 </form>
                 <br></br>
             <LocationsList /> 
