@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Logo from '../components/Logo.js';
 import Navbar from '../components/Navbar.js';
 import LocationsList from '../components/LocationsList.js';
+import PlaceOrder from '../components/hooks/placeOrder.js';
 
 function Orderqty(){
     return( 
@@ -16,18 +17,7 @@ function Orderqty(){
                 </header>
             </div>
 
-            <p>Input the number of firewood bundles you would like to purchase.</p>
-            <p id="email">Logged in as:</p>
-             <form>
-                <label for="quantity">
-                    Number of bundles:     
-                    <input type="text" id="quantity" name="quantity" autoComplete="off"/>
-                    <input type="submit" value="Next" />
-                    <br></br>
-                </label>
-                </form>
-                <br></br>
-            <LocationsList /> 
+            <PlaceOrder />
 
             <Link to="/">Click here to go back</Link><br></br>
             <Link to="payment">Click here to view Payment page</Link>
