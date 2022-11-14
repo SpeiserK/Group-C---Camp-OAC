@@ -7,6 +7,7 @@ export default class Locations_List extends Component {
                 <label>
                     Select Pickup Location: 
                 <select>
+        <option value="select" disabled selected>Select a location</option>
         <option value="West Kelowna">West Kelowna</option>
         <option value="Rutland">Rutland</option>
         <option value="Mission">Mission</option>
