@@ -3,17 +3,13 @@ import React from 'react'
 import EmailCheck from "../components/hooks/matchEmail.js";
 import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
+import Banner from '../components/Banner.js';
 
 
 function Startpage(){
     return(
         <div className="main">
-            <div className="App">
-                <header className="App-header">
-                <h1>Camp OAC</h1>
-                <Logo />
-                </header>
-            </div>
+            <Banner />
             <div className="container">
                 <EmailCheck />
                 <Link to="order">Click here to view Order page</Link><br/>
