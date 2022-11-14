@@ -17,7 +17,10 @@ function Startpage(){
             <div className="container">
                 <EmailCheck />
                 <Link to="order">Click here to view Order page</Link><br/>
+                
+                <Link to="login">Click here to view Employee login page page</Link><br/> 
             </div>
+            
             <div className="footer">
                 <footer className="App-footer">
                     <Navbar />
