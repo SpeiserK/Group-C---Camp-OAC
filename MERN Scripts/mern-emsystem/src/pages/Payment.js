@@ -4,7 +4,7 @@ import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
 import PlaceOrder from '..components/hooks/placeOrder.js'
 
-function Paymentpage(){
+function Payment(){
     return(
     <div className="main">
         <div className="App">
@@ -23,4 +23,4 @@ function Paymentpage(){
     );
 }
 
-export default Paymentpage;
+export default Payment;
