@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import React from 'react'
-import Textbox from "../components/Textbox";
+import EmailCheck from "../components/hooks/matchEmail.js";
 import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
 
@@ -15,7 +15,7 @@ function Startpage(){
                 </header>
             </div>
             <div className="container">
-                <Textbox />
+                <EmailCheck />
                 <Link to="order">Click here to view Order page</Link><br/>
             </div>
             <div className="footer">
