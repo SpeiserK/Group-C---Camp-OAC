@@ -1,10 +1,9 @@
-import React from 'react'
+import React from 'react';
 import { Link } from "react-router-dom";
 
-import Logo from '../components/Logo.js'
+import Logo from '../components/Logo.js';
 import Navbar from '../components/Navbar.js';
 import LocationsList from '../components/LocationsList.js';
-import Textbox from '../components/Textbox.js';
 
 function Orderqty(){
     return( 
@@ -30,9 +29,10 @@ function Orderqty(){
                 <br></br>
             <LocationsList /> 
 
-            <Link to="/">Click here to go back</Link>
-        </div>
-        <div className="footer">
+            <Link to="/">Click here to go back</Link><br></br>
+            <Link to="payment">Click here to view Payment page</Link>
+            </div>
+            <div className="footer">
                 <footer className="App-footer">
                     <Navbar />
                 </footer>
