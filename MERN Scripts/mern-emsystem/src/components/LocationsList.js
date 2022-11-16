@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import setLocValue from "../components/hooks/placeOrder.js"
 
 export default class Locations_List extends Component {
     render(){
@@ -6,7 +7,8 @@ export default class Locations_List extends Component {
             <div className="Location-List">
                 <label>
                     Select Pickup Location: 
-                <select>
+                <select onChange={(e) => setLocValue(e.target.value)}>
+        <option value="select" disabled selected>Select a location</option>
         <option value="West Kelowna">West Kelowna</option>
         <option value="Rutland">Rutland</option>
         <option value="Mission">Mission</option>
