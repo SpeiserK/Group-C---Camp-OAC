@@ -13,12 +13,6 @@ function Orderqty(){
         <div>
             <div className="main">
 
-            <div className="App">
-                <header className="App-header">
-                <h1>Camp OAC</h1>
-                <Logo />
-                </header>
-            </div>
 
             <Banner />
 
