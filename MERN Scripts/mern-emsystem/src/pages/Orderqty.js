@@ -12,10 +12,17 @@ function Orderqty(){
     return( 
         <div>
             <div className="main">
+
+            <div className="App">
+                <header className="App-header">
+                <h1>Camp OAC</h1>
+                <Logo />
+                </header>
+            </div>
+
             <Banner />
 
             <PlaceOrder />
-
             <Link to="/">Click here to go back</Link><br></br>
             <Link to="payment">Click here to view Payment page</Link>
             </div>
