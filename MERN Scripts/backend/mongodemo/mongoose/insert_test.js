@@ -8,25 +8,31 @@ var url = process.env.ATLAS_URI;
 const options = {
   dbName: 'mydb'
 };
-mongoose.connect(url, options);
+mongoose.connect("mongodb+srv://OACgroupC:Q2NuEWhwR7ohRZOE@cluster0.mwpch7j.mongodb.net/?retryWrites=true&w=majority", options);
 var db = mongoose.connection;
 
 db.once('open', function() {
   console.log("Connection Successful!");
    
   // define Schema
-  var BookSchema = mongoose.Schema({
-    name: String,
-    age: Number
-  });
+  const EmployeeSchema = new mongoose.Schema ({
+    email: {
+        type: String,
+        required: true,
+    },
+    passWord: {
+        type: String,
+        required: true,
+    },
+});
   // compile schema to model, first arg is collection name, second is schema
-  var Book = mongoose.model('dogs', BookSchema);
+  var Employee = mongoose.model('Employees', EmployeeSchema);
   // a document instance
-  var book1 = new Book({ name: 'John Smith', age: 12});
   // save model to database
-    book1.save(function (err, book) {
+  var Employee1 = new Employee({email: 'persongmailcom', passWord: 'securepw'});
+    Employee1.save(function (err, Employee) {
       if (err) return console.error(err);
-      console.log(book.name + " saved to clients collection");
+      console.log(Employee.name + " saved to clients collection");
     });
      
 });

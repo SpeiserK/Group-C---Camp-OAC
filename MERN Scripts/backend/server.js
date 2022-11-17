@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config();
+import Employee from 'models.js'
 
 const app  = express();
 const port = process.env.PORT || 5000;
@@ -24,5 +25,16 @@ app.listen(port, ()=>{
 
 app.get("/",(req,res)=> {
     res.json({message: "Welcome to Camp OAC app."});
+});
+
+app.get("/mongo", (req, res)=> {
+    Employee.find({ })
+    .then((data) => {
+        console.log( 'Data', data);
+        res.json(data);
+    })
+    .catch(() => {
+        console.log( 'error: ', daerrorta);
+    })
 });
 

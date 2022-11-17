@@ -24,6 +24,18 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User',UserSchema);
-
 module.exports = User;
 
+const EmployeeSchema = new mongoose.Schema ({
+    email: {
+        type: String,
+        required: true,
+    },
+    passWord: {
+        type: String,
+        required: true,
+    },
+});
+
+const Employee = mongoose.model('Employee',EmployeeSchema);
+module.exports = Employee;
