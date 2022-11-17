@@ -57,8 +57,8 @@ const EmailCheck = () => {
     }
 
     return(
-        <section className="textbox">
-            <p>If you wish to purchase firewood, we'll need an email we can the send order information to.</p>
+        <section className="enterEmail">
+            <p>If you wish to purchase firewood, we'll need an email we can send the order information to.</p>
             <br></br>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form onSubmit={handleSubmit}>
