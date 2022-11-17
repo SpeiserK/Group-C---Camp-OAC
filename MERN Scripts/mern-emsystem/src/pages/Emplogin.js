@@ -1,15 +1,15 @@
 import React from 'react'
-import { Route, Routes, Link, useNavigate } from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import Emp from '../pages/Emp';
 
+
+
 function Emplogin(){
-    const navigateEmp = () => {
-        useNavigate('/Emp');
-    }
+    
 
 
     return( 
@@ -29,7 +29,7 @@ function Emplogin(){
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" />
                     </p>
-                    <button type="submit" id="submit" class="submit" onClick={navigateEmp}>Log In</button>
+                    <Link to="Emp"><button type="submit" id="submit" class="submit">Log In</button></Link>
                 </form>
             </div>
             

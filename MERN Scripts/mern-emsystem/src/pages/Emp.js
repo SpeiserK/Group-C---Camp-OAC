@@ -11,9 +11,7 @@ function Emp(){
             <Banner />
             <div className="container">
                 
-                <Link to="order">Click here to view Order page</Link><br/>
                 
-                <Link to="login">Click here to view Employee login page page</Link><br/> 
             </div>
             
             <div className="footer">
