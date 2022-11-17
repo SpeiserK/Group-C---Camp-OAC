@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { BrowserRouter } from "react-router-dom";
+//import './fonts/Frutiger/Frutiger.tff';
+//import './fonts/OpensSans/OpenSans-Regular.tff';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
