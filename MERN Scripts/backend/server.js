@@ -22,7 +22,3 @@ app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);
 });
 
-app.get("/",(req,res)=> {
-    res.json({message: "Welcome to Camp OAC app."});
-});
-

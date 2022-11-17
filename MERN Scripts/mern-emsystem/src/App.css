@@ -31,8 +31,9 @@
   max-height: 90px;
   display: flex;
   flex-direction: row;
-  align-items: center;
-  justify-content: center;
+  align-items: right;
+  justify-content: right;
+  padding-right: 60px;
 }
 
 .App-link {
@@ -45,7 +46,8 @@
 }
 
 .logoimg img {
-  float: right;
+  float: left;
+  padding-left: 30px;
 }
 
 .main-menu {
@@ -82,3 +84,9 @@
   left: -9999px;
 }
 
+.enterEmail {
+  font-family: "Frutiger";
+  text-align: left;
+  padding-top: 180px;
+  padding-left: 270px;
+}
