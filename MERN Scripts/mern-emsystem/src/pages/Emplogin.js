@@ -1,13 +1,17 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Route, Routes, Link, useNavigate } from "react-router-dom";
 
-import Logo from '../components/Logo.js'
+
 import Navbar from '../components/Navbar.js';
-import Textbox from '../components/Textbox.js';
 import Banner from '../components/Banner.js';
-
+import Emp from '../pages/Emp';
 
 function Emplogin(){
+    const navigateEmp = () => {
+        useNavigate('/Emp');
+    }
+
+
     return( 
         <div>
             <div className="main">
@@ -25,7 +29,7 @@ function Emplogin(){
                         <label for="password">Password:</label>
                         <input type="password" name="password" id="password" />
                     </p>
-                    <button type="submit" id="submit" class="submit">Log In</button>
+                    <button type="submit" id="submit" class="submit" onClick={navigateEmp}>Log In</button>
                 </form>
             </div>
             
@@ -43,6 +47,7 @@ function Emplogin(){
         </div>
     );
 }
+
         
 
 export default Emplogin;
