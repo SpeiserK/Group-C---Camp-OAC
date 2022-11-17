@@ -12,10 +12,10 @@ function Orderqty(){
     return( 
         <div>
             <div className="main">
-
+  
 
             <Banner />
-
+            <Logo />
             <PlaceOrder />
             <Link to="/">Click here to go back</Link><br></br>
             <Link to="payment">Click here to view Payment page</Link>
