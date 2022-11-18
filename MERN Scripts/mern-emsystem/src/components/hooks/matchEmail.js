@@ -54,6 +54,8 @@ const EmailCheck = () => {
 
     function handleClick(){
         gotoOrder("order");
+        // nxt line added by zach, trying to save email in local storage
+        localStorage.setItem("email",email);
     }
 
     return(

@@ -40,10 +40,12 @@ const PlaceOrder = () => {
         }
     }
 
+    const email = localStorage.getItem("email");
+
     return (
         <div className="orderText">
         <p>Input the number of firewood bundles you would like to purchase.</p>
-            <p id="email">Logged in as: </p>
+            <p id="email">Logged in as: {email} </p>
             <div className="Location-List">
                 <label>
                     Select Pickup Location: 
