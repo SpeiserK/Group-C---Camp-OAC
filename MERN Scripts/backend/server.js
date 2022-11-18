@@ -3,7 +3,6 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config();
-import Employee from 'models.js'
 
 const app  = express();
 const port = process.env.PORT || 5000;
@@ -12,8 +11,27 @@ app.use(cors());
 app.use(express.json());
 
 
+
+const EmployeeSchema = new mongoose.Schema ({
+    email: {
+        type: String,
+        required: true,
+    },
+    passWord: {
+        type: String,
+        required: true,
+    },
+});
+
+const Employee = mongoose.model('Employee',EmployeeSchema);
+
+const options = {
+    dbName: 'mydb'
+  };
+
+
 const uri = process.env.ATLAS_URI;
-mongoose.connect(uri);
+mongoose.connect(uri, options);
 const connection = mongoose.connection;
 connection.once('open',()=> {
     console.log("MongoDB database connection established successfully");
