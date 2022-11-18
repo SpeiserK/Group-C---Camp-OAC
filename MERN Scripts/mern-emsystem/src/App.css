@@ -119,3 +119,43 @@
 .emailSubmit {
   margin-top: 16px;
 }
+
+/* drop down button*/
+.dropbtn{
+  background-color:#f7a81b;
+  color: black;
+  padding: 10px;
+  font-size: 12px;
+  
+  
+}
+/* drop down box*/
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+/*dropdown-content*/
+.dropdown-content {
+  position: absolute;
+  background-color: #17458f;
+  min-width: 200px;
+  display: none;
+  z-index: 1;
+  text-align: right;
+  border-radius: 0.2rem;
+}
+
+/* drop down cells*/
+.dropdown-content a {  
+  color: black;  
+  padding: 12px 16px;  
+  text-decoration: none;  
+  display: block; 
+  outline-width: 2px;
+  outline-style: solid;
+  outline-color: white;
+}  
+
+.dropdown-content a:hover { background-color: #f7a81b;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .drpbtn {background-color: grey;}
