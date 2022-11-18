@@ -55,4 +55,3 @@ app.get("/mongo", (req, res)=> {
         console.log( 'error: ', daerrorta);
     })
 });
-

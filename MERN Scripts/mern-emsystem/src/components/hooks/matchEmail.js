@@ -57,8 +57,8 @@ const EmailCheck = () => {
     }
 
     return(
-        <section className="textbox">
-            <p>If you wish to purchase firewood, we'll need an email we can the send order information to.</p>
+        <section className="enterEmail">
+            <p>If you wish to purchase firewood, we'll need an email we can send the order information to.</p>
             <br></br>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form onSubmit={handleSubmit}>
@@ -82,7 +82,7 @@ const EmailCheck = () => {
                     Please enter a valid email.
                 </p>
                 <br />
-                <label htmlFor="confirmEmail">
+                <label htmlFor="confirmEmail" className="conEmail">
                     Confirm email:
                     <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
                         <FontAwesomeIcon icon={faCheck} />
@@ -108,7 +108,7 @@ const EmailCheck = () => {
                     Must match the first email input field.<br />
                 </p>
                 <br></br>
-                <button disabled={!validEmail || !validMatch ? true : false} onClick={(e) => handleClick()}
+                <button className="emailSubmit" disabled={!validEmail || !validMatch ? true : false} onClick={(e) => handleClick()}
                 >Continue</button>
             </form>
         </section>

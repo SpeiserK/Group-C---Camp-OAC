@@ -10,11 +10,10 @@ function Startpage(){
     return(
         <div className="main">
             <Banner />
+            <Logo />
             <div className="container">
                 <EmailCheck />
                 <Link to="order">Click here to view Order page</Link><br/>
-                
-                <Link to="login">Click here to view Employee login page page</Link><br/> 
             </div>
             
             <div className="footer">
