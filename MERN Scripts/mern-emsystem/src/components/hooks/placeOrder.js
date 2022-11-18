@@ -41,7 +41,7 @@ const PlaceOrder = () => {
     }
 
     return (
-        <div>
+        <div className="orderText">
         <p>Input the number of firewood bundles you would like to purchase.</p>
             <p id="email">Logged in as: </p>
             <div className="Location-List">
@@ -58,7 +58,7 @@ const PlaceOrder = () => {
                 </select>
                 </label>
             </div>
-             <form>
+             <form className="orderQuantity">
                 <label htmlFor="quantity">
                     Number of bundles:     
                     <input
@@ -71,7 +71,7 @@ const PlaceOrder = () => {
                         onChange={(e) => setOrderValue(e.target.value)}
                         aria-describedby="uidnote"
                     />
-                    <button disabled={!validValue || !locValue ? true : false} onClick={(e) => checkInput()}
+                    <button className="orderSubmit" disabled={!validValue || !locValue ? true : false} onClick={(e) => checkInput()}
                     >Next</button>
                     <p id="uidnote" className={!validValue ? "instructions" : "offscreen"}>
                     <FontAwesomeIcon icon={faInfoCircle} />
