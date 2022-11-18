@@ -91,3 +91,31 @@
   padding-left: 270px;
 }
 
+.orderText {
+  font-family: "Frutiger";
+  text-align: left;
+  padding-top: 30px;
+  padding-left: 270px;
+}
+
+.orderQuantity {
+  padding-top: 20px;
+}
+
+.orderSubmit {
+  margin-left: 60px;
+}
+
+.valid {
+  color: limegreen;
+  margin-left: 4px;
+}
+
+.invalid {
+  color: red;
+  margin-left: 4px;
+}
+
+.emailSubmit {
+  margin-top: 16px;
+}
