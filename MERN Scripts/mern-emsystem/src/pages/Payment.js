@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import Logo from '../components/Logo.js';
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
+import PaymentSummary from '../components/PaymentSummary.js';
+import Progressbar from '../components/Progressbar.js';
+
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
 
@@ -11,6 +14,9 @@ const navigate = useNavigate();
     return(
             <div className="main">
                 <Banner />
+                
+                <PaymentSummary />
+
                 <div className="container">
                     <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
                 </div>

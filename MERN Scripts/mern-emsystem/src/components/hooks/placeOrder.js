@@ -33,21 +33,27 @@ const PlaceOrder = () => {
     function checkInput(){
         let orderVal = document.getElementById("quantity").value;
         if(orderVal >= 1 && orderVal <= 20 && (orderVal%1===0)){
+            
             orderVal = "true";
             gotoOrder("payment");
+            //set local storage item #qty to value
+            localStorage.setItem("quantity",document.getElementById("quantity").value);
+            localStorage.setItem("location",document.getElementById("location").value);
         } else {
             orderVal = "false";
         }
     }
 
+    const email = localStorage.getItem("email");
+
     return (
         <div className="orderText">
         <p>Input the number of firewood bundles you would like to purchase.</p>
-            <p id="email">Logged in as: </p>
+            <p id="email">Logged in as: {email} </p>
             <div className="Location-List">
                 <label>
                     Select Pickup Location: 
-                <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"}>
+                <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" >
         <option value="select" disabled selected>Select a location</option>
         <option value="West Kelowna">West Kelowna</option>
         <option value="Rutland">Rutland</option>
