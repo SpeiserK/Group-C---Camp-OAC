@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 
 import PlaceOrder from '../components/hooks/placeOrder.js';
+import Progressbar from '../components/Progressbar.js';
 
 function Orderqty(){
     return( 
@@ -16,6 +17,7 @@ function Orderqty(){
 
             <Banner />
             <Logo />
+            
             <PlaceOrder />
             
             <Link to="/">Click here to go back</Link><br></br>
