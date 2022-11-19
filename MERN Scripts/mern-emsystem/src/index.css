@@ -12,3 +12,26 @@ code {
     monospace;
 }
 
+@font-face {
+  font-family: "Frutiger";
+  src: local("Frutiger"),
+   url("./fonts/Frutiger/Frutiger.ttf") format("truetype");
+  font-weight: bold;
+ }
+
+ @font-face {
+  font-family: "OpenSans";
+  src: local("OpenSans"),
+   url("./fonts/OpenSans/OpenSans-Regular.ttf") format("truetype");
+  font-weight: bold;
+ }
+
+ @font-face {
+  font-family: "Arial";
+  src: local("Arial"),
+   url("./fonts/Arial/arial 1.ttf") format("truetype");
+  font-weight: bold;
+ }
+
+
+
