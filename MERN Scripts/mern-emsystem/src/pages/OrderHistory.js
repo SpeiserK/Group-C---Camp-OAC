@@ -1,15 +1,15 @@
 import React from 'react'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
-import EmpTools from '../components/EmpTools.js';
 
-function Emp(){
+
+function OrderHistory(){
     return(
         <div className="main">
             <Banner />
             <div className="container">
-                <EmpTools />
                 
+                <p>Order History.</p>
             </div>
             
             <div className="footer">
@@ -20,4 +20,4 @@ function Emp(){
         </div>
     );
 }
-export default Emp;
+export default OrderHistory;
