@@ -29,10 +29,10 @@ db.once('open', function() {
   var Employee = mongoose.model('Employees', EmployeeSchema);
   // a document instance
   // save model to database
-  var Employee1 = new Employee({email: 'persongmailcom', passWord: 'securepw'});
+  var Employee1 = new Employee({email: 'Zach@iCloud.com', passWord: 'pw123'});
     Employee1.save(function (err, Employee) {
       if (err) return console.error(err);
-      console.log(Employee.name + " saved to clients collection");
+      console.log(Employee.email + " saved to clients collection");
     });
      
 });
