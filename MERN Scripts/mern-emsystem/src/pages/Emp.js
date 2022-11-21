@@ -1,17 +1,45 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import axios from "axios";
 
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
+const {useEffect, useState} = React;
+
+const fetchData = async () => {
+    return axios.get('http://localhost:5000/mongo')
+    .then( ({data}) => {
+        console.log(data);
+        return JSON.stringify(data);
+
+    })
+    .catch( err => {
+
+        console.error(err);
+    });
+
+}
 
 
 function Emp(){
+    const [userData, setUserData] = useState('');
+
+    useEffect(() => {
+        fetchData().then(Data => {
+            setUserData(Data || ' ');
+
+        })
+        
+    }, []);
+
+
     return(
         <div className="main">
             <Banner />
             <div className="container">
-                
-                
+                <button onClick={() => {
+                fetchData();
+                }}>get data</button>
+                {userData}
             </div>
             
             <div className="footer">
