@@ -12,7 +12,6 @@ export default class Banner extends Component {
                 <header className="App-header">
                 <Link to="/" className="Link" style={{textDecoration: 'none', padding: 20 }}><h1>Rotary Club of Kelowna Ogopogo</h1></Link>
                 <Dropdown />
-                
                 </header>
             </div>
         );            
