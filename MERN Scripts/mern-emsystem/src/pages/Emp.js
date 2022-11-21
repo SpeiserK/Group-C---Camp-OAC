@@ -1,6 +1,6 @@
 import React from 'react'
+import EmpTools from '../components/EmpTools.js';
 import axios from "axios";
-
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 const {useEffect, useState} = React;
@@ -19,7 +19,6 @@ const fetchData = async () => {
 
 }
 
-
 function Emp(){
     const [userData, setUserData] = useState('');
 
@@ -36,6 +35,8 @@ function Emp(){
         <div className="main">
             <Banner />
             <div className="container">
+                <EmpTools />
+                
                 <button onClick={() => {
                 fetchData();
                 }}>get data</button>
