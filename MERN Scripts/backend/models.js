@@ -39,3 +39,46 @@ const EmployeeSchema = new mongoose.Schema ({
 
 const Employee = mongoose.model('Employee',EmployeeSchema);
 module.exports = Employee;
+
+const OrderSchema = new mongoose.Schema ({
+
+    Name:  {
+        type: String,
+        
+    },
+    Quantity:  {
+        type: Number,
+        
+    },
+    Location:  {
+        type: String,
+
+    },
+});
+
+const Order = mongoose.model('Order',OrderSchema);
+module.exports = Order;
+
+const LocationSchema = new mongoose.Schema ({
+    Name:  {
+        type: String,
+
+    },
+    Address:  {
+        type: String,
+
+    },
+    Stock:  {
+        type: Number,
+
+    },
+    Open:  {
+        type: Boolean,
+
+    },
+    
+
+});
+
+const Location = mongoose.model('Location', LocationSchema);
+module.exports = Location;

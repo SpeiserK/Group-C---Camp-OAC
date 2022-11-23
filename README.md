@@ -64,6 +64,9 @@ npm start
 To link the database to your Node.js server, create a .env in the Node server file<br />
 Use the connection string with the appropriate username and password to connect<br />
 
+
+
+
 ### ***Jest***:
 click [here](https://jestjs.io/docs/getting-started) for info from developers
 
@@ -88,4 +91,33 @@ format package.json file appropriately
 }
 ```
 4.
-run `npm test` in code directory
+run 
+```
+npm test
+``` 
+in code directory
+
+## Optional features:
+### ***Concurrent execution of node server and react project***:
+
+1.
+navigate to the root directory of your project ('MERN Scripts'), which should contain the 'Backend' and 'mern-emsystem' folders, and start another node project:
+
+```
+npm init
+```
+
+install the package: `Concurrently` When prompted, otherwise press return for all other prompts.
+
+2.
+Open the `package.json` file in the 'MERN Scripts' folder, and in the 'Scripts' bracket add the following line:
+
+```
+"dev": "concurrently \"cd backend && node server.js\" \"cd mern-emsystem && npm start\" "
+```
+
+This runs the react project and launches the node server with one command:
+
+```
+npm run dev
+```
