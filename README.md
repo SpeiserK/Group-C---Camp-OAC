@@ -89,3 +89,9 @@ format package.json file appropriately
 ```
 4.
 run `npm test` in code directory
+
+### ***bootstrap***:
+1. 
+```
+npm install react-bootstrap bootstrap
+```

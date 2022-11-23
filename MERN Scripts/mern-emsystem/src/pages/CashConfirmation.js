@@ -9,18 +9,13 @@ import Progressbar from '../components/Progressbar.js';
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
 
-function Payment(){
+function CashConfirmation(){
 const navigate = useNavigate();
     return(
             <div className="main">
                 <Banner />
-                
-                <PaymentSummary />
-
+                <p> Because you have selected cash payment your order is under review , please check your email for updates from our team!</p>
                 <div className="container">
-                <button><a href="https://squareup.com/ca/en">Pay with Square</a> </button>
-                <button onClick={() => navigate("CashConfirmation")}> Pay with Cash </button>
-                <button> Pay with e-transfer </button>
                     <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
                 </div>
                 <div className="footer">
@@ -32,4 +27,4 @@ const navigate = useNavigate();
     );
 }
 
-export default Payment;
+export default CashConfirmation;
