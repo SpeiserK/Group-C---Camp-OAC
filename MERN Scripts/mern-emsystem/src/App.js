@@ -10,6 +10,7 @@ import ViewOrders from './pages/ViewOrders.js';
 import Inventory from './pages/Inventory.js';
 import OrderHistory from './pages/OrderHistory.js';
 import CashConfirmation from './pages/CashConfirmation';
+import ETransferConfirmation from './pages/ETransferConfirmation';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="login" element={<Emplogin/>} />
           <Route path="order/payment" element={<Payment/>} />
           <Route path="order/payment/cashConfirmation" element={<CashConfirmation/>} />
+          <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
           <Route path="login/emp" element={<Emp/>}/>
           <Route path="login/emp/viewOrders" element={<ViewOrders/>} />
           <Route path="login/emp/inventory" element={<Inventory/>} />
