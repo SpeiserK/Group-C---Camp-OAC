@@ -136,6 +136,8 @@
 .dropdown {
   display: inline-block;
   position:relative;
+  align-items:flex-start;
+  flex-direction:row-reverse;
   right: -18%;
 }
 /*dropdown-content*/
