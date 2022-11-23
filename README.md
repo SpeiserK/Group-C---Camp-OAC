@@ -110,13 +110,7 @@ npm init
 install the package: `Concurrently` When prompted, otherwise press return for all other prompts.
 
 2.
-Open the `package.json` file in the 'MERN Scripts' folder, and in the 'Scripts' bracket add the following line:
-
-```
-"dev": "concurrently \"cd backend && node server.js\" \"cd mern-emsystem && npm start\" "
-```
-
-This runs the react project and launches the node server with one command:
+Run the react project and launches the node server with one command:
 
 ```
 npm run dev
