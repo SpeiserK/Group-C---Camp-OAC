@@ -171,3 +171,9 @@
 .dropdown-content a:hover { background-color: #f7a81b;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .drpbtn {background-color: grey;}
+
+.about1 {font-family: "Frutiger";}
+.about2 {font-family: "OpenSans";}
+.about3 {font-family: "Arial";}
+.about4 {font-family: "Sentinel";}
+.about5 {font-family: "Georgia";}

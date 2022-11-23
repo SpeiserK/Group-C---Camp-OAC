@@ -9,6 +9,7 @@ import Emp from './pages/Emp.js';
 import ViewOrders from './pages/ViewOrders.js';
 import Inventory from './pages/Inventory.js';
 import OrderHistory from './pages/OrderHistory.js';
+import About from './pages/About.js';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Startpage/>} />
           <Route path="order" element={<Orderqty/>} />
           <Route path="login" element={<Emplogin/>} />
+          <Route path="/about" element={<About/>} />
           <Route path="order/payment" element={<Payment/>} />
           <Route path="login/emp" element={<Emp/>}/>
           <Route path="login/emp/viewOrders" element={<ViewOrders/>} />
