@@ -36,7 +36,6 @@ function Emp(){
             <Banner />
             <div className="container">
                 <EmpTools />
-                
                 <button onClick={() => {
                 fetchData();
                 }}>get data</button>

@@ -171,3 +171,26 @@
 .dropdown-content a:hover { background-color: #f7a81b;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .drpbtn {background-color: grey;}
+
+.adminTools {
+  display: flex;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.viewOrders {
+  font-family: "Frutiger";
+}
+
+.inventoryByLoc {
+  font-family: "Frutiger";
+  margin-right: 60px;
+  margin-left: 60px;
+}
+
+.orderHistory {
+  font-family: "Frutiger";
+}
