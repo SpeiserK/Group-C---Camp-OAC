@@ -3,7 +3,7 @@ const router = express.Router();
 const Models = require ("../models.js");
 
 
-router.route("/newOrder").post((req, res) => {
+router.route("/placeOrder").post((req, res) => {
     const Name = req.body.Name;
     const Quantity = req.body.Location;
     const Location = req.body.Quantity;
@@ -20,4 +20,3 @@ router.route("/newOrder").post((req, res) => {
 
 
 module.exports = router;
-console.log(Models.Employee.schema.paths);

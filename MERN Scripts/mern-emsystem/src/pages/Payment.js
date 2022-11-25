@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import Logo from '../components/Logo.js';
 import Navbar from '../components/Navbar.js';
@@ -19,18 +19,20 @@ const [Order, setOrder] = useState({
 })
 
 function handleClick() {
-    setOrder( input => {
-        return(
-            {
+    setOrder( () => {
+        return({
                 Name: localStorage.getItem("email"),
                 Quantity: localStorage.getItem("quantity"),
                 Location: localStorage.getItem("location") 
-            }
-        )
-    }
-
-    )
+            })
+    })
     console.log(Order);
+    const newOrder = {
+        Name: Order.Name,
+        Quantity: Order.Quantity,
+        Location: Order.Location
+    }
+    axios.post('http://localhost:5000/placeOrder', newOrder);
 }
 
 
