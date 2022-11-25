@@ -16,23 +16,29 @@ db.once('open', function() {
    
   // define Schema
   const EmployeeSchema = new mongoose.Schema ({
-    email: {
+
+    Name:  {
         type: String,
-        required: true,
+        
     },
-    passWord: {
+    Quantity:  {
+        type: Number,
+        
+    },
+    Location:  {
         type: String,
-        required: true,
+
     },
 });
   // compile schema to model, first arg is collection name, second is schema
-  var Employee = mongoose.model('Employees', EmployeeSchema);
+  var Employee = mongoose.model('orders', EmployeeSchema);
   // a document instance
   // save model to database
-  var Employee1 = new Employee({email: 'Zach@iCloud.com', passWord: 'pw123'});
+  
+  var Employee1 = new Employee({Name: 'Fabiano@gmail.com', Quantity: 12, Location: "Kelowna Central"});
     Employee1.save(function (err, Employee) {
       if (err) return console.error(err);
-      console.log(Employee.email + " saved to clients collection");
+      console.log(Employee.email + " saved to orders collection");
     });
      
 });

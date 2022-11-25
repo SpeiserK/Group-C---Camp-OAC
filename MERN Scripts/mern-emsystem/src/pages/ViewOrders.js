@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
-
+import OrderLiveDisp from '../components/OrderLiveDisp.js';
 
 function ViewOrders(){
     return(
@@ -9,7 +9,7 @@ function ViewOrders(){
             <Banner />
             <div className="container">
                 
-                <p>Orders page.</p>
+            <OrderLiveDisp />
             </div>
             
             <div className="footer">
