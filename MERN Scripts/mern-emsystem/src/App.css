@@ -70,6 +70,26 @@
   font-family: "OpenSans";
 }
 
+.dblist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dblist h1 {
+  text-align: center;
+}
+
+.dblist li {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dblist li span {
+  display: block;
+  text-align: left;
+}
+
 .quantity {
   display: flex;
   background-color: #f7a81b;

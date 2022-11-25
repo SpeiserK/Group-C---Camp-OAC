@@ -12,6 +12,9 @@ app.use(express.json());
 
 
 
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// HOW TO IMPORT?
 const EmployeeSchema = new mongoose.Schema ({
     email: {
         type: String,
@@ -24,6 +27,49 @@ const EmployeeSchema = new mongoose.Schema ({
 });
 
 const Employee = mongoose.model('Employee',EmployeeSchema);
+
+
+const OrderSchema = new mongoose.Schema ({
+
+    Name:  {
+        type: String,
+        
+    },
+    Quantity:  {
+        type: Number,
+        
+    },
+    Location:  {
+        type: String,
+
+    },
+});
+
+const Order = mongoose.model('Order',OrderSchema);
+
+const LocationSchema = new mongoose.Schema ({
+    Name:  {
+        type: String,
+
+    },
+    Address:  {
+        type: String,
+
+    },
+    Stock:  {
+        type: Number,
+
+    },
+    Open:  {
+        type: Boolean,
+
+    },
+    
+
+});
+
+const Location = mongoose.model('Location', LocationSchema);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const options = {
     dbName: 'mydb'
@@ -47,6 +93,28 @@ app.get("/",(req,res)=> {
 
 app.get("/mongo", (req, res)=> {
     Employee.find({ })
+    .then((data) => {
+        console.log( 'Data', data);
+        res.json(data);
+    })
+    .catch(() => {
+        console.log( 'error: ', daerrorta);
+    })
+});
+
+app.get("/order", (req, res)=> {
+    Order.find({ })
+    .then((data) => {
+        console.log( 'Data', data);
+        res.json(data);
+    })
+    .catch(() => {
+        console.log( 'error: ', daerrorta);
+    })
+});
+
+app.get("/location", (req, res)=> {
+    Location.find({ })
     .then((data) => {
         console.log( 'Data', data);
         res.json(data);

@@ -4,7 +4,7 @@ import EmailCheck from "../components/hooks/matchEmail.js";
 import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
-import Progressbar from "../components/Progressbar.js";
+
 
 
 function Startpage(){

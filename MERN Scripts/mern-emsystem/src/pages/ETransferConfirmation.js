@@ -9,18 +9,13 @@ import Progressbar from '../components/Progressbar.js';
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
 
-function Payment(){
+function ETransferConfirmation(){
 const navigate = useNavigate();
     return(
             <div className="main">
                 <Banner />
-                
-                <PaymentSummary />
-
+                <p> Please send $$$$ to OGOPOGOEMAIL@ROTARYCLUB.COM, When we confirm your payment your order will be approved, please check your email. </p>
                 <div className="container">
-                <button><a href="https://squareup.com/ca/en">Pay with Square</a> </button>
-                <button onClick={() => navigate("CashConfirmation")}> Pay with Cash </button>
-                <button onClick={() => navigate("ETransferConfirmation")}> Pay with e-transfer </button>
                     <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
                 </div>
                 <div className="footer">
@@ -32,4 +27,4 @@ const navigate = useNavigate();
     );
 }
 
-export default Payment;
+export default ETransferConfirmation;
