@@ -2,7 +2,6 @@
   position: relative;
 }
 
-
 #App {
   text-align: center;
 }
@@ -18,6 +17,46 @@
   color: #f7a81b;
 }
 
+.divwrap{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: grey;
+}
+.midContainer{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  margin: 0px auto;
+  padding-top: 30px;
+  padding-bottom: -20px;
+  width: 48%;
+  height: 96%;
+  background-color: white;
+}
+
+.container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  background-color: white;
+}
+.rightContainer{
+  position: relative;
+
+  margin: 0px auto;
+  padding-top: 30px;
+  padding-bottom: -20px;
+  width: 48%;
+  height: 96%;
+  background-color: white;
+}
+
 .footer {
   text-align: center;
   position: absolute;
@@ -28,7 +67,7 @@
 
 .App-footer {
   background-color:#17458f;
-  max-height: 90px;
+  max-height: 100px;
   display: flex;
   flex-direction: row;
   align-items: right;
