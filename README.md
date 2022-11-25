@@ -91,6 +91,7 @@ format package.json file appropriately
 }
 ```
 4.
+
 run 
 ```
 npm test
@@ -114,4 +115,5 @@ Run the react project and launches the node server with one command:
 
 ```
 npm run dev
+
 ```
