@@ -20,7 +20,7 @@ function About(){
                     <p className="aboutA">Answer</p><br></br>
                 </div>
                 <div className="rightContainer">
-                    <p>Primary Fonts: Use for headlines and navigation handles</p><br></br>
+                <p>Primary Fonts: Use for headlines and navigation handles</p><br></br>
                         <h2 className="about1">This is the Frutiger font</h2><br></br>
                         <h2 className="about2">This is the OpenSans font</h2><br></br>
                         <h2 className="about3">This is the Arial font</h2><br></br>
