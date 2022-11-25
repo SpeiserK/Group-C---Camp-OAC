@@ -241,3 +241,38 @@
   list-style: none;
   padding: 0;
 }
+
+/*NEW CSS LAYOUT: TESTING*/
+/*Main App*/
+.appMain{
+
+}
+
+/*App Header*/
+.appHeader{
+
+}
+
+/*App Container*/
+.appContainer{
+
+}
+
+/*3 divs in appContainer divided into columns*/
+/*Left Container*/
+.leftDiv{
+
+}
+/*Middle Container*/
+.middleDiv{
+
+}
+/*Right Container*/
+.rightDiv{
+
+}
+
+/*App Footer*/
+.appFooter{
+
+}
