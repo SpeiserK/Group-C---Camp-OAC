@@ -5,17 +5,20 @@ export default class EmpTools extends Component {
     render() {
         return(
         <div className="adminTools">
+            <Link to="/login/emp/viewOrders" style={{textDecoration: 'none' }}>
             <button className="viewOrders" style={{textDecoration: 'none' , color: 'black'}}>
-            <Link to="/login/emp/viewOrders" style={{textDecoration: 'none' }}>View Current Orders</Link>
-            </button>
+            Current Orders
+            </button> </Link>
+            
+            <Link to="/login/emp/inventory" style={{textDecoration: 'none' }}>
+            <button className="inventoryByLoc" style={{textDecoration: 'none' , color: 'black'}}  >
+            Inventory By Location
+            </button> </Link>
 
-            <button className="inventoryByLoc" style={{textDecoration: 'none' , color: 'black'}}>
-            <Link to="/login/emp/inventory" style={{textDecoration: 'none' }}>Inventory By Location</Link>
-            </button>
-
+            <Link to="/login/emp/history" style={{textDecoration: 'none' }}>
             <button className="orderHistory" style={{textDecoration: 'none' , color: 'black'}}>
-            <Link to="/login/emp/history" style={{textDecoration: 'none' }}>Order History</Link>
-            </button>
+            Order History
+            </button> </Link>
         </div>
         );
     }
