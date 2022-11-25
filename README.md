@@ -32,7 +32,7 @@ npm init -y
 2.
 Use npm to install the following dependencies: 
 ```
-npm install express cors mongoose dotenv
+npm install express cors mongoose dotenv axios
 ```
 Express: middleware for MERN stack, provides robust functions for Node.js<br />
 Cors: permits AJAX requests from the remote host<br />
@@ -64,6 +64,9 @@ npm start
 To link the database to your Node.js server, create a .env in the Node server file<br />
 Use the connection string with the appropriate username and password to connect<br />
 
+
+
+
 ### ***Jest***:
 click [here](https://jestjs.io/docs/getting-started) for info from developers
 
@@ -88,10 +91,29 @@ format package.json file appropriately
 }
 ```
 4.
-run `npm test` in code directory
 
-### ***bootstrap***:
-1. 
+run 
 ```
-npm install react-bootstrap bootstrap
+npm test
+``` 
+in code directory
+
+## Optional features:
+### ***Concurrent execution of node server and react project***:
+
+1.
+navigate to the root directory of your project ('MERN Scripts'), which should contain the 'Backend' and 'mern-emsystem' folders, and start another node project:
+
+```
+npm init
+```
+
+install the package: `Concurrently` When prompted, otherwise press return for all other prompts.
+
+2.
+Run the react project and launches the node server with one command:
+
+```
+npm run dev
+
 ```

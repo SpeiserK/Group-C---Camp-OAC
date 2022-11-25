@@ -44,7 +44,7 @@ const OrderSchema = new mongoose.Schema ({
 
     Name:  {
         type: String,
-
+        
     },
     Quantity:  {
         type: Number,
@@ -58,6 +58,31 @@ const OrderSchema = new mongoose.Schema ({
 
 const Order = mongoose.model('Order',OrderSchema);
 module.exports = Order;
+
+
+const LocationSchema = new mongoose.Schema ({
+    Name:  {
+        type: String,
+
+    },
+    Address:  {
+        type: String,
+
+    },
+    Stock:  {
+        type: Number,
+
+    },
+    Open:  {
+        type: Boolean,
+
+    },
+    
+
+});
+
+const Location = mongoose.model('Location', LocationSchema);
+module.exports = Location;
 
 module.exports = {
     Employee: Employee,
