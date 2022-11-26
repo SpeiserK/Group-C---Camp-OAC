@@ -1,12 +1,12 @@
 const express = require("express");
 const router = express.Router();
-const Models = require ("../models.js");
+const Models = require("../models.js");
 
 
-router.route("/placeOrder").post((req, res) => {
+router.route("/send").post((req, res) => {
     const Name = req.body.Name;
-    const Quantity = req.body.Location;
-    const Location = req.body.Quantity;
+    const Location = req.body.Location;
+    const Quantity = Number(req.body.Quantity);
     const newOrder = new Models.Order({
         Name,
         Quantity,

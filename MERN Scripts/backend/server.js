@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 require('dotenv').config();
+const Models = require("./models.js");
 
 const app  = express();
 const port = process.env.PORT || 5000;
@@ -10,66 +11,6 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// HOW TO IMPORT?
-const EmployeeSchema = new mongoose.Schema ({
-    email: {
-        type: String,
-        required: true,
-    },
-    passWord: {
-        type: String,
-        required: true,
-    },
-});
-
-const Employee = mongoose.model('Employee',EmployeeSchema);
-
-
-const OrderSchema = new mongoose.Schema ({
-
-    Name:  {
-        type: String,
-        
-    },
-    Quantity:  {
-        type: Number,
-        
-    },
-    Location:  {
-        type: String,
-
-    },
-});
-
-const Order = mongoose.model('Order',OrderSchema);
-
-const LocationSchema = new mongoose.Schema ({
-    Name:  {
-        type: String,
-
-    },
-    Address:  {
-        type: String,
-
-    },
-    Stock:  {
-        type: Number,
-
-    },
-    Open:  {
-        type: Boolean,
-
-    },
-    
-
-});
-
-const Location = mongoose.model('Location', LocationSchema);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const options = {
     dbName: 'mydb'
@@ -86,13 +27,15 @@ connection.once('open',()=> {
 app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);
 });
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// GET requests
 app.get("/",(req,res)=> {
     res.json({message: "Welcome to Camp OAC app."});
+    
 });
 
 app.get("/mongo", (req, res)=> {
-    Employee.find({ })
+    Models.Employee.find({ })
     .then((data) => {
         console.log( 'Data', data);
         res.json(data);
@@ -102,11 +45,8 @@ app.get("/mongo", (req, res)=> {
     })
 });
 
-
-//app.use("/placeOrder", require("./routes/OrderRoute"));
-
 app.get("/order", (req, res)=> {
-    Order.find({ })
+    Models.Order.find({ })
     .then((data) => {
         console.log( 'Data', data);
         res.json(data);
@@ -117,7 +57,7 @@ app.get("/order", (req, res)=> {
 });
 
 app.get("/location", (req, res)=> {
-    Location.find({ })
+    Models.Location.find({ })
     .then((data) => {
         console.log( 'Data', data);
         res.json(data);
@@ -127,3 +67,7 @@ app.get("/location", (req, res)=> {
     })
 });
 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+app.use("/", require("./routes/OrderRoute.js"))

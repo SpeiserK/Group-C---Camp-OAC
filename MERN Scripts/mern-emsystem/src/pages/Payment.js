@@ -32,15 +32,11 @@ function handleClick() {
         Quantity: Order.Quantity,
         Location: Order.Location
     }
-    axios.post('http://localhost:5000/placeOrder', newOrder);
+    axios.post('http://localhost:5000/send', newOrder);
 }
 
 
-const newOrder = {
-    Name: localStorage.getItem("email"),
-    Quantity: localStorage.getItem("quantity"),
-    Location: localStorage.getItem("location")
-}
+
 
 
 

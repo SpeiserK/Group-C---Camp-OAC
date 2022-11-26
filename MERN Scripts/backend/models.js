@@ -24,7 +24,6 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User',UserSchema);
-module.exports = User;
 
 const EmployeeSchema = new mongoose.Schema ({
     email: {
@@ -38,7 +37,6 @@ const EmployeeSchema = new mongoose.Schema ({
 });
 
 const Employee = mongoose.model('Employee',EmployeeSchema);
-module.exports = Employee;
 
 const OrderSchema = new mongoose.Schema ({
 
@@ -57,8 +55,6 @@ const OrderSchema = new mongoose.Schema ({
 });
 
 const Order = mongoose.model('Order',OrderSchema);
-module.exports = Order;
-
 
 const LocationSchema = new mongoose.Schema ({
     Name:  {
@@ -82,9 +78,10 @@ const LocationSchema = new mongoose.Schema ({
 });
 
 const Location = mongoose.model('Location', LocationSchema);
-module.exports = Location;
 
 module.exports = {
     Employee: Employee,
     Order: Order,
+    Location: Location,
+    User: User,
 };
