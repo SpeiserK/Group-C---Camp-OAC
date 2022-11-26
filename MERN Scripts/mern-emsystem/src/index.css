@@ -33,5 +33,21 @@ code {
   font-weight: bold;
  }
 
+ @font-face {
+  font-family: "Sentinel";
+  src: local("Sentinel"),
+   url("./fonts/Sentienl/FontsFree-Net-Sentinel-Medium.ttf") format("truetype");
+  font-weight: bold;
+ }
+
+ @font-face {
+  font-family: "Georgia";
+  src: local("Georgia"),
+   url("./fonts/Georgia/Georgia.ttf") format("truetype");
+  font-weight: bold;
+ }
+
+
+
 
 
