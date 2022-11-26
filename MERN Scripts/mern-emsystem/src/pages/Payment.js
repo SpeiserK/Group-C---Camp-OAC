@@ -11,29 +11,19 @@ import axios from 'axios';
 
 function Payment(){
 const navigate = useNavigate();
-const [Order, setOrder] = useState({
-    Name: '',
-    Quantity: '',
-    Location: ''
 
-})
 
 function handleClick() {
-    setOrder( () => {
-        return({
-                Name: localStorage.getItem("email"),
-                Quantity: localStorage.getItem("quantity"),
-                Location: localStorage.getItem("location") 
-            })
-    })
-    console.log(Order);
+    //maybe put this in a functions.js file somewhere and import it, for readability
     const newOrder = {
-        Name: Order.Name,
-        Quantity: Order.Quantity,
-        Location: Order.Location
+        Name: localStorage.getItem("email"),
+        Quantity: localStorage.getItem("quantity"),
+        Location: localStorage.getItem("location")
     }
     axios.post('http://localhost:5000/send', newOrder);
 }
+
+
 
 
 
