@@ -1,0 +1,13 @@
+{
+    "name": "concurrently",
+    "version": "1.0.0",
+    "description": "overall project",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "dev": "concurrently \"cd backend && node server.js\" \"cd mern-emsystem && npm start\" "
+    },
+    "author": "",
+    "license": "ISC"
+  
+  }

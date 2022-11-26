@@ -109,7 +109,17 @@
   font-family: "OpenSans";
 }
 
-/*Progressbar.js CSS*/
+dblist {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.quantity {
+  display: flex;
+  background-color: #f7a81b;
+}
+
 .progBar {
   display: flex;
   align-items: center;
@@ -218,6 +228,49 @@
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .drpbtn {background-color: grey;}
 
+/*adminTools, viewOrders, inventoryByLoc, orderHistory
+  all inplement styling for Emp.js
+
+  adminTools a: Creates the spacing between buttons
+*/
+.adminTools {
+  display: flex;
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+.adminTools a {margin-right: 30px;}
+
+.viewOrders {
+  font-family: "Frutiger";
+  height: 50px;
+  background-color: white;
+  border-radius: 30px;
+  border-color: #0067c8;
+}
+
+.inventoryByLoc {
+  font-family: "Frutiger";
+  height: 50px;
+  background-color: white;
+  border-radius: 30px;
+  border-color: #0067c8;
+}
+
+.orderHistory {
+  font-family: "Frutiger";
+  height: 50px;
+  background-color: white;
+  border-radius: 30px;
+  border-color: #0067c8;
+}
+
+.viewOrders:hover {background-color: #0067c8;}
+.inventoryByLoc:hover {background-color: #0067c8;}
+.orderHistory:hover {background-color: #0067c8;}
 
 /*NEED TO CLARIFY: Are these being used?*/
 
@@ -250,29 +303,5 @@
 
 /*App Header*/
 .appHeader{
-  position: relative;
-}
-
-/*App Container*/
-.appContainer{
-  position: relative;
-}
-
-/*3 divs in appContainer divided into columns*/
-/*Left Container*/
-.leftDiv{
-  position: relative;
-}
-/*Middle Container*/
-.middleDiv{
-  position: relative;
-}
-/*Right Container*/
-.rightDiv{
-  position: relative;
-}
-
-/*App Footer*/
-.appFooter{
   position: relative;
 }

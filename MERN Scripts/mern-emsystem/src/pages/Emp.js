@@ -28,7 +28,7 @@ function Emp(){
 
         })
         
-    }, []);
+    });
 
 
     return(
@@ -37,9 +37,7 @@ function Emp(){
             <div className="container">
                 <EmpTools />
                 
-                <button onClick={() => {
-                fetchData();
-                }}>get data</button>
+                
                 {userData}
             </div>
             
