@@ -11,7 +11,7 @@ export default class Dropdown extends Component {
                 <button className="dropbtn"><FontAwesomeIcon icon={faBars} size="4x" /></button>
                 <div className="dropdown-content">
                     <a href="https://www.facebook.com/ogopogorotary/" className="link1">Facebook</a>
-                    <Link to="about">About</Link>
+                    <Link to="/about">About</Link>
                     <a href="https://portal.clubrunner.ca/824" className="link3">Ogopogo Website</a>
                 </div>
              

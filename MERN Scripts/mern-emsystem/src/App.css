@@ -245,34 +245,34 @@
 /*NEW CSS LAYOUT: TESTING*/
 /*Main App*/
 .appMain{
-
+  position: absolute;
 }
 
 /*App Header*/
 .appHeader{
-
+  position: relative;
 }
 
 /*App Container*/
 .appContainer{
-
+  position: relative;
 }
 
 /*3 divs in appContainer divided into columns*/
 /*Left Container*/
 .leftDiv{
-
+  position: relative;
 }
 /*Middle Container*/
 .middleDiv{
-
+  position: relative;
 }
 /*Right Container*/
 .rightDiv{
-
+  position: relative;
 }
 
 /*App Footer*/
 .appFooter{
-
+  position: relative;
 }
