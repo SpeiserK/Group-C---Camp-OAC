@@ -3,12 +3,10 @@
 #App {
   text-align: center;
 }
-
 /*First div in every page, may change to body instead of div*/
 #main {
   position: relative;
 }
-
 /*Container Wrap, contains 3 main divs*/
 .divwrap{
   position: relative;
@@ -19,7 +17,6 @@
   width: 100%;
   background-color: grey;
 }
-
 /*Middle Div*/
 .midContainer{
   position: relative;
@@ -32,11 +29,9 @@
   height: 96%;
   background-color: white;
 }
-
 /*Right Div*/
 .rightContainer{
   position: relative;
-
   margin: 0px auto;
   padding-top: 30px;
   padding-bottom: -20px;
@@ -44,18 +39,14 @@
   height: 96%;
   background-color: white;
 }
-
 /*Left Div*/
 .leftContainer{
   position: relative;
 }
-
-
 /*Main container, used in ALL pages except About (for now)*/
 .container {
   position: relative;
 }
-
 /*Footer Div, exists outside of div wrap, but inside of main*/
 .footer {
   text-align: center;
@@ -63,7 +54,6 @@
   bottom: 0;
   width: 100%;
 }
-
 /*Footer Element, exists inside of .footer*/
 .App-footer {
   background-color:#17458f;
@@ -74,14 +64,12 @@
   justify-content: right;
   padding-right: 60px;
 }
-
 /*Fonts for text in About.js*/
 .about1 {font-family: "Frutiger";}
 .about2 {font-family: "OpenSans";}
 .about3 {font-family: "Arial";}
 .about4 {font-family: "Sentinel";}
 .about5 {font-family: "Georgia";}
-
 /*Components and Hooks CSS*/
 /*Banner CSS, may be able to remove App div inside Banner.js*/
 .App-header {
@@ -94,13 +82,11 @@
   font-size: calc(10px + 2vmin);
   color: #f7a81b;
 }
-
 /*Ogopogo Logo, in Logo.js*/
 .logoimg img {
   float: left;
   padding-left: 30px;
 }
-
 /*Textbox.js CSS*/
 .textbox {
   display: flex;
@@ -108,24 +94,12 @@
   align-items: flex-start;
   font-family: "OpenSans";
 }
-
-dblist {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.quantity {
-  display: flex;
-  background-color: #f7a81b;
-}
-
+/*Progressbar.js CSS*/
 .progBar {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
-
 /*matchEmail.js main Section*/
 .enterEmail {
   font-family: "Arial";
@@ -133,19 +107,16 @@ dblist {
   padding-top: 180px;
   padding-left: 270px;
 }
-
 /*Quantity on Orderqty.js*/
 .quantity {
   display: flex;
   background-color: #f7a81b;
 }
-
 /*Removes something from screen, use in matchEmail.js and placeOrder.js*/
 .offscreen {
   position: absolute;
   left: -9999px;
 }
-
 /*Text in placeOrder.js*/
 .orderText {
   font-family: "Frutiger";
@@ -153,34 +124,28 @@ dblist {
   padding-top: 30px;
   padding-left: 270px;
 }
-
 /*Display order quantity, placeOrder.js*/
 .orderQuantity {
   padding-top: 20px;
 }
-
 /*Next button on Orderqty.js(placeOrder.js)*/
 .orderSubmit {
   margin-left: 60px;
 }
-
 /*Check mark for matchEmail.js*/
 .valid {
   color: limegreen;
   margin-left: 4px;
 }
-
 /*Red X for matchEmail.js*/
 .invalid {
   color: red;
   margin-left: 4px;
 }
-
 /*Continue button on Startpage, used in matchEmail.js*/
 .emailSubmit {
   margin-top: 16px;
 }
-
 /* drop down button*/
 .dropbtn{
   background-color:#f7a81b;
@@ -188,9 +153,7 @@ dblist {
   padding: 8px;
   font-size: 12px;
   border-radius: 8px;
-
 }
-
 /* drop down box*/
 .dropdown {
   display: inline-block;
@@ -210,7 +173,6 @@ dblist {
   border-radius: 0.2rem;
   right: 5%;
 }
-
 /* drop down cells */
 .dropdown-content a {  
   color: black;  
@@ -222,73 +184,23 @@ dblist {
   outline-style: solid;
   outline-color: white;
 }  
-
 /*Dropdown cell attriibutes, used in Dropdown.js*/
 .dropdown-content a:hover { background-color: #f7a81b;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .drpbtn {background-color: grey;}
-
-/*adminTools, viewOrders, inventoryByLoc, orderHistory
-  all inplement styling for Emp.js
-
-  adminTools a: Creates the spacing between buttons
-*/
-.adminTools {
-  display: flex;
-  position: relative;
-  padding-top: 100px;
-  padding-bottom: 100px;
-  align-items: center;
-  justify-content: center;
-}
-
-.adminTools a {margin-right: 30px;}
-
-.viewOrders {
-  font-family: "Frutiger";
-  height: 50px;
-  background-color: white;
-  border-radius: 30px;
-  border-color: #0067c8;
-}
-
-.inventoryByLoc {
-  font-family: "Frutiger";
-  height: 50px;
-  background-color: white;
-  border-radius: 30px;
-  border-color: #0067c8;
-}
-
-.orderHistory {
-  font-family: "Frutiger";
-  height: 50px;
-  background-color: white;
-  border-radius: 30px;
-  border-color: #0067c8;
-}
-
-.viewOrders:hover {background-color: #0067c8;}
-.inventoryByLoc:hover {background-color: #0067c8;}
-.orderHistory:hover {background-color: #0067c8;}
-
 /*NEED TO CLARIFY: Are these being used?*/
-
 .App-link {
   color: #61dafb;
 }
-
 .Link {
   font-family: "Frutiger";
   color: white;
   align-self: center;
 }
-
 .main-menu {
   display: flex;
   padding: 0;
 }
-
 .main-menu li {
   margin:0 10px;
   list-style: none;
@@ -296,12 +208,50 @@ dblist {
 }
 
 /*NEW CSS LAYOUT: TESTING*/
-/*Main App*/
-.appMain{
+ /*Main App*/
+ .appMain{
   position: absolute;
 }
 
 /*App Header*/
 .appHeader{
   position: relative;
+}
+
+/*App Container*/
+.appContainer{
+  position: relative;
+}
+
+/*3 divs in appContainer divided into columns*/
+/*Left Container*/
+.leftDiv{
+  position: relative;
+}
+/*Middle Container*/
+.middleDiv{
+  position: relative;
+}
+/*Right Container*/
+.rightDiv{
+  position: relative;
+}
+
+/*App Footer*/
+.appFooter{
+  position: relative;
+}
+
+.dblist h1 {
+  text-align: center;
+}
+
+.dblist li {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.dblist li span {
+  display: block;
+  text-align: left;
 }
