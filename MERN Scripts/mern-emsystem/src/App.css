@@ -57,7 +57,7 @@
 }
 /*Footer Element, exists inside of .footer*/
 .App-footer {
-  background-color:#17458f;
+  background-image: linear-gradient(to right, #17458f,#0067c8);
   max-height: 100px;
   display: flex;
   flex-direction: row;
@@ -194,7 +194,7 @@ background-color: #17458f;
   text-decoration: none;
   color: white; /*text color*/
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-family: "Arial";
   border-radius: 4px;
 }
@@ -311,7 +311,7 @@ background-color: #17458f;
   justify-content: center;
   width: 100%;
   background-color: lightgray;
-  
+  /*background-image: linear-gradient( lightgray,grey);*/
 }
 
 /*3 divs in appContainer divided into columns*/

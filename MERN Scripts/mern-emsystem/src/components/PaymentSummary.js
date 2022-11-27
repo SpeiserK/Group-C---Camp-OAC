@@ -20,7 +20,7 @@ export default class PaymentSummary extends Component {
             <div className="orderText">
                 <p> Pickup location: {location}</p>
                 <p> Firewood Ordered: {quantity} </p> 
-                <p> Total Price: ${quantity*14.99} </p>   
+                <p> Total Price: ${quantity*9.99} </p>   
             </div>
         </div>
         );            
