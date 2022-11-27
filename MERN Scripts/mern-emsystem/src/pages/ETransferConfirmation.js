@@ -21,7 +21,12 @@ const navigate = useNavigate();
                 <Logo />
             </div>
             <div className="middleDiv">
-                <p> Please send $$$$ to OGOPOGOEMAIL@ROTARYCLUB.COM, When we confirm your payment your order will be approved, please check your email. </p>
+                <p> Please send $$$$ to OGOPOGOEMAIL@ROTARYCLUB.COM, When we confirm your payment your order will be approved, please check your email.
+                (WIP, email confirmation not functioning yet)
+                </p>
+                <div className="buttonBox">
+                            <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
+                    </div>
             </div>
             <div className="rightDiv">
                 <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>

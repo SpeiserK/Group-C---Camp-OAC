@@ -9,7 +9,7 @@ import Progressbar from '../components/Progressbar.js';
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
 
-function CashConfirmation(){
+function SquareConfirmation(){
 const navigate = useNavigate();
     return(
     <div className="appMain">
@@ -21,11 +21,11 @@ const navigate = useNavigate();
                 <Logo />
             </div>
             <div className="middleDiv">
-                <p> Because you have selected cash payment your order is under review , please check your email for updates from our team!
-                (WIP, email confirmation not functioning yet)
-                </p>
-                
-                <div className="buttonBox">
+                <p> Your order has successfully been processed!
+                    Check your email for the pickup location of your firewood, it should be ready for you when you get there!
+                    (WIP, email confirmation not functioning yet)
+                    </p>
+                    <div className="buttonBox">
                             <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
                     </div>
             </div>
@@ -42,4 +42,4 @@ const navigate = useNavigate();
     );
 }
 
-export default CashConfirmation;
+export default SquareConfirmation;
