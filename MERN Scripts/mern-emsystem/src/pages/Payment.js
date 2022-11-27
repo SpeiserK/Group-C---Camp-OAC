@@ -18,10 +18,13 @@ const navigate = useNavigate();
                         <Logo />  
                     </div>
                     <div className="middleDiv">
+                        <h2 className="orderTitle">Select Payment Type</h2>
                         <PaymentSummary />
-                        <button><a href="https://squareup.com/ca/en">Pay with Square</a> </button>
-                        <button onClick={() => navigate("CashConfirmation")}> Pay with Cash </button>
-                        <button onClick={() => navigate("ETransferConfirmation")}> Pay with e-transfer </button>
+                        <div className="buttonBox">
+                            <button className="buttonStyle"><a className="squareLink" href="https://squareup.com/ca/en">Pay with Square</a> </button>
+                            <button className="buttonStyle" onClick={() => navigate("CashConfirmation")}> Pay with Cash </button>
+                            <button className="buttonStyle" onClick={() => navigate("ETransferConfirmation")}> Pay with e-transfer </button>
+                        </div>
                     </div>
                     <div className="rightDiv">
                         <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>

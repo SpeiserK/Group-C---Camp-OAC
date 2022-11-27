@@ -17,7 +17,8 @@ function Startpage(){
                 <Logo />
             </div>
             <div className="middleDiv">
-                <h2 className="startTitle">Buy Firewood</h2>
+                <h2 className="startTitle">Enter Email Here to Buy Firewood</h2><br></br>
+                
                 <EmailCheck />
             </div>
             <div className="rightDiv">
