@@ -24,12 +24,22 @@ export default class OrderLiveDisp extends React.Component {
         {
           this.state.orders
             .map(content =>
+              
               <li key={content._id}>
-                <span>Email: {content.Name}</span>&emsp;
-                <span>Quantity Ordered: {content.Quantity}</span>&emsp;
-                <span>Location: {content.Location}</span>&emsp;
+                <div className="orderList">
+                  <div className ="orderChild">
+                    <span>Email: {content.Name}</span>&emsp;
+                    <span>Quantity Ordered: {content.Quantity}</span>&emsp;
+                    <span>Location: {content.Location}</span>&emsp;
+                  </div>
+                  <div className ="orderChild"> 
+                    <button> test </button>
+                    <button> test2 </button>
+                  </div>
+                </div>
                 
               </li>
+              
             )
         }
       </ul>
