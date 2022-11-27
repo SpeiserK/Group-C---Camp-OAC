@@ -42,10 +42,15 @@ function post2DB() {
                         </div>
                     </div>
                     <div className="rightDiv">
-                        
                         <div className="progBar">
-                            <p className="aboutTitle">Progress:</p><br></br>
+                            <h4 className="progressTitle">Steps:</h4><br></br>
                             <OurProgBar bgcolor="#17458f" progress='66'  height={30}/>
+                            <ul>
+                                <li className="progressText"><strong>Email:</strong> Completed</li>
+                                 <li className="progressText"><strong>Quantity:</strong>  Completed</li>
+                                <li className="progressText"><strong>Location:</strong>  Completed</li>
+                                <li className="progressText"><strong>Payment: </strong> Pending...</li>
+                            </ul> 
                         </div>
                         <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
                     </div>

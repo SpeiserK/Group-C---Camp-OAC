@@ -9,8 +9,9 @@ import React, { Component } from 'react';
       width: '100%',
       backgroundColor: 'whitesmoke',
       borderRadius: 40,
-      marginRight: 70,
-      marginBottom: 10
+      marginRight: 74,
+      marginTop: -10,
+      marginBottom: 30
     }
     
     const progChild = {
@@ -33,7 +34,7 @@ import React, { Component } from 'react';
         <div style={progParent}>
           <div style={progChild}>
             <span style={progText}>
-              {`${progress}%`}
+              
             </span>
           </div>
         </div>
