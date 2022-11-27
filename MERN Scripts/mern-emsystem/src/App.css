@@ -154,13 +154,17 @@
   font-size: 12px;
   border-radius: 8px;
 }
-/* drop down box*/
+/* drop down box right: -18%; display: inline-block;*/
 .dropdown {
-  display: inline-block;
   position:relative;
   align-items:flex-start;
   flex-direction:row-reverse;
-  right: -18%;
+  
+  margin-left: 30%;
+  float: right;
+  
+  
+  
 }
 /*dropdown-content*/
 .dropdown-content {
