@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
-export default class OrderLiveDisp extends React.Component {
+export default class LocationLiveDisp extends React.Component {
   state = {
     orders: []
   }
@@ -25,9 +25,9 @@ export default class OrderLiveDisp extends React.Component {
           this.state.orders
             .map(content =>
               <li key={content._id}>
-                <span>Email: {content.Name}</span>&emsp;
-                <span>Quantity Ordered: {content.Quantity}</span>&emsp;
-                <span>Location: {content.Location}</span>&emsp;
+                <span>Name: {content.Name}</span>&emsp;
+                <span>Address: {content.Address}</span>&emsp;
+                <span>Stock: {content.Stock}</span>&emsp;
                 
               </li>
             )

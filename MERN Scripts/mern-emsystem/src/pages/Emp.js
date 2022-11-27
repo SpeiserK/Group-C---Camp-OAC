@@ -5,30 +5,10 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 const {useEffect, useState} = React;
 
-const fetchData = async () => {
-    return axios.get('http://localhost:5000/mongo')
-    .then( ({data}) => {
-        console.log(data);
-        return JSON.stringify(data);
 
-    })
-    .catch( err => {
-
-        console.error(err);
-    });
-
-}
 
 function Emp(){
-    const [userData, setUserData] = useState('');
-
-    useEffect(() => {
-        fetchData().then(Data => {
-            setUserData(Data || ' ');
-
-        })
-        
-    });
+    
 
 
     return(
@@ -37,8 +17,6 @@ function Emp(){
             <div className="container">
                 <EmpTools />
                 
-                
-                {userData}
             </div>
             
             <div className="footer">
