@@ -47,12 +47,18 @@
 .container {
   position: relative;
 }
-/*Footer Div, exists outside of div wrap, but inside of main*/
-.footer {
-  text-align: center;
+/*Footer Div, exists outside of div wrap, but inside of main
+text-align: center;
   position: absolute;
   bottom: 0;
   width: 100%;
+*/
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 /*Footer Element, exists inside of .footer*/
 .App-footer {
@@ -146,6 +152,12 @@
 .emailSubmit {
   margin-top: 16px;
 }
+/*CSS for Header Link, found in Header.js*/
+.Link {
+  font-family: "Frutiger";
+  color: white;
+  align-self: center;
+}
 /* drop down button*/
 .dropbtn{
   background-color:#f7a81b;
@@ -159,12 +171,8 @@
   position:relative;
   align-items:flex-start;
   flex-direction:row-reverse;
-  
   margin-left: 30%;
   float: right;
-  
-  
-  
 }
 /*dropdown-content*/
 .dropdown-content {
@@ -195,11 +203,6 @@
 /*NEED TO CLARIFY: Are these being used?*/
 .App-link {
   color: #61dafb;
-}
-.Link {
-  font-family: "Frutiger";
-  color: white;
-  align-self: center;
 }
 .main-menu {
   display: flex;
