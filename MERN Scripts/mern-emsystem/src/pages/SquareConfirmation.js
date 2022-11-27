@@ -4,7 +4,7 @@ import Logo from '../components/Logo.js';
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import PaymentSummary from '../components/PaymentSummary.js';
-import Progressbar from '../components/Progressbar.js';
+import OurProgBar from '../components/OurProgBar.js';
 
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
