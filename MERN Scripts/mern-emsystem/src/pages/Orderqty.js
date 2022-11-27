@@ -11,18 +11,23 @@ import Progressbar from '../components/Progressbar.js';
 
 function Orderqty(){
     return( 
-        <div>
-            <div className="main">
-  
-
-            <Banner />
-            <Logo />
-            
-            <PlaceOrder />
-            
-            <Link to="/">Click here to go back</Link><br></br>
-            <Link to="payment">Click here to view Payment page</Link>
+        <div className="appMain">
+            <div className="appHeader">
+                <Banner />
             </div>
+            <body className="appContainer">
+                <div className="leftDiv">
+                     <Logo />
+                </div>
+                <div className="middleDiv">
+                    <h2 className="orderTitle">Enter Order Details</h2>
+                    <PlaceOrder />
+                 </div>
+                <div className="rightDiv">
+                    <Link to="/">Click here to go back</Link><br></br>
+                    <Link to="payment">Click here to view Payment page</Link>
+                 </div>
+            </body>
             <div className="footer">
                 <footer className="App-footer">
                     <Navbar />

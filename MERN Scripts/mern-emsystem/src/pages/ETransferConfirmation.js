@@ -12,18 +12,32 @@ import Progressbar from '../components/Progressbar.js';
 function ETransferConfirmation(){
 const navigate = useNavigate();
     return(
-            <div className="main">
-                <Banner />
-                <p> Please send $$$$ to OGOPOGOEMAIL@ROTARYCLUB.COM, When we confirm your payment your order will be approved, please check your email. </p>
-                <div className="container">
-                    <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
-                </div>
-                <div className="footer">
-                    <footer className="App-footer">
-                        <Navbar />
-                    </footer>
-                </div>
+    <div className="appMain">
+        <div className="appHeader">
+            <Banner />
+        </div>
+        <body className="appContainer">
+            <div className="leftDiv">
+                <Logo />
             </div>
+            <div className="middleDiv">
+                <p> Please send $$$$ to OGOPOGOEMAIL@ROTARYCLUB.COM, When we confirm your payment your order will be approved, please check your email.
+                (WIP, email confirmation not functioning yet)
+                </p>
+                <div className="buttonBox">
+                            <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
+                    </div>
+            </div>
+            <div className="rightDiv">
+                <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
+            </div>
+        </body>
+        <div className="footer">
+            <footer className="App-footer">
+                <Navbar />
+            </footer>
+        </div>
+    </div>
     );
 }
 

@@ -60,7 +60,6 @@ const EmailCheck = () => {
 
     return(
         <section className="enterEmail">
-            <p>If you wish to purchase firewood, we'll need an email we can send the order information to.</p>
             <br></br>
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form onSubmit={handleSubmit}>
@@ -71,6 +70,7 @@ const EmailCheck = () => {
                 <input
                     type="text"
                     id="email"
+                    className="textboxStyle"
                     ref={userRef}
                     autoComplete="off"
                     onChange={(e) => setEmail(e.target.value)}
@@ -79,12 +79,12 @@ const EmailCheck = () => {
                     aria-describedby="uidnote"
                     onFocus={() => setEmailFocus(true)} 
                 />
-                <p id="uidnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"}>
+                <p id="uidnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"} >
                     <FontAwesomeIcon icon={faInfoCircle} />
                     Please enter a valid email.
                 </p>
                 <br />
-                <label htmlFor="confirmEmail" className="conEmail">
+                <label htmlFor="confirmEmail">
                     Confirm email:
                     <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
                         <FontAwesomeIcon icon={faCheck} />
@@ -97,6 +97,7 @@ const EmailCheck = () => {
                 <input
                     type="text"
                     id="confirmEmail"
+                    className="textboxStyle"
                     autoComplete="off"
                     onChange={(e) => setMatchEmail(e.target.value)}
                     required
@@ -110,7 +111,7 @@ const EmailCheck = () => {
                     Must match the first email input field.<br />
                 </p>
                 <br></br>
-                <button className="emailSubmit" disabled={!validEmail || !validMatch ? true : false} onClick={(e) => handleClick()}
+                <button className="buttonStyle" disabled={!validEmail || !validMatch ? true : false} onClick={(e) => handleClick()}
                 >Continue</button>
             </form>
         </section>

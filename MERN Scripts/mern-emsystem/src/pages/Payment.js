@@ -9,11 +9,11 @@ import axios from 'axios';
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
 
+
 function Payment(){
 const navigate = useNavigate();
 
-
-function handleClick() {
+function post2DB() {
     //maybe put this in a functions.js file somewhere and import it, for readability
     const newOrder = {
         Name: localStorage.getItem("email"),
@@ -23,26 +23,28 @@ function handleClick() {
     axios.post('http://localhost:5000/send', newOrder);
 }
 
-
-
-
-
-
-
-
-
     return(
-            <div className="main">
-                <Banner />
-                
-                <PaymentSummary />
-
-                <div className="container">
-                <button onClick={handleClick}>Pay with Square</button>
-                <button onClick={() => navigate("CashConfirmation")}> Pay with Cash </button>
-                <button onClick={() => navigate("ETransferConfirmation")}> Pay with e-transfer </button>
-                    <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
+            <div className="appMain">
+                <div className="appHeader">
+                    <Banner />
                 </div>
+                <body className="appContainer">
+                    <div className="leftDiv">
+                        <Logo />  
+                    </div>
+                    <div className="middleDiv">
+                        <h2 className="orderTitle">Select Payment Type</h2>
+                        <PaymentSummary />
+                        <div className="buttonBox">
+                            <button className="buttonStyle" onClick={() => {post2DB(); navigate("SquareConfirmation")}}>Pay with Square</button>
+                            <button className="buttonStyle" onClick={() => {post2DB(); navigate("CashConfirmation")}}> Pay with Cash </button>
+                            <button className="buttonStyle" onClick={() => {post2DB(); navigate("ETransferConfirmation")}}> Pay with e-transfer </button>
+                        </div>
+                    </div>
+                    <div className="rightDiv">
+                        <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
+                    </div>
+                </body>
                 <div className="footer">
                     <footer className="App-footer">
                         <Navbar />
