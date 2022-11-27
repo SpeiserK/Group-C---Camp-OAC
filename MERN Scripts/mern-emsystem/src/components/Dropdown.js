@@ -10,9 +10,9 @@ export default class Dropdown extends Component {
                     <button className="dropbtn"><FontAwesomeIcon icon={faBars} size="4x" /></button>
                     <div className="dropdown-content">
                         <Link to="/about">About</Link>
-                        <a href="https://www.facebook.com/ogopogorotary/" className="link1">Facebook</a>
-                        <a href="https://portal.clubrunner.ca/824" className="link3">Ogopogo Website</a>
-                        <a href="https://www.campoac.com" className="link2">Camp OAC</a>
+                        <a href="https://www.facebook.com/ogopogorotary/" target="_blank" className="link1">Facebook</a>
+                        <a href="https://portal.clubrunner.ca/824" target="_blank" className="link3">Ogopogo Website</a>
+                        <a href="https://www.campoac.com" target="_blank" className="link2">Camp OAC</a>
                     </div>
                 </div>
         );
