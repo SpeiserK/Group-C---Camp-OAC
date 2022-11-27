@@ -4,7 +4,7 @@ import Logo from '../components/Logo.js';
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import PaymentSummary from '../components/PaymentSummary.js';
-import Progressbar from '../components/Progressbar.js';
+import OurProgBar from '../components/OurProgBar.js';
 import axios from 'axios';
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
@@ -43,6 +43,11 @@ function handleClick() {
                         </div>
                     </div>
                     <div className="rightDiv">
+                        
+                        <div className="progBar">
+                            <p className="aboutTitle">Progress:</p><br></br>
+                            <OurProgBar bgcolor="#17458f" progress='66'  height={30}/>
+                        </div>
                         <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
                     </div>
                 </body>

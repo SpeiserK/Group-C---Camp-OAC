@@ -7,7 +7,7 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 
 import PlaceOrder from '../components/hooks/placeOrder.js';
-import Progressbar from '../components/Progressbar.js';
+import OurProgBar from '../components/OurProgBar.js';
 
 function Orderqty(){
     return( 
@@ -24,6 +24,10 @@ function Orderqty(){
                     <PlaceOrder />
                  </div>
                 <div className="rightDiv">
+                    <div className="progBar">
+                        <p className="aboutTitle">Progress:</p><br></br>
+                        <OurProgBar bgcolor="#17458f" progress='33'  height={30}/>
+                    </div>
                     <Link to="/">Click here to go back</Link><br></br>
                     <Link to="payment">Click here to view Payment page</Link>
                  </div>
