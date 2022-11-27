@@ -85,8 +85,9 @@
 }
 /*Ogopogo Logo, in Logo.js*/
 .logoimg img {
-  float: left;
-  padding-left: 30px;
+  position: relative;
+  
+  
 }
 /*Textbox.js CSS*/
 .textbox {
@@ -105,8 +106,8 @@
 .enterEmail {
   font-family: "Arial";
   text-align: left;
-  padding-top: 180px;
-  padding-left: 270px;
+  padding-top: 70px;
+  padding-left: 100px;
 }
 /*Quantity on Orderqty.js*/
 .quantity {
@@ -122,8 +123,8 @@
 .orderText {
   font-family: "Frutiger";
   text-align: left;
-  padding-top: 30px;
-  padding-left: 270px;
+  padding-top: 70px;
+  padding-left: 100px;
 }
 /*Display order quantity, placeOrder.js*/
 .orderQuantity {
@@ -195,6 +196,21 @@
 .dropdown-content a:hover { background-color: #f7a81b;}
 .dropdown:hover .dropdown-content {display: block;}
 .dropdown:hover .drpbtn {background-color: grey;}
+
+/*Title in Email Check startpage*/
+.startTitle{
+  padding-left: 100px;
+  font-family: "Frutiger";
+  font-weight: bolder;
+}
+/*Place Order Title*/
+.orderTitle {
+  padding-left: 100px;
+  font-family: "Frutiger";
+  font-weight: bolder;
+}
+
+
 /*NEED TO CLARIFY: Are these being used?*/
 .App-link {
   color: #61dafb;
@@ -212,7 +228,7 @@
 /*NEW CSS LAYOUT: TESTING*/
  /*Main App*/
  .appMain{
-  position: absolute;
+  position: relative;
 }
 
 /*App Header*/
@@ -223,20 +239,57 @@
 /*App Container*/
 .appContainer{
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: top;
+  justify-content: center;
+  width: 100%;
+  background-color: lightgray;
+  
 }
 
 /*3 divs in appContainer divided into columns*/
 /*Left Container*/
 .leftDiv{
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 10%;
+  min-height: 650px;
+  border: 7px solid #0067c8;
+  padding: 50px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: white;
 }
 /*Middle Container*/
 .middleDiv{
   position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  width: 70%;
+  min-height: 650px;
+  border: 7px solid #0067c8;
+  padding: 50px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: white;
 }
 /*Right Container*/
 .rightDiv{
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-height: 650px;
+  
+  border: 7px solid #0067c8;
+  padding: 50px;
+  border-radius: 5px;
+  margin:5px;
+  background-color: white;
 }
 
 /*App Footer*/

@@ -6,26 +6,30 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 
 
-
 function Startpage(){
     return(
-        <div className="main">
+    <div className="appMain">
+        <div className="appHeader">
             <Banner />
-            
-            <div>
+        </div>
+        <body className="appContainer">
+            <div className="leftDiv">
                 <Logo />
             </div>
-            <div className="container">
+            <div className="middleDiv">
+                <h2 className="startTitle">Buy Firewood</h2>
                 <EmailCheck />
+            </div>
+            <div className="rightDiv">
                 <Link to="order">Click here to view Order page</Link><br/>
             </div>
-            
-            <div className="footer">
-                <footer className="App-footer">
-                    <Navbar />
-                </footer>
-            </div>
+        </body>
+        <div className="footer">
+            <footer className="App-footer">
+                <Navbar />
+            </footer>
         </div>
+    </div>
     );
 }
 

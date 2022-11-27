@@ -12,18 +12,27 @@ import Progressbar from '../components/Progressbar.js';
 function CashConfirmation(){
 const navigate = useNavigate();
     return(
-            <div className="main">
-                <Banner />
-                <p> Because you have selected cash payment your order is under review , please check your email for updates from our team!</p>
-                <div className="container">
-                    <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
-                </div>
-                <div className="footer">
-                    <footer className="App-footer">
-                        <Navbar />
-                    </footer>
-                </div>
+    <div className="appMain">
+        <div className="appHeader">
+        <Banner />
+        </div>
+        <body className="appContainer">
+            <div className="leftDiv">
+                <Logo />
             </div>
+            <div className="middleDiv">
+                <p> Because you have selected cash payment your order is under review , please check your email for updates from our team!</p>
+            </div>
+            <div className="rightDiv">
+                <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
+            </div>
+        </body>
+        <div className="footer">
+            <footer className="App-footer">
+                <Navbar />
+            </footer>
+        </div>
+    </div>
     );
 }
 
