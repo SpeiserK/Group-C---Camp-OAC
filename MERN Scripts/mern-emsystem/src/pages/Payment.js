@@ -13,8 +13,7 @@ import axios from 'axios';
 function Payment(){
 const navigate = useNavigate();
 
-
-function handleClick() {
+function post2DB() {
     //maybe put this in a functions.js file somewhere and import it, for readability
     const newOrder = {
         Name: localStorage.getItem("email"),
@@ -37,9 +36,9 @@ function handleClick() {
                         <h2 className="orderTitle">Select Payment Type</h2>
                         <PaymentSummary />
                         <div className="buttonBox">
-                            <button className="buttonStyle" onClick={handleClick}>Pay with Square</button>
-                            <button className="buttonStyle" onClick={() => navigate("CashConfirmation")}> Pay with Cash </button>
-                            <button className="buttonStyle" onClick={() => navigate("ETransferConfirmation")}> Pay with e-transfer </button>
+                            <button className="buttonStyle" onClick={() => {post2DB(); navigate("SquareConfirmation")}}>Pay with Square</button>
+                            <button className="buttonStyle" onClick={() => {post2DB(); navigate("CashConfirmation")}}> Pay with Cash </button>
+                            <button className="buttonStyle" onClick={() => {post2DB(); navigate("ETransferConfirmation")}}> Pay with e-transfer </button>
                         </div>
                     </div>
                     <div className="rightDiv">

@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
-
+import LocationLiveDisp from '../components/LocationLiveDisp.js';
 
 function ViewOrders(){
     return(
@@ -11,6 +11,7 @@ function ViewOrders(){
                 
                 <p>Inventory by Location.</p>
             </div>
+            <LocationLiveDisp />
             
             <div className="footer">
                 <footer className="App-footer">
