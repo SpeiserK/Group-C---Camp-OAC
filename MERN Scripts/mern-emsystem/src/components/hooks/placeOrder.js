@@ -47,45 +47,50 @@ const PlaceOrder = () => {
     const email = localStorage.getItem("email");
 
     return (
-        <div className="orderText">
-        <p>Input the number of firewood bundles you would like to purchase.</p>
-            <p id="email">Logged in as: {email} </p>
-            <div className="Location-List">
-                <label>
-                    Select Pickup Location: 
-                <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" >
-        <option value="select" disabled selected>Select a location</option>
-        <option value="West Kelowna">West Kelowna</option>
-        <option value="Rutland">Rutland</option>
-        <option value="Mission">Mission</option>
-        <option value="Lake Country">Lake Country</option>
-        <option value="Glenmore"> Glenmore </option>
-        <option value="Kelowna Central"> Kelowna Central </option>
-                </select>
-                </label>
+        <div>
+            <div className="loggedIn">
+                <p id="email" >Logged in as: {email} </p>
             </div>
-             <form className="orderQuantity">
-                <label htmlFor="quantity">
-                    Number of bundles:     
-                    <input
-                        type="number"
-                        id="quantity"
-                        ref={userRef}
-                        min="1"
-                        max="20"
-                        autoComplete="off"
-                        onChange={(e) => setOrderValue(e.target.value)}
-                        aria-describedby="uidnote"
-                    />
-                    <button className="orderSubmit" disabled={!validValue || !locValue ? true : false} onClick={(e) => checkInput()}
-                    >Next</button>
-                    <p id="uidnote" className={!validValue ? "instructions" : "offscreen"}>
-                    <FontAwesomeIcon icon={faInfoCircle} />
-                    *Order size must be between 1-20*
-                    </p>
-                    <br></br>
-                </label>
-            </form>
+            <div className="orderText">
+            <p>Input the number of firewood bundles you would like to purchase.</p>
+                <form className="orderQuantity">
+                    <label htmlFor="quantity">
+                        Number of bundles:     
+                        <input
+                            type="number"
+                            id="quantity"
+                            className="locationStyle"
+                            ref={userRef}
+                            min="1"
+                            max="20"
+                            autoComplete="off"
+                            onChange={(e) => setOrderValue(e.target.value)}
+                            aria-describedby="uidnote"
+                        />
+                        <p id="uidnote" className={!validValue ? "instructions" : "offscreen"}>
+                        <FontAwesomeIcon icon={faInfoCircle} />
+                        *Order size must be between 1-20*
+                        </p>
+                        <br></br>
+                    </label>
+                </form>
+                <div className="Location-List">
+                    <label>
+                        Select Pickup Location: 
+                    <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" >
+            <option value="select" disabled selected>Select a location</option>
+            <option value="West Kelowna">West Kelowna</option>
+            <option value="Rutland">Rutland</option>
+            <option value="Mission">Mission</option>
+            <option value="Lake Country">Lake Country</option>
+            <option value="Glenmore"> Glenmore </option>
+            <option value="Kelowna Central"> Kelowna Central </option>
+                    </select>
+                    </label>
+                </div>
+                <button className="buttonStyle" disabled={!validValue || !locValue ? true : false} onClick={(e) => checkInput()}
+                        >Next</button>
+            </div>
         </div>
     )
 }

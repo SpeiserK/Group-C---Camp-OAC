@@ -3,32 +3,42 @@ import React from 'react'
 import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
-//<Logo />
 
 function About(){
+    const q1 = "What is this website for?";
+    const q2 = "What is Rotary Club of Kelowna Ogopogo?";
+    const q3 = "What is CampOAC?";
+    const q4 = "How to use this website.";
+
+    const a1 = "Camp OAC and the Rotary Club of Kelowna Ogopogo have partnered to sell firewood. This web app is an online firewood store, made to simplify the process of buying wood to support the community.";
+    const a2 = "The Rotary Club of Kelowna Ogopogo, chartered in 1993, is a group of 52 men and women, and is one of eight Rotary clubs in our area. In addition to providing support to their own community, their club has an active focus on programs involving youth. As well, both directly and through their involvement with Rotary International's Foundation, they assist with major international projects including disaster relief, fresh water development projects, and health programs such as PolioPlus.";
+    const a3 = "Camp Owaissi is a childrens summer camp located just north of Kelowna on the beautiful Okanagan lake! Started in 1950, Camp Owaissi has ran summer camps that have been attended by thousands of campers. In the Offseason, the amazing property is available for rentals to host family reunions, get togethers and even weddings. They also host school group rentals. Camp Owaissi is a place that everyone can enjoy.";
+    const a4 = "Click the page title to get started. Enter your email and follow the steps to place your order!";
+
     return(
-        <div className="main">
-            
-            <Banner />
-            
-            <div className="divwrap">
-                <div className="midContainer">
-                    <h1 className="aboutTitle">About Us</h1><br></br>
-                    <h2 className="aboutQ">Who are you</h2><br></br>
-                    <p className="aboutA">Answer</p><br></br>
-                    <h2 className="aboutQ">What do you do?</h2><br></br>
-                    <p className="aboutA">Answer</p><br></br>
-                </div>
-                <div className="rightContainer">
-                <p>Primary Fonts: Use for headlines and navigation handles</p><br></br>
-                        <h2 className="about1">This is the Frutiger font</h2><br></br>
-                        <h2 className="about2">This is the OpenSans font</h2><br></br>
-                        <h2 className="about3">This is the Arial font</h2><br></br>
-                        <p>Secondary Fonts: Use for body text, captions, secondary headlines</p><br></br>
-                        <h4 className="about4">This is the Sentinel font</h4><br></br>
-                        <h4 className="about5">This is the Georgia font</h4><br></br>
-                </div>
+        <div className="appMain">
+            <div className="appHeader">
+                <Banner />
             </div>
+            <body className="appContainer">
+                <div className="leftDiv">
+                    <Logo />
+                </div>
+                <div className="middleDiv">
+                    <h1 className="aboutTitle">About Us</h1><br></br>
+                    <h2 className="aboutQ">{q1}</h2><br></br>
+                    <p className="aboutA">{a1}</p><br></br>
+                    <h2 className="aboutQ">{q2}</h2><br></br>
+                    <p className="aboutA">{a2}</p><br></br>
+                    <h2 className="aboutQ">{q3}</h2><br></br>
+                    <p className="aboutA">{a3}</p><br></br>
+                    <h2 className="aboutQ">{q4}</h2><br></br>
+                    <p className="aboutA">{a4}</p><br></br>
+                </div>
+                <div className="rightDiv">
+                    
+                </div>
+            </body>
             <div className="footer">
                 <footer className="App-footer">
                     <Navbar />
