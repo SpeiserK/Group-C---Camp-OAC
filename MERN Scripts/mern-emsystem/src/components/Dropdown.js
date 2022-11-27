@@ -12,6 +12,7 @@ export default class Dropdown extends Component {
                         <Link to="/about">About</Link>
                         <a href="https://www.facebook.com/ogopogorotary/" className="link1">Facebook</a>
                         <a href="https://portal.clubrunner.ca/824" className="link3">Ogopogo Website</a>
+                        <a href="https://www.campoac.com" className="link2">Camp OAC</a>
                     </div>
                 </div>
         );
