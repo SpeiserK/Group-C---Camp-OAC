@@ -13,7 +13,6 @@ import axios from 'axios';
 function Payment(){
 const navigate = useNavigate();
 
-
 function handleClick() {
     //maybe put this in a functions.js file somewhere and import it, for readability
     const newOrder = {
