@@ -11,29 +11,32 @@ export default class OrderLiveDisp extends React.Component {
   }
 
   componentDidMount() {
+    
     axios.get(`http://localhost:5000/order`)
       .then(res => {
-        const orders = res.data;
-        this.setState({ orders:orders });
-      })
+        const orderData = res.data;
+        this.setState({ orders:orderData });
+      });
+      this.setState({color: new Array(this.state.orders.length).fill("green")});
   }
-
-  /*
-  onClick (){
-    let size = this.state.orders.length;
-
-    let items = new Array(size).fill(true);
-
-    const onClick
-    for (let i = 0; i < size; i++){
-      
-    }
-  }
-  */
-
-
 
   
+
+  approve(index) {
+    console.log("clicked!", index);
+    const cloneColor = [...this.state.color];
+    cloneColor[index] = "approved"
+    this.setState({ color: cloneColor });
+  }
+  decline(index) {
+    console.log("clicked!", index);
+    const cloneColor = [...this.state.color];
+    cloneColor[index] = "denied"
+    this.setState({ color: cloneColor });
+  }
+
+
+
 
 
   
@@ -44,27 +47,24 @@ export default class OrderLiveDisp extends React.Component {
         <h1> Order history </h1>
         {
           this.state.orders
-            .map(content =>
+            .map((content, index) =>
               
-              <li key={content._id}>
-                <div className="orderList" id = {content._id}>
-                  <div className ="orderChild">
-                    <span>Email: {content.Name}</span>&emsp;
-                    <span>Quantity Ordered: {content.Quantity}</span>&emsp;
-                    <span>Location: {content.Location}</span>&emsp;
-                  </div>
-                  <div className ="orderChild"> 
+            <li key={content._id}>
+            <div className="orderList" id = {content._id} key={`buttons-${index}`}>
+              <div className ="orderChild">
+                <span>Email: {content.Name}</span>&emsp;
+                <span>Quantity Ordered: {content.Quantity}</span>&emsp;
+                <span>Location: {content.Location}</span>&emsp;
+              </div>
+              <div className ="orderChild"> 
 
-                    <button onClick={() => {
-                      
-                      this.setState({ color: "Approved" })}}
-                      > Approve </button>
-                    <button onClick={() => this.setState({ color: "Denied" })}> Deny </button>
-                    <p> {this.state.color}</p>
-                  </div>
-                </div>
-                
-              </li>
+                <button onClick={() => this.approve(index)}> Approve</button>
+                <button onClick={() => this.decline(index)}> Deny </button>
+                <p> {this.state.color[index]}</p>
+              </div>
+            </div>
+            
+          </li>
               
             )
         }
