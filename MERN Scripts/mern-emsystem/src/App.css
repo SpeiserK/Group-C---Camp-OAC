@@ -318,11 +318,15 @@ background-color: #17458f;
  /*Main App*/
  .appMain{
   position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 /*App Header*/
-.appHeader{
-  position: relative;
+.appHeader {
+  position: fixed;
+  top: 0;
+  width: 100%
 }
 
 /*App Container*/
