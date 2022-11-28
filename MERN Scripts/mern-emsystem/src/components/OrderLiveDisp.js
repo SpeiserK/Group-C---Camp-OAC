@@ -4,21 +4,35 @@ import axios from 'axios';
 
 
 export default class OrderLiveDisp extends React.Component {
+  
   state = {
-    orders: []
+    orders: [],
+    color: []
   }
 
   componentDidMount() {
     axios.get(`http://localhost:5000/order`)
       .then(res => {
         const orders = res.data;
-        this.setState({ orders });
+        this.setState({ orders:orders });
       })
   }
-  
- 
 
-  
+  /*
+  onClick (){
+    let size = this.state.orders.length;
+
+    let items = new Array(size).fill(true);
+
+    const onClick
+    for (let i = 0; i < size; i++){
+      
+    }
+  }
+  */
+
+
+
   
 
 
@@ -33,7 +47,7 @@ export default class OrderLiveDisp extends React.Component {
             .map(content =>
               
               <li key={content._id}>
-                <div className="orderList">
+                <div className="orderList" id = {content._id}>
                   <div className ="orderChild">
                     <span>Email: {content.Name}</span>&emsp;
                     <span>Quantity Ordered: {content.Quantity}</span>&emsp;
@@ -41,8 +55,12 @@ export default class OrderLiveDisp extends React.Component {
                   </div>
                   <div className ="orderChild"> 
 
-                    <button> Approve </button>
-                    <button> Deny </button>
+                    <button onClick={() => {
+                      
+                      this.setState({ color: "Approved" })}}
+                      > Approve </button>
+                    <button onClick={() => this.setState({ color: "Denied" })}> Deny </button>
+                    <p> {this.state.color}</p>
                   </div>
                 </div>
                 
