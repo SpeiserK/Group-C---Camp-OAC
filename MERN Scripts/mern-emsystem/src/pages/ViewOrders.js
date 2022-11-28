@@ -3,6 +3,15 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import OrderLiveDisp from '../components/OrderLiveDisp.js';
 
+function approve() {
+    var elements = document.getElementByClassName("orderList");
+    for (var i in elements) {
+      //if (elements.hasOwnProperty(i)) {
+        elements[i].className = "approved";
+      //}
+    }
+  }
+
 function ViewOrders(){
     return(
         <div className="main">
