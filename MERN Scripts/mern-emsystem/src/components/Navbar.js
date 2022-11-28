@@ -21,6 +21,9 @@ export default class Navbar extends Component {
         const data = res.data;
         this.setState({ online: data });
       })
+      .catch(err => {
+        console.log(err);
+      })
       }
 
 
