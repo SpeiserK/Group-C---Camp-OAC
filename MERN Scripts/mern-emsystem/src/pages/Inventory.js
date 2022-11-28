@@ -1,18 +1,19 @@
 import React from 'react'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
-import LocationLiveDisp from '../components/LocationLiveDisp.js';
+import InvByLoc from '../components/hooks/InvByLoc.js';
+
 
 function ViewOrders(){
+
     return(
         <div className="main">
             <Banner />
-            <div className="container">
-                
-                <p>Inventory by Location.</p>
-            </div>
-            <LocationLiveDisp />
+
+            <div className="mainDiv">
+                <InvByLoc />
             
+            </div>
             <div className="footer">
                 <footer className="App-footer">
                     <Navbar />
