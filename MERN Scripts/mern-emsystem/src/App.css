@@ -360,6 +360,8 @@ background-color: #17458f;
   position: relative;
 }
 
+/* DB LIST */
+
 .dblist h1 {
   text-align: center;
 }
@@ -367,6 +369,7 @@ background-color: #17458f;
 .dblist li {
   padding: 20px 0;
   border-bottom: 1px solid var(--border-color);
+  list-style-type: none;
 }
 
 .dblist li span {
@@ -397,6 +400,39 @@ background-color: #17458f;
   border-radius: 30px;
   border-color: #0067c8;
 }
+/* order list styling*/
+.orderList { 
+  outline: 1px solid #0067c8;
+  height: 125px;
+  width: 500px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+
+}
+.approved { 
+  outline: 1px solid #0067c8;
+  height: 125px;
+  width: 500px;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  background-color: green;
+
+}
+
+.orderChild{
+  display: inline-block;
+  position: relative;
+  margin: auto;
+  padding: auto;
+}
+.orderChild button{
+  display: inline-block;
+  position: relative;
+  margin: 5 px;
+}
+
 
 .inventoryByLoc {
   font-family: "Frutiger";

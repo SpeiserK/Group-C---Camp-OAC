@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+
+
 export default class OrderLiveDisp extends React.Component {
   state = {
     orders: []
@@ -13,6 +15,11 @@ export default class OrderLiveDisp extends React.Component {
         this.setState({ orders });
       })
   }
+  
+ 
+
+  
+  
 
 
   
@@ -33,8 +40,9 @@ export default class OrderLiveDisp extends React.Component {
                     <span>Location: {content.Location}</span>&emsp;
                   </div>
                   <div className ="orderChild"> 
-                    <button> test </button>
-                    <button> test2 </button>
+
+                    <button> Approve </button>
+                    <button> Deny </button>
                   </div>
                 </div>
                 
@@ -44,5 +52,7 @@ export default class OrderLiveDisp extends React.Component {
         }
       </ul>
     )
+
   }
+
 }
