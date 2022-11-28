@@ -69,6 +69,14 @@
 .aboutTitle {font-family: "Frutiger";}
 .aboutQ {font-family: "OpenSans";}
 .aboutA {font-family: "Sentinel";}
+.progessTitle{
+  font-family: "Frutiger";
+  font-weight:900;
+}
+.progressText {
+  font-family: "Arial";
+  font-size: small;
+}
 /*Components and Hooks CSS*/
 /*Banner CSS, may be able to remove App div inside Banner.js 
 
@@ -101,12 +109,30 @@ background-color: #17458f;
   align-items: flex-start;
   font-family: "OpenSans";
 }
-/*Progressbar.js CSS*/
+/*Progressbar.js CSS #17458f*/
 .progBar {
+  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
+  flex-direction: column;
+  
+  width: 100%;
+  margin-left: -15px;
+  margin-bottom: 30px;
+  border: 2px ridge #0067c8;
+  padding: 15px;
+  padding-top: 5px;
 }
+.progBar ul {
+  margin-top: -10px;
+  margin-bottom: -5px;
+  list-style: square;
+  align-items:flex-start;
+  
+}
+.progBar ul li {
+  margin: 7px;
+}
+
 /*matchEmail.js main Section*/
 .enterEmail {
   font-family: "Arial";

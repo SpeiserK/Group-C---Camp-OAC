@@ -11,7 +11,7 @@ export default class Dropdown extends Component {
                     <div className="dropdown-content">
                         <Link to="/about">About</Link>
                         <a href="https://www.facebook.com/ogopogorotary/" target="_blank" className="link1">Facebook</a>
-                        <a href="https://portal.clubrunner.ca/824" target="_blank" className="link3">Ogopogo Website</a>
+                        <a href="https://portal.clubrunner.ca/824" target="_blank" className="link3">Kelowna Rotary</a>
                         <a href="https://www.campoac.com" target="_blank" className="link2">Camp OAC</a>
                     </div>
                 </div>

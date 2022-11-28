@@ -4,7 +4,7 @@ import Logo from '../components/Logo.js';
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import PaymentSummary from '../components/PaymentSummary.js';
-import Progressbar from '../components/Progressbar.js';
+import OurProgBar from '../components/OurProgBar.js';
 
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
@@ -30,6 +30,16 @@ const navigate = useNavigate();
                     </div>
             </div>
             <div className="rightDiv">
+                <div className="progBar">
+                    <h4 className="progressTitle">Complete :D</h4><br></br>
+                    <OurProgBar bgcolor="#17458f" progress='100'  height={30}/>
+                    <ul>
+                        <li className="progressText"><strong>Email:</strong> Completed</li>
+                        <li className="progressText"><strong>Quantity:</strong>  Completed</li>
+                        <li className="progressText"><strong>Location:</strong>  Completed</li>
+                        <li className="progressText"><strong>Payment: </strong> Completed</li>
+                     </ul> 
+                </div>
                 <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
             </div>
         </body>
