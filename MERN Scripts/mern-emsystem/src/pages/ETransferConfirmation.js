@@ -30,7 +30,7 @@ const navigate = useNavigate();
             </div>
             <div className="rightDiv">
             <div className="progBar">
-                <h4 className="progressTitle">Complete :D</h4><br></br>
+                <h4 className="progressTitle">Complete</h4><br></br>
                 <OurProgBar bgcolor="#17458f" progress='100'  height={30}/>
                 <ul>
                     <li className="progressText"><strong>Email:</strong> Completed</li>
