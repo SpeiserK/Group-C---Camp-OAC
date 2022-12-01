@@ -8,23 +8,25 @@ const {useEffect, useState} = React;
 
 
 function Emp(){
-    
-
-
     return(
-        <div className="main">
-            <Banner />
-            <div className="container">
-                <EmpTools />
-                
-            </div>
-            
-            <div className="footer">
-                <footer className="App-footer">
-                    <Navbar />
-                </footer>
-            </div>
+    <div className="appMain">
+        <div className="appHeader">
+           <Banner />
         </div>
+        <body className="appContainer">
+            <div className="empLeftDiv">
+                <EmpTools />
+            </div>
+            <div className="empRightDiv">
+               
+            </div>
+        </body>
+        <div className="footer">
+            <footer className="App-footer">
+                <Navbar />
+            </footer>
+        </div>
+    </div>
     );
 }
 export default Emp;

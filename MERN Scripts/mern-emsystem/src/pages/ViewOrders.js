@@ -14,18 +14,20 @@ function approve() {
 
 function ViewOrders(){
     return(
-        <div className="main">
+        <div className="appMain">
+          <div className="appHeader">
             <Banner />
-            <div className="container">
-                
-            <OrderLiveDisp />
+          </div>
+          <body className="appContainer">
+            <div className="empMainDiv">
+              <OrderLiveDisp />
             </div>
-            
-            <div className="footer">
-                <footer className="App-footer">
-                    <Navbar />
-                </footer>
-            </div>
+          </body>
+          <div className="footer">
+            <footer className="App-footer">
+                <Navbar />
+            </footer>
+          </div>
         </div>
     );
 }

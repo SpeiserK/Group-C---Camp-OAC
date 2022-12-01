@@ -9,42 +9,36 @@ import Emp from '../pages/Emp';
 
 
 function Emplogin(){
-    
-
-
     return( 
-        <div>
-            <div className="main">
+    <div className="appMain">
+        <div className="appHeader">
             <Banner />
-            
-
-            <div class="container">
+        </div>
+        <body className="appContainer">
+            <div className="empLeftDiv">
                 <h1>Sign In</h1>
-                <form method="post">
-                    <p>
-                        <label for="username">Email:</label>
-                        <input type="text" name="email" id="username"/>
-                    </p>
-                    <p>
-                        <label for="password">Password:</label>
-                        <input type="password" name="password" id="password" />
-                    </p>
-                    <Link to="Emp"><button type="submit" id="submit" class="submit">Log In</button></Link>
-                </form>
+                    <form method="post">
+                        <p>
+                            <label for="username">Email:</label>
+                            <input type="text" name="email" id="username"/>
+                        </p>
+                        <p>
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" />
+                        </p>
+                        <Link to="Emp"><button type="submit" id="submit" class="submit">Log In</button></Link>
+                    </form>
             </div>
-            
-
-            
-                <br/><br/>
-            
-            <Link to="/">Click here to go back</Link>
-        </div>
+            <div className="empRightDiv">
+                <Link to="/">Click here to go back</Link>
+             </div>
+        </body>
         <div className="footer">
-                <footer className="App-footer">
-                    <Navbar />
-                </footer>
-            </div>
+            <footer className="App-footer">
+                <Navbar />
+            </footer>
         </div>
+    </div>
     );
 }
 

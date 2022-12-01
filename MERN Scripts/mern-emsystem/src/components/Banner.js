@@ -8,12 +8,10 @@ export default class Banner extends Component {
 
        
         return(
-            <div>
                 <header className="App-header">
-                <Link to="/" className="Link" style={{textDecoration: 'none', padding: 20 }}><h1>Rotary Club of Kelowna Ogopogo</h1></Link>
-                <Dropdown />
+                    <Link to="/" className="Link" style={{textDecoration: 'none', padding: 20 }}><h1>Rotary Club of Kelowna Ogopogo</h1></Link>
+                    <Dropdown />
                 </header>
-            </div>
         );            
     }
 }
