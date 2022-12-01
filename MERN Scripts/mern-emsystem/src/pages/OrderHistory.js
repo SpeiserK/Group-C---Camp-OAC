@@ -1,13 +1,9 @@
 import React from 'react'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
+import EmpTools from '../components/EmpTools.js';
 import axios from "axios";
 import OrderDispHist from '../components/OrderDispHist.js'
-
-
-
-
-
 
 function OrderHistory(){
     
@@ -18,8 +14,11 @@ function OrderHistory(){
             <Banner />
         </div>
         <body className="appContainer">
-            <div className="empMainDiv">
+            <div className="empLeftDiv">
                 <OrderDispHist />
+            </div>
+            <div className="empRightDiv">
+                <EmpTools />
             </div>
         </body>
         <div className="footer">

@@ -12,6 +12,7 @@ const InvByLoc = () => {
             
     return(
             <div className="inventoryCont">
+                <h1>Stock by Location</h1>
                 <table className="inventoryTable">
                     <tr><th>Location</th><th>Inventory</th><th>Update Inventory</th></tr>
 
