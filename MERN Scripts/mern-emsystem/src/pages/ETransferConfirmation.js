@@ -39,7 +39,6 @@ const navigate = useNavigate();
                     <li className="progressText"><strong>Payment: </strong> Completed</li>
                 </ul> 
             </div>
-                <Link onClick={() => navigate(-1)}>Click here to go back</Link><br></br>
             </div>
         </body>
         <div className="footer">
