@@ -15,7 +15,7 @@ function Emplogin(){
             <Banner />
         </div>
         <body className="appContainer">
-            <div className="empLeftDiv">
+            <div className="empLoginDiv">
                 <h1>Sign In</h1>
                     <form method="post">
                         <p>
@@ -29,9 +29,6 @@ function Emplogin(){
                         <Link to="Emp"><button type="submit" id="submit" class="submit">Log In</button></Link>
                     </form>
             </div>
-            <div className="empRightDiv">
-                <Link to="/">Click here to go back</Link>
-             </div>
         </body>
         <div className="footer">
             <footer className="App-footer">

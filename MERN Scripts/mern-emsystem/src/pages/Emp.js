@@ -6,6 +6,8 @@ import axios from "axios";
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import OrderDispHist from '../components/OrderDispHist.js';
+import Empnav from '../components/Empnav.js';
+import Empbanner from '../components/Empbanner.js';
 const {useEffect, useState} = React;
 
 
@@ -14,18 +16,15 @@ function Emp(){
     return(
     <div className="appMain">
         <div className="appHeader">
-           <Banner />
+           <Empbanner />
+           <Empnav />
         </div>
         <body className="appContainer">
-            <div className="empLeftDiv">
-                <div className="superAdminTop">
-                    <InvByLoc />
-                    <OrderLiveDisp />
-                </div>
-                <OrderDispHist />
+            <div className="empLeftDiv"> 
+                 <OrderLiveDisp />
             </div>
             <div className="empRightDiv">
-                <EmpTools /> 
+                <InvByLoc />
             </div>
         </body>
         <div className="footer">
