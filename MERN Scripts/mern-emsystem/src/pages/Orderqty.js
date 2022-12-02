@@ -34,8 +34,6 @@ function Orderqty(){
                             <li className="progressText"><strong>Payment: </strong> Pending...</li>
                         </ul> 
                     </div>
-                    <Link to="/">Click here to go back</Link><br></br>
-                    <Link to="payment">Click here to view Payment page</Link>
                  </div>
             </body>
             <div className="footer">
