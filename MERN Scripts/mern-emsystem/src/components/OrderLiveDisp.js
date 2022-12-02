@@ -42,10 +42,7 @@ export default class OrderLiveDisp extends React.Component {
   
   render() {
     return (
-      
-
       <table className="dblist">
-        
         <tr id="listHeader" className="listHeader">
           <td id="headerID"  className="listHeaderItem">
             <span> Order id </span>
@@ -65,8 +62,8 @@ export default class OrderLiveDisp extends React.Component {
           <td id="headerPrice" className="listHeaderItem">
             <span> Price </span>
           </td>
-          <td id="headerApproved" className="listHeaderItem">
-            <span> Approve </span>
+          <td id="headerStatus" className="listHeaderItem">
+            <span> Status </span>
           </td>
         </tr> 
 
