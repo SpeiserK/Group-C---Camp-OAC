@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 
 import PlaceOrder from '../components/hooks/placeOrder.js';
+import Woodimg from '../components/Woodimg.js';
 import OurProgBar from '../components/OurProgBar.js';
 
 function Orderqty(){
@@ -22,6 +23,7 @@ function Orderqty(){
                 <div className="middleDiv">
                     <h2 className="orderTitle">Enter Order Details</h2>
                     <PlaceOrder />
+                    <Woodimg />
                  </div>
                 <div className="rightDiv">
                     <div className="progBar">
