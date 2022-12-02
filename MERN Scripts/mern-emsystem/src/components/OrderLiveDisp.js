@@ -44,7 +44,26 @@ export default class OrderLiveDisp extends React.Component {
     return (
       
       <ul className="dblist">
-        <h1> Order history </h1>
+        <div id="listHeader" className="listHeader">
+          <div id="headerEmail"  className="listHeaderItem">
+            <span> Email </span>
+          </div>
+          <div id="headerQuantity" className="listHeaderItem">
+            <span> Quantity </span>
+          </div>
+          <div id="headerLocation" className="listHeaderItem">
+            <span> Location </span>
+          </div>
+          <div id="headerDate" className="listHeaderItem">
+            <span> Date </span>
+          </div>
+          <div id="headerPrice" className="listHeaderItem">
+            <span> Price </span>
+          </div>
+          <div id="headerApproved" className="listHeaderItem">
+            <span> Approve </span>
+          </div>
+        </div>
         {
           this.state.orders
             .map((content, index) =>
@@ -52,19 +71,24 @@ export default class OrderLiveDisp extends React.Component {
             <li id="list-orderList" key={content._id}>
             <div className="orderList" id = {content._id} key={`buttons-${index}`}>
               <div id="current-orderEmail" className ="orderChild">
-                <span>Email: {content.Name}</span>&emsp;
+                <span>{content.Name}</span>&emsp;
               </div>
               <div id="current-orderQty" className ="orderChild">
-                <span>Quantity Ordered: {content.Quantity}</span>&emsp;
+                <span>{content.Quantity}</span>&emsp;
               </div>
               <div id="current-orderLoc" className ="orderChild">
-                <span>Location: {content.Location}</span>&emsp;
+                <span>{content.Location}</span>&emsp;
+              </div>
+              <div id="current-orderDate" className ="orderChild">
+                <span> DATE </span>&emsp;
+              </div>
+              <div id="current-orderPrice" className ="orderChild">
+                <span> $$$ </span>&emsp;
               </div>
               <div id="current-approve-deny"className ="orderChild"> 
                 <p> {this.state.color[index]}</p>
                 <button onClick={() => this.approve(index)}> Approve</button>
                 <button onClick={() => this.decline(index)}> Deny </button>
-                
               </div>
             </div>
             

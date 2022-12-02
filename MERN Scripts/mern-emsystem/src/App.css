@@ -434,9 +434,28 @@ background-color: #17458f;
   padding: 0%;
   
 }
+.listHeader{
+  border-bottom: 1px solid #0067c8;
+  height: 5%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  background-color: #61dafb;
+}
+.listHeaderItem{
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  text-align: center;
+  border-left: 1px solid #0067c8;
+  box-sizing: border-box;
+  width:100%;
+}
 .orderList { 
   border-bottom: 1px solid #0067c8;
-  height: 125px;
+  height: 10%;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -445,7 +464,7 @@ background-color: #17458f;
 }
 
 .orderChild{
-  display: flex;
+  display:inline-flex;
   gap: 0.5rem;
   padding: 0.5rem 1rem;
   align-items: center;
@@ -456,9 +475,7 @@ background-color: #17458f;
   
 }
 .orderChild span{
-  
   text-align: center;
-  
   
 }
 
