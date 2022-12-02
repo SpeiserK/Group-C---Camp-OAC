@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useNavigate } from "react-router-dom";
 
 //Used to verify if email is valid (will need to include more verification)
-const EMAIL_REGEX = /^(?=.*[a-zA-Z0-9])(?=.*[@])(?=.*[.])[a-zA-Z0-9-_.@]{8,48}$/;
+const REGEX = /^[a-zA-Z0-9_.-]{3,48}@[a-zA-Z0-9.]{2,28}\.(com|ca|net)$/;
 
 const EmailCheck = () => {
     const userRef = useRef();
@@ -29,7 +29,7 @@ const EmailCheck = () => {
 
     //check for email match
     useEffect(() => {
-        const result = EMAIL_REGEX.test(email);
+        const result = REGEX.test(email);
         //console.log(result);
         //console.log(email);
         setValidEmail(result);
@@ -44,7 +44,7 @@ const EmailCheck = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         //to prevent bypass with JS hack
-        const v1 = EMAIL_REGEX.test(email);
+        const v1 = REGEX.test(email);
         if(!v1){
             setErrMsg("Invalid Entry");
             return;

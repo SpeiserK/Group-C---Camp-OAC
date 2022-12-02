@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 
 import PlaceOrder from '../components/hooks/placeOrder.js';
+import Woodimg from '../components/Woodimg.js';
 import OurProgBar from '../components/OurProgBar.js';
 
 function Orderqty(){
@@ -22,6 +23,7 @@ function Orderqty(){
                 <div className="middleDiv">
                     <h2 className="orderTitle">Enter Order Details</h2>
                     <PlaceOrder />
+                    <Woodimg />
                  </div>
                 <div className="rightDiv">
                     <div className="progBar">
@@ -34,8 +36,6 @@ function Orderqty(){
                             <li className="progressText"><strong>Payment: </strong> Pending...</li>
                         </ul> 
                     </div>
-                    <Link to="/">Click here to go back</Link><br></br>
-                    <Link to="payment">Click here to view Payment page</Link>
                  </div>
             </body>
             <div className="footer">

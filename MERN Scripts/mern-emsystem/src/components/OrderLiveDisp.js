@@ -43,6 +43,7 @@ export default class OrderLiveDisp extends React.Component {
   render() {
     return (
       
+
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
@@ -68,6 +69,7 @@ export default class OrderLiveDisp extends React.Component {
             <span> Approve </span>
           </td>
         </tr> 
+
         {
           this.state.orders
             .map((content, index) =>
