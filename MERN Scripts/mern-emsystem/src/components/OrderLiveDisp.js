@@ -49,18 +49,22 @@ export default class OrderLiveDisp extends React.Component {
           this.state.orders
             .map((content, index) =>
               
-            <li key={content._id}>
+            <li id="list-orderList" key={content._id}>
             <div className="orderList" id = {content._id} key={`buttons-${index}`}>
-              <div className ="orderChild">
+              <div id="current-orderEmail" className ="orderChild">
                 <span>Email: {content.Name}</span>&emsp;
+              </div>
+              <div id="current-orderQty" className ="orderChild">
                 <span>Quantity Ordered: {content.Quantity}</span>&emsp;
+              </div>
+              <div id="current-orderLoc" className ="orderChild">
                 <span>Location: {content.Location}</span>&emsp;
               </div>
-              <div className ="orderChild"> 
-
+              <div id="current-approve-deny"className ="orderChild"> 
+                <p> {this.state.color[index]}</p>
                 <button onClick={() => this.approve(index)}> Approve</button>
                 <button onClick={() => this.decline(index)}> Deny </button>
-                <p> {this.state.color[index]}</p>
+                
               </div>
             </div>
             
