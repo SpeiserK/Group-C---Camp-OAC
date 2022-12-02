@@ -387,6 +387,7 @@ background-color: #17458f;
 }
 
 /* DB LIST */
+/*
 .dblist
 .dblist h1 {
   text-align: center;
@@ -402,6 +403,7 @@ background-color: #17458f;
   display: block;
   text-align: left;
 }
+*/
 
 
 /*adminTools, viewOrders, inventoryByLoc, orderHistory
@@ -429,7 +431,7 @@ background-color: #17458f;
 }
 
 /* order list styling*/
-
+/*
 #list-orderList{
   padding: 0%;
   
@@ -484,7 +486,7 @@ background-color: #17458f;
   display: grid;
   row-gap: 0;
 }
-
+*/
 
 
 .inventoryByLoc {

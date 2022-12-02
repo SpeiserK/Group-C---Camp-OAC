@@ -43,60 +43,64 @@ export default class OrderLiveDisp extends React.Component {
   render() {
     return (
       
-      <ul className="dblist">
-        <div id="listHeader" className="listHeader">
-          <div id="headerEmail"  className="listHeaderItem">
+      <table className="dblist">
+        
+        <tr id="listHeader" className="listHeader">
+          <td id="headerID"  className="listHeaderItem">
+            <span> Order id </span>
+          </td>
+          <td id="headerEmail"  className="listHeaderItem">
             <span> Email </span>
-          </div>
-          <div id="headerQuantity" className="listHeaderItem">
+          </td>
+          <td id="headerQuantity" className="listHeaderItem">
             <span> Quantity </span>
-          </div>
-          <div id="headerLocation" className="listHeaderItem">
+          </td>
+          <td id="headerLocation" className="listHeaderItem">
             <span> Location </span>
-          </div>
-          <div id="headerDate" className="listHeaderItem">
+          </td>
+          <td id="headerDate" className="listHeaderItem">
             <span> Date </span>
-          </div>
-          <div id="headerPrice" className="listHeaderItem">
+          </td>
+          <td id="headerPrice" className="listHeaderItem">
             <span> Price </span>
-          </div>
-          <div id="headerApproved" className="listHeaderItem">
+          </td>
+          <td id="headerApproved" className="listHeaderItem">
             <span> Approve </span>
-          </div>
-        </div>
+          </td>
+        </tr> 
         {
           this.state.orders
             .map((content, index) =>
               
-            <li id="list-orderList" key={content._id}>
-            <div className="orderList" id = {content._id} key={`buttons-${index}`}>
-              <div id="current-orderEmail" className ="orderChild">
+            <tr id="list-orderList" key={content._id} Name={`buttons-${index}`}>  
+              <td id="current-orderID" className ="orderChild">
+                <span>{content._id}</span>&emsp;
+              </td>         
+              <td id="current-orderEmail" className ="orderChild">
                 <span>{content.Name}</span>&emsp;
-              </div>
-              <div id="current-orderQty" className ="orderChild">
+              </td>
+              <td id="current-orderQty" className ="orderChild">
                 <span>{content.Quantity}</span>&emsp;
-              </div>
-              <div id="current-orderLoc" className ="orderChild">
+              </td>
+              <td id="current-orderLoc" className ="orderChild">
                 <span>{content.Location}</span>&emsp;
-              </div>
-              <div id="current-orderDate" className ="orderChild">
-                <span> DATE </span>&emsp;
-              </div>
-              <div id="current-orderPrice" className ="orderChild">
+              </td>
+              <td id="current-orderDate" className ="orderChild">
+                <span> Date </span>&emsp;
+              </td>
+              <td id="current-orderPrice" className ="orderChild">
                 <span> $$$ </span>&emsp;
-              </div>
-              <div id="current-approve-deny"className ="orderChild"> 
+              </td>
+              <td id="current-approve-deny"className ="orderChild"> 
                 <p> {this.state.color[index]}</p>
                 <button onClick={() => this.approve(index)}> Approve</button>
                 <button onClick={() => this.decline(index)}> Deny </button>
-              </div>
-            </div>
-            
-          </li>
+              </td>         
+          </tr>
               
             )
         }
-      </ul>
+      </table>
     )
 
   }
