@@ -5,21 +5,22 @@ import InvByLoc from '../components/hooks/InvByLoc.js';
 
 
 function ViewOrders(){
-
     return(
-        <div className="main">
+    <div className="appMain">
+        <div className="appHeader">
             <Banner />
-
-            <div className="mainDiv">
-                <InvByLoc />
-            
-            </div>
-            <div className="footer">
-                <footer className="App-footer">
-                    <Navbar />
-                </footer>
-            </div>
         </div>
+        <body className="appContainer">
+            <div className="empMainDiv">
+                <InvByLoc />
+            </div>
+        </body>
+        <div className="footer">
+            <footer className="App-footer">
+                <Navbar />
+            </footer>
+        </div>
+    </div>
     );
 }
 export default ViewOrders;

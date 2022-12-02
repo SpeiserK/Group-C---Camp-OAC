@@ -23,7 +23,7 @@ function Startpage(){
                 <Bundles1 />
             </div>
             <div className="rightDiv">
-                <Link to="order">Click here to view Order page</Link><br/>
+
                 <CutWood />
             </div>
         </body>

@@ -44,7 +44,8 @@ export default class OrderLiveDisp extends React.Component {
     return (
       
       <ul className="dblist">
-        <h1> Order history </h1>
+        <h1>Live Orders</h1><br></br>
+        <p>Orders waiting to be approved, paid either by cash or e-transfer.</p>
         {
           this.state.orders
             .map((content, index) =>
