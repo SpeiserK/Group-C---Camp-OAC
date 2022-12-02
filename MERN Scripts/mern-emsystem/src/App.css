@@ -102,6 +102,35 @@ background-color: #17458f;
 .logoimg img {
   position: relative;
 }
+/*Bundle1 image on startpage, in Bundles1.js*/
+.bundles1 img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  width: 600px;
+  height: 350px;
+}
+/*Woodimg image on startpage right div, in Woodimg.js*/
+.woodimg img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  width: 600px;
+  height: 450px;
+}
+.cutWood img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  width: 150px;
+  height: 200px;
+}
 /*Textbox.js CSS*/
 .textbox {
   display: flex;
