@@ -471,7 +471,7 @@ background-color: #17458f;
   display: flex;
   align-items: left;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
   min-height: 650px;
   border: 7px solid #0067c8;
   padding: 40px;
@@ -485,7 +485,7 @@ background-color: #17458f;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  width: 30%;
   min-height: 650px;
   
   border: 7px solid #0067c8;
@@ -542,12 +542,14 @@ background-color: #17458f;
 
 /* DB LIST */
 
-.dblist h1 {
-  text-align: center;
-}
 
+.dblist {
+  table-layout: fixed;
+  width: 100%;
+  
+}
+/*
 .dblist li {
-  padding: 20px 0;
   border-bottom: 1px solid var(--border-color);
   list-style-type: none;
 }
@@ -556,6 +558,8 @@ background-color: #17458f;
   display: block;
   text-align: left;
 }
+*/
+
 
 /*adminTools, viewOrders, inventoryByLoc, orderHistory
   all inplement styling for Emp.js
@@ -582,38 +586,80 @@ background-color: #17458f;
   border-radius: 30px;
   border-color: #0067c8;
 }
-/* order list styling*/
-.orderList { 
-  outline: 1px solid #0067c8;
-  height: 125px;
-  width: 500px;
-  margin-right: auto;
-  display: flex;
-  flex-direction: row;
 
+/* order list styling*/
+/*
+#list-orderList{
+  padding: 0%;
+  
 }
-.approved { 
-  outline: 1px solid #0067c8;
-  height: 125px;
-  width: 500px;
-  margin-right: auto;
+*/
+.listHeader{
+  
+  background-color: lightgray;
+}
+/*
+.listHeaderItem{
+  display: flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  text-align: center;
+  border-left: 1px solid #0067c8;
+  box-sizing: border-box;
+  width:100%;
+}
+.orderList { 
+  border-bottom: 1px solid #0067c8;
+  height: 10%;
+  width: 100%;
   display: flex;
   flex-direction: row;
-  background-color: green;
+  box-sizing: border-box;
 
 }
 
 .orderChild{
-  display: inline-block;
-  position: relative;
-  margin: auto;
-  padding: auto;
+  display:inline-flex;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  text-align: center;
+  border-left: 1px solid #0067c8;
+  box-sizing: border-box;
+  width:100%;
+  
 }
-.orderChild button{
-  display: inline-block;
-  position: relative;
-  margin: 5 px;
+*/
+.orderChild span{
+  text-align: center;
+  font-size: 12px;
+
+  
 }
+#headerID{
+  width:24%
+}
+#headerEmail{
+  width:18%
+}
+#headerQuantity{
+  width: 10%;
+}
+#headerLocation{
+  width:18%;
+}
+#headerDate{
+  width:10%
+}
+#headerPrice{
+  width:10%;
+}
+#headerStatus{
+  width:10%
+}
+
+
 
 
 .inventoryByLoc {
