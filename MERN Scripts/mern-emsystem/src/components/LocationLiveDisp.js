@@ -3,14 +3,15 @@ import axios from 'axios';
 
 export default class LocationLiveDisp extends React.Component {
   state = {
-    location: []
+    location: [],
+    openStatus: []
   }
 
   componentDidMount() {
     axios.get(`http://localhost:5000/location`)
       .then(res => {
-        const location = res.data;
-        this.setState({ location });
+        const locationData = res.data;
+        this.setState({ location: locationData });
       })
   }
 
@@ -19,6 +20,7 @@ export default class LocationLiveDisp extends React.Component {
   render() {
     return (
       <table className="dblist">
+        
         <tr id="listHeader" className="listHeader">
           <td id="headerID"  className="listHeaderItem">
             <span> Location id </span>
@@ -34,10 +36,10 @@ export default class LocationLiveDisp extends React.Component {
             <span> Stock </span>
           </td>
           <td id="headerOpen" className="listHeaderOpen">
-            <span> Open? </span>
+            <span> Location Status </span>
           </td>
         </tr> 
-        <h1> Stock by location </h1>
+        
         {
           this.state.location
             .map((content, index) =>
@@ -50,12 +52,13 @@ export default class LocationLiveDisp extends React.Component {
               </td>
               <td id="current-orderAddress" className ="orderChild">
                 <span>{content.Address}</span>&emsp;
+                
               </td>
               <td id="current-orderStock" className ="orderChild">
-                <span>{content.Stock}</span>&emsp;
+                <span><input type="text" size="4" value={`${content.Stock}`}></input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
-                <span> {content.Open.toString()} </span>&emsp;
+                <span><button> {content.Open? "OPEN": "CLOSED"} </button></span>&emsp;
               </td>        
           </tr>
             )
