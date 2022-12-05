@@ -3,14 +3,14 @@ import axios from 'axios';
 
 export default class LocationLiveDisp extends React.Component {
   state = {
-    orders: []
+    location: []
   }
 
   componentDidMount() {
     axios.get(`http://localhost:5000/location`)
       .then(res => {
-        const orders = res.data;
-        this.setState({ orders });
+        const location = res.data;
+        this.setState({ location });
       })
   }
 
@@ -18,21 +18,49 @@ export default class LocationLiveDisp extends React.Component {
   
   render() {
     return (
-      
-      <ul className="dblist">
-        <h1> Order history </h1>
+      <table className="dblist">
+        <tr id="listHeader" className="listHeader">
+          <td id="headerID"  className="listHeaderItem">
+            <span> Location id </span>
+          </td>
+          <td id="headerName"  className="listHeaderName">
+            <span> Name </span>
+          </td>
+          <td id="headerAddress" className="listHeaderAddress">
+            <span> Address </span>
+          </td>
+          
+          <td id="headerStock" className="listHeaderStock">
+            <span> Stock </span>
+          </td>
+          <td id="headerOpen" className="listHeaderOpen">
+            <span> Open? </span>
+          </td>
+        </tr> 
+        <h1> Stock by location </h1>
         {
-          this.state.orders
-            .map(content =>
-              <li key={content._id}>
-                <span>Name: {content.Name}</span>&emsp;
-                <span>Address: {content.Address}</span>&emsp;
-                <span>Stock: {content.Stock}</span>&emsp;
-                
-              </li>
+          this.state.location
+            .map((content, index) =>
+              <tr id="list-locationList" key={content._id} Name={`buttons-${index}`}>  
+              <td id="current-locationID" className ="orderChild">
+                <span>{content._id}</span>&emsp;
+              </td>         
+              <td id="current-locationName" className ="orderChild">
+                <span>{content.Name}</span>&emsp;
+              </td>
+              <td id="current-orderAddress" className ="orderChild">
+                <span>{content.Address}</span>&emsp;
+              </td>
+              <td id="current-orderStock" className ="orderChild">
+                <span>{content.Stock}</span>&emsp;
+              </td>
+              <td id="current-orderDate" className ="orderChild">
+                <span> {content.Open.toString()} </span>&emsp;
+              </td>        
+          </tr>
             )
         }
-      </ul>
+      </table>
     )
   }
 }
