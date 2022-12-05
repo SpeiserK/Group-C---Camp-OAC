@@ -70,4 +70,5 @@ app.get("/location", (req, res)=> {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-app.use("/", require("./routes/OrderRoute.js"))
+app.use("/", require("./routes/OrderRoute.js"));
+app.use("/", require("./routes/LocationRoute.js"));

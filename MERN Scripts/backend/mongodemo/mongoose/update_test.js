@@ -38,15 +38,14 @@ db.once('open', function() {
     
     const Location = mongoose.model('Location', LocationSchema);
     //Query filter
-    const filter = {Name: "West Kelowna"};    
+    const filter = {_id: "6383e1e2b9f69fb40fd5769d"};    
     //changes to be made to first doc found
-    const update = {Stock: 999};
+    const update = {Stock: -50};
 
     let doc = Location.findOneAndUpdate(filter, update, {returnNewDocument: true},
         function (err, res) {
             if (err) return console.error(err);
             console.log(res.Name + " saved to orders collection");
           });
-    console.log(doc);
        
   });

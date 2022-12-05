@@ -12,9 +12,13 @@ export default class LocationLiveDisp extends React.Component {
       .then(res => {
         const locationData = res.data;
         this.setState({ location: locationData });
-      })
+      });
+      this.setState({openStatus: new Array(this.state.location.length).fill(false)});
   }
 
+  locUpdate() {
+    //post request to http://localhost:5000/send , send location object using location model from backend
+  }
 
   
   render() {
