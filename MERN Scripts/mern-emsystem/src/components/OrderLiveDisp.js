@@ -42,34 +42,64 @@ export default class OrderLiveDisp extends React.Component {
   
   render() {
     return (
-      
-      <ul className="dblist">
-        <h1>Live Orders</h1><br></br>
-        <p>Orders waiting to be approved, paid either by cash or e-transfer.</p>
+      <table className="dblist">
+        <tr id="listHeader" className="listHeader">
+          <td id="headerID"  className="listHeaderItem">
+            <span> Order id </span>
+          </td>
+          <td id="headerEmail"  className="listHeaderItem">
+            <span> Email </span>
+          </td>
+          <td id="headerQuantity" className="listHeaderItem">
+            <span> Quantity </span>
+          </td>
+          <td id="headerLocation" className="listHeaderItem">
+            <span> Location </span>
+          </td>
+          <td id="headerDate" className="listHeaderItem">
+            <span> Date </span>
+          </td>
+          <td id="headerPrice" className="listHeaderItem">
+            <span> Price </span>
+          </td>
+          <td id="headerStatus" className="listHeaderItem">
+            <span> Status </span>
+          </td>
+        </tr> 
+
         {
           this.state.orders
             .map((content, index) =>
               
-            <li key={content._id}>
-            <div className="orderList" id = {content._id} key={`buttons-${index}`}>
-              <div className ="orderChild">
-                <span>Email: {content.Name}</span>&emsp;
-                <span>Quantity Ordered: {content.Quantity}</span>&emsp;
-                <span>Location: {content.Location}</span>&emsp;
-              </div>
-              <div className ="orderChild"> 
-
+            <tr id="list-orderList" key={content._id} Name={`buttons-${index}`}>  
+              <td id="current-orderID" className ="orderChild">
+                <span>{content._id}</span>&emsp;
+              </td>         
+              <td id="current-orderEmail" className ="orderChild">
+                <span>{content.Name}</span>&emsp;
+              </td>
+              <td id="current-orderQty" className ="orderChild">
+                <span>{content.Quantity}</span>&emsp;
+              </td>
+              <td id="current-orderLoc" className ="orderChild">
+                <span>{content.Location}</span>&emsp;
+              </td>
+              <td id="current-orderDate" className ="orderChild">
+                <span> Date </span>&emsp;
+              </td>
+              <td id="current-orderPrice" className ="orderChild">
+                <span> $$$ </span>&emsp;
+              </td>
+              <td id="current-approve-deny"className ="orderChild"> 
+                <p> {this.state.color[index]}</p>
                 <button onClick={() => this.approve(index)}> Approve</button>
                 <button onClick={() => this.decline(index)}> Deny </button>
-                <p> {this.state.color[index]}</p>
-              </div>
-            </div>
-            
-          </li>
+              </td>         
+          </tr>
               
             )
         }
-      </ul>
+      </table>
     )
 
   }
