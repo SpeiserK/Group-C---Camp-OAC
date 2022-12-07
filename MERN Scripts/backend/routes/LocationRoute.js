@@ -24,4 +24,6 @@ router.route("/locupdate").post((req, res) => {
             console.log(res.Name + " saved to orders collection");
           });
 
-})
+});
+
+module.exports = router;
