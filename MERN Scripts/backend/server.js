@@ -37,7 +37,7 @@ app.get("/",(req,res)=> {
 app.get("/mongo", (req, res)=> {
     Models.Employee.find({ })
     .then((data) => {
-        console.log( 'Data', data);
+        console.log( 'Employee read data available');
         res.json(data);
     })
     .catch(() => {
@@ -48,7 +48,7 @@ app.get("/mongo", (req, res)=> {
 app.get("/order", (req, res)=> {
     Models.Order.find({ })
     .then((data) => {
-        console.log( 'Data', data);
+        console.log( 'Order read data available');
         res.json(data);
     })
     .catch(() => {
@@ -59,7 +59,7 @@ app.get("/order", (req, res)=> {
 app.get("/location", (req, res)=> {
     Models.Location.find({ })
     .then((data) => {
-        console.log( 'Data', data);
+        console.log( 'Location read data available');
         res.json(data);
     })
     .catch(() => {
@@ -70,4 +70,5 @@ app.get("/location", (req, res)=> {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-app.use("/", require("./routes/OrderRoute.js"))
+app.use("/", require("./routes/OrderRoute.js"));
+app.use("/", require("./routes/LocationRoute.js"));
