@@ -29,10 +29,7 @@ function post2DB() {
                     <Banner />
                 </div>
                 <body className="appContainer">
-                    <div className="leftDiv">
-                        <Logo />  
-                    </div>
-                    <div className="middleDiv">
+                    <div className="updateLeft">
                         <h2 className="orderTitle">Select Payment Type</h2>
                         <PaymentSummary />
                         <div className="buttonBox">
@@ -41,7 +38,8 @@ function post2DB() {
                             <button className="buttonStyle" onClick={() => {post2DB(); navigate("ETransferConfirmation")}}> Pay with e-transfer </button>
                         </div>
                     </div>
-                    <div className="rightDiv">
+                    <div className="updateRight">
+                        <Logo />  
                         <div className="progBar">
                             <h4 className="progressTitle">Steps:</h4><br></br>
                             <OurProgBar bgcolor="#17458f" progress='66'  height={30}/>

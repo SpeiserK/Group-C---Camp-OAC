@@ -17,10 +17,7 @@ const navigate = useNavigate();
         <Banner />
         </div>
         <body className="appContainer">
-            <div className="leftDiv">
-                <Logo />
-            </div>
-            <div className="middleDiv">
+            <div className="updateLeft">
                 <p> Your order has successfully been processed!
                     Check your email for the pickup location of your firewood, it should be ready for you when you get there!
                     (WIP, email confirmation not functioning yet)
@@ -29,7 +26,8 @@ const navigate = useNavigate();
                             <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
                     </div>
             </div>
-            <div className="rightDiv">
+            <div className="updateRight">
+                <Logo />
                 <div className="progBar">
                     <h4 className="progressTitle">Complete</h4><br></br>
                     <OurProgBar bgcolor="#17458f" progress='100'  height={30}/>

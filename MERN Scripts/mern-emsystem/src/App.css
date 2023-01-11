@@ -59,7 +59,7 @@
 /*Footer Element, exists inside of .footer*/
 .App-footer {
   background-image: linear-gradient(to right, #17458f,#0067c8);
-  max-height: 100px;
+  height: 40px;
   display: flex;
   flex-direction: row;
   align-items: right;
@@ -124,6 +124,10 @@ background-color: #17458f;
 /*Ogopogo Logo, in Logo.js*/
 .logoimg img {
   position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  
 }
 /*Bundle1 image on startpage, in Bundles1.js*/
 .bundles1 img {
@@ -135,6 +139,17 @@ background-color: #17458f;
   width: 600px;
   height: 350px;
 }
+/*Bundle2 image on order page, in Bundles2.js*/
+.bundles2 img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-left: 80px;
+  width: 500px;
+  height: 350px;
+}
 /*Woodimg image on startpage right div, in Woodimg.js*/
 .woodimg img {
   position: relative;
@@ -142,8 +157,11 @@ background-color: #17458f;
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  width: 600px;
-  height: 450px;
+  padding-left: 3px;
+  width: 230px;
+  height: 150px;
+  /*width: 600px;
+  height: 450px;*/
 }
 .cutWood img {
   position: relative;
@@ -153,6 +171,16 @@ background-color: #17458f;
   padding-top: 40px;
   width: 150px;
   height: 200px;
+}
+.firewoodTeam img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-left: 3px;
+  width: 230px;
+  height: 150px;
 }
 /*Textbox.js CSS*/
 .textbox {
@@ -351,11 +379,24 @@ background-color: #17458f;
   font-family: "Frutiger";
   font-weight: bolder;
 }
+/*CSS for text in right div on start page*/
+.howToTitle{
+  font-family: "Arial";
+}
+.howToText{
+  font-family: "Frutiger";
+}
 /*Place Order Title*/
 .orderTitle {
   padding-left: 100px;
   font-family: "Frutiger";
   font-weight: bolder;
+}
+/*Text for bundle size info, in */
+.bundleText{
+  padding: 30px;
+  font-family: "Frutiger";
+  font-size: large;
 }
 
 
@@ -455,11 +496,48 @@ background-color: #17458f;
   min-height: 650px;
   
   border: 7px solid #0067c8;
+  padding: 30px;
+  border-radius: 5px;
+  margin:5px;
+  background-color: white;
+}
+/*left Div for order page and on*/
+.updateLeft{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  width: 80%;
+  min-height: 650px;
+  border: 7px solid #0067c8;
+  padding: 50px;
+  margin: 5px;
+  border-radius: 5px;
+  background-color: white;
+}
+/*right Div for order page and on*/
+.updateRight{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-height: 650px;
+  
+  border: 7px solid #0067c8;
   padding: 50px;
   border-radius: 5px;
   margin:5px;
   background-color: white;
 }
+/*Div that contains bundle info, on order page*/
+.bundleDiv{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 5px;
+}
+
 
 /*App Footer*/
 .appFooter{

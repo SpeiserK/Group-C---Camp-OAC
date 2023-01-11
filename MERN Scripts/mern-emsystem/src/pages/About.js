@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import React from 'react'
 import Logo from '../components/Logo.js'
+import FirewoodTeam from '../components/FirewoodTeam.js';
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 
@@ -23,8 +24,9 @@ function About(){
             <body className="appContainer">
                 <div className="leftDiv">
                     <Logo />
+                    <FirewoodTeam />
                 </div>
-                <div className="middleDiv">
+                <div className="updateLeft">
                     <h1 className="aboutTitle">About Us</h1><br></br>
                     <h2 className="aboutQ">{q1}</h2><br></br>
                     <p className="aboutA">{a1}</p><br></br>
@@ -35,9 +37,7 @@ function About(){
                     <h2 className="aboutQ">{q4}</h2><br></br>
                     <p className="aboutA">Click <a href="/">here</a> to get started. Enter your email and follow the steps to place your order!</p><br></br>
                 </div>
-                <div className="rightDiv">
-                    
-                </div>
+                
             </body>
             <div className="footer">
                 <footer className="App-footer">

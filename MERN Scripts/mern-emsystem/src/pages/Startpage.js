@@ -8,6 +8,12 @@ import Bundles1 from '../components/Bundles1.js';
 import CutWood from '../components/CutWood.js';
 
 function Startpage(){
+
+    const p1 = "Enter your email. We'll use it to relay order details and confirmation.";
+    const p2 = "Select amount of firewood and pickup location.";
+    const p3 = "Choose prefered payment method.";
+    const p4 = "Receive confirmation email and pickup your bundle(s)!";
+
     return(
     <div className="appMain">
         <div className="appHeader">
@@ -16,6 +22,7 @@ function Startpage(){
         <body className="appContainer">
             <div className="leftDiv">
                 <Logo />
+                <CutWood />
             </div>
             <div className="middleDiv">
                 <h2 className="startTitle">Enter Email Here to Buy Firewood</h2><br></br>
@@ -23,8 +30,15 @@ function Startpage(){
                 <Bundles1 />
             </div>
             <div className="rightDiv">
-
-                <CutWood />
+                <h2 className="howToTitle">How to use:</h2>
+                <h4>1.</h4>
+                <p className="howToText">{p1}</p>
+                <h4>2.</h4>
+                <p className="howToText">{p2}</p>
+                <h4>3.</h4>
+                <p className="howToText">{p3}</p>
+                <h4>4.</h4>
+                <p className="howToText">{p4}</p>
             </div>
         </body>
         <div className="footer">

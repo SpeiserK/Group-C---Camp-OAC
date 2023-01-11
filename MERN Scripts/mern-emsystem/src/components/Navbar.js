@@ -34,7 +34,7 @@ export default class Navbar extends Component {
         return(
             <div className="mainNav">
                 {this.state.online.message}
-                <button style={{textDecoration: 'none' , color: 'black'}}>
+                <button style={{textDecoration: 'none' , color: 'black', fontSize: '16px',marginTop: '10px'}}>
                 <Link to="/login" style={{textDecoration: 'none' }}>Admin Portal</Link>
                 </button>
             </div>

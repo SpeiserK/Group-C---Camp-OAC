@@ -17,10 +17,7 @@ const navigate = useNavigate();
         <Banner />
         </div>
         <body className="appContainer">
-            <div className="leftDiv">
-                <Logo />
-            </div>
-            <div className="middleDiv">
+            <div className="updateLeft">
                 <p> Because you have selected cash payment your order is under review , please check your email for updates from our team!
                 (WIP, email confirmation not functioning yet)
                 </p>
@@ -29,7 +26,8 @@ const navigate = useNavigate();
                             <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
                     </div>
             </div>
-            <div className="rightDiv">
+            <div className="updateRight">
+                <Logo />
                 <div className="progBar">
                     <h4 className="progressTitle">Complete</h4><br></br>
                     <OurProgBar bgcolor="#17458f" progress='100'  height={30}/>
