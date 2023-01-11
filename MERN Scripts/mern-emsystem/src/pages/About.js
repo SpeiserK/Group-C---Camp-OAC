@@ -33,7 +33,7 @@ function About(){
                     <h2 className="aboutQ">{q3}</h2><br></br>
                     <p className="aboutA">{a3}</p><br></br>
                     <h2 className="aboutQ">{q4}</h2><br></br>
-                    <p className="aboutA">{a4}</p><br></br>
+                    <p className="aboutA">Click <a href="/">here</a> to get started. Enter your email and follow the steps to place your order!</p><br></br>
                 </div>
                 <div className="rightDiv">
                     
