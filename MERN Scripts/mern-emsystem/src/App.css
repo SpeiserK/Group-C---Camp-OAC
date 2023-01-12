@@ -158,8 +158,8 @@ background-color: #17458f;
   justify-content: center;
   padding-top: 40px;
   padding-left: 3px;
-  width: 230px;
-  height: 150px;
+  width: 260px;
+  height: 195px;
   /*width: 600px;
   height: 450px;*/
 }
@@ -179,8 +179,19 @@ background-color: #17458f;
   justify-content: center;
   padding-top: 40px;
   padding-left: 3px;
+  margin-bottom: 20px;
   width: 230px;
   height: 150px;
+}
+/*Camp OAC Secondary Logo*/
+.campLogo img{
+  position: relative;
+  margin: auto;
+  display: flex;
+  padding-top: 50px;
+  padding-left: 3px;
+  width: 160px;
+  height: 175px;
 }
 /*Textbox.js CSS*/
 .textbox {
@@ -198,6 +209,7 @@ background-color: #17458f;
   width: 100%;
   margin-left: -15px;
   margin-bottom: 30px;
+  margin-top: 20px;
   border: 2px ridge #0067c8;
   padding: 15px;
   padding-top: 5px;

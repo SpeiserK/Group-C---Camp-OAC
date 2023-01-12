@@ -10,6 +10,7 @@ import PlaceOrder from '../components/hooks/placeOrder.js';
 import Woodimg from '../components/Woodimg.js';
 import OurProgBar from '../components/OurProgBar.js';
 import Bundles2 from '../components/Bundles2.js';
+import CampLogo from '../components/CampLogo.js';
 
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -43,7 +44,7 @@ function Orderqty(){
                             <li className="progressText"><strong>Payment: </strong> Pending...</li>
                         </ul> 
                     </div>
-                    <Woodimg />
+                    <CampLogo />
                  </div>
             </body>
             <div className="footer">

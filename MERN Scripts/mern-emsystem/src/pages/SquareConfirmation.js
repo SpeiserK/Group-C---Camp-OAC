@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import PaymentSummary from '../components/PaymentSummary.js';
 import OurProgBar from '../components/OurProgBar.js';
+import CampLogo from '../components/CampLogo.js';
 
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
@@ -38,6 +39,7 @@ const navigate = useNavigate();
                         <li className="progressText"><strong>Payment: </strong> Completed</li>
                      </ul> 
                 </div>
+                <CampLogo />
             </div>
         </body>
         <div className="footer">

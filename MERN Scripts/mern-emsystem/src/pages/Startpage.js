@@ -6,6 +6,7 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import Bundles1 from '../components/Bundles1.js';
 import CutWood from '../components/CutWood.js';
+import CampLogo from "../components/CampLogo.js";
 
 function Startpage(){
 
@@ -23,6 +24,7 @@ function Startpage(){
             <div className="leftDiv">
                 <Logo />
                 <CutWood />
+                <CampLogo />
             </div>
             <div className="middleDiv">
                 <h2 className="startTitle">Enter Email Here to Buy Firewood</h2><br></br>
@@ -31,13 +33,14 @@ function Startpage(){
             </div>
             <div className="rightDiv">
                 <h2 className="howToTitle">How to use:</h2>
-                <h4>1.</h4>
+                
+                <strong>1.</strong>
                 <p className="howToText">{p1}</p>
-                <h4>2.</h4>
+                <strong>2.</strong>
                 <p className="howToText">{p2}</p>
-                <h4>3.</h4>
+                <strong>3.</strong>
                 <p className="howToText">{p3}</p>
-                <h4>4.</h4>
+                <strong>4.</strong>
                 <p className="howToText">{p4}</p>
             </div>
         </body>

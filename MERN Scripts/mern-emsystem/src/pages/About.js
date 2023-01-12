@@ -4,6 +4,7 @@ import Logo from '../components/Logo.js'
 import FirewoodTeam from '../components/FirewoodTeam.js';
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
+import CampLogo from "../components/CampLogo.js";
 
 function About(){
     const q1 = "What is this website for?";
@@ -25,6 +26,7 @@ function About(){
                 <div className="leftDiv">
                     <Logo />
                     <FirewoodTeam />
+                    <CampLogo />
                 </div>
                 <div className="updateLeft">
                     <h1 className="aboutTitle">About Us</h1><br></br>

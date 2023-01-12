@@ -6,6 +6,7 @@ import Banner from '../components/Banner.js';
 import PaymentSummary from '../components/PaymentSummary.js';
 import OurProgBar from '../components/OurProgBar.js';
 import axios from 'axios';
+import CampLogo from '../components/CampLogo.js';
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
 
@@ -50,6 +51,7 @@ function post2DB() {
                                 <li className="progressText"><strong>Payment: </strong> Pending...</li>
                             </ul> 
                         </div>
+                        <CampLogo />
                     </div>
                 </body>
                 <div className="footer">
