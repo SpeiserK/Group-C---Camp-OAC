@@ -4,7 +4,8 @@ import axios from 'axios';
 export default class LocationLiveDisp extends React.Component {
   state = {
     location: [],
-    openStatus: []
+    openStatus: [],
+    stock: []
   }
 
   componentDidMount() {
@@ -16,13 +17,22 @@ export default class LocationLiveDisp extends React.Component {
       this.setState({openStatus: new Array(this.state.location.length).fill(false)});
   }
 
-  locUpdate() {
+  locUpdate(id, quant, location) {
+    const locationUpdate = {
+      _id: 45,
+      stock: 34,
+      openStatus: 45
+  }
+  axios.post('http://localhost:5000/send', locationUpdate);
     //post request to http://localhost:5000/send , send location object using location model from backend
   }
 
   
   render() {
     return (
+      <div>
+        <button onClick={ () => this.locUpdate()}>lock</button>
+        <button>unlock</button>
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
@@ -42,6 +52,9 @@ export default class LocationLiveDisp extends React.Component {
           <td id="headerOpen" className="listHeaderOpen">
             <span> Location Status </span>
           </td>
+          <td id="headerUpdate" className="listHeaderUpdate">
+            <span> Location Status </span>
+          </td>
         </tr> 
         
         {
@@ -56,18 +69,22 @@ export default class LocationLiveDisp extends React.Component {
               </td>
               <td id="current-orderAddress" className ="orderChild">
                 <span>{content.Address}</span>&emsp;
-                
               </td>
               <td id="current-orderStock" className ="orderChild">
-                <span><input type="text" size="4" value={`${content.Stock}`}></input></span>&emsp;
+                <span><input type="number" size="4" defaultValue={`${content.Stock}`}></input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
                 <span><button> {content.Open? "OPEN": "CLOSED"} </button></span>&emsp;
+              </td>
+              <td id="current-orderUpdate" className ="orderChild">
+                <span><button> UPDATE </button></span>&emsp;
               </td>        
           </tr>
             )
         }
       </table>
+      
+      </div>
     )
   }
 }

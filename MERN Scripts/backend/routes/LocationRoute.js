@@ -5,6 +5,7 @@ const Models = require("../models.js");
 router.route("/locupdate").post((req, res) => {
     const ID = req.body._id;
     const openStatus = req.body.Open;
+    const stock = req.body.Stock;
     if (!openStatus){
         return res.status(422).json({error:"Missing Fields"})
     }
@@ -16,7 +17,7 @@ router.route("/locupdate").post((req, res) => {
     //Query filter
     const filter = {_id: ID};    
     //changes to be made to first doc found
-    const update = {Open: openStatus};
+    const update = {Open: openStatus, Stock: stock};
 
     let doc = Location.findOneAndUpdate(filter, update, {returnNewDocument: true},
         function (err, res) {
