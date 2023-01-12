@@ -136,8 +136,8 @@ background-color: #17458f;
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  width: 600px;
-  height: 350px;
+  width: 220px;
+  height: 120px;
 }
 /*Bundle2 image on order page, in Bundles2.js*/
 .bundles2 img {
@@ -192,6 +192,13 @@ background-color: #17458f;
   padding-left: 3px;
   width: 160px;
   height: 175px;
+}
+.campName img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  width: 46px;
+  height: 13px;
 }
 /*Textbox.js CSS*/
 .textbox {

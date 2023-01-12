@@ -6,7 +6,7 @@ router.route("/send").post((req, res) => {
     const Name = req.body.Name;
     const Location = req.body.Location;
     const Quantity = Number(req.body.Quantity);
-    const Datetime = new Date();
+    var Datetime = new Date();
 
     if (!Name||!Location||!Quantity){
         return res.status(422).json({error:"Missing Fields"})

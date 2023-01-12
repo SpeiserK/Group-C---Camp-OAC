@@ -29,7 +29,6 @@ function Startpage(){
             <div className="middleDiv">
                 <h2 className="startTitle">Enter Email Here to Buy Firewood</h2><br></br>
                 <EmailCheck />
-                <Bundles1 />
             </div>
             <div className="rightDiv">
                 <h2 className="howToTitle">How to use:</h2>
@@ -42,6 +41,7 @@ function Startpage(){
                 <p className="howToText">{p3}</p>
                 <strong>4.</strong>
                 <p className="howToText">{p4}</p>
+                <Bundles1 />
             </div>
         </body>
         <div className="footer">

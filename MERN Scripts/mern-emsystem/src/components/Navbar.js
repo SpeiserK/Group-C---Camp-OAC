@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { text } from '@fortawesome/fontawesome-svg-core';
+import CampName from './CampName';
 
 export default class Navbar extends Component {
     
@@ -33,6 +34,7 @@ export default class Navbar extends Component {
 
         return(
             <div className="mainNav">
+                <CampName />
                 {this.state.online.message}
                 <button style={{textDecoration: 'none' , color: 'black', fontSize: '16px',marginTop: '10px'}}>
                 <Link to="/login" style={{textDecoration: 'none' }}>Admin Portal</Link>
