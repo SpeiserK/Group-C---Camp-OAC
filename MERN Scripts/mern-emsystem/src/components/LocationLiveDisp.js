@@ -14,9 +14,21 @@ export default class LocationLiveDisp extends React.Component {
   componentDidMount() {
     axios.get(`http://localhost:5000/location`)
       .then(res => {
+
         const locationData = res.data;
         this.setState({ location: locationData });
-        this.setState({ openStatus: locationData[1]});
+
+        const cleanStock = locationData.map((item) =>
+            item.Stock
+        );
+        this.setState({ stock: cleanStock});
+
+        const cleanOpenStatus = locationData.map((item) =>
+            item.Open
+        );
+        this.setState({ openStatus: cleanOpenStatus});
+        
+        
       });
   }
 
@@ -36,7 +48,7 @@ export default class LocationLiveDisp extends React.Component {
   render() {
     return (
       <div>
-      <p>before{(this.state.openStatus.Name)} after</p>
+      <p>before {JSON.stringify(this.state.openStatus[1])} after</p>
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
