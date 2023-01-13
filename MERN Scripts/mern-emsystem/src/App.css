@@ -768,11 +768,10 @@ background-color: #17458f;
 .orderChild span{
   text-align: center;
   font-size: 12px;
-
   
 }
 #headerID{
-  width:24%
+  width:22%
 }
 #headerEmail{
   width:18%
@@ -781,10 +780,10 @@ background-color: #17458f;
   width: 10%;
 }
 #headerLocation{
-  width:18%;
+  width:16%;
 }
 #headerDate{
-  width:10%
+  width:14%
 }
 #headerPrice{
   width:10%;
