@@ -10,6 +10,7 @@ export default class LocationLiveDisp extends React.Component {
       stock: []
     }
   }
+  //variables to handle state changes
   componentDidMount() {
     axios.get(`http://localhost:5000/location`)
       .then(res => {
@@ -43,11 +44,10 @@ export default class LocationLiveDisp extends React.Component {
     changeOpenStatus(index) {
       const openStatus = this.state.openStatus;
       this.setState({openStatus: openStatus.map((item, i) => {
-        if(i === index){
-          return !item;
-        } else {
-          return item;
-        }
+        if(this.state.stock[i] <= 0) return false;
+        if(i === index) return !item;
+        return item;
+        
       })});
     }
 
@@ -55,17 +55,16 @@ export default class LocationLiveDisp extends React.Component {
       const stock = this.state.stock;
       this.setState({stock: stock.map((item, i) => {
         if(i === index){
+          if(item <= 0) this.changeOpenStatus(index);
           return newStock;
-        } else {
-          return item;
         }
+        return item;
       })});
     }
   
   render() {
     return (
       <div>
-      <p>before {this.state.stock[4]} after</p>
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">

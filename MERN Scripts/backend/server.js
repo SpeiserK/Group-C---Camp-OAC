@@ -77,6 +77,11 @@ app.post("/locupdate", (req, res) => {
     const id = req.body.id;
     const stock = req.body.stock;
     const open = req.body.open;
+
+    if (!id||!stock||!open){
+        return res.status(422).json({error:"Missing Fields"})
+    }res.json("Posted successfully");
+
     Models.Location.findByIdAndUpdate(id, {Stock: stock, Open: open}, (err, doc) => {
         if(err) return console.log(err);
         res.json(doc);
