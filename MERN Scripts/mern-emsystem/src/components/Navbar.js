@@ -29,17 +29,18 @@ export default class Navbar extends Component {
 
 
     render(){
-
-
-
         return(
-            <div className="mainNav">
+          <div className="mainNav">
+              <div className="leftNav">
                 <CampName />
-                {this.state.online.message}
-                <button style={{textDecoration: 'none' , color: 'black', fontSize: '16px',marginTop: '10px'}}>
-                <Link to="/login" style={{textDecoration: 'none' }}>Admin Portal</Link>
-                </button>
-            </div>
+              </div>
+              <div className="rightNav">
+                  {this.state.online.message}
+                  <button style={{textDecoration: 'none' , color: 'black', fontSize: '16px',marginTop: '10px'}}>
+                  <Link to="/login" style={{textDecoration: 'none' }}>Admin Portal</Link>
+                  </button>
+              </div>
+          </div>
         );            
     }
 }

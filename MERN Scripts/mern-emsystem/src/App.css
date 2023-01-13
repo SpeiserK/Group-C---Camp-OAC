@@ -60,12 +60,23 @@
 .App-footer {
   background-image: linear-gradient(to right, #17458f,#0067c8);
   height: 40px;
+  position: relative;
   display: flex;
-  flex-direction: row;
-  align-items: right;
-  justify-content: right;
+  flex-direction: row-reverse;
   padding-right: 60px;
 }
+
+/*more Navbar CSS, exists in the navbar component, is inside .App-footer*/
+.mainNav {
+  position: relative;
+}
+.leftNav {
+  position: relative;
+}
+.rightNav {
+  position: relative;
+}
+
 /*Fonts for text in About.js*/
 .aboutTitle {font-family: "Frutiger";}
 .aboutQ {font-family: "OpenSans";}
