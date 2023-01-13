@@ -3,6 +3,9 @@ import { useState } from 'react';
 import { Link } from "react-router-dom";
 import axios from 'axios';
 import { text } from '@fortawesome/fontawesome-svg-core';
+import { faX } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import CampName from './CampName';
 
 export default class Navbar extends Component {
     
@@ -28,16 +31,27 @@ export default class Navbar extends Component {
 
 
     render(){
-
-
-
         return(
-            <div className="mainNav">
-                {this.state.online.message}
-                <button style={{textDecoration: 'none' , color: 'black'}}>
-                <Link to="/login" style={{textDecoration: 'none' }}>Admin Portal</Link>
-                </button>
-            </div>
+          <div className="mainNav">
+              <div className="leftNav">
+
+              </div>
+              <div className="centerNav">
+                <CampName />
+                &nbsp;
+                &nbsp;
+                <FontAwesomeIcon icon={faX} color="white"/>
+                &nbsp;
+                &nbsp;
+                <h4 className="rotaryFont">ROTARY</h4>
+              </div>
+              <div className="rightNav">
+                  {this.state.online.message}
+                  <button style={{textDecoration: 'none' , color: 'black', fontSize: '14px',marginTop: '10px'}}>
+                  <Link to="/login" style={{textDecoration: 'none' }}>Admin Portal</Link>
+                  </button>
+              </div>
+          </div>
         );            
     }
 }

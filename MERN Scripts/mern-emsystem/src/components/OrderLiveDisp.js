@@ -85,7 +85,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content.Location}</span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
-                <span> Date </span>&emsp;
+                <span>{content.Datetime}</span>&emsp;
               </td>
               <td id="current-orderPrice" className ="orderChild">
                 <span> $$$ </span>&emsp;

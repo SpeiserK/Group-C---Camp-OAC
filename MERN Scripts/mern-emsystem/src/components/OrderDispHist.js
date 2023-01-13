@@ -28,6 +28,7 @@ export default class OrderDispHist extends React.Component {
                 <span>Email: {content.Name}</span>&emsp;
                 <span>Quantity Ordered: {content.Quantity}</span>&emsp;
                 <span>Location: {content.Location}</span>&emsp;
+                <span>Date/Time: {content.Datetime}</span>&emsp;
                 
               </li>
             )

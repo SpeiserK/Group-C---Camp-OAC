@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import PaymentSummary from '../components/PaymentSummary.js';
 import OurProgBar from '../components/OurProgBar.js';
+import CampLogo from '../components/CampLogo.js';
 
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
@@ -17,10 +18,7 @@ const navigate = useNavigate();
             <Banner />
         </div>
         <body className="appContainer">
-            <div className="leftDiv">
-                <Logo />
-            </div>
-            <div className="middleDiv">
+            <div className="updateLeft">
                 <p> Please send $$$$ to OGOPOGOEMAIL@ROTARYCLUB.COM, When we confirm your payment your order will be approved, please check your email.
                 (WIP, email confirmation not functioning yet)
                 </p>
@@ -28,17 +26,19 @@ const navigate = useNavigate();
                             <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
                     </div>
             </div>
-            <div className="rightDiv">
-            <div className="progBar">
-                <h4 className="progressTitle">Complete</h4><br></br>
-                <OurProgBar bgcolor="#17458f" progress='100'  height={30}/>
-                <ul>
-                    <li className="progressText"><strong>Email:</strong> Completed</li>
-                    <li className="progressText"><strong>Quantity:</strong>  Completed</li>
-                    <li className="progressText"><strong>Location:</strong>  Completed</li>
-                    <li className="progressText"><strong>Payment: </strong> Completed</li>
-                </ul> 
-            </div>
+            <div className="updateRight">
+                <Logo />
+                <div className="progBar">
+                    <h4 className="progressTitle">Complete</h4><br></br>
+                    <OurProgBar bgcolor="#17458f" progress='100'  height={30}/>
+                    <ul>
+                        <li className="progressText"><strong>Email:</strong> Completed</li>
+                        <li className="progressText"><strong>Quantity:</strong>  Completed</li>
+                        <li className="progressText"><strong>Location:</strong>  Completed</li>
+                        <li className="progressText"><strong>Payment: </strong> Completed</li>
+                    </ul> 
+                </div>
+                <CampLogo />
             </div>
         </body>
         <div className="footer">
