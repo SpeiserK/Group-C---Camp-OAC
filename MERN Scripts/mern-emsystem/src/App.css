@@ -59,7 +59,7 @@
 /*Footer Element, exists inside of .footer*/
 .App-footer {
   background-image: linear-gradient(to right, #17458f,#0067c8);
-  height: 38px;
+  height: 42px;
   position: relative;
   display: flex;
   padding-right: 60px;
@@ -517,10 +517,8 @@ background-color: #17458f;
   min-height: 650px;
   border: 7px solid #0067c8;
   padding: 5px 50px;
-  margin-top: 5px;
-  margin-right: 5px;
+  margin: 5px;
   margin-left: 10px;
-
   border-radius: 5px;
   background-color: white;
 }
