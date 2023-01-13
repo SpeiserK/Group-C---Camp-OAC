@@ -84,7 +84,6 @@ app.post("/locupdate", (req, res) => {
 
     Models.Location.findByIdAndUpdate(id, {Stock: stock, Open: open}, (err, doc) => {
         if(err) return console.log(err);
-        res.json(doc);
     });
 });
 
