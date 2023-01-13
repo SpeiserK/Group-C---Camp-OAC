@@ -2,30 +2,44 @@ import React from 'react';
 import axios from 'axios';
 
 export default class LocationLiveDisp extends React.Component {
-  state = {
-    location: [],
-    openStatus: [],
-    stock: []
+  constructor(props){
+    super(props);
+      this.state = {
+      location: [],
+      openStatus: [],
+      stock: [],
+      ex: 7
+    }
   }
-
   componentDidMount() {
     axios.get(`http://localhost:5000/location`)
       .then(res => {
         const locationData = res.data;
         this.setState({ location: locationData });
       });
-      this.setState({openStatus: new Array(this.state.location.length).fill(false)});
+      this.setState({openStatus: new Array(this.state.location.length).fill(1)});
   }
 
-  locUpdate(id, quant, location) {
-    const locationUpdate = {
-      _id: 45,
-      stock: 34,
-      openStatus: 45
-  }
-  axios.post('http://localhost:5000/send', locationUpdate);
-    //post request to http://localhost:5000/send , send location object using location model from backend
-  }
+  // locUpdate(idx) {
+  //   const locationUpdate = {
+  //     _id: '6383e1e2b9f69fb40fd5769d',
+  //     stock: 100,
+  //     openStatus: true
+  // };
+  // axios.post('http://localhost:5000/locupdate', locationUpdate)
+  // .then((res) => {console.log('success')},
+  //       (err) => {console.log('failure')});
+  //   }
+    locUpdate = (index) => {
+      axios.post('http://localhost:5000/locupdate', {
+        id: '6383e1e2b9f69fb40fd5769d',
+        stock: 70,
+        open: true
+      })
+      .then( response => {
+
+      })
+    }
 
   
   render() {
@@ -77,13 +91,13 @@ export default class LocationLiveDisp extends React.Component {
                 <span><button> {content.Open? "OPEN": "CLOSED"} </button></span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button> UPDATE </button></span>&emsp;
+                <span><button onClick={() => this.locUpdate(index)}> UPDATE </button></span>&emsp;
               </td>        
           </tr>
             )
         }
       </table>
-      
+      <p>read this {this.state.openStatus[1]}</p>
       </div>
     )
   }

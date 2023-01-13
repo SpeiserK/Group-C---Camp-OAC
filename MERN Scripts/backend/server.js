@@ -69,6 +69,16 @@ app.get("/location", (req, res)=> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+app.post("/locupdate", (req, res) => {
+    const id = req.body.id;
+    const stock = req.body.stock;
+    const open = req.body.open;
+    Models.Location.updateOne({_id:id}, {Stock: stock, Open: open}, (err, doc) => {
+        if(err) return console.log(err);
+        res.json(doc);
+    });
+});
+
 
 app.use("/", require("./routes/OrderRoute.js"));
-app.use("/", require("./routes/LocationRoute.js"));
+//app.use("/", require("./routes/LocationRoute.js"));

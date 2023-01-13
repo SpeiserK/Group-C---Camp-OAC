@@ -40,9 +40,9 @@ db.once('open', function() {
     //Query filter
     const filter = {_id: "6383e1e2b9f69fb40fd5769d"};    
     //changes to be made to first doc found
-    const update = {Stock: -50};
+    const update = {Stock: 85};
 
-    let doc = Location.findOneAndUpdate(filter, update, {returnNewDocument: true},
+    Location.findOneAndUpdate(filter, update, {returnNewDocument: true},
         function (err, res) {
             if (err) return console.error(err);
             console.log(res.Name + " saved to orders collection");
