@@ -59,13 +59,43 @@
 /*Footer Element, exists inside of .footer*/
 .App-footer {
   background-image: linear-gradient(to right, #17458f,#0067c8);
-  max-height: 100px;
+  height: 42px;
+  position: relative;
   display: flex;
-  flex-direction: row;
-  align-items: right;
-  justify-content: right;
   padding-right: 60px;
 }
+
+/*more Navbar CSS, exists in the navbar component, is inside .App-footer*/
+.mainNav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:flex-end;
+  width: 100%;
+}
+.leftNav{
+  position: relative;
+  width: 15%;
+}
+.centerNav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4.5%;
+  width: 70%;
+}
+.rightNav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items:baseline;
+  width: 15%;
+}
+.rotaryFont{font-family:"Sentinel"; color: white;}
+
 /*Fonts for text in About.js*/
 .aboutTitle {font-family: "Frutiger";}
 .aboutQ {font-family: "OpenSans";}
@@ -92,7 +122,7 @@ background-color: #17458f;
   background-image: linear-gradient(to right,#0067c8, #17458f);
   */
   background-image: linear-gradient(to right, #17458f,#0067c8);
-  min-height: 50px;
+  height: 140px;
   position: fixed;
   top: 0;
   left: 0;
@@ -124,6 +154,10 @@ background-color: #17458f;
 /*Ogopogo Logo, in Logo.js*/
 .logoimg img {
   position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  
 }
 /*Bundle1 image on startpage, in Bundles1.js*/
 .bundles1 img {
@@ -132,7 +166,18 @@ background-color: #17458f;
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  width: 600px;
+  width: 220px;
+  height: 120px;
+}
+/*Bundle2 image on order page, in Bundles2.js*/
+.bundles2 img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-left: 80px;
+  width: 500px;
   height: 350px;
 }
 /*Woodimg image on startpage right div, in Woodimg.js*/
@@ -142,17 +187,47 @@ background-color: #17458f;
   display: flex;
   justify-content: center;
   padding-top: 40px;
-  width: 600px;
-  height: 450px;
+  padding-left: 3px;
+  width: 260px;
+  height: 195px;
+  /*width: 600px;
+  height: 450px;*/
 }
 .cutWood img {
   position: relative;
   margin: auto;
   display: flex;
   justify-content: center;
-  padding-top: 40px;
   width: 150px;
   height: 200px;
+}
+.firewoodTeam img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  padding-top: 40px;
+  padding-left: 3px;
+  margin-bottom: 20px;
+  width: 230px;
+  height: 150px;
+}
+/*Camp OAC Secondary Logo*/
+.campLogo img{
+  position: relative;
+  margin: auto;
+  display: flex;
+  padding-top: 30px;
+  padding-left: 3px;
+  width: 160px;
+  height: 175px;
+}
+.campName img {
+  position: relative;
+  margin: auto;
+  display: flex;
+  width: 46px;
+  height: 13px;
 }
 /*Textbox.js CSS*/
 .textbox {
@@ -170,6 +245,7 @@ background-color: #17458f;
   width: 100%;
   margin-left: -15px;
   margin-bottom: 30px;
+  margin-top: 20px;
   border: 2px ridge #0067c8;
   padding: 15px;
   padding-top: 5px;
@@ -351,11 +427,24 @@ background-color: #17458f;
   font-family: "Frutiger";
   font-weight: bolder;
 }
+/*CSS for text in right div on start page*/
+.howToTitle{
+  font-family: "Arial";
+}
+.howToText{
+  font-family: "Frutiger";
+}
 /*Place Order Title*/
 .orderTitle {
   padding-left: 100px;
   font-family: "Frutiger";
   font-weight: bolder;
+}
+/*Text for bundle size info, in */
+.bundleText{
+  padding: 30px;
+  font-family: "Frutiger";
+  font-size: large;
 }
 
 
@@ -427,8 +516,9 @@ background-color: #17458f;
   width: 10%;
   min-height: 650px;
   border: 7px solid #0067c8;
-  padding: 50px;
+  padding: 5px 50px;
   margin: 5px;
+  margin-left: 10px;
   border-radius: 5px;
   background-color: white;
 }
@@ -455,11 +545,50 @@ background-color: #17458f;
   min-height: 650px;
   
   border: 7px solid #0067c8;
+  padding: 30px;
+  border-radius: 5px;
+  margin:5px;
+  background-color: white;
+}
+/*left Div for order page and on*/
+.updateLeft{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  
+  width: 80%;
+  min-height: 650px;
+  border: 7px solid #0067c8;
+  padding: 50px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+/*right Div for order page and on*/
+.updateRight{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+  min-height: 650px;
+  
+  border: 7px solid #0067c8;
   padding: 50px;
   border-radius: 5px;
   margin:5px;
   background-color: white;
 }
+/*Div that contains bundle info, on order page*/
+.bundleDiv{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 5px;
+}
+
 
 /*App Footer*/
 .appFooter{
@@ -476,6 +605,7 @@ background-color: #17458f;
   border: 7px solid #0067c8;
   padding: 40px;
   margin: 5px;
+  margin-left: 11px;
   margin-top: 60px;
   border-radius: 5px;
   background-color: white;
@@ -506,6 +636,7 @@ background-color: #17458f;
   border: 7px solid #0067c8;
   padding: 20px;
   margin: 5px;
+  margin-left: 11px;
   margin-top: 60px;
   border-radius: 5px;
   background-color: white;
@@ -520,7 +651,8 @@ background-color: #17458f;
   min-height: 650px;
   border: 7px solid #0067c8;
   padding: 20px;
-  margin: 5px;
+  margin-right: 5px;
+  margin-left: 10px;
   margin-top: 10px;
   border-radius: 5px;
   background-color: white;
@@ -634,11 +766,10 @@ background-color: #17458f;
 .orderChild span{
   text-align: center;
   font-size: 12px;
-
   
 }
 #headerID{
-  width:24%
+  width:22%
 }
 #headerEmail{
   width:18%
@@ -647,10 +778,10 @@ background-color: #17458f;
   width: 10%;
 }
 #headerLocation{
-  width:18%;
+  width:16%;
 }
 #headerDate{
-  width:10%
+  width:14%
 }
 #headerPrice{
   width:10%;

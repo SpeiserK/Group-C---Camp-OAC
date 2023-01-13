@@ -58,6 +58,8 @@ const EmailCheck = () => {
         localStorage.setItem("email",email);
     }
 
+
+
     return(
         <section className="enterEmail">
             <br></br>
@@ -89,7 +91,7 @@ const EmailCheck = () => {
                     <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
                         <FontAwesomeIcon icon={faCheck} />
                     </span>
-                    <span className={validMatch || !matchEmail ? "offscreen" : "invalid"}>
+                    <span className={validMatch || !matchEmail || !email ? "offscreen" : "invalid"}>
                         <FontAwesomeIcon icon={faTimes} />
                     </span>
                     <br />
