@@ -7,6 +7,8 @@ router.route("/send").post((req, res) => {
     const Location = req.body.Location;
     const Quantity = Number(req.body.Quantity);
     var Datetime = new Date();
+    var offset = Datetime.getTimezoneOffset();
+    Datetime.setMinutes(Datetime.getMinutes()-offset);
 
     if (!Name||!Location||!Quantity){
         return res.status(422).json({error:"Missing Fields"})
