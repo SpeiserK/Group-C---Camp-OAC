@@ -55,6 +55,12 @@ const OrderSchema = new mongoose.Schema ({
     Datetime:   {
         type: Date,
     },
+    Price: {
+        type: Number,
+    },
+    Payment: {
+        type: String,
+    },
 });
 
 const Order = mongoose.model('Order',OrderSchema);
