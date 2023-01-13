@@ -59,23 +59,42 @@
 /*Footer Element, exists inside of .footer*/
 .App-footer {
   background-image: linear-gradient(to right, #17458f,#0067c8);
-  height: 40px;
+  height: 38px;
   position: relative;
   display: flex;
-  flex-direction: row-reverse;
   padding-right: 60px;
 }
 
 /*more Navbar CSS, exists in the navbar component, is inside .App-footer*/
 .mainNav {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:flex-end;
+  width: 100%;
 }
-.leftNav {
+.leftNav{
   position: relative;
+  width: 15%;
+}
+.centerNav {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding-left: 4.5%;
+  width: 70%;
 }
 .rightNav {
   position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items:baseline;
+  width: 15%;
 }
+.rotaryFont{font-family:"Sentinel"; color: white;}
 
 /*Fonts for text in About.js*/
 .aboutTitle {font-family: "Frutiger";}
@@ -103,7 +122,7 @@ background-color: #17458f;
   background-image: linear-gradient(to right,#0067c8, #17458f);
   */
   background-image: linear-gradient(to right, #17458f,#0067c8);
-  min-height: 50px;
+  height: 140px;
   position: fixed;
   top: 0;
   left: 0;
@@ -179,7 +198,6 @@ background-color: #17458f;
   margin: auto;
   display: flex;
   justify-content: center;
-  padding-top: 40px;
   width: 150px;
   height: 200px;
 }
@@ -199,7 +217,7 @@ background-color: #17458f;
   position: relative;
   margin: auto;
   display: flex;
-  padding-top: 50px;
+  padding-top: 30px;
   padding-left: 3px;
   width: 160px;
   height: 175px;
@@ -498,8 +516,10 @@ background-color: #17458f;
   width: 10%;
   min-height: 650px;
   border: 7px solid #0067c8;
-  padding: 50px;
-  margin: 5px;
+  padding: 5px 50px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 10px;
   border-radius: 5px;
   background-color: white;
 }
@@ -541,7 +561,9 @@ background-color: #17458f;
   min-height: 650px;
   border: 7px solid #0067c8;
   padding: 50px;
-  margin: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
+  margin-left: 10px;
   border-radius: 5px;
   background-color: white;
 }
