@@ -7,8 +7,7 @@ export default class LocationLiveDisp extends React.Component {
       this.state = {
       location: [],
       openStatus: [],
-      stock: [],
-      ex: 4
+      stock: []
     }
   }
   componentDidMount() {
@@ -18,37 +17,55 @@ export default class LocationLiveDisp extends React.Component {
         const locationData = res.data;
         this.setState({ location: locationData });
 
-        const cleanStock = locationData.map((item) =>
-            item.Stock
-        );
+        const cleanStock = locationData.map((item) => item.Stock);
         this.setState({ stock: cleanStock});
 
-        const cleanOpenStatus = locationData.map((item) =>
-            item.Open
-        );
+        const cleanOpenStatus = locationData.map((item) => item.Open);
         this.setState({ openStatus: cleanOpenStatus});
         
         
       });
   }
 
-  
-    locUpdate (index) {
+    //single doc post request
+    locUpdate (index, id) {
       axios.post('http://localhost:5000/locupdate', {
-        id: '6383e1e2b9f69fb40fd5769d',
-        stock: 26,
-        open: false
+        id: id,
+        stock: this.state.stock[index],
+        open: this.state.openStatus[index]
       })
       .then( response => {
 
       })
     }
 
+    //state change functions
+    changeOpenStatus(index) {
+      const openStatus = this.state.openStatus;
+      this.setState({openStatus: openStatus.map((item, i) => {
+        if(i === index){
+          return !item;
+        } else {
+          return item;
+        }
+      })});
+    }
+
+    changeStock(index, newStock) {
+      const stock = this.state.stock;
+      this.setState({stock: stock.map((item, i) => {
+        if(i === index){
+          return newStock;
+        } else {
+          return item;
+        }
+      })});
+    }
   
   render() {
     return (
       <div>
-      <p>before {JSON.stringify(this.state.openStatus[1])} after</p>
+      <p>before {this.state.stock[4]} after</p>
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
@@ -87,13 +104,16 @@ export default class LocationLiveDisp extends React.Component {
                 <span>{content.Address}</span>&emsp;
               </td>
               <td id="current-orderStock" className ="orderChild">
-                <span><input type="number" size="4" defaultValue={`${content.Stock}`}></input></span>&emsp;
+                <span><input type="number" size="4" defaultValue={`${content.Stock}` } onChange={(e) => this.changeStock(index, e.target.value)}>
+                </input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
-                <span><button> {content.Open? "OPEN": "CLOSED"} </button></span>&emsp;
+                <span><button onClick={() => this.changeOpenStatus(index)}>
+                  {this.state.openStatus[index]? "OPEN": "CLOSED"}
+                </button></span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button onClick={() => this.locUpdate(index)}> UPDATE </button></span>&emsp;
+                <span><button onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
               </td>        
           </tr>
             )
