@@ -8,7 +8,7 @@ export default class LocationLiveDisp extends React.Component {
       location: [],
       openStatus: [],
       stock: [],
-      ex: 7
+      ex: 4
     }
   }
   componentDidMount() {
@@ -16,25 +16,16 @@ export default class LocationLiveDisp extends React.Component {
       .then(res => {
         const locationData = res.data;
         this.setState({ location: locationData });
+        this.setState({ openStatus: locationData[1]});
       });
-      this.setState({openStatus: new Array(this.state.location.length).fill(1)});
   }
 
-  // locUpdate(idx) {
-  //   const locationUpdate = {
-  //     _id: '6383e1e2b9f69fb40fd5769d',
-  //     stock: 100,
-  //     openStatus: true
-  // };
-  // axios.post('http://localhost:5000/locupdate', locationUpdate)
-  // .then((res) => {console.log('success')},
-  //       (err) => {console.log('failure')});
-  //   }
-    locUpdate = (index) => {
+  
+    locUpdate (index) {
       axios.post('http://localhost:5000/locupdate', {
         id: '6383e1e2b9f69fb40fd5769d',
-        stock: 70,
-        open: true
+        stock: 26,
+        open: false
       })
       .then( response => {
 
@@ -45,8 +36,7 @@ export default class LocationLiveDisp extends React.Component {
   render() {
     return (
       <div>
-        <button onClick={ () => this.locUpdate()}>lock</button>
-        <button>unlock</button>
+      <p>before{(this.state.openStatus.Name)} after</p>
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
@@ -97,7 +87,6 @@ export default class LocationLiveDisp extends React.Component {
             )
         }
       </table>
-      <p>read this {this.state.openStatus[1]}</p>
       </div>
     )
   }
