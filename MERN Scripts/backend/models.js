@@ -61,6 +61,9 @@ const OrderSchema = new mongoose.Schema ({
     Payment: {
         type: String,
     },
+    phoneNumber: {
+        type: String,
+    }
 });
 
 const Order = mongoose.model('Order',OrderSchema);
