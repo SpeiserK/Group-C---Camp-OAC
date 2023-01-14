@@ -29,7 +29,7 @@ export default class OrderDispHist extends React.Component {
                 <span>Quantity Ordered: {content.Quantity}</span>&emsp;
                 <span>Location: {content.Location}</span>&emsp;
                 <span>Date/Time: {content.Datetime}</span>&emsp;
-                <span>Price: {content.Price}</span>&emsp;
+                <span>Price: ${content.Price}</span>&emsp;
                 <span>Payment: {content.Payment}</span>&emsp;
               </li>
             )
