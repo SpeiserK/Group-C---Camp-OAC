@@ -1,3 +1,4 @@
 .DS_Store
 MERN Scripts/backend/.env
 MERN Scripts/backend/node_modules/
+MERN Scripts/mern-emsystem/node_modules/
