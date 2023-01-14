@@ -21,6 +21,7 @@ function post2DB(type) {
         Quantity: localStorage.getItem("quantity"),
         Location: localStorage.getItem("location"),
         Payment: type,
+        phoneNumber: localStorage.getItem("phoneNumber")
     }
     axios.post('http://localhost:5000/send', newOrder);
 }

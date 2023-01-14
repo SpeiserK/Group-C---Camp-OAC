@@ -6,6 +6,7 @@ router.route("/send").post((req, res) => {
     const Name = req.body.Name;
     const Location = req.body.Location;
     const Quantity = Number(req.body.Quantity);
+    const phoneNumber = req.body.phoneNumber;
     var Datetime = new Date();
     const Price = Quantity * 9.99;
     Payment = req.body.Payment;
@@ -24,7 +25,8 @@ router.route("/send").post((req, res) => {
         Location,
         Datetime,
         Price,
-        Payment
+        Payment,
+        phoneNumber
 
     });
 

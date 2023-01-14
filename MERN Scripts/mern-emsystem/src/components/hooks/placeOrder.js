@@ -11,6 +11,7 @@ const PlaceOrder = () => {
     const userRef = useRef();
     const minBundle = 0;
     const maxBundle = 21;
+    const [phoneNumber, setPhoneNumber] = useState('');
 
     useEffect(() => {
         userRef.current.focus();
@@ -39,6 +40,7 @@ const PlaceOrder = () => {
             //set local storage item #qty to value
             localStorage.setItem("quantity",document.getElementById("quantity").value);
             localStorage.setItem("location",document.getElementById("location").value);
+            localStorage.setItem("phoneNumber", phoneNumber);
         } else {
             orderVal = "false";
         }
@@ -87,6 +89,17 @@ const PlaceOrder = () => {
             <option value="Kelowna Central"> Kelowna Central </option>
                     </select>
                     </label>
+                </div>
+                <br></br>
+                <div className="phone-number">
+                <label>
+                 Phone Number:
+                    <input
+                     type="text"
+                     value={phoneNumber}
+                    onChange={e => setPhoneNumber(e.target.value)}
+                     />
+                </label>
                 </div>
                 <button className="buttonStyle" disabled={!validValue || !locValue ? true : false} onClick={(e) => checkInput()}
                         >Next</button>
