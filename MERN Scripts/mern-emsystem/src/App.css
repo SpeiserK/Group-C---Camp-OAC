@@ -348,7 +348,22 @@ background-color: #17458f;
   font-family: "Arial";
   border-radius: 4px;
 }
+.squareButtonStyle {
+  background-color: #17458f; /*button color*/
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  color: white; /*text color*/
+  margin-top: 16px;
+  font-size: 20px;
+  font-family: "Arial";
+  border-radius: 4px;
+}
 .buttonStyle:hover {
+  background-color: #f7a81b;
+  color: black;
+}
+.squareButtonStyle:hover {
   background-color: #f7a81b;
   color: black;
 }
@@ -361,6 +376,9 @@ background-color: #17458f;
 /*box for payment option buttons*/
 .buttonBox {
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 13%;
   padding-left: 100px;
   margin: 10px;
 }
@@ -778,13 +796,13 @@ background-color: #17458f;
   width: 10%;
 }
 #headerLocation{
-  width:16%;
+  width:15%;
 }
 #headerDate{
   width:14%
 }
 #headerPrice{
-  width:10%;
+  width:11%;
 }
 #headerStatus{
   width:10%
