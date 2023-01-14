@@ -60,7 +60,7 @@ export default class OrderLiveDisp extends React.Component {
             <span> Date </span>
           </td>
           <td id="headerPrice" className="listHeaderItem">
-            <span> Price </span>
+            <span> Payment Details</span>
           </td>
           <td id="headerStatus" className="listHeaderItem">
             <span> Status </span>
@@ -88,7 +88,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content.Datetime}</span>&emsp;
               </td>
               <td id="current-orderPrice" className ="orderChild">
-                <span> $$$ </span>&emsp;
+                <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
               </td>
               <td id="current-approve-deny"className ="orderChild"> 
                 <p> {this.state.color[index]}</p>

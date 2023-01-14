@@ -65,6 +65,18 @@ To link the database to your Node.js server, create a .env in the Node server fi
 Use the connection string with the appropriate username and password to connect<br />
 
 
+### ***Square Payments***
+To handle credit and debit purchases, the following must be installed:
+
+1.
+```
+npm install react-square-web-payments-sdk
+```
+
+2.
+```
+npm install square
+```
 
 
 ### ***Jest***:
