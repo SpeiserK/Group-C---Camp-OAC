@@ -4,42 +4,49 @@ import axios from 'axios';
 
 
 export default class OrderLiveDisp extends React.Component {
-  
-  state = {
-    orders: [],
-    color: []
-  }
+      state = {
+        orders: [],
+        color: []
+      }
+    
 
   componentDidMount() {
     
     axios.get(`http://localhost:5000/order`)
       .then(res => {
         const orderData = res.data;
-        this.setState({ orders:orderData });
+        this.setState({ orders: orderData });
       });
       this.setState({color: new Array(this.state.orders.length).fill("green")});
   }
 
-  
+  //approve order post
+  approve(id) {
 
-  approve(index) {
-    console.log("clicked!", index);
-    const cloneColor = [...this.state.color];
-    cloneColor[index] = "approved"
-    this.setState({ color: cloneColor });
-  }
-  decline(index) {
-    console.log("clicked!", index);
-    const cloneColor = [...this.state.color];
-    cloneColor[index] = "denied"
-    this.setState({ color: cloneColor });
+    axios.post('http://localhost:5000/statuschange', {
+        id: id,
+        status: "Approved"
+      })
+      .then( response => {
+
+      })
   }
 
+  //decline order post
+
+  decline(id) {
+
+    axios.post('http://localhost:5000/statuschange', {
+      id: id,
+      status: "Denied"
+    })
+    .then( response => {
+
+    } )
+  }
 
 
 
-
-  
   render() {
     return (
       <table className="dblist">
@@ -91,9 +98,9 @@ export default class OrderLiveDisp extends React.Component {
                 <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
               </td>
               <td id="current-approve-deny"className ="orderChild"> 
-                <p> {this.state.color[index]}</p>
-                <button onClick={() => this.approve(index)}> Approve</button>
-                <button onClick={() => this.decline(index)}> Deny </button>
+              <span>{content.Status}</span>&emsp;
+                <button onClick={() => this.approve(content._id)}> Approve </button>
+                <button onClick={() => this.decline(content._id)}> Deny </button>
               </td>         
           </tr>
               

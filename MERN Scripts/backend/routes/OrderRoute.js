@@ -9,6 +9,8 @@ router.route("/send").post((req, res) => {
     var Datetime = new Date();
     const Price = Quantity * 9.99;
     Payment = req.body.Payment;
+    const Status = "Pending";
+    const Pickup = false;
     var offset = Datetime.getTimezoneOffset();
     Datetime.setMinutes(Datetime.getMinutes()-offset);
 
@@ -24,7 +26,9 @@ router.route("/send").post((req, res) => {
         Location,
         Datetime,
         Price,
-        Payment
+        Payment,
+        Status,
+        Pickup
 
     });
 
