@@ -10,6 +10,8 @@ export default class PaymentSummary extends Component {
         // grabs location
         const location = localStorage.getItem("location");
 
+        const phoneNumber = localStorage.getItem("phoneNumber")
+
         
 
         return( // within this block we display email, firewood ordered amt, and total price
@@ -20,7 +22,8 @@ export default class PaymentSummary extends Component {
             <div className="orderText">
                 <p> Pickup location: {location}</p>
                 <p> Firewood Ordered: {quantity} </p> 
-                <p> Total Price: ${quantity*9.99} </p>   
+                <p> Total Price: ${quantity*9.99} </p>  
+                <p> Number : {phoneNumber}</p> 
             </div>
         </div>
         );            

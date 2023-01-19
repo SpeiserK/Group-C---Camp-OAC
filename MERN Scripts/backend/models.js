@@ -67,6 +67,9 @@ const OrderSchema = new mongoose.Schema ({
     Pickup: {
         type: Boolean,
     },
+    phoneNumber: {
+        type: String,
+    }
 });
 
 const Order = mongoose.model('Order',OrderSchema);

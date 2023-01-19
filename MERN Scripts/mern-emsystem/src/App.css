@@ -382,6 +382,7 @@ background-color: #17458f;
   padding-left: 100px;
   margin: 10px;
 }
+
 /*CSS for Header Link, found in Header.js*/
 .Link {
   font-family: "Frutiger";
@@ -808,8 +809,12 @@ background-color: #17458f;
   width:10%
 }
 
-
-
+.payForm {
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  height: 100;
+}
 
 .inventoryByLoc {
   font-family: "Frutiger";
