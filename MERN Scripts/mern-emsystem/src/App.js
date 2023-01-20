@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate} from 'react-router-dom';
 import Startpage from './pages/Startpage.js';
 import Orderqty from './pages/Orderqty.js';
 import Emplogin from './pages/Emplogin';
