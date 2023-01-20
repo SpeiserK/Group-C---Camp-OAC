@@ -13,10 +13,15 @@ export default class OrderLiveDisp extends React.Component {
   }
     
   componentDidMount() {
-    axios.get(`http://localhost:5000/order`, this.props.query.Status)
+    //const statusReq = this.props.query1;
+    axios.get(`http://localhost:5000/order`, { 
+      params: {
+        Status: this.props.query1,
+        Pickup: 'false'
+      }
+    })
       .then(res => {
         const orderData = res.data;
-        console.log(this.props.query);
         this.setState({ orders: orderData });
       });
       this.setState({color: new Array(this.state.orders.length).fill("green")});
@@ -102,7 +107,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
               </td>
               <td id="current-approve-deny"className ="orderChild"> 
-              <span>{content.Status}</span>&emsp;
+              <span>{content.Status} &nbsp; Picked up: {content.Pickup}</span>&emsp;
                 <button onClick={() => this.approve(content._id)}> Approve </button>
                 <button onClick={() => this.decline(content._id)}> Deny </button>
               </td>         

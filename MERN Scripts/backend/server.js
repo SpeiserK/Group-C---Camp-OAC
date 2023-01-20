@@ -48,10 +48,9 @@ app.get("/mongo", (req, res)=> {
 
 
 app.get("/order", (req, res)=> {
-    Models.Order.find( req.body )
+    Models.Order.find(req.query)
     .then((data) => {
         console.log( 'Order read data available');
-        console.log(req.body);
         res.json(data);
     })
     .catch(() => {
