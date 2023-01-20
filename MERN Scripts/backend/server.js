@@ -87,6 +87,11 @@ app.post("/locupdate", (req, res) => {
     });
 });
 
-
+//orders
 app.use("/", require("./routes/OrderRoute.js"));
+//emp creation
+app.use("/api/emp", require("./routes/EmpRoute.js"));
+//emp auth
+app.use("/api/auth", require("./routes/Auth.js"));
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
