@@ -10,6 +10,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 
 const options = {
@@ -45,10 +46,12 @@ app.get("/mongo", (req, res)=> {
     })
 });
 
+
 app.get("/order", (req, res)=> {
-    Models.Order.find({ })
+    Models.Order.find( req.body )
     .then((data) => {
         console.log( 'Order read data available');
+        console.log(req.body);
         res.json(data);
     })
     .catch(() => {

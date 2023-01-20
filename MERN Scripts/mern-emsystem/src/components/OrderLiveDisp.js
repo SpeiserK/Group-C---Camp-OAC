@@ -4,21 +4,25 @@ import axios from 'axios';
 
 
 export default class OrderLiveDisp extends React.Component {
-      state = {
-        orders: [],
-        color: []
-      }
+  constructor(props){
+    super(props);
+    this.state = {
+      orders: [],
+      color: []
+    }
+  }
     
-
   componentDidMount() {
-    
-    axios.get(`http://localhost:5000/order`)
+    axios.get(`http://localhost:5000/order`, this.props.query.Status)
       .then(res => {
         const orderData = res.data;
+        console.log(this.props.query);
         this.setState({ orders: orderData });
       });
       this.setState({color: new Array(this.state.orders.length).fill("green")});
   }
+
+
 
   //approve order post
   approve(id) {

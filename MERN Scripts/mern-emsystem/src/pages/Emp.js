@@ -22,7 +22,7 @@ function Emp(){
         </div>
         <body className="appContainer">
             <div className="empLeftDiv"> 
-                 <OrderLiveDisp />
+                 <OrderLiveDisp query={{Status: "Approved"}} />
             </div>
             <div className="empRightDiv">
             
