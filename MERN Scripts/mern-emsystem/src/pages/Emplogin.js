@@ -1,10 +1,12 @@
-import React from 'react'
+import React from 'react';
 import {Link, useNavigate} from "react-router-dom";
 
 
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import Emp from '../pages/Emp';
+import EmpSignup from '../components/Signup/EmpSignup.js';
+import EmpLogin from '../components/Login/EmpLogin.jsx';
 
 
 
@@ -16,6 +18,7 @@ function Emplogin(){
         </div>
         <body className="appContainer">
             <div className="empLoginDiv">
+                {/*
                 <h1>Sign In</h1>
                     <form method="post">
                         <p>
@@ -28,6 +31,10 @@ function Emplogin(){
                         </p>
                         <Link to="Emp"><button type="submit" id="submit" class="submit">Log In</button></Link>
                     </form>
+    */}
+                    
+                    <EmpSignup />
+                    <EmpLogin />
             </div>
         </body>
         <div className="footer">

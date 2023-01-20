@@ -106,4 +106,9 @@ app.post("/statuschange", (req, res) => {
 
 
 app.use("/", require("./routes/OrderRoute.js"));
+//emp creation
+app.use("/api/emp", require("./routes/EmpRoute.js"));
+//emp auth
+app.use("/api/auth", require("./routes/Auth.js"));
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
