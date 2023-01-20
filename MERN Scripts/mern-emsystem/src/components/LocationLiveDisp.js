@@ -36,7 +36,7 @@ export default class LocationLiveDisp extends React.Component {
         open: this.state.openStatus[index]
       })
       .then( response => {
-
+          
       })
     }
 

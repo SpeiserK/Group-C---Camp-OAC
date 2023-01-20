@@ -31,6 +31,8 @@ export default class OrderDispHist extends React.Component {
                 <span>Date/Time: {content.Datetime}</span>&emsp;
                 <span>Price: ${content.Price}</span>&emsp;
                 <span>Payment: {content.Payment}</span>&emsp;
+                <span>Status: {content.Status}</span>&emsp;
+                <span>Picked up: {content.Pickup}</span>&emsp;
               </li>
             )
         }

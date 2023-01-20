@@ -85,6 +85,12 @@ const OrderSchema = new mongoose.Schema ({
     Payment: {
         type: String,
     },
+    Status: {
+        type: String,
+    },
+    Pickup: {
+        type: Boolean,
+    },
     phoneNumber: {
         type: String,
     }
