@@ -34,7 +34,8 @@ export default class OrderLiveDisp extends React.Component {
 
     axios.post('http://localhost:5000/statuschange', {
         id: id,
-        status: "Approved"
+        status: "Approved",
+        pickup: 'false'
       })
       .then( response => {
 
@@ -47,11 +48,25 @@ export default class OrderLiveDisp extends React.Component {
 
     axios.post('http://localhost:5000/statuschange', {
       id: id,
-      status: "Denied"
+      status: "Denied",
+      pickup: 'false'
     })
     .then( response => {
 
     } )
+  }
+
+  //confirm pickup post
+
+  confirmPickup(id,orderStatus) {
+    axios.post('http://localhost:5000/statuschange',{
+      id: id,
+      status: orderStatus,
+      pickup: 'true'
+  })
+  .then( response =>{
+
+  })
   }
 
 
@@ -110,6 +125,7 @@ export default class OrderLiveDisp extends React.Component {
               <span>{content.Status} &nbsp; Picked up: {content.Pickup.toString()}</span>&emsp;
                 <button onClick={() => this.approve(content._id)}> Approve </button>
                 <button onClick={() => this.decline(content._id)}> Deny </button>
+                <button onClick={() => this.confirmPickup(content._id,content.Status)}> Pickup Complete </button>
               </td>         
           </tr>
               
