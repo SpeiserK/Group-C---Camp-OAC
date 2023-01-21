@@ -19,7 +19,6 @@
     "joi": "^17.7.0",
     "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
-    "mongoose": "^6.6.7",
-    "square": "^25.0.0"
+    "mongoose": "^6.6.7"
   }
 }
