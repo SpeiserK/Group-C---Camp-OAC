@@ -10,6 +10,7 @@ const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.json());
 
 
 const options = {
@@ -45,8 +46,9 @@ app.get("/mongo", (req, res)=> {
     })
 });
 
+
 app.get("/order", (req, res)=> {
-    Models.Order.find({ })
+    Models.Order.find(req.query)
     .then((data) => {
         console.log( 'Order read data available');
         res.json(data);
@@ -87,6 +89,25 @@ app.post("/locupdate", (req, res) => {
     });
 });
 
+app.post("/statuschange", (req, res) => {
+    const idS = req.body.id;
+    const status = req.body.status;
+
+    if (!idS||!status){
+        return res.status(422).json({error:"Missing Fields"})
+    }res.json("Posted successfully");
+
+    Models.Order.findByIdAndUpdate(idS, {Status: status}, (err, doc) => {
+        if(err) return console.log(err);
+    });
+
+});
+
 
 app.use("/", require("./routes/OrderRoute.js"));
+//emp creation
+app.use("/api/emp", require("./routes/EmpRoute.js"));
+//emp auth
+app.use("/api/auth", require("./routes/Auth.js"));
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
