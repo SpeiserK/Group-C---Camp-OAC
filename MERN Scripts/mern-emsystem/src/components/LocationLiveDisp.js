@@ -12,11 +12,7 @@ export default class LocationLiveDisp extends React.Component {
   }
   //variables to handle state changes
   componentDidMount() {
-    axios.get(`http://localhost:5000/location`, { 
-      params: {
-        Name: this.props.queryLocation
-      }
-    })
+    axios.get(`http://localhost:5000/location`)
       .then(res => {
 
         const locationData = res.data;

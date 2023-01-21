@@ -11,7 +11,7 @@ import Empnav from '../components/Empnav.js';
 import Empbanner from '../components/Empbanner.js';
 const {useEffect, useState} = React;
 
-const location = localStorage.getItem("adminLocation");
+
 
 function Emp(){
     return(
@@ -21,16 +21,17 @@ function Emp(){
            <Empnav />
         </div>
         <body className="appContainer">
-            <div className="empLeftDiv">
-
-                <LocationLiveDisp queryLocation={location}/>
-
+            <div className="empLeftDiv"> 
                 <h2>Orders that need pickup</h2>
-                 <OrderLiveDisp queryStatus={'Approved'} queryLocation={location} />
+                 <OrderLiveDisp query1={'Approved'} />
                  <h2>Orders that need approval/denial</h2>
-                 <OrderLiveDisp queryStatus={'Pending'} queryLocation={location}/>
+                 <OrderLiveDisp query1={'Pending'} />
             </div>
+            <div className="empRightDiv">
             
+                
+                <LocationLiveDisp/>
+            </div>
         </body>
         <div className="footer">
             <footer className="App-footer">

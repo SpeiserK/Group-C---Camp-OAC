@@ -1,8 +1,5 @@
 import { Link } from "react-router-dom";
 import React, { Component, useState } from "react";
-import Dropdown from "./Dropdown";
-import InvByLoc from "./hooks/InvByLoc";
-
 
 /*
  <Link to="/login/emp/inventory" style={{textDecoration: 'none' }}>
@@ -23,12 +20,7 @@ export default class EmpTools extends Component {
             <button className="viewOrders" style={{textDecoration: 'none' , color: 'black'}}>
             View Live Orders and Stock
             </button> </Link>
-
             
-            
-            <adminLocSelect />
-        
-
            
 
             <Link to="/login/emp/history" style={{textDecoration: 'none' }}>
