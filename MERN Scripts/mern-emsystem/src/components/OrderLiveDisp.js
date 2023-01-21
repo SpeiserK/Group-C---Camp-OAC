@@ -122,9 +122,10 @@ export default class OrderLiveDisp extends React.Component {
                 <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
               </td>
               <td id="current-approve-deny"className ="orderChild"> 
-              <span>{content.Status} &nbsp; Picked up: {content.Pickup.toString()}</span>&emsp;
+              <span>{content.Status}</span>&emsp;
                 <button onClick={() => this.approve(content._id)}> Approve </button>
                 <button onClick={() => this.decline(content._id)}> Deny </button>
+                <p ><small>Picked up: {content.Pickup ? "Complete" : "Pending"}</small></p>
                 <button onClick={() => this.confirmPickup(content._id,content.Status)}> Pickup Complete </button>
               </td>         
           </tr>
