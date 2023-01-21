@@ -31,10 +31,12 @@ function Emplogin(){
                         </p>
                         <Link to="Emp"><button type="submit" id="submit" class="submit">Log In</button></Link>
                     </form>
-    */}
+                */}
                     
                     <EmpSignup />
                     <EmpLogin />
+                    
+                    
             </div>
         </body>
         <div className="footer">
