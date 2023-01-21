@@ -96,6 +96,9 @@ export default class OrderLiveDisp extends React.Component {
           <td id="headerStatus" className="listHeaderItem">
             <span> Status </span>
           </td>
+          <td id="pickupStatus" className="listHeaderItem">
+            <span> Pickup </span>
+          </td>
         </tr> 
 
         {
@@ -125,9 +128,11 @@ export default class OrderLiveDisp extends React.Component {
               <span>{content.Status}</span>&emsp;
                 <button onClick={() => this.approve(content._id)}> Approve </button>
                 <button onClick={() => this.decline(content._id)}> Deny </button>
-                <p ><small>Picked up: {content.Pickup ? "Complete" : "Pending"}</small></p>
+              </td> 
+              <td id="current-pickup" className ="orderChild">
+                <span>Picked up: {content.Pickup ? "Complete" : "Pending"}</span>&emsp;
                 <button onClick={() => this.confirmPickup(content._id,content.Status)}> Pickup Complete </button>
-              </td>         
+              </td>        
           </tr>
               
             )
