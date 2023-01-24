@@ -34,7 +34,8 @@ export default class OrderLiveDisp extends React.Component {
 
     axios.post('http://localhost:5000/statuschange', {
         id: id,
-        status: "Approved"
+        status: "Approved",
+        pickup: 'false'
       })
       .then( response => {
 
@@ -47,11 +48,25 @@ export default class OrderLiveDisp extends React.Component {
 
     axios.post('http://localhost:5000/statuschange', {
       id: id,
-      status: "Denied"
+      status: "Denied",
+      pickup: 'false'
     })
     .then( response => {
 
     } )
+  }
+
+  //confirm pickup post
+
+  confirmPickup(id,orderStatus) {
+    axios.post('http://localhost:5000/statuschange',{
+      id: id,
+      status: orderStatus,
+      pickup: 'true'
+  })
+  .then( response =>{
+
+  })
   }
 
 
@@ -81,6 +96,9 @@ export default class OrderLiveDisp extends React.Component {
           <td id="headerStatus" className="listHeaderItem">
             <span> Status </span>
           </td>
+          <td id="pickupStatus" className="listHeaderItem">
+            <span> Pickup </span>
+          </td>
         </tr> 
 
         {
@@ -92,7 +110,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content._id}</span>&emsp;
               </td>         
               <td id="current-orderEmail" className ="orderChild">
-                <span>{content.Name}</span>&emsp;
+                <span>{content.Name}<br></br>{content.phoneNumber}</span>&emsp;
               </td>
               <td id="current-orderQty" className ="orderChild">
                 <span>{content.Quantity}</span>&emsp;
@@ -107,10 +125,14 @@ export default class OrderLiveDisp extends React.Component {
                 <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
               </td>
               <td id="current-approve-deny"className ="orderChild"> 
-              <span>{content.Status} &nbsp; Picked up: {content.Pickup.toString()}</span>&emsp;
+              <span>{content.Status}</span>&emsp;
                 <button onClick={() => this.approve(content._id)}> Approve </button>
                 <button onClick={() => this.decline(content._id)}> Deny </button>
-              </td>         
+              </td> 
+              <td id="current-pickup" className ="orderChild">
+                <span>Picked up: {content.Pickup ? "Complete" : "Pending"}</span>&emsp;
+                <button onClick={() => this.confirmPickup(content._id,content.Status)}> Pickup Complete </button>
+              </td>        
           </tr>
               
             )
