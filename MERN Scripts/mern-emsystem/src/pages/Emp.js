@@ -11,7 +11,8 @@ import Empnav from '../components/Empnav.js';
 import Empbanner from '../components/Empbanner.js';
 const {useEffect, useState} = React;
 
-
+// grab the location lolololol
+const empLocation = localStorage.getItem('selectedLocation');
 
 function Emp(){
     return(
@@ -22,7 +23,7 @@ function Emp(){
         </div>
         <body className="appContainer">
             <div className="empLeftDiv"> 
-                <LocationLiveDisp/>
+                <LocationLiveDisp queryLoc={empLocation} />
                 <h2>Orders that need pickup</h2>
                  <OrderLiveDisp query1={'Approved'} />
                  <h2>Orders that need approval/denial</h2>
