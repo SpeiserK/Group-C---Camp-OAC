@@ -72,7 +72,7 @@ app.get("/location", (req, res)=> {
 app.get("/employee", (req, res)=> {
     Models.Employee.find({ })
     .then((data) => {
-        console.log( 'Employee read data available');
+        //console.log( 'Employee read data available');
         res.json(data);
     })
     .catch(() => {
@@ -115,9 +115,17 @@ app.post("/statuschange", (req, res) => {
 
 });
 
-app.post("/empremove", (req, res) => {
+app.post("/deleteuser", (req, res) => {
     const id = req.body.id;
-})
+    console.log(id);
+    if (!id){
+        return res.status(422).json({error: "Missing Fields"})
+    }res.json("Posted successfully");
+    console.log("test2");
+    Models.Employee.deleteOne({ _id: id});
+    console.log("test3");
+    
+});
 
 
 app.use("/", require("./routes/OrderRoute.js"));

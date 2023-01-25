@@ -6,7 +6,7 @@ export default class LocationLiveDisp extends React.Component {
     super(props);
       this.state = {
       location: [],
-      Access: []
+      error: ""
     }
   }
   //variables to handle state changes
@@ -15,43 +15,17 @@ export default class LocationLiveDisp extends React.Component {
       .then(res => {
         const locationData = res.data;
         this.setState({ location: locationData });
-        const cleanAccess = locationData.map((item) => item.Location);
-        this.setState({ stock: cleanAccess});
       });
   }
 
     //single doc post request
-    locUpdate (index, id) {
-      axios.post('http://localhost:5000/locupdate', {
-        id: id,
-        stock: this.state.stock[index],
-        open: this.state.openStatus[index]
+    deleteUser(id) {
+      axios.post('http://localhost:5000/deleteuser', {
+        id: id
       })
       .then( response => {
-          
+          this.setState({ error: response.message})
       })
-    }
-
-    //state change functions
-    changeOpenStatus(index) {
-      const openStatus = this.state.openStatus;
-      this.setState({openStatus: openStatus.map((item, i) => {
-        if(this.state.stock[i] <= 0) return false;
-        if(i === index) return !item;
-        return item;
-        
-      })});
-    }
-
-    changeStock(index, newStock) {
-      const stock = this.state.stock;
-      this.setState({stock: stock.map((item, i) => {
-        if(i === index){
-          if(item <= 0) this.changeOpenStatus(index);
-          return newStock;
-        }
-        return item;
-      })});
     }
   
   render() {
@@ -94,12 +68,13 @@ export default class LocationLiveDisp extends React.Component {
                 <span>{content.Location}</span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button onClick={() => this.locUpdate(index, content._id)}> DELETE USER </button></span>&emsp;
+                <span><button onClick={() => this.deleteUser(content._id)}> DELETE USER </button></span>&emsp;
               </td> 
           </tr>
             )
         }
       </table>
+      {this.state.error && <div>{this.state.error}</div>}
       </div>
     )
   }
