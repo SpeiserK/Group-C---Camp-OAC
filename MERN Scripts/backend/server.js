@@ -138,7 +138,9 @@ app.post("/statuschange", (req, res) => {
             from: process.env.EMAIL,
             to: process.env.EMAIL,          //will replace with email const
             subject: "Your firewood order has been approved.",
-            text: "Hello "+email+", your order for "+quantity+" fire wood bundle(s) has been approved for $"+price+". Your pickup address will be "+location+", your order will be available for pickup until "+date+" CLOSING TIME (PST).",
+            text: "Hello,\n\nYour order for "+quantity+" fire wood bundle(s) has been approved for $"
+            +price+" CAD.\nYour pickup address will be "+location+", your order will be available for pickup until "
+            +date+"at CLOSING TIME (PST).\n\nThanks for your support,\nKelowna Rotary Club and Camp OAC",
         };
         
         transporter.sendMail(mailOptions, function (err, data) {
