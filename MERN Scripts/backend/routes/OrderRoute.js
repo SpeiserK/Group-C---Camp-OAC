@@ -10,7 +10,10 @@ router.route("/send").post((req, res) => {
     var Datetime = new Date();
     const Price = Quantity * 9.99;
     Payment = req.body.Payment;
-    const Status = "Pending";
+    let Status = "Pending";
+    if(Payment == "Credit/Debit"){
+        Status = "Approved";
+    }
     const Pickup = false;
     var offset = Datetime.getTimezoneOffset();
     Datetime.setMinutes(Datetime.getMinutes()-offset);

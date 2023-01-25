@@ -92,12 +92,13 @@ app.post("/locupdate", (req, res) => {
 app.post("/statuschange", (req, res) => {
     const idS = req.body.id;
     const status = req.body.status;
+    const pickup = req.body.pickup;
 
-    if (!idS||!status){
+    if (!idS||!status || !pickup){
         return res.status(422).json({error:"Missing Fields"})
     }res.json("Posted successfully");
 
-    Models.Order.findByIdAndUpdate(idS, {Status: status}, (err, doc) => {
+    Models.Order.findByIdAndUpdate(idS, {Status: status, Pickup: pickup}, (err, doc) => {
         if(err) return console.log(err);
     });
 
