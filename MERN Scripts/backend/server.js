@@ -122,7 +122,7 @@ app.post("/deleteuser", (req, res) => {
         return res.status(422).json({error: "Missing Fields"})
     }res.json("Posted successfully");
     console.log("test2");
-    Models.Employee.deleteOne({ _id: id});
+    Models.Employee.findByIdAndDelete({ _id: id}).exec();
     console.log("test3");
     
 });
