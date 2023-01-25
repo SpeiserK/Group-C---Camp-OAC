@@ -25,9 +25,9 @@ function Emp(){
             <div className="empLeftDiv"> 
                 <LocationLiveDisp queryLoc={empLocation} />
                 <h2>Orders that need pickup</h2>
-                 <OrderLiveDisp query1={'Approved'} />
+                 <OrderLiveDisp query1={'Approved'} queryLoc={empLocation} />
                  <h2>Orders that need approval/denial</h2>
-                 <OrderLiveDisp query1={'Pending'} />
+                 <OrderLiveDisp query1={'Pending'} queryLoc={empLocation} />
             </div>
         </body>
         <div className="footer">
