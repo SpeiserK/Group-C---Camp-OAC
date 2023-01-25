@@ -32,7 +32,7 @@ npm init -y
 2.
 Use npm to install the following dependencies: 
 ```
-npm install express cors mongoose dotenv axios
+npm install express cors mongoose dotenv axios jsonwebtoken joi joi-password-complexity bcrypt 
 ```
 Express: middleware for MERN stack, provides robust functions for Node.js<br />
 Cors: permits AJAX requests from the remote host<br />

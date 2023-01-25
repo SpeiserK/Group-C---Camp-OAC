@@ -791,22 +791,25 @@ background-color: #17458f;
   width:22%
 }
 #headerEmail{
-  width:18%
+  width:12%
 }
 #headerQuantity{
   width: 10%;
 }
 #headerLocation{
-  width:15%;
+  width:10%;
 }
 #headerDate{
   width:14%
 }
 #headerPrice{
-  width:11%;
+  width:10%;
 }
 #headerStatus{
   width:10%
+}
+#pickupStatus{
+  width: 12%
 }
 
 .payForm {
