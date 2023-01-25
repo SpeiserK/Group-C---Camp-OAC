@@ -69,6 +69,17 @@ app.get("/location", (req, res)=> {
     })
 });
 
+app.get("/employee", (req, res)=> {
+    Models.Employee.find({ })
+    .then((data) => {
+        console.log( 'Employee read data available');
+        res.json(data);
+    })
+    .catch(() => {
+        console.log( 'error: ', daerrorta);
+    })
+});
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -103,6 +114,10 @@ app.post("/statuschange", (req, res) => {
     });
 
 });
+
+app.post("/empremove", (req, res) => {
+    const id = req.body.id;
+})
 
 
 app.use("/", require("./routes/OrderRoute.js"));
