@@ -29,6 +29,26 @@ connection.once('open',()=> {
 app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);
 });
+
+//Nodemailer functions
+let transporter = nodeMailer.createTransport({
+    service: "gmail",
+    auth: {
+        type: "OAuth2",
+        user: process.env.EMAIL,
+        pass: process.env.WORD,
+        clientId: process.env.OAUTH_CLIENTID,
+        clientSecret: process.env.OAUTH_CLIENT_SECRET,
+        refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+    },
+});
+
+transporter.verify((err, success) =>{
+    err
+        ? console.log(err)
+        : console.log(`== Server is  ready to take messages: ${success} ===`)
+});
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //get requests
 app.get("/",(req,res)=> {
@@ -72,8 +92,6 @@ app.get("/location", (req, res)=> {
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //post requests
 app.post("/locupdate", (req, res) => {
@@ -89,30 +107,6 @@ app.post("/locupdate", (req, res) => {
         if(err) return console.log(err);
     });
 });
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-//Nodemailer functions
-
-let transporter = nodeMailer.createTransport({
-    service: "gmail",
-    auth: {
-        type: "OAuth2",
-        user: process.env.EMAIL,
-        pass: process.env.WORD,
-        clientId: process.env.OAUTH_CLIENTID,
-        clientSecret: process.env.OAUTH_CLIENT_SECRET,
-        refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-    },
-});
-
-transporter.verify((err, success) =>{
-    err
-        ? console.log(err)
-        : console.log(`== Server is  ready to take messages: ${success} ===`)
-});
-
 
 //status change post request
 app.post("/statuschange", (req, res) => {
