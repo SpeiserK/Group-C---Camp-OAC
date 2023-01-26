@@ -80,7 +80,7 @@ app.get("/order", (req, res)=> {
 });
 
 app.get("/location", (req, res)=> {
-    Models.Location.find({ })
+    Models.Location.find(req.query)
     .then((data) => {
         console.log( 'Location read data available');
         res.json(data);

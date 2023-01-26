@@ -17,7 +17,8 @@ export default class OrderLiveDisp extends React.Component {
     axios.get(`http://localhost:5000/order`, { 
       params: {
         Status: this.props.query1,
-        Pickup: 'false'
+        Pickup: 'false', 
+        Location: this.props.queryLoc
       }
     })
       .then(res => {

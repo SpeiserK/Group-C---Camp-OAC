@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import React, { Component, useState } from "react";
+import LocationSelect from "./LocationSelect";
 
 /*
  <Link to="/login/emp/inventory" style={{textDecoration: 'none' }}>
@@ -21,15 +22,7 @@ export default class EmpTools extends Component {
             View Live Orders and Stock
             </button> </Link>
             
-            <select >
-            <option value="select" disabled selected>Select a location</option>
-            <option value="West Kelowna">West Kelowna</option>
-            <option value="Rutland">Rutland</option>
-            <option value="Mission">Mission</option>
-            <option value="Lake Country">Lake Country</option>
-            <option value="Glenmore"> Glenmore </option>
-            <option value="Kelowna Central"> Kelowna Central </option>
-                    </select>
+            <LocationSelect />
 
             <Link to="/login/emp/history" style={{textDecoration: 'none' }}>
             <button className="orderHistory" style={{textDecoration: 'none' , color: 'black'}}>
