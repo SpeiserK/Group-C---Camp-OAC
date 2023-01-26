@@ -712,8 +712,8 @@ background-color: #17458f;
 */
 
 
-/*adminTools, viewOrders, inventoryByLoc, orderHistory
-  all inplement styling for Emp.js
+/*adminTools, viewOrders, inventoryByLoc, orderHistory, employeeList
+  all implement styling for Emp.js
 
   adminTools a: Creates the spacing between buttons
 */
@@ -835,9 +835,18 @@ background-color: #17458f;
   border-color: #0067c8;
 }
 
+.employeeList {
+  font-family: "Frutiger";
+  height: 50px;
+  background-color: white;
+  border-radius: 30px;
+  border-color: #0067c8;
+}
+
 .viewOrders:hover {background-color: #0067c8;}
 .inventoryByLoc:hover {background-color: #0067c8;}
 .orderHistory:hover {background-color: #0067c8;}
+.employeeList:hover {background-color: #0067c8;}
 
 .inventoryTable, th, td {
   border: 1px solid black;
