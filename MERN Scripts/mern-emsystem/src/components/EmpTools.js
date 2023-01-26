@@ -28,6 +28,11 @@ export default class EmpTools extends Component {
             <button className="orderHistory" style={{textDecoration: 'none' , color: 'black'}}>
             Order History
             </button> </Link>
+
+            <Link to="/login/emp/employee" style={{textDecoration: 'none' }}>
+            <button className="employeeList" style={{textDecoration: 'none' , color: 'black'}}>
+            Employee Login List
+            </button> </Link>
         </div>
         );
     }
