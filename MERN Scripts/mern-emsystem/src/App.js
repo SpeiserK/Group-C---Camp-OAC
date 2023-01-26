@@ -14,6 +14,7 @@ import CashConfirmation from './pages/CashConfirmation';
 import ETransferConfirmation from './pages/ETransferConfirmation';
 import SquareConfirmation from './pages/SquareConfirmation';
 import SquarePay from './pages/SquarePay';
+import EmployeeList from './pages/EmployeeList';
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="login/emp/viewOrders" element={<ViewOrders/>} />
           <Route path="login/emp/inventory" element={<Inventory/>} />
           <Route path="login/emp/history" element={<OrderHistory/>} />
+          <Route path="login/emp/employee" element={<EmployeeList/>} />
         </Routes>
         
       </div>
