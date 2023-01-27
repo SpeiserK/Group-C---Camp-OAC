@@ -10,10 +10,11 @@ const LocationSelect = () => {
     window.location.reload();
   }
 
+
   return (
     
     <select value={selectedLocation} onChange={handleChange} >
-      <option value="Rutland">Select a location</option>
+      <option value="null">Select a location</option>
       <option value="West Kelowna">West Kelowna</option>
       <option value="Rutland">Rutland</option>
       <option value="Mission">Mission</option>
@@ -21,6 +22,10 @@ const LocationSelect = () => {
       <option value="Glenmore"> Glenmore </option>
       <option value="Kelowna Central"> Kelowna Central </option>
     </select>
+
+
+ 
+
     
   );
 }
