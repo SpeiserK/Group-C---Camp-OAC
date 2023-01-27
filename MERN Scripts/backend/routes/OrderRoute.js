@@ -1,6 +1,27 @@
 const express = require("express");
 const router = express.Router();
 const Models = require("../models.js");
+const nodeMailer = require('nodemailer');
+
+//Nodemailer functions
+let transporter = nodeMailer.createTransport({
+    service: "gmail",
+    auth: {
+        type: "OAuth2",
+        user: process.env.EMAIL,
+        pass: process.env.WORD,
+        clientId: process.env.OAUTH_CLIENTID,
+        clientSecret: process.env.OAUTH_CLIENT_SECRET,
+        refreshToken: process.env.OAUTH_REFRESH_TOKEN,
+    },
+});
+
+transporter.verify((err, success) =>{
+    err
+        ? console.log(err)
+        : console.log(`== Server is  ready to take messages from square: ${success} ===`)
+});
+
 
 router.route("/send").post((req, res) => {
     const Name = req.body.Name;
@@ -22,6 +43,31 @@ router.route("/send").post((req, res) => {
         return res.status(422).json({error:"Missing Fields"})
     }
     res.json("Posted successfully");
+
+    if(Status == "Approved"){
+        var newDate = Datetime;
+        //add two days to date of approval for pickup time limit
+        newDate.setMinutes(newDate.getMinutes() + 2880);
+        let datePickup = newDate.toString();
+        //delete timezone details
+        datePickup = datePickup.slice(0,11);
+        let mailOptions = {
+            from: process.env.EMAIL,
+            to: process.env.EMAIL,          //will replace with Name
+            subject: "Your firewood order has been approved.",
+            text: "Hello,\n\nYour order for "+Quantity+" fire wood bundle(s) has been approved for $"
+            +Price+" CAD.\nYour pickup address will be "+Location+", your order will be available for pickup until "
+            +datePickup+"at CLOSING TIME (PST).\n\nThanks for your support,\nKelowna Rotary Club and Camp OAC",
+        };
+        
+        transporter.sendMail(mailOptions, function (err, data) {
+            if(err){
+                console.log("Error"+err);
+            } else{
+                console.log("Email sent successfully");
+            }
+        });
+    }
     
 
     const newOrder = new Models.Order({

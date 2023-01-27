@@ -20,6 +20,7 @@
     "joi-password-complexity": "^5.1.0",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.6.7",
+    "nodemailer": "^6.9.0",
     "square": "^25.0.0"
   }
 }
