@@ -31,12 +31,29 @@ export default class OrderLiveDisp extends React.Component {
 
 
   //approve order post
-  approve(id) {
+  approve(id,quantity,location,price,email) {
+    //get date of approval
+      var dateApprove = new Date();
+      var offset = dateApprove.getTimezoneOffset();
+    //get date of approval in pst
+      dateApprove.setMinutes(dateApprove.getMinutes()-offset);
+    //add two days to date of approval for pickup time limit
+      dateApprove.setMinutes(dateApprove.getMinutes() + 2880);
+      let datePickup = dateApprove.toString();
+    //delete timezone details
+      datePickup = datePickup.slice(0,11);
+
 
     axios.post('http://localhost:5000/statuschange', {
         id: id,
         status: "Approved",
-        pickup: 'false'
+        pickup: 'false',
+        quantity: quantity,
+        location: location,
+        date: datePickup,
+        price: price,
+        email: email,
+
       })
       .then( response => {
 
@@ -127,7 +144,7 @@ export default class OrderLiveDisp extends React.Component {
               </td>
               <td id="current-approve-deny"className ="orderChild"> 
               <span>{content.Status}</span>&emsp;
-                <button onClick={() => this.approve(content._id)}> Approve </button>
+                <button onClick={() => this.approve(content._id,content.Quantity,content.Location,content.Price,content.Name)}> Approve </button>
                 <button onClick={() => this.decline(content._id)}> Deny </button>
               </td> 
               <td id="current-pickup" className ="orderChild">

@@ -78,6 +78,17 @@ npm install react-square-web-payments-sdk
 npm install square
 ```
 
+### ***Node Mailer***
+click [here](https://nodemailer.com/about/) for node mailer documentation
+
+1.
+In the backend folder, install nodemailer
+```
+npm install nodemailer
+```
+2.
+You will need to add necessary token to .env file
+
 
 ### ***Jest***:
 click [here](https://jestjs.io/docs/getting-started) for info from developers
