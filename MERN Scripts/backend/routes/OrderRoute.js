@@ -44,22 +44,55 @@ router.route("/send").post((req, res) => {
     }
     res.json("Posted successfully");
 
+    //If status has been approved, set email parameters with custom location address and send email
     if(Status == "Approved"){
+        //email strings, to be used as email inputs
+        let emailSub = "";
+        let emailContent = "";
+        let emailAdd = "";
+        emailSub = "Your firewood order has been approved.";
+        //get approval date
         var newDate = Datetime;
         //add two days to date of approval for pickup time limit
         newDate.setMinutes(newDate.getMinutes() + 2880);
         let datePickup = newDate.toString();
         //delete timezone details
         datePickup = datePickup.slice(0,11);
+        //set address based on location
+        switch(Location){
+            case 'Rutland':
+                emailAdd = "Rutland address";
+                break;
+            case 'West Kelowna':
+                emailAdd = "West K address";
+                break;
+            case 'Mission':
+                emailAdd = "Mission address";
+                break;
+            case 'Lake Country':
+                emailAdd = "Lake Country address";
+                break;
+            case 'Glenmore':
+                emailAdd = "Glenmore address";
+                break;
+            case 'Central Kelowna':
+                emailAdd = "Central K address";
+                break;
+            default:
+                emailAdd = "DEFAULT";
+        }
+        //set email content
+        emailContent = "Hello,\n\nYour order for "+Quantity+" fire wood bundle(s) has been approved for $"
+        +Price+" CAD.\nYour pickup address will be "+emailAdd+", your order will be available for pickup until "
+        +datePickup+"at CLOSING TIME (PST).\n\nThanks for your support,\nKelowna Rotary Club and Camp OAC";
+    
         let mailOptions = {
             from: process.env.EMAIL,
             to: process.env.EMAIL,          //will replace with Name
-            subject: "Your firewood order has been approved.",
-            text: "Hello,\n\nYour order for "+Quantity+" fire wood bundle(s) has been approved for $"
-            +Price+" CAD.\nYour pickup address will be "+Location+", your order will be available for pickup until "
-            +datePickup+"at CLOSING TIME (PST).\n\nThanks for your support,\nKelowna Rotary Club and Camp OAC",
+            subject: emailSub,
+            text: emailContent,
         };
-        
+
         transporter.sendMail(mailOptions, function (err, data) {
             if(err){
                 console.log("Error"+err);
