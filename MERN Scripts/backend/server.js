@@ -69,6 +69,17 @@ app.get("/location", (req, res)=> {
     })
 });
 
+app.get("/employee", (req, res)=> {
+    Models.Employee.find({ })
+    .then((data) => {
+        //console.log( 'Employee read data available');
+        res.json(data);
+    })
+    .catch(() => {
+        console.log( 'error: ', daerrorta);
+    })
+});
+
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
@@ -102,6 +113,18 @@ app.post("/statuschange", (req, res) => {
         if(err) return console.log(err);
     });
 
+});
+
+app.post("/deleteuser", (req, res) => {
+    const id = req.body.id;
+    console.log(id);
+    if (!id){
+        return res.status(422).json({error: "Missing Fields"})
+    }res.json("Posted successfully");
+    console.log("test2");
+    Models.Employee.findByIdAndDelete({ _id: id}).exec();
+    console.log("test3");
+    
 });
 
 
