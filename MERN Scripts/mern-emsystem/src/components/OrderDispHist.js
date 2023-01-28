@@ -71,7 +71,7 @@ export default class OrderDispHist extends React.Component {
                   <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
                 </td>
                 <td id="current-approve-deny"className ="orderChild"> 
-                  <span>{content.Status} &nbsp; Picked up: {content.Pickup ? "Complete" : "Pending"}</span>&emsp;
+                  <span>{content.Status} &nbsp; Picked up: {content.Pickup ? "Complete" : "Incomplete"}</span>&emsp;
                 </td>         
               </tr>
             )
