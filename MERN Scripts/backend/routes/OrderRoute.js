@@ -47,10 +47,9 @@ router.route("/send").post((req, res) => {
     //If status has been approved, set email parameters with custom location address and send email
     if(Status == "Approved"){
         //email strings, to be used as email inputs
-        let emailSub = "";
         let emailContent = "";
         let emailAdd = "";
-        emailSub = "Your firewood order has been approved.";
+        let emailSub = "Your firewood order has been approved.";
         //get approval date
         var newDate = Datetime;
         //add two days to date of approval for pickup time limit
