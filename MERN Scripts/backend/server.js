@@ -12,7 +12,6 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 
-
 const options = {
     dbName: 'mydb'
   };
@@ -102,7 +101,7 @@ app.post("/statuschange", (req, res) => {
     });
 
 });
-
+app.use("/charge", require("./routes/api/charge.js"));
 
 app.use("/", require("./routes/OrderRoute.js"));
 //emp creation
