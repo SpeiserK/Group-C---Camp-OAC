@@ -7,7 +7,8 @@ export default class LocationLiveDisp extends React.Component {
       this.state = {
       location: [],
       openStatus: [],
-      stock: []
+      stock: [],
+      error: []
     }
   }
   //variables to handle state changes
@@ -28,7 +29,8 @@ export default class LocationLiveDisp extends React.Component {
         const cleanOpenStatus = locationData.map((item) => item.Open);
         this.setState({ openStatus: cleanOpenStatus});
         
-        
+        const cleanErrorMessage = locationData.map(() => "");
+        this.setState({ error: cleanErrorMessage});
       });
   }
 
@@ -39,8 +41,11 @@ export default class LocationLiveDisp extends React.Component {
         stock: this.state.stock[index],
         open: this.state.openStatus[index]
       })
-      .then( response => {
-          
+      .then( response => { 
+          this.setState({error: this.state.error.map((item, i) => {
+            if (i === index)return response.data.message;
+            else return "";
+          })});
       })
     }
 
@@ -69,6 +74,7 @@ export default class LocationLiveDisp extends React.Component {
   render() {
     return (
       <div>
+        {this.state.stock[0]}
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
@@ -107,7 +113,7 @@ export default class LocationLiveDisp extends React.Component {
                 <span>{content.Address}</span>&emsp;
               </td>
               <td id="current-orderStock" className ="orderChild">
-                <span><input type="number" size="4" defaultValue={`${content.Stock}` } onChange={(e) => this.changeStock(index, e.target.value)}>
+                <span><input type="number" size="4" defaultValue={`${content.Stock}` } onBlur={(e) => this.changeStock(index, e.target.value)}>
                 </input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
@@ -117,6 +123,7 @@ export default class LocationLiveDisp extends React.Component {
               </td>
               <td id="current-orderUpdate" className ="orderChild">
                 <span><button onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
+                {this.state.error[index]}
               </td>        
           </tr>
             )
