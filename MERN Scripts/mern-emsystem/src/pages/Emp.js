@@ -1,14 +1,9 @@
 import React from 'react'
-import InvByLoc from '../components/hooks/InvByLoc.js';
 import OrderLiveDisp from '../components/OrderLiveDisp.js';
-import axios from "axios";
 import Navbar from '../components/Navbar.js';
-import Banner from '../components/Banner.js';
-import OrderDispHist from '../components/OrderDispHist.js';
 import LocationLiveDisp from '../components/LocationLiveDisp.js';
 import Empnav from '../components/Empnav.js';
 import Empbanner from '../components/Empbanner.js';
-const {useEffect, useState} = React;
 
 // grab the location lolololol
 const empLocation = localStorage.getItem('selectedLocation');

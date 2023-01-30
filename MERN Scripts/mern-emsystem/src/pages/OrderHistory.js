@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from '../components/Navbar.js';
 import Empbanner from '../components/Empbanner.js';
 import Empnav from '../components/Empnav.js';
-import axios from "axios";
 import OrderDispHist from '../components/OrderDispHist.js'
 
 function OrderHistory(){
