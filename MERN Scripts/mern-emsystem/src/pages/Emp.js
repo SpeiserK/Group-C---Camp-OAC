@@ -5,7 +5,6 @@ import LocationLiveDisp from '../components/LocationLiveDisp.js';
 import Empnav from '../components/Empnav.js';
 import Empbanner from '../components/Empbanner.js';
 
-// grab the location lolololol
 const empLocation = localStorage.getItem('selectedLocation');
 
 function Emp(){
