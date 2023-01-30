@@ -54,7 +54,7 @@ export default class LocationLiveDisp extends React.Component {
       const openStatus = this.state.openStatus;
       this.setState({openStatus: openStatus.map((item, i) => {
         if(this.state.stock[i] <= 0) return false;
-        if(i === index) return !item;
+        if(i === index)return !item;
         return item;
         
       })});
@@ -64,7 +64,7 @@ export default class LocationLiveDisp extends React.Component {
       const stock = this.state.stock;
       this.setState({stock: stock.map((item, i) => {
         if(i === index){
-          if(item <= 0) this.changeOpenStatus(index);
+          if(newStock <= 0) this.changeOpenStatus(index);
           return newStock;
         }
         return item;
@@ -74,7 +74,7 @@ export default class LocationLiveDisp extends React.Component {
   render() {
     return (
       <div>
-        {this.state.stock[0]}
+        {this.state.stock[0]}        
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
@@ -117,13 +117,14 @@ export default class LocationLiveDisp extends React.Component {
                 </input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
-                <span><button onClick={() => this.changeOpenStatus(index)}>
+                <span><button onClick={() => this.changeOpenStatus(index)} disabled={this.state.stock[index] <= 0}>
                   {this.state.openStatus[index]? "OPEN": "CLOSED"}
                 </button></span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
                 <span><button onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
                 {this.state.error[index]}
+                
               </td>        
           </tr>
             )
