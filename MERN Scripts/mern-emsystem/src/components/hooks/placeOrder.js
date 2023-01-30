@@ -50,9 +50,6 @@ const PlaceOrder = () => {
 
     return (
         <div>
-            <div className="loggedIn">
-                <p id="email" >Logged in as: {email} </p>
-            </div>
             <div className="orderText">
             <p>Input the number of firewood bundles you would like to purchase.</p>
                 <form className="orderQuantity">

@@ -53,8 +53,7 @@ const EmailCheck = () => {
     const gotoOrder = useNavigate();
 
     function handleClick(){
-        gotoOrder("order");
-        // nxt line added by zach, trying to save email in local storage
+        
         localStorage.setItem("email",email);
     }
 
@@ -62,7 +61,7 @@ const EmailCheck = () => {
 
     return(
         <section className="enterEmail">
-            <br></br>
+            
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form onSubmit={handleSubmit}>
                 <label htmlFor="email">
