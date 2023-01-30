@@ -2,7 +2,6 @@ import React from 'react'
 import Navbar from '../components/Navbar.js';
 import Empbanner from '../components/Empbanner.js';
 import Empnav from '../components/Empnav.js';
-import EmpTools from '../components/EmpTools.js';
 import axios from "axios";
 import EmployeeLiveDisp from '../components/EmployeeLiveDisp';
 
