@@ -1,7 +1,6 @@
 import {useState} from 'react';
 import {Link, useNavigate} from 'react-router-dom';
 import axios from 'axios';
-import styles from './styles.EmpSignup.css';
 
 const EmpSignup = () => {
     const[data, setData] = useState({
@@ -35,12 +34,12 @@ const EmpSignup = () => {
 
     }
     return (
-        <div className={styles.signup_container}>
-            <div className={styles.signup_form_container}>
+        <div>
+            <div>
                 
                 
-                <div className={styles.right}>
-                    <form className={styles.form_container} onSubmit={handleSubmit}>
+                <div>
+                    <form onSubmit={handleSubmit}>
                         <h1>Create Account</h1>
                         <input
                             type="text"
@@ -49,7 +48,6 @@ const EmpSignup = () => {
                             onChange={handleChange}
                             value={data.Username}
                             required
-                            className={styles.input}
                         />
                         <input
                             type="email"
@@ -58,7 +56,6 @@ const EmpSignup = () => {
                             onChange={handleChange}
                             value={data.Email}
                             required
-                            className={styles.input}
                         />
                         <input
                             type="password"
@@ -67,7 +64,6 @@ const EmpSignup = () => {
                             onChange={handleChange}
                             value={data.Password}
                             required
-                            className={styles.input}
                         />
                         <input
                             type="text"
@@ -76,9 +72,8 @@ const EmpSignup = () => {
                             onChange={handleChange}
                             value={data.Location}
                             required
-                            className={styles.input}
                         />
-                        {error && <div className={styles.error_msg}>{error}</div>}
+                        {error && <div>{error}</div>}
                         <button type="submit">
                             Register User
                         </button>

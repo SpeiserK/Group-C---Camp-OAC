@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from "react-router-dom";
 
 import Logo from '../components/Logo.js';
 import Navbar from '../components/Navbar.js';
@@ -7,7 +6,6 @@ import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 
 import PlaceOrder from '../components/hooks/placeOrder.js';
-import Woodimg from '../components/Woodimg.js';
 import OurProgBar from '../components/OurProgBar.js';
 import Bundles2 from '../components/Bundles2.js';
 import CampLogo from '../components/CampLogo.js';
