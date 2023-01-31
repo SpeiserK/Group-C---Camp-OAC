@@ -111,12 +111,16 @@ export default class OrderLiveDisp extends React.Component {
           <td id="headerPrice" className="listHeaderItem">
             <span> Payment Details</span>
           </td>
-          <td id="headerStatus" className="listHeaderItem">
-            <span> Status </span>
-          </td>
+          { this.props.query1 === "Pending" ?(
+            <td id="headerStatus" className="listHeaderItem">
+              <span> Status </span>
+            </td>): (<></>)
+          }
+          { this.props.query1 === "Approved" ?(
           <td id="pickupStatus" className="listHeaderItem">
             <span> Pickup </span>
-          </td>
+          </td> ): (<></>)
+          }
         </tr> 
 
         {
@@ -142,15 +146,19 @@ export default class OrderLiveDisp extends React.Component {
               <td id="current-orderPrice" className ="orderChild">
                 <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
               </td>
+          { this.props.query1 === "Pending" ?(
               <td id="current-approve-deny"className ="orderChild"> 
               <span>{content.Status}</span>&emsp;
                 <button onClick={() => this.approve(content._id,content.Quantity,content.Location,content.Price,content.Name)}> Approve </button>
                 <button onClick={() => this.decline(content._id)}> Deny </button>
-              </td> 
+              </td> ): (<></>)
+          }
+          { this.props.query1 === "Approved" ?(
               <td id="current-pickup" className ="orderChild">
                 <span>Picked up: {content.Pickup ? "Complete" : "Pending"}</span>&emsp;
                 <button onClick={() => this.confirmPickup(content._id,content.Status)}> Pickup Complete </button>
-              </td>        
+              </td>   ): (<></>)
+          }      
           </tr>
               
             )
