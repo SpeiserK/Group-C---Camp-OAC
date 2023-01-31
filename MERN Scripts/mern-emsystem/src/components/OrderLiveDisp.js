@@ -56,7 +56,7 @@ export default class OrderLiveDisp extends React.Component {
 
       })
       .then( response => {
-
+        window.location.reload();
       })
   }
 
@@ -70,7 +70,7 @@ export default class OrderLiveDisp extends React.Component {
       pickup: 'false'
     })
     .then( response => {
-
+      window.location.reload();
     } )
   }
 
@@ -83,7 +83,7 @@ export default class OrderLiveDisp extends React.Component {
       pickup: 'true'
   })
   .then( response =>{
-
+    window.location.reload();
   })
   }
 

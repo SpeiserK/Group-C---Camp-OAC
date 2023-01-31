@@ -13,7 +13,6 @@ app.use(cors());
 app.use(express.json());
 app.use(bodyParser.json());
 
-
 const options = {
     dbName: 'mydb'
   };
@@ -106,17 +105,20 @@ app.get("/employee", (req, res)=> {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //post requests
 app.post("/locupdate", (req, res) => {
-    const id = req.body.id;
-    const stock = req.body.stock;
-    const open = req.body.open;
+    try {
+        const id = req.body.id;
+        const stock = req.body.stock;
+        const open = req.body.open;
+        if (!id||!stock||typeof open !== typeof true){
+            return res.status(422).send({message:"Missing/Bad field types"});
+        }res.status(200).send({message: "Posted successfully"});
 
-    if (!id||!stock||!open){
-        return res.status(422).json({error:"Missing Fields"})
-    }res.json("Posted successfully");
-
-    Models.Location.findByIdAndUpdate(id, {Stock: stock, Open: open}, (err, doc) => {
-        if(err) return console.log(err);
-    });
+        Models.Location.findByIdAndUpdate(id, {Stock: stock, Open: open}, (err, doc) => {
+            if(err) return console.log(err);
+        });
+    } catch (error) {
+        res.status(500).send({message: "Location update failed, internal server error"});
+    }
 });
 
 //status change post request
@@ -138,14 +140,50 @@ app.post("/statuschange", (req, res) => {
         if(err) return console.log(err);
     });
 
+    //email strings, to be used as email inputs
+    let emailSub = "";
+    let emailContent = "";
+    let emailAdd = "";
+
+    //set email parameters with custom location address
     if(status == "Approved"){
+        emailSub = "Your firewood order has been approved.";
+        switch(location){
+            case "Rutland":
+                emailAdd = "Rutland address";
+                break;
+            case "West Kelowna":
+                emailAdd = "West K address";
+                break;
+            case "Mission":
+                emailAdd = "Mission address";
+                break;
+            case "Lake Country":
+                emailAdd = "Lake Country address";
+                break;
+            case "Glenmore":
+                emailAdd = "Glenmore address";
+                break;
+            case "Central Kelowna":
+                emailAdd = "Central K address";
+                break;
+            default:
+                emailAdd = "DEFAULT";
+        }
+        emailContent = "Hello,\n\nYour order for "+quantity+" fire wood bundle(s) has been approved for $"
+        +price+" CAD.\nYour pickup address will be "+emailAdd+", your order will be available for pickup until "
+        +date+"at CLOSING TIME (PST).\n\nThanks for your support,\nKelowna Rotary Club and Camp OAC";
+    }else{
+        emailSub = "Your firewood order has been denied.";
+        emailContent = "Hello,\n\nWe are sorry to inform you that your firewood has been cancelled.\n\nThanks"
+        +" for your support,\nKelowna Rotary Club and Camp OAC ";
+    }
+
         let mailOptions = {
             from: process.env.EMAIL,
             to: process.env.EMAIL,          //will replace with email const
-            subject: "Your firewood order has been approved.",
-            text: "Hello,\n\nYour order for "+quantity+" fire wood bundle(s) has been approved for $"
-            +price+" CAD.\nYour pickup address will be "+location+", your order will be available for pickup until "
-            +date+"at CLOSING TIME (PST).\n\nThanks for your support,\nKelowna Rotary Club and Camp OAC",
+            subject: emailSub,
+            text: emailContent,
         };
         
         transporter.sendMail(mailOptions, function (err, data) {
@@ -155,7 +193,6 @@ app.post("/statuschange", (req, res) => {
                 console.log("Email sent successfully");
             }
         });
-    }
 });
 
 app.post("/deleteuser", (req, res) => {
@@ -169,7 +206,7 @@ app.post("/deleteuser", (req, res) => {
     console.log("test3");
     
 });
-
+app.use("/charge", require("./routes/api/charge.js"));
 
 app.use("/", require("./routes/OrderRoute.js"));
 //emp creation

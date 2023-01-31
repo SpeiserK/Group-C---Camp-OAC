@@ -1038,3 +1038,9 @@ background-color: #17458f;
     
   }
 }
+
+/*end fire animation*/
+
+.orderChild span input{
+  width: 90%;
+}
