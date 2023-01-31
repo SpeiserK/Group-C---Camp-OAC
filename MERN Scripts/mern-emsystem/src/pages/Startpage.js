@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from 'react'
-import EmailCheck from "../components/hooks/matchEmail.js";
+
 import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';

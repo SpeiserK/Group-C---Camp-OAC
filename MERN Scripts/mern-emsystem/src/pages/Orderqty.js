@@ -12,7 +12,7 @@ import OurProgBar from '../components/OurProgBar.js';
 import Bundles2 from '../components/Bundles2.js';
 import CampLogo from '../components/CampLogo.js';
 
-import EmailCheck from "../components/hooks/matchEmail.js";
+
 
 
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
@@ -26,7 +26,7 @@ function Orderqty(){
             </div>
             <body className="appContainer">
                 <div className="updateLeft">
-                    <EmailCheck />
+                    
                     <h2 className="orderTitle">Enter Order Details</h2>
                     <PlaceOrder />
                     <div className="bundleDiv">
