@@ -105,17 +105,20 @@ app.get("/employee", (req, res)=> {
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //post requests
 app.post("/locupdate", (req, res) => {
-    const id = req.body.id;
-    const stock = req.body.stock;
-    const open = req.body.open;
+    try {
+        const id = req.body.id;
+        const stock = req.body.stock;
+        const open = req.body.open;
+        if (!id||!stock||typeof open !== typeof true){
+            return res.status(422).send({message:"Missing/Bad field types"});
+        }res.status(200).send({message: "Posted successfully"});
 
-    if (!id||!stock||!open){
-        return res.status(422).json({error:"Missing Fields"})
-    }res.json("Posted successfully");
-
-    Models.Location.findByIdAndUpdate(id, {Stock: stock, Open: open}, (err, doc) => {
-        if(err) return console.log(err);
-    });
+        Models.Location.findByIdAndUpdate(id, {Stock: stock, Open: open}, (err, doc) => {
+            if(err) return console.log(err);
+        });
+    } catch (error) {
+        res.status(500).send({message: "Location update failed, internal server error"});
+    }
 });
 
 //status change post request
