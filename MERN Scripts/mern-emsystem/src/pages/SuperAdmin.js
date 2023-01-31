@@ -2,13 +2,10 @@ import React from 'react'
 import Navbar from '../components/Navbar.js';
 import Empbanner from '../components/Empbanner.js';
 import Empnav from '../components/Empnav.js';
-import EmpTools from '../components/EmpTools.js';
-import axios from "axios";
 import EmployeeLiveDisp from '../components/EmployeeLiveDisp';
+import EmployeeCreation from '../components/Signup/EmpSignup';
 
-function OrderHistory(){
-    
-
+function SuperAdmin(){
     return(
     <div className="appMain">
         <div className="appHeader">
@@ -18,6 +15,7 @@ function OrderHistory(){
         <body className="appContainer">
             <div className="empMainDiv">
                 <EmployeeLiveDisp />
+                <EmployeeCreation />
             </div>
         </body>
         <div className="footer">
@@ -28,4 +26,4 @@ function OrderHistory(){
     </div>
     );
 }
-export default OrderHistory;
+export default SuperAdmin;
