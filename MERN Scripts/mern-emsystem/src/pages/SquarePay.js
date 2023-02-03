@@ -1,10 +1,11 @@
 import { PaymentForm, CreditCard } from 'react-square-web-payments-sdk';
-import { useEffect, useState } from 'react';
-import SquareCheck from '../components/SquareCheck.js';
+import { useState } from 'react';
 
 const SquarePay = () => {
 
     const [output, setOutput] = useState([]);
+
+    const Quantity = localStorage.getItem("quantity");
 
     return (
     <div className="payForm">
@@ -29,21 +30,26 @@ const SquarePay = () => {
               'Content-type': 'application/json'
             },
             body: body
-          })
-          if(response.ok) {
-            return response.json();
-          }
-          alert(JSON.stringify(await response.json(), null, 2));
-          let output = await response.json();
-          console.log(output);
-          console.info('Token:', token);
-          console.info('Verified Buyer:', buyer);
+          });
+          
+          const data = await response.json();
+          console.log(data);
 
-          setOutput(output);
-        }}
-      >
+          if (data.errors && data.errors.length > 0) {
+            if (data.errors[0].detail) {
+              window.showError(data.errors[0].detail);
+            } else {
+              window.showError('Payment Failed.');
+            }
+          } else {
+            alert('Payment Successful!');
+          }
+        }
+        }
+        >
         {/* Component for taking Credit Card payment */}
         <CreditCard />
+        <p>Total: ${Quantity*9.99}</p>
         </PaymentForm>
     </div>
     )
