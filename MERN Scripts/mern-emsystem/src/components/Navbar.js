@@ -53,6 +53,9 @@ export default class Navbar extends Component {
                   <button style={{textDecoration: 'none' , color: 'black', fontSize: '14px',marginTop: '10px'}}>
                   <Link to="/login/Emp" style={{textDecoration: 'none' }}>Admin Dash</Link>
                   </button>
+                  <button style={{textDecoration: 'none' , color: 'black', fontSize: '14px',marginTop: '10px'}}>
+                  <Link to="/bootstrap" style={{textDecoration: 'none' }}>Boot</Link>
+                  </button>
               </div>
           </div>
         );            
