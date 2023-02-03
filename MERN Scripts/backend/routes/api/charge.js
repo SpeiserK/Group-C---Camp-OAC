@@ -1,8 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const squareConnect = require('square-connect');
+const squareConnect = require('square');
 //const uuidv4 = require('uuid/v4');
-//import { randomUUID } from 'crypto';
+
+
 const { randomUUID } = require('crypto');
 
 router.route('/').post((req, res) => {

@@ -1,6 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React from 'react'
-import EmailCheck from "../components/hooks/matchEmail.js";
+
 import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
@@ -8,12 +8,20 @@ import Bundles1 from '../components/Bundles1.js';
 import CutWood from '../components/CutWood.js';
 import CampLogo from "../components/CampLogo.js";
 
-function Startpage(){
 
+
+
+
+function Startpage(){
+    const gotoOrder = useNavigate();
     const p1 = "Enter your email. We'll use it to relay order details and confirmation.";
     const p2 = "Select amount of firewood and pickup location.";
     const p3 = "Choose prefered payment method.";
     const p4 = "Receive confirmation email and pickup your bundle(s)!";
+
+    function handleClick(){
+        gotoOrder("order");
+    }
 
     return(
     <div className="appMain">
@@ -27,8 +35,11 @@ function Startpage(){
                 <CampLogo />
             </div>
             <div className="middleDiv">
-                <h2 className="startTitle">Enter Email Here to Buy Firewood</h2><br></br>
-                <EmailCheck />
+    
+                
+                
+                <button className="buttonStyle" onClick={(e) => handleClick()}
+                >Order</button>
             </div>
             <div className="rightDiv">
                 <h2 className="howToTitle">How to use:</h2>
