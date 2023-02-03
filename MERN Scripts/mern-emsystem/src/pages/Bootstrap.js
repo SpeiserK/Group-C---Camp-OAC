@@ -4,7 +4,6 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {ReactComponent as BundlesSVG} from '../components/pictures/Bundles1.svg';
-import EmailCheck from "../components/hooks/matchEmail.js";
 import Logo from '../components/Logo.js'
 import Logo2 from '../components/Logo2.js';
 import NavbarT from '../components/Navbar.js';

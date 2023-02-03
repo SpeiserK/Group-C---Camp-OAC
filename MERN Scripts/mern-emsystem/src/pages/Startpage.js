@@ -1,12 +1,19 @@
 import { Link, useNavigate } from "react-router-dom";
 import React from 'react'
 
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Logo2 from '../components/Logo2.js';
 import Logo from '../components/Logo.js'
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import Bundles1 from '../components/Bundles1.js';
 import CutWood from '../components/CutWood.js';
 import CampLogo from "../components/CampLogo.js";
+import Dropdown from '../components/Dropdown.js';
+import FireAnimation from "../components/FireAnimation";
+import Button from 'react-bootstrap/Button';
 
 
 
@@ -24,42 +31,52 @@ function Startpage(){
     }
 
     return(
-    <div className="appMain">
-        <div className="appHeader">
-            <Banner />
-        </div>
-        <body className="appContainer">
-            <div className="leftDiv">
-                <Logo />
-                <CutWood />
-                <CampLogo />
+<div className="bContainer">
+<Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <Row>
+            <div className="bHeader">
+                <Col lg={3} sm={2}>
+                <Logo2 fluid />
+                </Col>
+                <Col>
+                <h1 className="bearHug">camp oac & rotary club of kelowna</h1>
+                </Col>
+                <Col lg={1}>
+                <Dropdown />
+                </Col>
+                <Col xl={1} lg={{span:2, offset: 1}}>
+                <div className="bHeadicons">
+                <Logo fluid/>
+                </div>
+                </Col>
             </div>
-            <div className="middleDiv">
-    
+            
+            </Row>
+            <Row>
+                <Col lg={8} md={9} sm={12} xs={12}>
+                <div className="bMain">
+                    <h1 className="robotoSlab">Info</h1>
+                        <p className="robotoSlab">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                            exercitation ullamco.
+                        </p>
+                </div>
+                <div className="bMain2">
+                    <Col md={{ span: 3, offset: 10 }}> 
+                <Button variant="start" onClick={() => handleClick()}>PLACE ORDER</Button>{' '} </Col>
+                </div>
+                    </Col>
                 
+            <Col lg={4} md={3} sm={12} xs={12}>
+            <div className="bSide">
+                <Row><div className="bSidebar1"></div></Row>
+                <Row><div className="bSidebar2"></div></Row>
                 
-                <button className="buttonStyle" onClick={(e) => handleClick()}
-                >Order</button>
+                <Row><div className="fireDiv"><FireAnimation /></div></Row>
             </div>
-            <div className="rightDiv">
-                <h2 className="howToTitle">How to use:</h2>
-                
-                <strong>1.</strong>
-                <p className="howToText">{p1}</p>
-                <strong>2.</strong>
-                <p className="howToText">{p2}</p>
-                <strong>3.</strong>
-                <p className="howToText">{p3}</p>
-                <strong>4.</strong>
-                <p className="howToText">{p4}</p>
-                <Bundles1 />
-            </div>
-        </body>
-        <div className="footer">
-            <footer className="App-footer">
-                <Navbar />
-            </footer>
-        </div>
+            </Col>
+        </Row>
+    </Container>
     </div>
     );
 }
