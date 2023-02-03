@@ -6,7 +6,7 @@ export default function SquareForm() {
       <PaymentForm
         applicationId="sandbox-sq0idb-7JEDuestTK6Hj-fdj6C0FA"
         cardTokenizeResponseReceived={ async (token, verifiedBuyer) => {
-          const response = await fetch('http://localhost:5000/quickstart', {
+          const response = await fetch('http://localhost:5000/pay', {
             method: 'POST',
             headers: {
               'Content-type': 'application/json'
