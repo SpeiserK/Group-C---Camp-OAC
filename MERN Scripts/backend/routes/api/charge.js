@@ -1,8 +1,10 @@
 const express = require('express');
 const router = express.Router();
-const squareConnect = require('square-connect');
+const squareConnect = require('square');
 //const uuidv4 = require('uuid/v4');
-import { randomUUID } from 'crypto';
+
+
+const { randomUUID } = require('crypto');
 
 router.route('/').post((req, res) => {
     try {
@@ -18,7 +20,7 @@ router.route('/').post((req, res) => {
           },
           idempotency_key: randomUUID(),
         };
-        const response = await transaction_api.charge(access_token, 'LS2QD8Y1ET9FY', request_body);
+        const response = transaction_api.charge(access_token, 'LS2QD8Y1ET9FY', request_body);
         res.json({
             status: 'success',
             transaction: response.transaction,

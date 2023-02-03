@@ -10,6 +10,9 @@ import OurProgBar from '../components/OurProgBar.js';
 import Bundles2 from '../components/Bundles2.js';
 import CampLogo from '../components/CampLogo.js';
 
+
+
+
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -21,6 +24,7 @@ function Orderqty(){
             </div>
             <body className="appContainer">
                 <div className="updateLeft">
+                    
                     <h2 className="orderTitle">Enter Order Details</h2>
                     <PlaceOrder />
                     <div className="bundleDiv">
