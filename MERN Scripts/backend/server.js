@@ -7,7 +7,7 @@ require('dotenv').config();
 const Models = require("./models.js");
 
 const app  = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5001;
 
 app.use(cors());
 app.use(express.json());
@@ -212,3 +212,6 @@ app.use("/", require("./routes/OrderRoute.js"));
 app.use("/api/emp", require("./routes/EmpRoute.js"));
 //emp auth
 app.use("/api/auth", require("./routes/Auth.js"));
+
+//Square api
+app.use("/charge", require("./routes/api/charge.js"));
