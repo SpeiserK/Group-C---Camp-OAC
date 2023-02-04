@@ -1076,7 +1076,7 @@ New CSS using bootstrap
 }
 
 .bMain2 {
-  background-color: #557a65;
+  background-image: url('components/pictures/Camp-OAC-Logo_Pine-Rectangle.png');
   font-size: calc(7px + 2vmin);
   color: white;
   padding: 2em 5em 2em 0em;

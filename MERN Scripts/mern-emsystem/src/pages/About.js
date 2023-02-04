@@ -49,7 +49,7 @@ function About(){
                             <h3 className="robotoSlab">{q3}</h3>
                             <p className="robotoSlab">{a3}</p><br></br>
                             <h3 className="robotoSlab">{q4}</h3>
-                            <p className="robotoSlab">{a4}</p><br></br>
+                            <p className="robotoSlab">Click <a href="/">here</a> to get started. Enter your email and follow the steps to place your order!</p><br></br>
                     </div>
                     <div className="bMain2">
         
