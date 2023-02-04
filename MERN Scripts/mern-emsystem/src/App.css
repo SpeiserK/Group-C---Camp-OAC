@@ -1070,7 +1070,7 @@ New CSS using bootstrap
   background-color: #f4f3ef;
   font-size: calc(7px + 2vmin);
   color: black;
-  padding: 1em 2em 13em 2em;
+  padding: 1em 2em 1em 2em;
   margin-top: 0.75em;
   margin-left: 0.5em;
 }
@@ -1079,7 +1079,7 @@ New CSS using bootstrap
   background-color: #557a65;
   font-size: calc(7px + 2vmin);
   color: white;
-  padding: 1em 5em 2em 0em;
+  padding: 2em 5em 2em 0em;
   margin-left: 0.5em;
   margin-bottom: 2em;
 }

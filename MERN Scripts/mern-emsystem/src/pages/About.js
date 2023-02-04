@@ -1,11 +1,16 @@
 import { Link } from "react-router-dom";
 import React from 'react'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Logo from '../components/Logo.js'
 import FirewoodTeam from '../components/FirewoodTeam.js';
 import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import CampLogo from "../components/CampLogo.js";
 import FireAnimation from "../components/FireAnimation.js";
+import Logo2 from '../components/Logo2.js';
+import Dropdown from '../components/Dropdown.js';
 
 function About(){
     const q1 = "What is this website for?";
@@ -19,37 +24,47 @@ function About(){
     const a4 = "Click the page title to get started. Enter your email and follow the steps to place your order!";
 
     return(
-        <div className="appMain">
-            <div className="appHeader">
-                <Banner />
-                
-            </div>
-            <body className="appContainer">
-                <div className="leftDiv">
-                    <Logo />
-                    <FirewoodTeam />
-                    <CampLogo />
-                    <FireAnimation />
-                </div>
-                <div className="updateLeft">
-                    <h1 className="aboutTitle">About Us</h1><br></br>
-                    <h2 className="aboutQ">{q1}</h2><br></br>
-                    <p className="aboutA">{a1}</p><br></br>
-                    <h2 className="aboutQ">{q2}</h2><br></br>
-                    <p className="aboutA">{a2}</p><br></br>
-                    <h2 className="aboutQ">{q3}</h2><br></br>
-                    <p className="aboutA">{a3}</p><br></br>
-                    <h2 className="aboutQ">{q4}</h2><br></br>
-                    <p className="aboutA">Click <a href="/">here</a> to get started. Enter your email and follow the steps to place your order!</p><br></br>
-                </div>
-                
-            </body>
-            <div className="footer">
-                <footer className="App-footer">
-                    <Navbar />
-                </footer>
-            </div>
-        </div>
+    <div className="bContainer">
+        <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <Row>
+                <div className="bHeader">
+                    <Col lg={3} sm={2}><Logo2 fluid /></Col>
+                    <Col><h1 className="bearHug">camp oac & rotary club of kelowna</h1> </Col>
+                    <Col lg={1}><Dropdown /></Col>
+                    <Col xl={1} lg={{span:2, offset: 1}}>
+                        <div className="bHeadicons">
+                            <Logo fluid/>
+                        </div>
+                    </Col>
+                </div>  
+            </Row>
+            <Row>
+                <Col lg={8} md={9} sm={12} xs={12}>
+                    <div className="bMain">
+                        <h1 className="robotoSlab">About</h1><br></br>
+                            <h3 className="robotoSlab">{q1}</h3>
+                            <p className="robotoSlab">{a1}</p><br></br>
+                            <h3 className="robotoSlab">{q2}</h3>
+                            <p className="robotoSlab">{a2}</p><br></br>
+                            <h3 className="robotoSlab">{q3}</h3>
+                            <p className="robotoSlab">{a3}</p><br></br>
+                            <h3 className="robotoSlab">{q4}</h3>
+                            <p className="robotoSlab">{a4}</p><br></br>
+                    </div>
+                    <div className="bMain2">
+        
+                    </div>
+                </Col>   
+                <Col lg={4} md={3} sm={12} xs={12}>
+                    <div className="bSide">
+                        <Row><div className="bSidebar1"></div></Row>
+                        <Row><div className="bSidebar2"></div></Row>
+                        <Row><div className="fireDiv"><FireAnimation /></div></Row>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
+    </div>
     );
 }
 

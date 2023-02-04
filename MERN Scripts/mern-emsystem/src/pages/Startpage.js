@@ -31,52 +31,44 @@ function Startpage(){
     }
 
     return(
-<div className="bContainer">
-<Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
-        <Row>
-            <div className="bHeader">
-                <Col lg={3} sm={2}>
-                <Logo2 fluid />
-                </Col>
-                <Col>
-                <h1 className="bearHug">camp oac & rotary club of kelowna</h1>
-                </Col>
-                <Col lg={1}>
-                <Dropdown />
-                </Col>
-                <Col xl={1} lg={{span:2, offset: 1}}>
-                <div className="bHeadicons">
-                <Logo fluid/>
-                </div>
-                </Col>
-            </div>
-            
+    <div className="bContainer">
+        <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <Row>
+                <div className="bHeader">
+                    <Col lg={3} sm={2}><Logo2 fluid /></Col>
+                    <Col><h1 className="bearHug">camp oac & rotary club of kelowna</h1> </Col>
+                    <Col lg={1}><Dropdown /></Col>
+                    <Col xl={1} lg={{span:2, offset: 1}}>
+                        <div className="bHeadicons">
+                            <Logo fluid/>
+                         </div>
+                    </Col>
+                </div>  
             </Row>
             <Row>
                 <Col lg={8} md={9} sm={12} xs={12}>
-                <div className="bMain">
-                    <h1 className="robotoSlab">Info</h1>
-                        <p className="robotoSlab">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                            exercitation ullamco.
-                        </p>
-                </div>
-                <div className="bMain2">
-                    <Col md={{ span: 3, offset: 10 }}> 
-                <Button variant="start" onClick={() => handleClick()}>PLACE ORDER</Button>{' '} </Col>
-                </div>
-                    </Col>
-                
-            <Col lg={4} md={3} sm={12} xs={12}>
-            <div className="bSide">
-                <Row><div className="bSidebar1"></div></Row>
-                <Row><div className="bSidebar2"></div></Row>
-                
-                <Row><div className="fireDiv"><FireAnimation /></div></Row>
-            </div>
-            </Col>
-        </Row>
-    </Container>
+                    <div className="bMain">
+                        <h1 className="robotoSlab">Info</h1>
+                            <p className="robotoSlab">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                                exercitation ullamco.
+                            </p>
+                    </div>
+                    <div className="bMain2">
+                        <Col md={{ span: 5, offset: 5 }} xs={{span: 5, offset: 5}}> 
+                            <Button variant="start" onClick={() => handleClick()}>PLACE ORDER</Button>{' '} 
+                        </Col>
+                    </div>
+                </Col>   
+                <Col lg={4} md={3} sm={12} xs={12}>
+                    <div className="bSide">
+                        <Row><div className="bSidebar1"></div></Row>
+                        <Row><div className="bSidebar2"></div></Row>
+                        <Row><div className="fireDiv"><FireAnimation /></div></Row>
+                    </div>
+                </Col>
+            </Row>
+        </Container>
     </div>
     );
 }
