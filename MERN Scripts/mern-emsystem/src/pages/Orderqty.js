@@ -27,15 +27,16 @@ function Orderqty(){
     <Banner /> 
     </Row>
     <Row>
-        <Col lg={12} md={12} sm={12} xs={12}>
-            <div className="bMain">
-                <Col lg={{span:12,offset: 4}}>
-                    <h2 className="orderTitle">Enter Order Details</h2>
+        <Col lg={9} md={10} sm={11} xs={11} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <div className="bOrder">
+            <h2 className="orderTitle">Enter Order Details</h2>
+                <Col lg={{span:12,offset: 1}}>
                     <PlaceOrder />
                 </Col>
             </div>
-            
-            <div className="bMain2">
+        </Col>
+        <Col lg={3} md={2} sm={1} xs={1} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <div className="bOrder2">
                 
             </div>
         </Col>  
