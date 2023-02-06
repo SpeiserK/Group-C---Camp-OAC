@@ -1,11 +1,14 @@
 import { PaymentForm, CreditCard } from 'react-square-web-payments-sdk';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SquarePay = () => {
 
     const [output, setOutput] = useState([]);
 
     const Quantity = localStorage.getItem("quantity");
+
+    const navigate = useNavigate();
 
     return (
     <div className="payForm">
@@ -34,16 +37,18 @@ const SquarePay = () => {
           
           const data = await response.json();
           console.log(data);
-
-          if (data.errors && data.errors.length > 0) {
-            if (data.errors[0].detail) {
-              window.showError(data.errors[0].detail);
+          async function statusCheck(onSuccess) {
+            if (data.errors && data.errors.length > 0) {
+              if (data.errors[0].detail) {
+                window.showError(data.errors[0].detail);
+              } else {
+                window.showError('Payment Failed.');
+              }
             } else {
-              window.showError('Payment Failed.');
+              onSuccess()
             }
-          } else {
-            alert('Payment Successful!');
           }
+          statusCheck(() => navigate("SquareReceipt"));
         }
         }
         >
