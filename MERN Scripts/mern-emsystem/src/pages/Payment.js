@@ -35,13 +35,8 @@ function post2DB(type) {
                     <div className="updateLeft">
                         <h2 className="orderTitle">Select Payment Type</h2>
                         <PaymentSummary />
-                        <button className="buttonStyle" onClick={() => navigate("SquarePay")}>Square Pay Page</button>
                         <div className="buttonBox">
-<<<<<<< Updated upstream
-                            <button className="squareButtonStyle" onClick={() => {post2DB("Credit/Debit"); navigate("SquareConfirmation")}}>Credit/Debit</button>
-=======
                             <button className="buttonStyle" onClick={() => {post2DB("Square"); navigate("SquarePay")}}>Square Pay Page</button>
->>>>>>> Stashed changes
                             <button className="buttonStyle" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash </button>
                             <button className="buttonStyle" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer </button>
                         </div>
