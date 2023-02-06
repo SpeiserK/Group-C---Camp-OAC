@@ -139,9 +139,8 @@ background-color: #17458f;
   font-size: calc(7px + 2vmin);
 }
 .empBanner {
-  background-image: linear-gradient(to right, #17458f,#2c4356);
+  background-color: #17458f;
   min-height: 50px;
-  position: fixed;
   top: 0;
   left: 0;
   margin-bottom: 0px;
@@ -496,16 +495,17 @@ background-color: #17458f;
 
 /*App Header*/
 .appHeader {
-  position: relative;
   display: flex;
   flex-direction: column;
+  
 }
 /*Admin Nav bar, used in Employee pages* top: 100;left: 0;*/
 .empHeader {
   background-color: #2c4356;
-  position: fixed;
   left: 0;
   top: 12%;
+  padding-top: 0.5em;
+  padding-bottom: 0.25em;
     
   z-index: 2;
   width: 100%;

@@ -10,7 +10,7 @@ function SuperAdmin(){
     <div className="appMain">
         <div className="appHeader">
             <Empbanner />
-            <Empnav />
+            
         </div>
         <body className="appContainer">
             <div className="empMainDiv">

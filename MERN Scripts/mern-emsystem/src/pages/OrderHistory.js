@@ -11,18 +11,14 @@ function OrderHistory(){
     <div className="appMain">
         <div className="appHeader">
             <Empbanner />
-            <Empnav />
+            
         </div>
         <body className="appContainer">
             <div className="empMainDiv">
                 <OrderDispHist />
             </div>
         </body>
-        <div className="footer">
-            <footer className="App-footer">
-                <Navbar />
-            </footer>
-        </div>
+       
     </div>
     );
 }
