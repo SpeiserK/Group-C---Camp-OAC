@@ -6,14 +6,11 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Logo2 from '../components/Logo2.js';
 import Logo from '../components/Logo.js'
-import Navbar from '../components/Navbar.js';
-import Banner from '../components/Banner.js';
-import Bundles1 from '../components/Bundles1.js';
-import CutWood from '../components/CutWood.js';
-import CampLogo from "../components/CampLogo.js";
-import Dropdown from '../components/Dropdown.js';
+import Drop from '../components/Dropdown.js';
 import FireAnimation from "../components/FireAnimation";
 import Button from 'react-bootstrap/Button';
+import Banner from "../components/Banner.js";
+import Navbar from "../components/Navbar.js";
 
 
 
@@ -21,10 +18,7 @@ import Button from 'react-bootstrap/Button';
 
 function Startpage(){
     const gotoOrder = useNavigate();
-    const p1 = "Enter your email. We'll use it to relay order details and confirmation.";
-    const p2 = "Select amount of firewood and pickup location.";
-    const p3 = "Choose prefered payment method.";
-    const p4 = "Receive confirmation email and pickup your bundle(s)!";
+    
 
     function handleClick(){
         gotoOrder("order");
@@ -34,25 +28,19 @@ function Startpage(){
     <div className="bContainer">
         <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
             <Row>
-                <div className="bHeader">
-                    <Col lg={3} sm={2}><Logo2 fluid /></Col>
-                    <Col><h1 className="bearHug">camp oac & rotary club of kelowna</h1> </Col>
-                    <Col lg={1}><Dropdown /></Col>
-                    <Col xl={1} lg={{span:2, offset: 1}}>
-                        <div className="bHeadicons">
-                            <Logo fluid/>
-                         </div>
-                    </Col>
-                </div>  
+            <Banner /> 
             </Row>
             <Row>
                 <Col lg={8} md={9} sm={12} xs={12}>
                     <div className="bMain">
-                        <h1 className="robotoSlab">Info</h1>
-                            <p className="robotoSlab">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
-                                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
-                                exercitation ullamco.
-                            </p>
+                        <h1 className="robotoSlab">Welcome</h1>
+                            <br></br>
+                            <p className="robotoSlab">This website is designed to act as a firewood purchasing portal for Camp OAC in coordination with Kelowna Rotary Ogopogo, all proceeds go to Camp OAC.
+                            </p><br></br>
+                            <p className="robotoSlab">To get started, use the Place Order button below!</p>
+                    </div>
+                    <div className="bMainFill">
+
                     </div>
                     <div className="bMain2">
                         <Col md={{ span: 5, offset: 5 }} xs={{span: 5, offset: 5}}> 

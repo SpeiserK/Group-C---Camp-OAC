@@ -28,14 +28,7 @@ function About(){
         <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
             <Row>
                 <div className="bHeader">
-                    <Col lg={3} sm={2}><Logo2 fluid /></Col>
-                    <Col><h1 className="bearHug">camp oac & rotary club of kelowna</h1> </Col>
-                    <Col lg={1}><Dropdown /></Col>
-                    <Col xl={1} lg={{span:2, offset: 1}}>
-                        <div className="bHeadicons">
-                            <Logo fluid/>
-                        </div>
-                    </Col>
+                    <Banner />
                 </div>  
             </Row>
             <Row>
