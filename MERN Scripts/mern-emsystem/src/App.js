@@ -13,6 +13,7 @@ import CashConfirmation from './pages/CashConfirmation';
 import ETransferConfirmation from './pages/ETransferConfirmation';
 import SquareConfirmation from './pages/SquareConfirmation';
 import SquarePay from './pages/SquarePay';
+import SquareReceipt from './pages/SquareReceipt';
 import SuperAdmin from './pages/SuperAdmin';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
           <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
           <Route path="order/payment/SquareConfirmation" element={<SquareConfirmation/>} />
           <Route path="order/payment/SquarePay" element={<SquarePay/>} />
+          <Route path="order/payment/SquarePay/SquareReceipt" element={<SquareReceipt/>} />
           <Route path="login/emp" element={<Emp/>}/>
           <Route path="login/emp/inventory" element={<Inventory/>} />
           <Route path="login/emp/history" element={<OrderHistory/>} />

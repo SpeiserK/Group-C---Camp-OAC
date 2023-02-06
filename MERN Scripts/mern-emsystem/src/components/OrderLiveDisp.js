@@ -14,7 +14,7 @@ export default class OrderLiveDisp extends React.Component {
     
   componentDidMount() {
     //const statusReq = this.props.query1;
-    axios.get(`http://localhost:5000/order`, { 
+    axios.get(`http://localhost:5001/order`, { 
       params: {
         Status: this.props.query1,
         Pickup: 'false', 
@@ -44,7 +44,7 @@ export default class OrderLiveDisp extends React.Component {
       datePickup = datePickup.slice(0,11);
 
 
-    axios.post('http://localhost:5000/statuschange', {
+    axios.post('http://localhost:5001/statuschange', {
         id: id,
         status: "Approved",
         pickup: 'false',
@@ -64,7 +64,7 @@ export default class OrderLiveDisp extends React.Component {
 
   decline(id) {
 
-    axios.post('http://localhost:5000/statuschange', {
+    axios.post('http://localhost:5001/statuschange', {
       id: id,
       status: "Denied",
       pickup: 'false'
@@ -77,7 +77,7 @@ export default class OrderLiveDisp extends React.Component {
   //confirm pickup post
 
   confirmPickup(id,orderStatus) {
-    axios.post('http://localhost:5000/statuschange',{
+    axios.post('http://localhost:5001/statuschange',{
       id: id,
       status: orderStatus,
       pickup: 'true'
