@@ -30,31 +30,34 @@ function post2DB(type) {
 }
 
     return(
-            <div>
-                <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
-                    <Row>
-                    
-                        <Banner />
-                    
-                    </Row>
-                    <Row>
-                    <body className="appContainer">
-                        <div className="updateLeft">
-                            <h2 className="orderTitle">Summary</h2>
-                            <PaymentSummary />
-                            <br></br>
-                            <h2 className="orderTitle">Select Payment Type:</h2>
-                            <div className="buttonBox">
-                                <button className="squareButtonStyle" onClick={() => {post2DB("Credit/Debit"); navigate("SquarePay")}}>Credit/Debit</button>
-                                <button className="buttonStyle" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash </button>
-                                <button className="buttonStyle" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer </button>
-                            </div>
+<div className="bContainer">
+<Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+    <Row>
+    <Banner /> 
+    </Row>
+    <Row>
+        <Col lg={9} md={10} sm={11} xs={11} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <div className="bOrder">
+            <h2 className="orderTitle">Select Payment Type</h2>
+                <Col lg={{span:12,offset: 1}}>
+                    <PaymentSummary />
+                        <div className="buttonBox">
+                            <button className="buttonStyle" onClick={() => navigate("SquarePay")}>Square Pay Page</button>
+                            <button className="squareButtonStyle" onClick={() => {post2DB("Credit/Debit"); navigate("SquareConfirmation")}}>Credit/Debit</button>
+                            <button className="buttonStyle" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash </button>
+                            <button className="buttonStyle" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer </button>
                         </div>
-                        
-                    </body>
-                    </Row>
-                </Container>
+                </Col>
             </div>
+        </Col>
+        <Col lg={3} md={2} sm={1} xs={1} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <div className="bPay2">
+                
+            </div>
+        </Col>  
+    </Row>
+</Container>
+</div>
     );
 }
 

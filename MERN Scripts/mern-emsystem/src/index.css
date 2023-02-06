@@ -56,7 +56,7 @@ code {
 
  @font-face {
   font-family: "RobotoSlab";
-  src: local("RobotoSlav"),
+  src: local("RobotoSlab"),
    url("./fonts/RobotoSlab/RobotoSlab-Regular.ttf") format("truetype");
    font-weight: bold;
  }
