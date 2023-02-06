@@ -26,7 +26,7 @@ function post2DB(type) {
         Payment: type,
         phoneNumber: localStorage.getItem("phoneNumber")
     }
-    axios.post('http://localhost:5001/send', newOrder);
+    axios.post('http://localhost:5000/send', newOrder);
 }
 
     return(
@@ -45,7 +45,7 @@ function post2DB(type) {
                             <br></br>
                             <h2 className="orderTitle">Select Payment Type:</h2>
                             <div className="buttonBox">
-                                <button className="squareButtonStyle" onClick={() => {post2DB("Credit/Debit"); navigate("SquarePay")}}>Credit/Debit</button>
+                                <button className="squareButtonStyle" onClick={() => {post2DB("Credit/Debit"); navigate("SquareConfirmation")}}>Credit/Debit</button>
                                 <button className="buttonStyle" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash </button>
                                 <button className="buttonStyle" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer </button>
                             </div>

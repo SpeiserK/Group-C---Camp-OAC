@@ -123,7 +123,7 @@ router.route("/send").post((req, res) => {
         console.log(err);
     }) 
 
-});
+})
 
 
 module.exports = router;
