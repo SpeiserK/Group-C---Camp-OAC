@@ -9,6 +9,9 @@ import PlaceOrder from '../components/hooks/placeOrder.js';
 import OurProgBar from '../components/OurProgBar.js';
 import Bundles2 from '../components/Bundles2.js';
 import CampLogo from '../components/CampLogo.js';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/esm/Container.js';
 
 
 
@@ -18,42 +21,28 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Orderqty(){
     return( 
-        <div className="appMain">
-            <div className="appHeader">
-                <Banner />
-            </div>
+        
+         <div>  
+            <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+                <Row>
+            <Banner />
+                </Row>
+                <Row>
+            
             <body className="appContainer">
+                
                 <div className="updateLeft">
                     
                     <h2 className="orderTitle">Enter Order Details</h2>
                     <PlaceOrder />
-                    <div className="bundleDiv">
-                        <Bundles2 />
-                        
-                        <p className="bundleText"><FontAwesomeIcon icon={faCircleInfo}/><br></br><br></br>Here is what the process of bundle making looks like! You can expect a similar bundle size as the ones shown in this image.</p>
-                    </div>
+                    
                    
                  </div>
-                <div className="updateRight">
-                    <Logo />
-                    <div className="progBar">
-                        <h4 className="progressTitle">Steps:</h4><br></br>
-                        <OurProgBar bgcolor="#17458f" progress='33'  height={30}/>
-                        <ul>
-                            <li className="progressText"><strong>Email:</strong>  Completed</li>
-                            <li className="progressText"><strong>Quantity:</strong>  Pending...</li>
-                            <li className="progressText"><strong>Location:</strong>  Pending...</li>
-                            <li className="progressText"><strong>Payment: </strong> Pending...</li>
-                        </ul> 
-                    </div>
-                    <CampLogo />
-                 </div>
             </body>
-            <div className="footer">
-                <footer className="App-footer">
-                    <Navbar />
-                </footer>
-            </div>
+            
+            </Row>
+            
+            </Container>
         </div>
     );
 }

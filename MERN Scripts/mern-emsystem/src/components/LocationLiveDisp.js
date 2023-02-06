@@ -13,7 +13,7 @@ export default class LocationLiveDisp extends React.Component {
   }
   //variables to handle state changes
   componentDidMount() {
-    axios.get(`http://localhost:5000/location`, { 
+    axios.get(`http://localhost:5001/location`, { 
       params: {
         Name: this.props.queryLoc
       }
@@ -36,7 +36,7 @@ export default class LocationLiveDisp extends React.Component {
 
     //single doc post request
     locUpdate (index, id) {
-      axios.post('http://localhost:5000/locupdate', {
+      axios.post('http://localhost:5001/locupdate', {
         id: id,
         stock: this.state.stock[index],
         open: this.state.openStatus[index]

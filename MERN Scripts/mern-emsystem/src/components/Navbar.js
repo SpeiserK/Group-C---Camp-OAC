@@ -19,7 +19,7 @@ export default class Navbar extends Component {
 
     
       componentDidMount(){
-        axios.get(`http://localhost:5000/`)
+        axios.get(`http://localhost:5001/`)
       .then(res => {
         const data = res.data;
         this.setState({ online: data });
