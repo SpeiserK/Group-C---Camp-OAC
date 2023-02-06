@@ -26,7 +26,7 @@ function post2DB(type) {
         Payment: type,
         phoneNumber: localStorage.getItem("phoneNumber")
     }
-    axios.post('http://localhost:5000/send', newOrder);
+    axios.post('http://localhost:5001/send', newOrder);
 }
 
     return(
