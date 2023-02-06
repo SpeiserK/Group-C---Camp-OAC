@@ -21,7 +21,7 @@ const EmpSignup = () => {
         
         e.preventDefault();
         try {
-            const url = "http://localhost:5000/api/emp";
+            const url = "http://localhost:5001/api/emp";
             const {data: res} = await axios.post(url, data);
             setError("account successfully created!");
             console.log(res.message);
