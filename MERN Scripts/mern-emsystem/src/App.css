@@ -1137,4 +1137,19 @@ New CSS using bootstrap
   background-color: #f4f3ef;
   color: black;
 }
-  
+
+
+/********
+DROPDOWN
+*********/
+.dropdown-toggle::after {
+  display: none !important;
+}
+.dropdown-toggle{
+  background: none;
+  border: none;
+}
+.dropdown-toggle:hover{
+  background: none;
+}
+

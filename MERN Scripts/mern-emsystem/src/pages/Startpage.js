@@ -11,7 +11,7 @@ import Banner from '../components/Banner.js';
 import Bundles1 from '../components/Bundles1.js';
 import CutWood from '../components/CutWood.js';
 import CampLogo from "../components/CampLogo.js";
-import Dropdown from '../components/Dropdown.js';
+import Drop from '../components/Dropdown.js';
 import FireAnimation from "../components/FireAnimation";
 import Button from 'react-bootstrap/Button';
 
@@ -37,7 +37,7 @@ function Startpage(){
                 <div className="bHeader">
                     <Col lg={3} sm={2}><Logo2 fluid /></Col>
                     <Col><h1 className="bearHug">camp oac & rotary club of kelowna</h1> </Col>
-                    <Col lg={1}><Dropdown /></Col>
+                    <Col lg={1}><Drop/></Col>
                     <Col xl={1} lg={{span:2, offset: 1}}>
                         <div className="bHeadicons">
                             <Logo fluid/>
