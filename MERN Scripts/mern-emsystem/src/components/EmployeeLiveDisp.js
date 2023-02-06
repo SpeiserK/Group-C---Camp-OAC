@@ -11,7 +11,7 @@ export default class LocationLiveDisp extends React.Component {
   }
   //variables to handle state changes
   componentDidMount() {
-    axios.get(`http://localhost:5000/employee`)
+    axios.get(`http://localhost:5001/employee`)
       .then(res => {
         const locationData = res.data;
         this.setState({ location: locationData });
@@ -20,7 +20,7 @@ export default class LocationLiveDisp extends React.Component {
 
     //single doc post request
     deleteUser(id) {
-      axios.post('http://localhost:5000/deleteuser', {
+      axios.post('http://localhost:5001/deleteuser', {
         id: id
       })
       .then( response => {

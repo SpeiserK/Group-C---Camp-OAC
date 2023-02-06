@@ -11,7 +11,7 @@ export default class OrderDispHist extends React.Component {
   
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/order`)
+    axios.get(`http://localhost:5001/order`)
       .then(res => {
         const orderData = res.data;
         this.setState({ orders: orderData });
