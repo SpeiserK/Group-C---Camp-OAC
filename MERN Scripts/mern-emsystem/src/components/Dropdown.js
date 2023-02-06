@@ -2,19 +2,31 @@ import React, { Component } from 'react';
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from "react-router-dom";
+import Dropdown from 'react-bootstrap/Dropdown';
 
-export default class Dropdown extends Component {
+
+/*TODO make dropdown display body on hover*/
+
+
+export default class Drop extends Component {
     render(){
         return(
-                <div className="dropdown">
-                    <button className="dropbtn"><FontAwesomeIcon icon={faBars} size="4x" /></button>
-                    <div className="dropdown-content">
-                        <Link to="/about">About</Link>
-                        <a href="https://www.facebook.com/ogopogorotary/" target="_blank" className="link1">Facebook</a>
-                        <a href="https://portal.clubrunner.ca/824" target="_blank" className="link3">Kelowna Rotary</a>
-                        <a href="https://www.campoac.com" target="_blank" className="link2">Camp OAC</a>
-                    </div>
-                </div>
+            
+                <Dropdown>
+            <Dropdown.Toggle id="dropdown-basic">
+            <FontAwesomeIcon icon={faBars} size="4x" />
+            </Dropdown.Toggle>
+      
+            <Dropdown.Menu>
+              <Dropdown.Item href="/about">About</Dropdown.Item>
+              <Dropdown.Item href="https://www.facebook.com/ogopogorotary/">Facebook</Dropdown.Item>
+              <Dropdown.Item href="https://portal.clubrunner.ca/824">Kelowna Rotary</Dropdown.Item>
+              <Dropdown.Item href="https://portal.clubrunner.ca/824">Camp OAC</Dropdown.Item>
+            </Dropdown.Menu>
+                </Dropdown>
+            
+                
+               
         );
     }
 }
