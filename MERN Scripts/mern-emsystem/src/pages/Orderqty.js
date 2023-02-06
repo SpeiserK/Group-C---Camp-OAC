@@ -21,29 +21,27 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Orderqty(){
     return( 
-        
-         <div>  
-            <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
-                <Row>
-            <Banner />
-                </Row>
-                <Row>
-            
-            <body className="appContainer">
-                
-                <div className="updateLeft">
-                    
+<div className="bContainer">
+<Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+    <Row>
+    <Banner /> 
+    </Row>
+    <Row>
+        <Col lg={12} md={12} sm={12} xs={12}>
+            <div className="bMain">
+                <Col lg={{span:12,offset: 4}}>
                     <h2 className="orderTitle">Enter Order Details</h2>
                     <PlaceOrder />
-                    
-                   
-                 </div>
-            </body>
+                </Col>
+            </div>
             
-            </Row>
-            
-            </Container>
-        </div>
+            <div className="bMain2">
+                
+            </div>
+        </Col>  
+    </Row>
+</Container>
+</div>
     );
 }
 

@@ -5,7 +5,7 @@ const SquareCheck = (props) => {
   const [amount, setAmount] = useState(0);
 
   const handleCardTokenizeResponseReceived = async (token, verifiedBuyer) => {
-    await fetch('http://localhost:5000/charge', {
+    await fetch('/quickstart', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ nonce: token.nonce, amount, sourceId: token.token }),
