@@ -22,8 +22,7 @@ const SquarePay = () => {
           const body = JSON.stringify({
             locationId: process.env.SQUARE_LOCATION_ID,
             applicationId: process.env.SQUARE_APPLICATION_ID,
-            sourceId: token,
-            quantity: 2
+            sourceId: token
           });
           console.log("Token Received: ", token);
           // Post request to backend 
@@ -37,6 +36,7 @@ const SquarePay = () => {
           
           const data = await response.json();
           console.log(data);
+
           async function statusCheck(onSuccess) {
             if (data.errors && data.errors.length > 0) {
               if (data.errors[0].detail) {

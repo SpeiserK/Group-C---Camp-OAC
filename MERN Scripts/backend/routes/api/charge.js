@@ -36,7 +36,10 @@ router.post('/', async (req, res) => {
       return typeof value === "bigint" ? parseInt(value) : value;
     }, 4);
     
+    var resData = JSON.parse(result);
     console.log(result);
+    var receiptLink = resData.receiptUrl;
+    console.log("Receipt Url: "+receiptLink);
     res.json({
       result
     });
