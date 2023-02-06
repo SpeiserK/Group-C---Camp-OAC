@@ -34,8 +34,13 @@ function Startpage(){
                 <Col lg={8} md={9} sm={12} xs={12}>
                     <div className="bMain">
                         <h1 className="robotoSlab">Welcome</h1>
-                            <p className="robotoSlab">This website is designed to act as a firewood purchasing portal for Camp OAC in coordination with Kelowna Rotary Ogopogo, all proceeds go to Camp OAC
-                            </p>
+                            <br></br>
+                            <p className="robotoSlab">This website is designed to act as a firewood purchasing portal for Camp OAC in coordination with Kelowna Rotary Ogopogo, all proceeds go to Camp OAC.
+                            </p><br></br>
+                            <p className="robotoSlab">To get started, use the Place Order button below!</p>
+                    </div>
+                    <div className="bMainFill">
+
                     </div>
                     <div className="bMain2">
                         <Col md={{ span: 5, offset: 5 }} xs={{span: 5, offset: 5}}> 
@@ -50,9 +55,6 @@ function Startpage(){
                         <Row><div className="fireDiv"><FireAnimation /></div></Row>
                     </div>
                 </Col>
-            </Row>
-            <Row>
-                <Navbar />
             </Row>
         </Container>
     </div>

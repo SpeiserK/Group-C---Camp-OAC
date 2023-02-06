@@ -22,6 +22,7 @@ export default class Drop extends Component {
               <Dropdown.Item href="https://www.facebook.com/ogopogorotary/">Facebook</Dropdown.Item>
               <Dropdown.Item href="https://portal.clubrunner.ca/824">Kelowna Rotary</Dropdown.Item>
               <Dropdown.Item href="https://portal.clubrunner.ca/824">Camp OAC</Dropdown.Item>
+              <Dropdown.Item href="/login">Admin Portal</Dropdown.Item>
             </Dropdown.Menu>
                 </Dropdown>
             

@@ -388,10 +388,11 @@ background-color: #17458f;
 
 /*CSS for Header Link, found in Header.js*/
 .Link {
-  font-family: "Frutiger";
   color: white;
   align-self: center;
-  
+}
+.Link:hover {
+  color: #f7a81b;
 }
 .adminLink {
   font-family: "Frutiger";
@@ -1080,12 +1081,17 @@ New CSS using bootstrap
   margin-top: 0.75em;
   margin-left: 0.5em;
 }
+.bMainFill {
+  background-color: #f4f3ef;
+  padding: 1em 2em 9.5em 2em;
+
+}
 
 .bMain2 {
-  background-image: url('components/pictures/Camp-OAC-Logo_Pine-Rectangle.png');
+  background-color: #557a65;
   font-size: calc(7px + 2vmin);
   color: white;
-  padding: 2em 5em 2em 0em;
+  padding: 2em 5em 1.5em 0em;
   margin-left: 0.5em;
   margin-bottom: 2em;
 }

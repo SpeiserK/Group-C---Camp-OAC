@@ -15,7 +15,7 @@ export default class Banner extends Component {
             <Container>
                     <div className="bHeader">
                     <Col lg={3} sm={2}><Logo2 fluid /></Col>
-                    <Col><Link to="/" className="Link" style={{textDecoration: 'none', padding: 20 }}><h1 className="bearHug">Rotary Club of Kelowna Ogopogo</h1></Link> </Col>
+                    <Col><Link to="/" className="Link" style={{textDecoration: 'none', padding: 20 }}><h1 className="bearHug">rotary club of kelowna ogopogo</h1></Link> </Col>
                     <Col lg={1}><Drop/></Col>
                     <Col xl={1} lg={{span:2, offset: 1}}>
                         <div className="bHeadicons">
