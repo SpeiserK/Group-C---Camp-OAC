@@ -17,13 +17,11 @@ export default class PaymentSummary extends Component {
         return( // within this block we display email, firewood ordered amt, and total price
         <div>
             <div className="loggedIn">
-                 <p id="email" >Logged in as: {email} </p>
-            </div>
-            <div className="orderText">
-                <p> Pickup location: {location}</p>
-                <p> Firewood Ordered: {quantity} </p> 
-                <p> Total Price: ${quantity*9.99} </p>  
-                <p> Number : {phoneNumber}</p> 
+                <label>Email:  </label> {email} <br></br><br></br>
+                <label>Number:  </label> {phoneNumber}<br></br><br></br>
+                <label>Pickup location:  </label> {location}<br></br><br></br>
+                <label>Firewood Ordered:  </label> {quantity}<br></br><br></br>
+                <label>Total Price:  </label> ${quantity*9.99}<br></br><br></br>
             </div>
         </div>
         );            

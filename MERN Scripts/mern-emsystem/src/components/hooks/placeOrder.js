@@ -14,8 +14,7 @@ const PlaceOrder = () => {
     const [orderValue, setOrderValue] = useState('');
 
     // set valid value to false
-    const [validValue, setValidValue] = useState(false);
-
+    const [validValue, setValidValue] = useState(true);
     //set locValue to false
     const [locValue, setLocValue] = useState(false);
 
@@ -73,9 +72,9 @@ const PlaceOrder = () => {
     }
 
     useEffect(() => {
-        if(orderValue > minBundle && orderValue < maxBundle){
+        if(orderValue > minBundle || orderValue < maxBundle){
             setOrderValue(orderValue);
-            const result = (orderValue < maxBundle && orderValue > minBundle);
+            const result = (orderValue < maxBundle || orderValue > minBundle);
             setValidValue(result);
         }
     }, [orderValue])
@@ -133,7 +132,8 @@ const PlaceOrder = () => {
                 </p>
                 <br />
                 <label htmlFor="confirmEmail">
-                    Confirm email:
+                    Confirm Email:
+                </label>
                     <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
                         <FontAwesomeIcon icon={faCheck} />
                     </span>
@@ -141,7 +141,7 @@ const PlaceOrder = () => {
                         <FontAwesomeIcon icon={faTimes} />
                     </span>
                     <br />
-                </label>
+                
                 <input
                     type="text"
                     id="confirmEmail"
@@ -158,13 +158,12 @@ const PlaceOrder = () => {
                     <FontAwesomeIcon icon={faInfoCircle} />
                     Must match the first email input field.<br />
                 </p>
-                <br></br>
-
                 
-                <p>Input the number of firewood bundles you would like to purchase.</p>
                     <form className="orderQuantity">
                         <label htmlFor="quantity">
-                            Number of bundles:     
+                            Number of bundles: (Max 20) 
+                        </label> 
+                        <br></br>    
                             <input
                                 type="number"
                                 id="quantity"
@@ -180,12 +179,14 @@ const PlaceOrder = () => {
                             <FontAwesomeIcon icon={faInfoCircle} />
                             *Order size must be between 1-20*
                             </p>
-                            <br></br>
-                        </label>
+                            
+                        
                     </form>
                     <div className="Location-List">
                         <label>
                             Select Pickup Location: 
+                        </label>
+                        <br></br>
                         <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" >
                 <option value="select" disabled selected>Select a location</option>
                 <option value="West Kelowna">West Kelowna</option>
@@ -195,18 +196,20 @@ const PlaceOrder = () => {
                 <option value="Glenmore"> Glenmore </option>
                 <option value="Kelowna Central"> Kelowna Central </option>
                         </select>
-                        </label>
+                        
                     </div>
                     <br></br>
                     <div className="phone-number">
                     <label>
                     Phone Number:
+                    </label>
+                    <br></br>
                         <input
                         type="text"
                         value={phoneNumber}
                         onChange={e => setPhoneNumber(e.target.value)}
                         />
-                    </label>
+                    
                     </div>
                 <button className="buttonStyle" disabled={!validValue || !locValue ? true : false} onClick={(e) => checkInput()}>
                     Next

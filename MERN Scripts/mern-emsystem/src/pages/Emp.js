@@ -4,16 +4,23 @@ import Navbar from '../components/Navbar.js';
 import LocationLiveDisp from '../components/LocationLiveDisp.js';
 import Empnav from '../components/Empnav.js';
 import Empbanner from '../components/Empbanner.js';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 
 const empLocation = localStorage.getItem('selectedLocation');
 
 function Emp(){
     return(
     <div className="appMain">
-        <div className="appHeader">
-           <Empbanner />
-           <Empnav />
-        </div>
+        <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <Row>
+                <div className="appHeader">
+                    <Empbanner />
+                    <Empnav />
+                </div>
+            </Row>
+            <Row>
         <body className="appContainer">
             <div className="empLeftDiv"> 
                 <LocationLiveDisp queryLoc={empLocation} />
@@ -23,11 +30,9 @@ function Emp(){
                  <OrderLiveDisp query1={'Pending'} queryLoc={empLocation} />
             </div>
         </body>
-        <div className="footer">
-            <footer className="App-footer">
-                <Navbar />
-            </footer>
-        </div>
+        
+            </Row>
+        </Container>
     </div>
     );
 }
