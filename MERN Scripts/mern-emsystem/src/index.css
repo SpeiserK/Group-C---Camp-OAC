@@ -47,6 +47,20 @@ code {
   font-weight: bold;
  }
 
+ @font-face {
+  font-family: "BearHug";
+  src: local("BearHug"),
+   url("./fonts/BearHug/BEARHUGSBYRATTICSASSIN-Regular.ttf") format("truetype");
+   font-weight: bold;
+ }
+
+ @font-face {
+  font-family: "RobotoSlab";
+  src: local("RobotoSlab"),
+   url("./fonts/RobotoSlab/RobotoSlab-Regular.ttf") format("truetype");
+   font-weight: bold;
+ }
+
 
 
 

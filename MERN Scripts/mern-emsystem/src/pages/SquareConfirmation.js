@@ -6,6 +6,10 @@ import Banner from '../components/Banner.js';
 import PaymentSummary from '../components/PaymentSummary.js';
 import OurProgBar from '../components/OurProgBar.js';
 import CampLogo from '../components/CampLogo.js';
+import Container from 'react-bootstrap/esm/Container.js';
+import Row from 'react-bootstrap/esm/Row.js';
+import Col from 'react-bootstrap/esm/Col.js';
+
 
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
@@ -13,41 +17,32 @@ import CampLogo from '../components/CampLogo.js';
 function SquareConfirmation(){
 const navigate = useNavigate();
     return(
-    <div className="appMain">
-        <div className="appHeader">
-        <Banner />
-        </div>
-        <body className="appContainer">
-            <div className="updateLeft">
-                <p> Your order has successfully been processed!
+<div className="bContainer">
+<Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+    <Row>
+    <Banner /> 
+    </Row>
+    <Row>
+        <Col lg={9} md={10} sm={11} xs={11} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <div className="bOrder">
+            <p> Your order has successfully been processed!
                     Check your email for the pickup location of your firewood, it should be ready for you when you get there!
                     (WIP, email confirmation not functioning yet)
                     </p>
                     <div className="buttonBox">
                             <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
                     </div>
+                
             </div>
-            <div className="updateRight">
-                <Logo />
-                <div className="progBar">
-                    <h4 className="progressTitle">Complete</h4><br></br>
-                    <OurProgBar bgcolor="#17458f" progress='100'  height={30}/>
-                     <ul>
-                        <li className="progressText"><strong>Email:</strong> Completed</li>
-                        <li className="progressText"><strong>Quantity:</strong>  Completed</li>
-                        <li className="progressText"><strong>Location:</strong>  Completed</li>
-                        <li className="progressText"><strong>Payment: </strong> Completed</li>
-                     </ul> 
-                </div>
-                <CampLogo />
+        </Col>
+        <Col lg={3} md={2} sm={1} xs={1} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <div className="bOrder2">
+                
             </div>
-        </body>
-        <div className="footer">
-            <footer className="App-footer">
-                <Navbar />
-            </footer>
-        </div>
-    </div>
+        </Col>  
+    </Row>
+</Container>
+</div>
     );
 }
 

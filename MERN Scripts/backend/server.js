@@ -206,12 +206,10 @@ app.post("/deleteuser", (req, res) => {
     console.log("test3");
     
 });
+app.use("/charge", require("./routes/api/charge.js"));
 
 app.use("/", require("./routes/OrderRoute.js"));
 //emp creation
 app.use("/api/emp", require("./routes/EmpRoute.js"));
 //emp auth
 app.use("/api/auth", require("./routes/Auth.js"));
-
-//Square api
-app.use("/charge", require("./routes/api/charge.js"));

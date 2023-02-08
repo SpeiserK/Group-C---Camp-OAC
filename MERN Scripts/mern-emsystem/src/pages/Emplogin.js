@@ -39,11 +39,7 @@ function Emplogin(){
                     
             </div>
         </body>
-        <div className="footer">
-            <footer className="App-footer">
-                <Navbar />
-            </footer>
-        </div>
+        <Navbar />
     </div>
     );
 }

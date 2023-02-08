@@ -7,6 +7,9 @@ import PaymentSummary from '../components/PaymentSummary.js';
 import OurProgBar from '../components/OurProgBar.js';
 import axios from 'axios';
 import CampLogo from '../components/CampLogo.js';
+import Row from 'react-bootstrap/esm/Row.js';
+import Col from 'react-bootstrap/esm/Col.js';
+import Container from 'react-bootstrap/esm/Container.js';
 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
 
@@ -27,41 +30,34 @@ function post2DB(type) {
 }
 
     return(
-            <div className="appMain">
-                <div className="appHeader">
-                    <Banner />
-                </div>
-                <body className="appContainer">
-                    <div className="updateLeft">
-                        <h2 className="orderTitle">Select Payment Type</h2>
-                        <PaymentSummary />
+
+<div className="bContainer">
+<Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+    <Row>
+    <Banner /> 
+    </Row>
+    <Row>
+        <Col lg={9} md={10} sm={11} xs={11} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <div className="bOrder">
+            <h2 className="orderTitle">Select Payment Type</h2>
+                <Col lg={{span:12,offset: 1}}>
+                    <PaymentSummary />
                         <div className="buttonBox">
                             <button className="buttonStyle" onClick={() => {post2DB("Square"); navigate("SquarePay")}}>Square Pay Page</button>
                             <button className="buttonStyle" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash </button>
                             <button className="buttonStyle" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer </button>
                         </div>
-                    </div>
-                    <div className="updateRight">
-                        <Logo />  
-                        <div className="progBar">
-                            <h4 className="progressTitle">Steps:</h4><br></br>
-                            <OurProgBar bgcolor="#17458f" progress='66'  height={30}/>
-                            <ul>
-                                <li className="progressText"><strong>Email:</strong> Completed</li>
-                                 <li className="progressText"><strong>Quantity:</strong>  Completed</li>
-                                <li className="progressText"><strong>Location:</strong>  Completed</li>
-                                <li className="progressText"><strong>Payment: </strong> Pending...</li>
-                            </ul> 
-                        </div>
-                        <CampLogo />
-                    </div>
-                </body>
-                <div className="footer">
-                    <footer className="App-footer">
-                        <Navbar />
-                    </footer>
-                </div>
+                </Col>
             </div>
+        </Col>
+        <Col lg={3} md={2} sm={1} xs={1} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <div className="bPay2">
+                
+            </div>
+        </Col>  
+    </Row>
+</Container>
+</div>
     );
 }
 
