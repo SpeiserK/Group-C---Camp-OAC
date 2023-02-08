@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const squareConnect = require('square');
 const { Client, Environment } = require("square");
 //const uuidv4 = require('uuid/v4');
-
 
 const { randomUUID } = require('crypto');
 const { json } = require('express');
@@ -18,8 +16,6 @@ const paymentsApi = client.paymentsApi;
 router.post('/', async (req, res) => {
   const token = req.body.sourceId.token;
   console.log(token);
-  //const payload = await json(req);
-  //const idempotency_Key = payload.idempotencyKey;
   const idempotencyKey = randomUUID();
     
   const request_body = {
