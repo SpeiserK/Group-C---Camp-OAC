@@ -7,12 +7,9 @@ export default class Empnav extends Component {
         return(
             <div>
                 <div className="empHeader">
-                <div className="adminTools">
-            
-            <LocationSelect />
-
-            
-        </div>
+                    <div className="adminTools">
+                        <LocationSelect />
+                    </div>
                 </div>
             </div>
         );            

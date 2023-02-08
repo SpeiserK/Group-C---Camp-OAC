@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../components/Navbar.js';
 import Empbanner from '../components/Empbanner.js';
 import Empnav from '../components/Empnav.js';
 import EmployeeLiveDisp from '../components/EmployeeLiveDisp';
@@ -20,7 +19,7 @@ function SuperAdmin(){
         </body>
         <div className="footer">
             <footer className="App-footer">
-                <Navbar />
+        
             </footer>
         </div>
     </div>

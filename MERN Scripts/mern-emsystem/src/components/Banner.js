@@ -7,10 +7,8 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-
 export default class Banner extends Component {
     render(){
-
         return(
             <Container>
                     <div className="bHeader">
