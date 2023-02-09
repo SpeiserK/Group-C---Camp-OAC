@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import Logo from '../components/Logo.js';
-import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import OurProgBar from '../components/OurProgBar.js';
 import CampLogo from '../components/CampLogo.js';
@@ -39,7 +38,6 @@ const navigate = useNavigate();
         </body>
         <div className="footer">
             <footer className="App-footer">
-                <Navbar />
             </footer>
         </div>
     </div>

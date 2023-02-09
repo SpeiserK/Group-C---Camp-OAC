@@ -1,6 +1,5 @@
 import React from 'react'
 import OrderLiveDisp from '../components/OrderLiveDisp.js';
-import Navbar from '../components/Navbar.js';
 import LocationLiveDisp from '../components/LocationLiveDisp.js';
 import Empnav from '../components/Empnav.js';
 import Empbanner from '../components/Empbanner.js';
