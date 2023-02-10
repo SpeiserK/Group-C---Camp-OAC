@@ -1,16 +1,13 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React from 'react'
 
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Logo2 from '../components/Logo2.js';
-import Logo from '../components/Logo.js'
-import Drop from '../components/Dropdown.js';
 import FireAnimation from "../components/FireAnimation";
 import Button from 'react-bootstrap/Button';
 import Banner from "../components/Banner.js";
-import Navbar from "../components/Navbar.js";
+
 
 
 
