@@ -4,13 +4,10 @@ import Logo from './Logo.js';
 import Logo2 from './Logo2.js';
 import Drop from './Dropdown.js';
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-
 
 export default class Banner extends Component {
     render(){
-
         return(
             <Container>
                     <div className="bHeader">

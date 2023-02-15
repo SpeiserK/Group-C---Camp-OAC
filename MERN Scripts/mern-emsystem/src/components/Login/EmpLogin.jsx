@@ -1,8 +1,7 @@
 import {useState} from 'react';
-import {Link} from 'react-router-dom';
 import axios from 'axios';
-import styles from './styles.EmpLogin.css';
 
+/*Used in EmpLogin.js*/
 const EmpLogin = () => {
     const[data, setData] = useState({
         Username:"",
@@ -31,43 +30,33 @@ const EmpLogin = () => {
 
     }
     return (
-        <div className={styles.login_container}>
-            <div className={styles.login_form_container}>
-                <div className={styles.left}>
-                <form className={styles.form_container} onSubmit={handleSubmit}>
+        <div className="empLoginDiv ">
+                <form onSubmit={handleSubmit}>
                         <h1>Employee Login</h1>
                         <input
                             type="text"
+                            className="textboxStyle"
                             placeholder='Username'
                             name='Username'
                             onChange={handleChange}
                             value={data.Username}
                             required
-                            className={styles.input}
-                        />
+                        /> <br></br>
                         <input
                             type="password"
+                            className="textboxStyle"
                             placeholder='Password'
                             name='Password'
                             onChange={handleChange}
                             value={data.Password}
                             required
-                            className={styles.input}
-                        />
-                        {error && <div className={styles.error_msg}>{error}</div>}
-                        <button type="submit" className={styles.green_btn}>
+                        /> <br></br>
+                        {error && <div>{error}</div>}
+                        <button type="submit">
                             Sign In
                         </button>
                     </form> 
-                </div>
-                
-                <div className={styles.right}>
-                
-                    
-                    
-
-                </div>
-            </div>
+               
         </div>
 
     );

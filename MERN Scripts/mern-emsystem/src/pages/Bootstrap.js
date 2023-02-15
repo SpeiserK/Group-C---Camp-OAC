@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col';
 import {ReactComponent as BundlesSVG} from '../components/pictures/Bundles1.svg';
 import Logo from '../components/Logo.js'
 import Logo2 from '../components/Logo2.js';
-import NavbarT from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import Bundles1 from '../components/Bundles1.js';
 import CutWood from '../components/CutWood.js';
@@ -14,7 +13,6 @@ import CampLogo from "../components/CampLogo.js";
 import Dropdown from '../components/Dropdown.js';
 
 import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import FireAnimation from "../components/FireAnimation";
 

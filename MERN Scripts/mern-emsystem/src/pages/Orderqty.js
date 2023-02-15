@@ -1,23 +1,9 @@
 import React from 'react';
-
-import Logo from '../components/Logo.js';
-import Navbar from '../components/Navbar.js';
-
 import Banner from '../components/Banner.js';
-
 import PlaceOrder from '../components/hooks/placeOrder.js';
-import OurProgBar from '../components/OurProgBar.js';
-import Bundles2 from '../components/Bundles2.js';
-import CampLogo from '../components/CampLogo.js';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/esm/Container.js';
-
-
-
-
-import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 function Orderqty(){
     return( 

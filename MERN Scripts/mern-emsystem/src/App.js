@@ -1,7 +1,7 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Routes, Route, Navigate} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Startpage from './pages/Startpage.js';
 import Orderqty from './pages/Orderqty.js';
 import Emplogin from './pages/Emplogin';
@@ -12,7 +12,6 @@ import OrderHistory from './pages/OrderHistory.js';
 import About from './pages/About.js';
 import CashConfirmation from './pages/CashConfirmation';
 import ETransferConfirmation from './pages/ETransferConfirmation';
-import SquareConfirmation from './pages/SquareConfirmation';
 import SquarePay from './pages/SquarePay';
 import SquareReceipt from './pages/SquareReceipt';
 import SuperAdmin from './pages/SuperAdmin';
@@ -31,7 +30,6 @@ function App() {
           <Route path="order/payment" element={<Payment/>} />
           <Route path="order/payment/cashConfirmation" element={<CashConfirmation/>} />
           <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
-          <Route path="order/payment/SquareConfirmation" element={<SquareConfirmation/>} />
           <Route path="order/payment/SquarePay" element={<SquarePay/>} />
           <Route path="order/payment/SquarePay/SquareReceipt" element={<SquareReceipt/>} />
           <Route path="login/emp" element={<Emp/>}/>
