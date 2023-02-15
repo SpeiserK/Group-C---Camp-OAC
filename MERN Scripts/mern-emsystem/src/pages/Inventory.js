@@ -1,5 +1,4 @@
 import React from 'react'
-import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import InvByLoc from '../components/hooks/InvByLoc.js';
 
@@ -17,7 +16,6 @@ function ViewOrders(){
         </body>
         <div className="footer">
             <footer className="App-footer">
-                <Navbar />
             </footer>
         </div>
     </div>

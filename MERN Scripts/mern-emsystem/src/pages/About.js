@@ -5,7 +5,6 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Logo from '../components/Logo.js'
 import FirewoodTeam from '../components/FirewoodTeam.js';
-import Navbar from '../components/Navbar.js';
 import Banner from '../components/Banner.js';
 import CampLogo from "../components/CampLogo.js";
 import FireAnimation from "../components/FireAnimation.js";

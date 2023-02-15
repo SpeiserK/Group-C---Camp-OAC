@@ -48,6 +48,7 @@
   position: relative;
 }
 /*Footer Div, exists outside of div wrap, but inside of main*/
+/*used in inventory.js*/
 .footer {
   position: fixed;
   left: 0;
@@ -57,6 +58,7 @@
   text-align: center;
 }
 /*Footer Element, exists inside of .footer*/
+/*used in inventory.js*/
 .App-footer {
  
   background-color:  #2c4356;
@@ -138,6 +140,7 @@ background-color: #17458f;
   justify-content:center;
   font-size: calc(7px + 2vmin);
 }
+/*used in Empbanner*/
 .empBanner {
   background-color: #17458f;
   min-height: 50px;
@@ -336,6 +339,7 @@ background-color: #17458f;
   font-weight: bolder;
 }
 /*Continue button on Startpage and Orderqty, used in matchEmail.js and placeOrder.js*/
+/*used in ETransfer Confirmation*/
 .buttonStyle {
   background-color: #17458f; /*button color*/
   border: none;
@@ -373,6 +377,7 @@ background-color: #17458f;
 }
 
 /*box for payment option buttons*/
+/*used in ETransfer Confirmation*/
 .buttonBox {
   position: relative;
   display: flex;
@@ -381,6 +386,7 @@ background-color: #17458f;
   padding-left: 100px;
   margin: 10px;
 }
+/*used in ETransfer Confirmation*/
 .buttonBox button{
   font-size: 95%;
 }
@@ -393,6 +399,8 @@ background-color: #17458f;
 .Link:hover {
   color: #f7a81b;
 }
+
+/*used in Empbanner*/
 .adminLink {
   font-family: "Frutiger";
   color: white;
@@ -457,6 +465,7 @@ background-color: #17458f;
   font-family: "Frutiger";
 }
 /*Place Order Title*/
+/* used in orderqty.js*/
 .orderTitle {
   padding-left: 100px;
   font-family: "Frutiger";
@@ -486,6 +495,7 @@ background-color: #17458f;
 
 /*NEW CSS LAYOUT: Testing CSS Box Model*/
  /*Main App*/
+ /*Used in EmpLogin.js*/
  .appMain{
   position: relative;
   display: flex;
@@ -494,6 +504,7 @@ background-color: #17458f;
 }
 
 /*App Header*/
+/*Used in EmpLogin.js*/
 .appHeader {
   display: flex;
   flex-direction: column;
@@ -516,6 +527,7 @@ background-color: #17458f;
 }
 
 /*App Container*/
+/*Used in EmpLogin.js*/
 .appContainer{
   position: relative;
   display: flex;
@@ -647,7 +659,7 @@ background-color: #17458f;
   margin-top: 60px;
   background-color: white;
 }
-
+/*used in inventory.js*/
 .empMainDiv {
   position: relative;
   display: flex;
@@ -664,6 +676,7 @@ background-color: #17458f;
   background-color: white;
 }
 
+/*Used in EmpLogin.js*/
 .empLoginDiv {
   position: relative;
   display: flex;
@@ -697,11 +710,13 @@ background-color: #17458f;
 /* DB LIST */
 
 
+/*used in OrderDispHist.js*/
 .dblist {
   table-layout: fixed;
   width: 100%;
   
 }
+
 /*
 .dblist li {
   border-bottom: 1px solid var(--border-color);
@@ -748,10 +763,13 @@ background-color: #17458f;
   
 }
 */
+/*used in OrderDispHist.js*/
 .listHeader{
   
   background-color: lightgray;
 }
+
+/*called but not used in OrderDispHist.js*/
 /*
 .listHeaderItem{
   display: flex;
@@ -785,6 +803,8 @@ background-color: #17458f;
   
 }
 */
+
+/*used in OrderDispHist.js*/
 .orderChild span{
   text-align: center;
   font-size: 12px;
@@ -830,6 +850,7 @@ background-color: #17458f;
   border-color: #2c4356;
 }
 
+/*used in Empbanner*/
 .orderHistory {
   font-family: "Frutiger";
   height: 50px;
@@ -838,6 +859,7 @@ background-color: #17458f;
   border-color: #2c4356;
 }
 
+/*used in Empbanner*/
 .employeeList {
   font-family: "Frutiger";
   height: 50px;
@@ -1053,6 +1075,7 @@ background-color: #17458f;
 New CSS using bootstrap
 ********************************************************************************/
 
+/*used in ETransferConfirmation.js*/
 .bContainer{
   background-color: white;
 }
@@ -1098,6 +1121,7 @@ New CSS using bootstrap
   margin-right: 0.5em;
 }
 
+/*used in ETransferConfirmation*/
 .bOrder{
   background-color: #f4f3ef;
   font-size: calc(7px + 2vmin);
@@ -1107,6 +1131,7 @@ New CSS using bootstrap
   margin-top: 0.75em;
   margin-bottom: 1em;
 }
+/*used in ETransfer Confirmation*/
 .bOrder2 {
   background-color: #557a65;
   font-size: calc(7px + 2vmin);

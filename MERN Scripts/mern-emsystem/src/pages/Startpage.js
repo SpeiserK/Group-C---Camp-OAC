@@ -10,7 +10,6 @@ import Drop from '../components/Dropdown.js';
 import FireAnimation from "../components/FireAnimation";
 import Button from 'react-bootstrap/Button';
 import Banner from "../components/Banner.js";
-import Navbar from "../components/Navbar.js";
 
 
 

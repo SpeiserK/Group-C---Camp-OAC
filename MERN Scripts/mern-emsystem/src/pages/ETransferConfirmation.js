@@ -1,11 +1,6 @@
 import React from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import Logo from '../components/Logo.js';
-import Navbar from '../components/Navbar.js';
+import {useNavigate } from "react-router-dom";
 import Banner from '../components/Banner.js';
-import PaymentSummary from '../components/PaymentSummary.js';
-import OurProgBar from '../components/OurProgBar.js';
-import CampLogo from '../components/CampLogo.js';
 import Container from 'react-bootstrap/esm/Container.js';
 import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
