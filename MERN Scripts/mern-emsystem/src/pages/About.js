@@ -3,13 +3,8 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Logo from '../components/Logo.js'
-import FirewoodTeam from '../components/FirewoodTeam.js';
 import Banner from '../components/Banner.js';
-import CampLogo from "../components/CampLogo.js";
 import FireAnimation from "../components/FireAnimation.js";
-import Logo2 from '../components/Logo2.js';
-import Dropdown from '../components/Dropdown.js';
 
 function About(){
     const q1 = "What is this website for?";

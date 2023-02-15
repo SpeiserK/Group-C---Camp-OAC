@@ -9,7 +9,6 @@ export default class OrderDispHist extends React.Component {
     }
   }
   
-
   componentDidMount() {
     axios.get(`http://localhost:5001/order`)
       .then(res => {
@@ -18,8 +17,6 @@ export default class OrderDispHist extends React.Component {
       })
   }
 
-
-  
   render() {
     return (
         <table className="dblist">

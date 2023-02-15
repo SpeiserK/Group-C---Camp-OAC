@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import Logo from './Logo.js'
-
 
 export default class Empbanner extends Component {
     render(){

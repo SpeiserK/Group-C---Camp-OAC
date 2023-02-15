@@ -29,7 +29,6 @@ function Emp(){
                  <OrderLiveDisp query1={'Pending'} queryLoc={empLocation} />
             </div>
         </body>
-        
             </Row>
         </Container>
     </div>

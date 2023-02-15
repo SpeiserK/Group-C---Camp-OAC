@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CampLog from './/pictures/Camp-OAC-Logo-Secondary.png';
 
 export default class FireAnimation extends Component {
     render(){

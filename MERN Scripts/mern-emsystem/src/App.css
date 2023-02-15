@@ -103,7 +103,9 @@
 .aboutTitle {font-family: "Frutiger";}
 .aboutQ {font-family: "OpenSans";}
 .aboutA {font-family: "Sentinel";}
+/*Used in About.js*/
 .robotoSlab{font-family: "RobotoSlab";}
+/*Used in Banner.js*/
 .bearHug {font-family: "BearHug";}
 .progessTitle{
   font-family: "Frutiger";
@@ -1103,14 +1105,17 @@ background-color: #17458f;
 New CSS using bootstrap
 ********************************************************************************/
 
+/*Used in all user side front end;*/
+
 /*below class name is in use */
 /*used on Payment.js */
 
 /*used in ETransferConfirmation.js*/
+
 .bContainer{
   background-color: white;
 }
-
+/*Used in user side front end pages*/
 .bHeader{
   background-color: #2c4356;
   display: flex;
@@ -1120,14 +1125,16 @@ New CSS using bootstrap
   padding: 0.5em 2em 0.5em 1em;
   color: white;
 }
-
+/*Div for logo in nav bar*/
 .bHeadicons{
   margin-left: 1em;
   max-height: 50;
   max-width: 75;
 }
 
+/*Main White block on user side pages*/
 /*in use on start page*/
+
 .bMain {
   background-color: #f4f3ef;
   font-size: calc(7px + 2vmin);
@@ -1138,6 +1145,7 @@ New CSS using bootstrap
   margin-right: 0.5em;
 }
 
+/*Div used to fill up bMain if its empty*/
 /*in use on start page*/
 .bMainFill {
   background-color: #f4f3ef;
@@ -1145,6 +1153,7 @@ New CSS using bootstrap
   margin-right: 0.5em;
 }
 
+/*Green div used on Startpage*/
 /*in use on start page*/
 .bMain2 {
   background-color: #557a65;
@@ -1157,9 +1166,11 @@ New CSS using bootstrap
 }
 
 
+/*Used in user side pages past Startpage...*/
 /* both bOrder and bOrder2 are in use but we need to change the classname */
 /*used on payment.js*/
 /*used in ETransferConfirmation*/
+
 .bOrder{
   background-color: #f4f3ef;
   font-size: calc(7px + 2vmin);
@@ -1179,8 +1190,9 @@ New CSS using bootstrap
   margin-top: 0.75em;
 }
 
-
+/*Used on the payment page*/
 /*currently used on payment.js*/
+
 .bPay2 {
   background-color: #557a65;
   font-size: calc(7px + 2vmin);
@@ -1190,10 +1202,13 @@ New CSS using bootstrap
   margin-top: 0.75em;
 }
 
+/*Sidebar div used in Starrpage*/
 /*in use on start page*/
 .bSide {
   margin: 1.1em 2.5em 0.1em 1.5em;
 }
+
+/*First picture div used in Start page*/
 /*in use on start page*/
 .bSidebar1{
     background-image: url('components/pictures/Bundles1.svg');
@@ -1204,6 +1219,8 @@ New CSS using bootstrap
     padding: 3.5em 5.5em 3.5em 5.5em;
     min-height: 200px;
 }
+
+/*Second picture div used in Start page*/
 /*in use on start page*/
 .bSidebar2{
     background-image: url('components/pictures/Wood1.svg');
@@ -1225,7 +1242,7 @@ New CSS using bootstrap
 .bottomBorder {
   border-bottom: solid #adadad;
 }
-
+/*Div for fire animation on the start page*/
 .fireDiv {
   top: 100%;
 }
