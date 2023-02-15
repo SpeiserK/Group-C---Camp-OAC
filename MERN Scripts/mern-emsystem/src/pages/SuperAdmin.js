@@ -4,6 +4,7 @@ import Empbanner from '../components/Empbanner.js';
 import Empnav from '../components/Empnav.js';
 import EmployeeLiveDisp from '../components/EmployeeLiveDisp';
 import EmployeeCreation from '../components/Signup/EmpSignup';
+import LocationManagement from '../components/LocationManagement';
 
 function SuperAdmin(){
     return(
@@ -16,6 +17,7 @@ function SuperAdmin(){
             <div className="empMainDiv">
                 <EmployeeLiveDisp />
                 <EmployeeCreation />
+                <LocationManagement />
             </div>
         </body>
         <div className="footer">
