@@ -99,7 +99,7 @@
 }
 .rotaryFont{font-family:"Sentinel"; color: white;}
 
-/*Fonts for text in About.js*/
+/*Fonts for text in About.js and start page*/
 .aboutTitle {font-family: "Frutiger";}
 .aboutQ {font-family: "OpenSans";}
 .aboutA {font-family: "Sentinel";}
@@ -284,6 +284,8 @@ background-color: #17458f;
   padding-top: 20px;
   padding-left: 100px;
 }
+/*used on payment summary to display order info on payment summary.js*/
+/*potentially rename*/
 .loggedIn {
   color: #17458f;
   text-align: left;
@@ -291,10 +293,12 @@ background-color: #17458f;
   font-weight: bolder;
   padding-top: 10px;
   padding-left: 100px;
-}
+} /*in use see above*/
 .loggedIn label{
   color: black;
 }
+
+
 /*Display order quantity, placeOrder.js*/
 .orderQuantity {
   padding-top: 20px;
@@ -339,6 +343,8 @@ background-color: #17458f;
   font-weight: bolder;
 }
 /*Continue button on Startpage and Orderqty, used in matchEmail.js and placeOrder.js*/
+/* used in startpage.js */
+/*used in multiple buttons over start page including receipt pages*/
 /*used in ETransfer Confirmation*/
 .buttonStyle {
   background-color: #17458f; /*button color*/
@@ -351,6 +357,8 @@ background-color: #17458f;
   font-family: "Arial";
   border-radius: 4px;
 }
+
+/*maybe delete*/
 .squareButtonStyle {
   background-color: #17458f; /*button color*/
   border: none;
@@ -362,14 +370,20 @@ background-color: #17458f;
   font-family: "Arial";
   border-radius: 4px;
 }
+
+/*hover class for buttonstyle*/
+
 .buttonStyle:hover {
   background-color: #f7a81b;
   color: black;
 }
+
+/*maybe delete this*/
 .squareButtonStyle:hover {
   background-color: #f7a81b;
   color: black;
 }
+
 /*Link style, will remain white*/
 .squareLink,.squareLink:link, .squareLink :visited {
   color: white;
@@ -377,6 +391,7 @@ background-color: #17458f;
 }
 
 /*box for payment option buttons*/
+/*used on Payment.js*/
 /*used in ETransfer Confirmation*/
 .buttonBox {
   position: relative;
@@ -495,6 +510,8 @@ background-color: #17458f;
 
 /*NEW CSS LAYOUT: Testing CSS Box Model*/
  /*Main App*/
+ /*prolly keep for now*/
+ /*jk delete this we replaced with bcontainer*/
  /*Used in EmpLogin.js*/
  .appMain{
   position: relative;
@@ -679,18 +696,14 @@ background-color: #17458f;
 /*Used in EmpLogin.js*/
 .empLoginDiv {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  
+  padding-left:3em;
+  padding-top:2em;
   width: 100%;
-  min-height: 650px;
-  border: 7px solid #2c4356;
-  padding: 20px;
-  margin-right: 5px;
-  margin-left: 10px;
-  margin-top: 10px;
-  border-radius: 5px;
   background-color: white;
+}
+.empLoginDiv input{
+  min-width: 20em;
+  width: 30%;
 }
 .superAdminTop {
   position: relative;
@@ -835,11 +848,26 @@ background-color: #17458f;
   width: 12%
 }
 
+/* used in square pay.js */
 .payForm {
+  margin-top: 2em;
   display: grid;
   justify-content: center;
   align-content: center;
   height: 100;
+}
+#squareTable{
+  justify-content: center;
+  align-content: center;
+  margin-top: 2em;
+  float: right;
+  border: none;
+  
+}
+#squareTable tr td, #squareTable tr th{
+  align-items: right;
+  border: none;
+  
 }
 
 .inventoryByLoc {
@@ -1075,6 +1103,9 @@ background-color: #17458f;
 New CSS using bootstrap
 ********************************************************************************/
 
+/*below class name is in use */
+/*used on Payment.js */
+
 /*used in ETransferConfirmation.js*/
 .bContainer{
   background-color: white;
@@ -1096,6 +1127,7 @@ New CSS using bootstrap
   max-width: 75;
 }
 
+/*in use on start page*/
 .bMain {
   background-color: #f4f3ef;
   font-size: calc(7px + 2vmin);
@@ -1105,12 +1137,15 @@ New CSS using bootstrap
   margin-left: 0.5em;
   margin-right: 0.5em;
 }
+
+/*in use on start page*/
 .bMainFill {
   background-color: #f4f3ef;
   padding: 1em 2em 9.5em 2em;
   margin-right: 0.5em;
 }
 
+/*in use on start page*/
 .bMain2 {
   background-color: #557a65;
   font-size: calc(7px + 2vmin);
@@ -1121,6 +1156,9 @@ New CSS using bootstrap
   margin-right: 0.5em;
 }
 
+
+/* both bOrder and bOrder2 are in use but we need to change the classname */
+/*used on payment.js*/
 /*used in ETransferConfirmation*/
 .bOrder{
   background-color: #f4f3ef;
@@ -1140,6 +1178,9 @@ New CSS using bootstrap
   margin-right: 2em;
   margin-top: 0.75em;
 }
+
+
+/*currently used on payment.js*/
 .bPay2 {
   background-color: #557a65;
   font-size: calc(7px + 2vmin);
@@ -1149,11 +1190,11 @@ New CSS using bootstrap
   margin-top: 0.75em;
 }
 
+/*in use on start page*/
 .bSide {
-  
   margin: 1.1em 2.5em 0.1em 1.5em;
-  
 }
+/*in use on start page*/
 .bSidebar1{
     background-image: url('components/pictures/Bundles1.svg');
     background-size: cover;
@@ -1163,7 +1204,7 @@ New CSS using bootstrap
     padding: 3.5em 5.5em 3.5em 5.5em;
     min-height: 200px;
 }
-
+/*in use on start page*/
 .bSidebar2{
     background-image: url('components/pictures/Wood1.svg');
     background-size: cover;

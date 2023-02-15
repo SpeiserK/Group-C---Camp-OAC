@@ -1,6 +1,10 @@
 import { PaymentForm, CreditCard } from 'react-square-web-payments-sdk';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Banner from '../components/Banner';
+import Row from 'react-bootstrap/esm/Row';
+import Container from 'react-bootstrap/esm/Container';
+import Col from 'react-bootstrap/esm/Col';
 
 const SquarePay = () => {
 
@@ -11,7 +15,32 @@ const SquarePay = () => {
     const navigate = useNavigate();
 
     return (
+      <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+<Row>
+      <Banner />
+</Row>
+<Row>
+<Col lg={5} md={5} sm={5} xs={5} style={{ paddingLeft: 0, paddingRight: 0 }}>
+  <div id="paySummary">
+
+    <table id="squareTable">
+      <tr>
+        <th>Bundles:</th>
+        <th>Total Price:</th>
+      </tr>
+      <tr>
+        <td> {Quantity} </td>
+        <td> ${Quantity*9.99} </td>
+      </tr>
+    </table>
+    
+  </div>
+</Col>
+<Col lg={4} md={4} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
     <div className="payForm">
+
+    
+
       <PaymentForm
         applicationId="sandbox-sq0idb-7JEDuestTK6Hj-fdj6C0FA"
         locationId="LS2QD8Y1ET9FY"
@@ -54,9 +83,12 @@ const SquarePay = () => {
         >
         {/* Component for taking Credit Card payment */}
         <CreditCard />
-        <p>Total: ${Quantity*9.99}</p>
+        
         </PaymentForm>
     </div>
+    </Col>
+    </Row>
+    </Container>
     )
 }
 export default SquarePay;

@@ -4,6 +4,11 @@ import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes, } from "@fortawesome/free-solid-svg-icons";
 
+//Very important component 
+//TODO: need to go through and document with cam - what are the classnames for 
+
+
+
 //Used to verify if email is valid (will need to include more verification)
 const REGEX = /^[a-zA-Z0-9_.-]{3,48}@[a-zA-Z0-9.]{2,28}\.(com|ca|net)$/;
 
@@ -188,6 +193,8 @@ const PlaceOrder = () => {
                         </label>
                         <br></br>
                         <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" >
+                            {// TODO: change location selection to pull from DB
+                            }
                 <option value="select" disabled selected>Select a location</option>
                 <option value="West Kelowna">West Kelowna</option>
                 <option value="Rutland">Rutland</option>
