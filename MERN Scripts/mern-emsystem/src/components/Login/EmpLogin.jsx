@@ -30,36 +30,33 @@ const EmpLogin = () => {
 
     }
     return (
-        <div>
-            <div>
-                <div>
+        <div className="empLoginDiv ">
                 <form onSubmit={handleSubmit}>
                         <h1>Employee Login</h1>
                         <input
                             type="text"
+                            className="textboxStyle"
                             placeholder='Username'
                             name='Username'
                             onChange={handleChange}
                             value={data.Username}
                             required
-                        />
+                        /> <br></br>
                         <input
                             type="password"
+                            className="textboxStyle"
                             placeholder='Password'
                             name='Password'
                             onChange={handleChange}
                             value={data.Password}
                             required
-                        />
+                        /> <br></br>
                         {error && <div>{error}</div>}
                         <button type="submit">
                             Sign In
                         </button>
                     </form> 
-                </div>
-                
-                
-            </div>
+               
         </div>
 
     );
