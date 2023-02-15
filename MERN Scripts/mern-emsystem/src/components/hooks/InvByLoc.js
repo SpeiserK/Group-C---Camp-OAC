@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 //TODO: need to go through and document this 
+//used in Inventory.js
 
 const InvByLoc = () => {
      

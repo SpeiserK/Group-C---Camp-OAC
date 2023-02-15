@@ -12,7 +12,6 @@ import Banner from "../components/Banner.js";
 
 
 
-
 function Startpage(){
     const gotoOrder = useNavigate();
     

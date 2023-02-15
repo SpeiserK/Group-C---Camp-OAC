@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { useNavigate } from "react-router-dom";
 import Banner from '../components/Banner.js';
 import PaymentSummary from '../components/PaymentSummary.js';
@@ -32,6 +32,7 @@ function post2DB(type) {
 }
 
     return(
+
 <div className="bContainer">
 <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
     <Row>
@@ -44,8 +45,7 @@ function post2DB(type) {
                 <Col lg={{span:12,offset: 1}}>
                     <PaymentSummary />
                         <div className="buttonBox">
-                            <button className="buttonStyle" onClick={() => navigate("SquarePay")}>Square Pay Page</button>
-                            <button className="buttonStyle" onClick={() => {post2DB("Credit/Debit"); navigate("SquareConfirmation")}}>Credit/Debit</button>
+                            <button className="buttonStyle" onClick={() => {post2DB("Square"); navigate("SquarePay")}}>Square Pay Page</button>
                             <button className="buttonStyle" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash </button>
                             <button className="buttonStyle" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer </button>
                         </div>

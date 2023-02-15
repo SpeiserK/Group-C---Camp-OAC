@@ -1,7 +1,8 @@
 import {useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
+// this is used in Emplogin.js
 const EmpSignup = () => {
     const[data, setData] = useState({
         Email:"",

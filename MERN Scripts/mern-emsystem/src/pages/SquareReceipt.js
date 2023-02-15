@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link, useNavigate } from "react-router-dom";
-import Logo from '../components/Logo.js';
-import Navbar from '../components/Navbar.js';
+import { useNavigate } from "react-router-dom";
 import Banner from '../components/Banner.js';
 import OurProgBar from '../components/OurProgBar.js';
 import CampLogo from '../components/CampLogo.js';
@@ -26,15 +24,15 @@ const navigate = useNavigate();
                     <div className="buttonBox">
                             <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
                     </div>
-            </div>
+                </div>
             </Col>
             <Col lg={3} md={2} sm={1} xs={1} style={{ paddingLeft: 0, paddingRight: 0 }}>
-            <div className="bOrder2">
-                
-            </div>
-        </Col>  
-    </Row>
-        </Container>
+                <div className="bOrder2">
+                    
+                </div>
+            </Col>  
+        </Row>
+    </Container>
     </div>
     );
 }
