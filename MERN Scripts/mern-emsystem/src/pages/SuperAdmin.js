@@ -19,7 +19,7 @@ function SuperAdmin(){
         </body>
         <div className="footer">
             <footer className="App-footer">
-        
+                
             </footer>
         </div>
     </div>
