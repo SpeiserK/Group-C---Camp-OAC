@@ -5,6 +5,8 @@ export default class LocationLiveDisp extends React.Component {
   constructor(props){
     super(props);
       this.state = {
+      name: [],
+      address: [],
       location: [],
       openStatus: [],
       stock: [],
@@ -22,6 +24,12 @@ export default class LocationLiveDisp extends React.Component {
 
         const locationData = res.data;
         this.setState({ location: locationData });
+
+        const cleanName = locationData.map((item) => item.Name);
+        this.setState({ name: cleanName});
+
+        const cleanAddress = locationData.map((item) => item.Address);
+        this.setState({ address: cleanAddress});
 
         const cleanStock = locationData.map((item) => item.Stock);
         this.setState({ stock: cleanStock});
@@ -70,13 +78,31 @@ export default class LocationLiveDisp extends React.Component {
         return item;
       })});
     }
+
+    changeName(index, newName) {
+      const name = this.state.name;
+      this.setState({name: name.map((item, i) => {
+        if(i === index){
+          return newName;
+        }
+        return item;
+      })});
+    }
+
+    changeAddress(index, newAddress) {
+      const address = this.state.address;
+      this.setState({address: address.map((item, i) => {
+        if(i === index){
+          return newAddress;
+        }
+        return item;
+      })});
+    }
   
   render() {
     return (
-      <div>
-        {this.state.stock[0]}        
+      <div>      
       <table className="dblist">
-        
         <tr id="listHeader" className="listHeader">
           <td id="headerID"  className="listHeaderItem">
             <span> Location id </span>
@@ -107,24 +133,25 @@ export default class LocationLiveDisp extends React.Component {
                 <span>{content._id}</span>&emsp;
               </td>         
               <td id="current-locationName" className ="orderChild">
-                <span>{content.Name}</span>&emsp;
+                <span><input type="text" defaultValue={`${content.Name}`} onBlur={(e) => this.changeName(index, e.target.value)}>
+                </input></span>&emsp;
               </td>
               <td id="current-orderAddress" className ="orderChild">
-                <span>{content.Address}</span>&emsp;
+              <span><input type="text" defaultValue={`${content.Address}`} onBlur={(e) => this.changeAddress(index, e.target.value)}>
+                </input></span>&emsp;
               </td>
               <td id="current-orderStock" className ="orderChild">
                 <span><input type="number" size="4" defaultValue={`${content.Stock}` } onBlur={(e) => this.changeStock(index, e.target.value)}>
                 </input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
-                <span><button onClick={() => this.changeOpenStatus(index)} disabled={this.state.stock[index] <= 0}>
+                <span><button onClick={() => this.changeOpenStatus(index)}>
                   {this.state.openStatus[index]? "OPEN": "CLOSED"}
                 </button></span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
                 <span><button onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
                 {this.state.error[index]}
-                
               </td>        
           </tr>
             )

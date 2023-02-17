@@ -59,17 +59,6 @@ export default class LocationLiveDisp extends React.Component {
         
       })});
     }
-
-    changeStock(index, newStock) {
-      const stock = this.state.stock;
-      this.setState({stock: stock.map((item, i) => {
-        if(i === index){
-          if(newStock <= 0) this.changeOpenStatus(index);
-          return newStock;
-        }
-        return item;
-      })});
-    }
   
   render() {
     return (
@@ -117,7 +106,7 @@ export default class LocationLiveDisp extends React.Component {
                 </input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
-                <span><button onClick={() => this.changeOpenStatus(index)} disabled={this.state.stock[index] <= 0}>
+                <span><button onClick={() => this.changeOpenStatus(index)} >
                   {this.state.openStatus[index]? "OPEN": "CLOSED"}
                 </button></span>&emsp;
               </td>
