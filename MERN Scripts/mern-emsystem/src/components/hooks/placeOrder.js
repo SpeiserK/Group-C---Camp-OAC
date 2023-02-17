@@ -46,6 +46,8 @@ const PlaceOrder = () => {
         // error const
     const [errMsg, setErrMsg] = useState('');
 
+    const bundleTotal = localStorage.getItem("quantity");
+
     useEffect(() => {
         userRef.current.focus();
     }, [])
@@ -93,7 +95,6 @@ const PlaceOrder = () => {
     function checkInput(){
         let orderVal = document.getElementById("quantity").value;
         if(orderVal >= 1 && orderVal <= 20 && (orderVal%1===0)){
-            
 
             handleSubmit();
             orderVal = "true";
@@ -108,93 +109,95 @@ const PlaceOrder = () => {
         }
     }
 
-    
+    // Order input form
+    // Includes email, confirm email, phone, quantity, location
 
     return (
         <div className="orderFormWrapper">
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form classname="orderForm"> 
                 
-            <label htmlFor="email">
-                    Email:
-            </label>  
-                <br />
+            <label htmlFor="email">Email: </label>  
+            <br />
+            <input
+                type="text"
+                id="email"
+                className="textboxStyle"
+                ref={userRef}
+                autoComplete="off"
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                aria-invalid={validEmail ? "false" : "true"}
+                aria-describedby="uidnote"
+                onFocus={() => setEmailFocus(true)} 
+            />
+            <p id="uidnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"} >
+                <FontAwesomeIcon icon={faInfoCircle} />
+                Please enter a valid email.
+            </p>
+            <br />
+            <label htmlFor="confirmEmail">Confirm Email: </label>
+            <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
+                <FontAwesomeIcon icon={faCheck} />
+            </span>
+            <span className={validMatch || !matchEmail || !email ? "offscreen" : "invalid"}>
+                <FontAwesomeIcon icon={faTimes} />
+            </span>
+            <br />
+                
+            <input
+                type="text"
+                id="confirmEmail"
+                className="textboxStyle"
+                autoComplete="off"
+                onChange={(e) => setMatchEmail(e.target.value)}
+                required
+                aria-invalid={validMatch ? "false" : "true"}
+                aria-describedby="emailNote"
+                onFocus={() => setMatchFocus(true)}
+                onBlur={() => setMatchFocus(false)}
+            />
+            <p id="emailNote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
+                <FontAwesomeIcon icon={faInfoCircle} />
+                Must match the first email input field.<br />
+            </p>
+            <br></br>
+            <div className="phone-number">
+                <label>Phone Number: </label>
+                <br></br>
                 <input
                     type="text"
-                    id="email"
                     className="textboxStyle"
+                    value={phoneNumber}
+                    onChange={e => setPhoneNumber(e.target.value)}
+                />
+            </div>
+            <form className="orderQuantity">
+                <label htmlFor="quantity">Quantity: (Max 20)   $9.99 per bundle</label> 
+                <br></br>    
+                <input
+                    type="number"
+                    id="quantity"
+                    className="locationStyle"
                     ref={userRef}
+                    min="1"
+                    max="20"
                     autoComplete="off"
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    aria-invalid={validEmail ? "false" : "true"}
+                    onChange={(e) => setOrderValue(e.target.value)}
                     aria-describedby="uidnote"
-                    onFocus={() => setEmailFocus(true)} 
                 />
-                <p id="uidnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"} >
+                <p id="uidnote" className={!validValue ? "instructions" : "offscreen"}>
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    Please enter a valid email.
-                </p>
-                <br />
-                <label htmlFor="confirmEmail">
-                    Confirm Email:
-                </label>
-                    <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
-                        <FontAwesomeIcon icon={faCheck} />
-                    </span>
-                    <span className={validMatch || !matchEmail || !email ? "offscreen" : "invalid"}>
-                        <FontAwesomeIcon icon={faTimes} />
-                    </span>
-                    <br />
-                
-                <input
-                    type="text"
-                    id="confirmEmail"
-                    className="textboxStyle"
-                    autoComplete="off"
-                    onChange={(e) => setMatchEmail(e.target.value)}
-                    required
-                    aria-invalid={validMatch ? "false" : "true"}
-                    aria-describedby="emailNote"
-                    onFocus={() => setMatchFocus(true)}
-                    onBlur={() => setMatchFocus(false)}
-                />
-                <p id="emailNote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
-                    <FontAwesomeIcon icon={faInfoCircle} />
-                    Must match the first email input field.<br />
-                </p>
-                
-                    <form className="orderQuantity">
-                        <label htmlFor="quantity">
-                            Number of bundles: (Max 20) 
-                        </label> 
-                        <br></br>    
-                            <input
-                                type="number"
-                                id="quantity"
-                                className="locationStyle"
-                                ref={userRef}
-                                min="1"
-                                max="20"
-                                autoComplete="off"
-                                onChange={(e) => setOrderValue(e.target.value)}
-                                aria-describedby="uidnote"
-                            />
-                            <p id="uidnote" className={!validValue ? "instructions" : "offscreen"}>
-                            <FontAwesomeIcon icon={faInfoCircle} />
-                            *Order size must be between 1-20*
-                            </p>
-                            
+                    *Order size must be between 1-20*
+                </p> 
                         
-                    </form>
-                    <div className="Location-List">
-                        <label>
-                            Select Pickup Location: 
-                        </label>
-                        <br></br>
-                        <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" >
-                            {// TODO: change location selection to pull from DB
-                            }
+                </form>
+                <div className="Location-List">
+                    <label>Select Pickup Location: </label>
+                    <br></br>
+                    <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" >
+                    {// TODO: change location selection to pull from DB
+                    }
                 <option value="select" disabled selected>Select a location</option>
                 <option value="West Kelowna">West Kelowna</option>
                 <option value="Rutland">Rutland</option>
@@ -202,23 +205,9 @@ const PlaceOrder = () => {
                 <option value="Lake Country">Lake Country</option>
                 <option value="Glenmore"> Glenmore </option>
                 <option value="Kelowna Central"> Kelowna Central </option>
-                        </select>
-                        
-                    </div>
-                    <br></br>
-                    <div className="phone-number">
-                    <label>
-                    Phone Number:
-                    </label>
-                    <br></br>
-                        <input
-                        type="text"
-                        value={phoneNumber}
-                        onChange={e => setPhoneNumber(e.target.value)}
-                        />
-                    
-                    </div>
-                <button className="buttonStyle" disabled={!validValue || !locValue ? true : false} onClick={(e) => checkInput()}>
+                    </select>  
+                </div>
+                <button className="orderSubmit" disabled={!validValue || !locValue ? true : false} onClick={(e) => checkInput()}>
                     Next
                 </button>
             </form>

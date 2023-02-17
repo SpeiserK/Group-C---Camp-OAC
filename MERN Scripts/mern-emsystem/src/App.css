@@ -307,7 +307,21 @@ background-color: #17458f;
 }
 /*Next button on Orderqty.js(placeOrder.js)*/
 .orderSubmit {
-  margin-left: 60px;
+  background-color: #17458f; /*button color*/
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  color: white; /*text color*/
+  margin-top: 16px;
+  font-size: 24px;
+  font-family: "Arial";
+  border-radius: 4px;
+  width: 80%;
+  height: 40px;
+}
+.orderSubmit:hover {
+  background-color: #f7a81b;
+  color: black;
 }
 /*Check mark for matchEmail.js*/
 .valid {
