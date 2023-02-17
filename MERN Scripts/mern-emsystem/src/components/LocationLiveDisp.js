@@ -59,6 +59,17 @@ export default class LocationLiveDisp extends React.Component {
         
       })});
     }
+
+    changeStock(index, newStock) {
+      const stock = this.state.stock;
+      this.setState({stock: stock.map((item, i) => {
+        if(i === index){
+          if(newStock <= 0) this.changeOpenStatus(index);
+          return newStock;
+        }
+        return item;
+      })});
+    }
   
   render() {
     return (
