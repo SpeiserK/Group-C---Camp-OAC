@@ -44,8 +44,10 @@ export default class LocationLiveDisp extends React.Component {
 
     //single doc post request
     locUpdate (index, id) {
-      axios.post('http://localhost:5001/locupdate', {
+      axios.post('http://localhost:5001/adminlocupdate', {
         id: id,
+        name: this.state.name[index],
+        address: this.state.address[index],
         stock: this.state.stock[index],
         open: this.state.openStatus[index]
       })
