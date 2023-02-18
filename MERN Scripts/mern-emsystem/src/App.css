@@ -928,11 +928,25 @@ background-color: #17458f;
 /* Css for Campfire Animation*/
 
 .fire-container{
+  width: 0;
+  height: 0;
+  margin: auto;
+  position: relative;
+}
+.fire-container2{
+  width:200px;
+  height:100px;
+  position: absolute;
+  right: 178px;
+  bottom: 58px;
+}
+.fire-containerRight{
   width:200px;
   height:100px;
   margin: auto;
   position: relative;
-  left: -7.5%; top: -135%;
+  left: 270px;
+  bottom: 362px;
 }
 #flame-1{
   height:95px;
