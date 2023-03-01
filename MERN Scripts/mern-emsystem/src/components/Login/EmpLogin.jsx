@@ -19,6 +19,7 @@ const EmpLogin = () => {
         try {
             const url = "http://localhost:5001/api/auth";
             const {data: res} = await axios.post(url, data);
+            //TODO: Change this to Session storage - not sure where we grab this
             localStorage.setItem("token", res.data);
             window.location= "login/emp";
         } catch (error) {
