@@ -121,6 +121,27 @@ app.post("/locupdate", (req, res) => {
     }
 });
 
+app.post("/adminlocupdate", (req, res) => {
+    try {
+        const id = req.body.id;
+        const name = req.body.name;
+        const address = req.body.address;
+        const stock = req.body.stock;
+        const open = req.body.open;
+        if (!address||!name||!id||!stock||typeof open !== typeof true){
+            return res.status(422).send({message:"Missing/Bad field types"});
+        }res.status(200).send({message: "Posted successfully"});
+
+        Models.Location.findByIdAndUpdate(id,
+            {Name: name, Address: address, Stock: stock, Open: open},
+            (err, doc) => {
+            if(err) return console.log(err);
+        });
+    } catch (error) {
+        res.status(500).send({message: "Location update failed, internal server error"});
+    }
+});
+
 //status change post request
 app.post("/statuschange", (req, res) => {
     const idS = req.body.id;
