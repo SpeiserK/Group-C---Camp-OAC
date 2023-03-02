@@ -956,15 +956,15 @@ background-color: #17458f;
   height:100px;
   position: absolute;
   right: 178px;
-  bottom: 58px;
+  bottom: 90px;
 }
 .fire-containerRight{
   width:200px;
   height:100px;
   margin: auto;
   position: relative;
-  left: 270px;
-  bottom: 362px;
+  left: 262px;
+  bottom: 350px;
 }
 #flame-1{
   height:95px;
@@ -1261,9 +1261,9 @@ New CSS using bootstrap
     background-size: cover;
     border: solid 0.25em #926d4c;
     color: white;
-    margin: 0em 0em 2em 0em;
+    margin: 0em 0em 1em 0em;
     padding: 3.5em 5.5em 3.5em 5.5em;
-    min-height: 200px;
+    min-height: 190px;
 }
 
 /*Second picture div used in Start page*/
@@ -1273,9 +1273,20 @@ New CSS using bootstrap
     background-size: cover;
     border: solid 0.25em #926d4c;
     color: white;
-    margin: 0em 0em 2em 0em;
+    margin: 0em 0em 1em 0em;
     padding: 3.5em 5.5em 3.5em 5.5em;
-    min-height: 200px;
+    min-height: 190px;
+}
+/*Third picture div used in Start page*/
+/*in use on start page*/
+.bSidebar3{
+    background-image: url('components/pictures/FirewoodTeam.jpg');
+    background-size: cover;
+    border: solid 0.25em #926d4c;
+    color: white;
+    margin: 0em 0em 1em 0em;
+    padding: 3.5em 5.5em 3.5em 5.5em;
+    min-height: 190px;
 }
 
 .bButton{

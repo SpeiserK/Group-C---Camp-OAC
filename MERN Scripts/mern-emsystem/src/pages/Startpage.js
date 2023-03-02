@@ -55,6 +55,7 @@ function Startpage(){
                     <div className="bSide">
                         <Row><div className="bSidebar1"></div></Row>
                         <Row><div className="bSidebar2"></div></Row>
+                        <Row><div className="bSidebar3"></div></Row>
                     </div>
                 </Col>
             </Row>
