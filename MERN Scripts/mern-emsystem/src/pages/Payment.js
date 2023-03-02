@@ -109,11 +109,28 @@ function post2DB(type) {
                 </PaymentForm>
                 </div>
                 <Row>
+                        <Col md={{offset:0, span: 5}} sm={{offset:0, span: 5}} xs={{offset:0, span: 5}}>
+                            <div className="hrBox">
+                                <hr></hr>
+                            </div>
+                        </Col>
+                            <Col lg={{offset:0, span: 2}} md={{offset:0, span: 2}} sm={{offset:0, span: 2}} xs={0}>
+                                <div className="orBox">
+                                    <p className="orderTitle">OR</p>
+                                </div>
+                            </Col>
+                        <Col md={{offset:0, span: 5}} sm={{offset:0, span: 5}} xs={{offset:0, span: 5}}>
+                            <div className="hrBox">
+                                <hr></hr>
+                            </div>
+                        </Col>
+                </Row>
+                <Row>
                     <div className="buttonBox"> 
-                        <Col lg={{ span: 1, offset: 11 }}>
+                        <Col xl={{ span: 1, offset: 11 }} lg={{ span: 1, offset: 8 }} md={{ span: 1, offset: 0 }}>
                             <Button variant="primary" size="lg" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash</Button>
                         </Col>
-                        <Col lg={{ span: 8, offset: 9 }}>
+                        <Col xl={{ span: 8, offset: 9 }} lg={{ span: 8, offset: 6 }} md={{ span: 1, offset: 1 }}>
                             <Button variant="primary" size="lg" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer</Button>
                         </Col>
                     </div>
