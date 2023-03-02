@@ -49,7 +49,7 @@ function post2DB(type) {
     <Banner /> 
     </Row>
     <Row>
-        <Col lg={8} md={8} sm={7} xs={6} style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <Col lg={{span: 8, offset: 0}} md={{span: 7, offset: 0}} sm={{span:12, offset: 0}} xs={{span: 12, offset: 0}} style={{ paddingLeft: 0, paddingRight: 0 }}>
             <div className="bOrder">
             <h2 className="mainOrderTitle">Order Summary</h2>
             <hr></hr>
@@ -59,7 +59,7 @@ function post2DB(type) {
                 </Col>
             </div>
         </Col>
-        <Col lg={4} md={4} sm={5} xs={6} style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <Col lg={{span:4, offset: 0}} md={{span:5, offset: 0}} sm={{span: 12, offset: 1}} xs={{span: 12, offset: 1}} style={{ paddingLeft: 0, paddingRight: 0}}>
             <div className="bPay2">
                 <h3 className="payOrderTitle"><strong>Select Payment Type</strong></h3>
                 <div className="payForm">
@@ -109,17 +109,17 @@ function post2DB(type) {
                 </PaymentForm>
                 </div>
                 <Row>
-                        <Col md={{offset:0, span: 5}} sm={{offset:0, span: 5}} xs={{offset:0, span: 5}}>
+                        <Col md={{offset:0, span: 5}} sm={{offset:0, span: 5}}>
                             <div className="hrBox">
                                 <hr></hr>
                             </div>
                         </Col>
-                            <Col lg={{offset:0, span: 2}} md={{offset:0, span: 2}} sm={{offset:0, span: 2}} xs={0}>
+                            <Col lg={{offset:0, span: 2}} md={{offset:0, span: 2}} sm={{offset:0, span: 2}}>
                                 <div className="orBox">
                                     <p className="orderTitle">OR</p>
                                 </div>
                             </Col>
-                        <Col md={{offset:0, span: 5}} sm={{offset:0, span: 5}} xs={{offset:0, span: 5}}>
+                        <Col md={{offset:0, span: 5}} sm={{offset:0, span: 5}}>
                             <div className="hrBox">
                                 <hr></hr>
                             </div>
@@ -127,10 +127,10 @@ function post2DB(type) {
                 </Row>
                 <Row>
                     <div className="buttonBox"> 
-                        <Col xl={{ span: 1, offset: 11 }} lg={{ span: 1, offset: 8 }} md={{ span: 1, offset: 0 }}>
+                        <Col xl={{ span: 1, offset: 11 }} lg={{ span: 1, offset: 8 }} md={{ span: 1, offset: 0 }} sm={{ span: 4, offset: 11 }} xs={{ span: 4, offset: 11 }}>
                             <Button variant="primary" size="lg" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash</Button>
                         </Col>
-                        <Col xl={{ span: 8, offset: 9 }} lg={{ span: 8, offset: 6 }} md={{ span: 1, offset: 1 }}>
+                        <Col xl={{ span: 8, offset: 9 }} lg={{ span: 8, offset: 6 }} md={{ span: 1, offset: 1 }} sm={{ span: 8, offset: 11 }} xs={{ span: 8, offset: 11 }}>
                             <Button variant="primary" size="lg" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer</Button>
                         </Col>
                     </div>
