@@ -74,7 +74,7 @@ export default class LocationLiveDisp extends React.Component {
   render() {
     return (
       <div>
-        {this.state.stock[0]}        
+               
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
