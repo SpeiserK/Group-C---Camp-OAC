@@ -34,13 +34,14 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/bootstrap" element={<Bootstrap/>} />
 
+
           {/*frontend protected routes*/}
           <Route element={<FrontProtectedRoutes />}>
             <Route path="order/payment" element={<Payment/>} />
             <Route path="order/payment/cashConfirmation" element={<CashConfirmation/>} />
             <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
             <Route path="order/payment/SquarePay" element={<SquarePay/>} />
-            <Route path="order/payment/SquarePay/SquareReceipt" element={<SquareReceipt/>} />
+            <Route path="order/payment/SquareReceipt" element={<SquareReceipt/>} />
           </Route>
           
           {/*admin protected routes*/}
@@ -52,6 +53,7 @@ function App() {
           </Route>
 
           
+
         </Routes>
         
       </div>

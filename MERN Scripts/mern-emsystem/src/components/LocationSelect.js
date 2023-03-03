@@ -1,15 +1,18 @@
 
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const LocationSelect = () => {
+  const [Locations, setLocations] = useState([]);
   const [selectedLocation, setSelectedLocation] = useState('Select a location');
+
 
   const handleChange = (event) => {
     setSelectedLocation(event.target.value);
     sessionStorage.setItem('selectedLocation', event.target.value);
     window.location.reload();
   }
-
+  
 
   return (
     

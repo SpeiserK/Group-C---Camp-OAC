@@ -5,13 +5,21 @@ const mongoose = require('mongoose');
 const nodeMailer = require('nodemailer');
 require('dotenv').config();
 const Models = require("./models.js");
+const pino = require('express-pino-logger')();
+const client = require('twilio')(
+  process.env.TWILIO_ACCOUNT_SID,
+  process.env.TWILIO_AUTH_TOKEN
+);
 
 const app  = express();
 const port = process.env.PORT || 5001;
 
 app.use(cors());
 app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(pino);
+
 
 const options = {
     dbName: 'mydb'
@@ -227,6 +235,25 @@ app.post("/deleteuser", (req, res) => {
     console.log("test3");
     
 });
+
+app.post('/api/messages', (req, res) => {
+    res.header('Content-Type', 'application/json');
+    client.messages
+    .create({
+      from: process.env.TWILIO_PHONE_NUMBER,
+      to: req.body.to,
+      body: req.body.body
+    })
+    .then(() => {
+      res.send(JSON.stringify({ success: true }));
+    })
+    .catch(err => {
+      console.log(err);
+      res.send(JSON.stringify({ success: false }));
+    });
+  
+  });
+
 app.use("/charge", require("./routes/api/charge.js"));
 
 app.use("/", require("./routes/OrderRoute.js"));
