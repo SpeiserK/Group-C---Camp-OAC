@@ -5,7 +5,7 @@ export default class Logo extends Component {
     render(){
         return(
             <div className="logoimg">
-                <img alt="campOAClogo" src={logo} height="100px" width="160px"/>
+                <img alt="campOAClogo" src={logo} height="100px" max-width="160px"/>
             </div>
         );            
     }
