@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 
-export default class FireAnimation extends Component {
+export default class FireAnimationRight extends Component {
     render(){
         return(
-            <div class = "fire-container">
-                <div class = "fire-container2">
+            <div class = "fire-containerRight">
                     <div class = "flame" id = "flame-2"></div>
                     <div class = "flame" id = "flame-1"></div>
                     <div class = "flame" id = "flame-3"></div>
@@ -16,7 +15,6 @@ export default class FireAnimation extends Component {
                     <div class = "wood" id = "wood-1"></div>
                     <div class = "wood" id = "wood-2"></div>
                 </div>
-            </div>
         );            
     }
 }

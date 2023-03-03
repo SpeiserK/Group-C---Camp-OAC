@@ -4,6 +4,7 @@ import EmpSignup from '../components/Signup/EmpSignup.js';
 import EmpLogin from '../components/Login/EmpLogin.jsx';
 import Row from 'react-bootstrap/esm/Row.js';
 import Container from 'react-bootstrap/esm/Container.js';
+import SMSForm from '../components/smsForm/SMSForm.js';
 
 function Emplogin(){
     return( 
@@ -16,6 +17,10 @@ function Emplogin(){
                 
             <EmpLogin />
             
+            </Row>
+            <br/><br/><br/>
+            <Row>
+                <SMSForm />
             </Row>
         </Container>
     </div>

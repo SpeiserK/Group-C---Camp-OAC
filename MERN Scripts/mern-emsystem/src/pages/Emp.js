@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
-const empLocation = localStorage.getItem('selectedLocation');
+const empLocation = sessionStorage.getItem('selectedLocation');
 
 function Emp(){
     return(
@@ -21,7 +21,8 @@ function Emp(){
             </Row>
             <Row>
         <body className="appContainer">
-            <div className="empLeftDiv"> 
+            <div className="empLeftDiv">
+                <h2>{empLocation}</h2>
                 <LocationLiveDisp queryLoc={empLocation} />
                 <h2>Orders that need pickup</h2>
                  <OrderLiveDisp query1={'Approved'} queryLoc={empLocation} />

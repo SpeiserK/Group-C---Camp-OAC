@@ -10,7 +10,7 @@ const SquarePay = () => {
 
     const [output, setOutput] = useState([]);
 
-    const Quantity = localStorage.getItem("quantity");
+    const Quantity = sessionStorage.getItem("quantity");
 
     const navigate = useNavigate();
 
