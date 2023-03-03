@@ -14,15 +14,16 @@ const navigate = useNavigate();
 function post2DB(type) {
     
     //function to post to database takes type which is a string value
-    //creates a new order from the local storage values 
+    //creates a new order from the session storage values 
     
     
     const newOrder = {
-        Name: localStorage.getItem("email"),
-        Quantity: localStorage.getItem("quantity"),
-        Location: localStorage.getItem("location"),
+       // Name: sessionStorage.getItem("email"),
+        Name: sessionStorage.getItem("email"),
+        Quantity: sessionStorage.getItem("quantity"),
+        Location: sessionStorage.getItem("location"),
         Payment: type,
-        phoneNumber: localStorage.getItem("phoneNumber")
+        phoneNumber: sessionStorage.getItem("phoneNumber")
     }
     // axios posts to our though orderroute file with the new order information
     // order route function: router.route("/send").post((req, res)

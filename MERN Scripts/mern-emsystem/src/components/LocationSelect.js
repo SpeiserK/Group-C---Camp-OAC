@@ -6,7 +6,7 @@ const LocationSelect = () => {
 
   const handleChange = (event) => {
     setSelectedLocation(event.target.value);
-    localStorage.setItem('selectedLocation', event.target.value);
+    sessionStorage.setItem('selectedLocation', event.target.value);
     window.location.reload();
   }
 
