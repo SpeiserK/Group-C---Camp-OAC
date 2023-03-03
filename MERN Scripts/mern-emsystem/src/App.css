@@ -1222,8 +1222,8 @@ New CSS using bootstrap
   font-size: calc(7px + 2vmin);
   color: black;
   padding: 1em 2em 1em 2em;
-  margin-left: 2em;
-  margin-top: 0.75em;
+  margin-left: 0em;
+  margin-top: 1em;
   margin-bottom: 1em;
   min-height: 800px;
 }
@@ -1246,8 +1246,8 @@ New CSS using bootstrap
   font-size: calc(7px + 2vmin);
   color: white;
   padding: 2em 0.5em 10em 0.5em;
-  margin-right: 2em;
-  margin-top: 0.75em;
+  margin-right: 0em;
+  margin-top: 1em;
   min-height: 800px;
 }
 
@@ -1301,6 +1301,14 @@ New CSS using bootstrap
 
 .bottomBorder {
   border-bottom: solid #adadad;
+}
+/*White side bar, used in payment.js*/
+.whiteSideBar {
+  padding: 0em 0em 0em 0em;
+  min-width: 2.5em;
+  max-width: 3.5em;
+
+  background-color: white;
 }
 /*Div for fire animation on the start page*/
 .fireDiv {

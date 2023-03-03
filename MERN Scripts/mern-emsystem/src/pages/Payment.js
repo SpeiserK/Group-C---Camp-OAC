@@ -49,7 +49,9 @@ function post2DB(type) {
     <Banner /> 
     </Row>
     <Row>
-        <Col lg={{span: 8, offset: 0}} md={{span: 7, offset: 0}} sm={{span:12, offset: 0}} xs={{span: 12, offset: 0}} style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <Col className="whiteSideBar">
+        </Col>
+        <Col xl={{span: 7, offset: 0}} lg={{span: 7, offset: 0}} md={{span: 7, offset: 0}} sm={{span:12, offset: 0}} xs={{span: 12, offset: 0}} style={{ paddingLeft: 0, paddingRight: 0 }}>
             <div className="bOrder">
             <h2 className="mainOrderTitle">Order Summary</h2>
             <hr></hr>
@@ -59,7 +61,7 @@ function post2DB(type) {
                 </Col>
             </div>
         </Col>
-        <Col lg={{span:4, offset: 0}} md={{span:5, offset: 0}} sm={{span: 12, offset: 1}} xs={{span: 12, offset: 1}} style={{ paddingLeft: 0, paddingRight: 0}}>
+        <Col xl={{span: 4, offset: 0}} lg={{span:4, offset: 0}} md={{span:4, offset: 0}} sm={{span: 12, offset: 0}} xs={{span: 12, offset: 0}} style={{ paddingLeft: 0, paddingRight: 0}}>
             <div className="bPay2">
                 <h3 className="payOrderTitle"><strong>Select Payment Type</strong></h3>
                 <div className="payForm">
@@ -136,7 +138,9 @@ function post2DB(type) {
                     </div>
                 </Row>
             </div>
-        </Col>  
+        </Col> 
+        <Col className="whiteSideBar">
+        </Col> 
     </Row>
 </Container>
 </div>

@@ -31,7 +31,7 @@ function App() {
           <Route path="order/payment/cashConfirmation" element={<CashConfirmation/>} />
           <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
           <Route path="order/payment/SquarePay" element={<SquarePay/>} />
-          <Route path="order/payment/SquarePay/SquareReceipt" element={<SquareReceipt/>} />
+          <Route path="order/payment/SquareReceipt" element={<SquareReceipt/>} />
           <Route path="login/emp" element={<Emp/>}/>
           <Route path="login/emp/inventory" element={<Inventory/>} />
           <Route path="login/emp/history" element={<OrderHistory/>} />
