@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
-
+import Popover from 'react-bootstrap/Popover';
+import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
+import SMSForm from './smsForm/SMSForm';
 
 
 export default class OrderLiveDisp extends React.Component {
@@ -58,6 +60,11 @@ export default class OrderLiveDisp extends React.Component {
       .then( response => {
         window.location.reload();
       })
+  }
+
+  popoverApprove(id,quantity,location,price,email, phoneNumber) {
+    //popover stuff
+    <SMSForm number={phoneNumber} text=""/>
   }
 
   //decline order post

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
+
 // twilio recovery: N4y2RRDuQ3WNqO2MpbwQRIcs1-n4q8SDpn2rvMZx
 class SMSForm extends Component {
     constructor(props) {
@@ -11,7 +12,8 @@ class SMSForm extends Component {
             body: ''
           },
           submitting: false,
-          error: false
+          error: false,
+          success: ""
         };
         this.onHandleChange = this.onHandleChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -34,7 +36,7 @@ class SMSForm extends Component {
           },
           body: JSON.stringify(this.state.message)
         })
-          .then(res => res.json())
+          .then(res => this.setState({success: res}))
           .then(data => {
             if (data.success) {
               this.setState({
@@ -60,6 +62,7 @@ class SMSForm extends Component {
             onSubmit={this.onSubmit}
             className={this.state.error ? 'error sms-form' : 'sms-form'}
             >
+              {this.state.error ? 'error sms-form' : 'sms-form'}
             <div>
               <label htmlFor="to">To:</label>
               <input
@@ -82,6 +85,7 @@ class SMSForm extends Component {
             <button type="submit">
               Send message
             </button>
+          {this.state.submitting}
           </form>
         );
       }
