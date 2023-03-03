@@ -8,8 +8,6 @@
         "dev": "concurrently \"cd backend && node server.js\" \"cd mern-emsystem && npm start\" "
     },
     "author": "",
-    "license": "ISC",
-    "dependencies": {
-        "twilio": "^4.8.0"
-    }
+    "license": "ISC"
+    
 }
