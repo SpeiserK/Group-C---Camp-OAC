@@ -16,6 +16,12 @@ import SquarePay from './pages/SquarePay';
 import SquareReceipt from './pages/SquareReceipt';
 import SuperAdmin from './pages/SuperAdmin';
 import Bootstrap from './pages/Bootstrap';
+import ProtectedRoutes from './components/hooks/protectedRoutes';
+
+
+
+//let isAuth = sessionStorage.getItem("auth");
+
 
 function App() {
   return (
@@ -32,10 +38,16 @@ function App() {
           <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
           <Route path="order/payment/SquarePay" element={<SquarePay/>} />
           <Route path="order/payment/SquarePay/SquareReceipt" element={<SquareReceipt/>} />
-          <Route path="login/emp" element={<Emp/>}/>
-          <Route path="login/emp/inventory" element={<Inventory/>} />
-          <Route path="login/emp/history" element={<OrderHistory/>} />
-          <Route path="login/emp/employee" element={<SuperAdmin/>} />
+          
+          {/*admin protected routes*/}
+          <Route element={<ProtectedRoutes auth={/*sessionStorage.getItem("auth")*/true}/>}>
+            <Route path="login/emp" element={<Emp/>}/>
+            <Route path="login/emp/inventory" element={<Inventory/>} />
+            <Route path="login/emp/history" element={<OrderHistory/>} />
+            <Route path="login/emp/employee" element={<SuperAdmin/>} />
+          </Route>
+
+          
         </Routes>
         
       </div>
