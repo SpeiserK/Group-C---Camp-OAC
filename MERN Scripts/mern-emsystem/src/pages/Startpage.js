@@ -8,18 +8,20 @@ import FireAnimation from "../components/FireAnimation";
 import FireAnimationRight from "../components/FireAnimationRight";
 import Button from 'react-bootstrap/Button';
 import Banner from "../components/Banner.js";
-
+import Collapse from "react-bootstrap/Collapse";
 
 
 
 
 function Startpage(){
     const gotoOrder = useNavigate();
-    
 
     function handleClick(){
         gotoOrder("order");
     }
+
+    
+        
 
     return(
     <div className="bContainer">
@@ -40,21 +42,24 @@ function Startpage(){
 
                     </div>
                     <div>
-                    <FireAnimation />
+                        <Collapse>
+                            <FireAnimation />
+                        </Collapse>
                     </div>
                     <div className="bMain2">
-                        <Col md={{ span: 5, offset: 5 }} xs={{span: 5, offset: 5}}> 
-                            <Button variant="start" onClick={() => handleClick()}>PLACE ORDER</Button>{' '} 
+                        <Col md={{ span: 5, offset: 5 }} xs={{span: 5, offset: 5}}>             
+                                <Button variant="start" onClick={() => handleClick()}>PLACE ORDER</Button>{' '} 
                         </Col>
                     </div>
                     <div>
-                    <FireAnimationRight />
+                      
                     </div>
                 </Col>   
                 <Col lg={4} md={3} sm={12} xs={12}>
                     <div className="bSide">
                         <Row><div className="bSidebar1"></div></Row>
                         <Row><div className="bSidebar2"></div></Row>
+                        <Row><div className="bSidebar3"></div></Row>
                     </div>
                 </Col>
             </Row>

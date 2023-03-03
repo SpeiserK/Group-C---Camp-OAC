@@ -3,6 +3,10 @@ import { useRef, useState, useEffect } from "react";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes, } from "@fortawesome/free-solid-svg-icons";
+//Bootstrap libs
+import Row from 'react-bootstrap/esm/Row.js';
+import Col from 'react-bootstrap/esm/Col.js';
+import Container from 'react-bootstrap/esm/Container.js';
 
 //Very important component 
 //TODO: need to go through and document with cam - what are the classnames for 
@@ -117,7 +121,7 @@ const PlaceOrder = () => {
     // Includes email, confirm email, phone, quantity, location
 
     return (
-        <div className="orderFormWrapper">
+        <div className="orderFormWrapper">     
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form classname="orderForm" onSubmit={(e) => handleSubmit()}> 
                 
