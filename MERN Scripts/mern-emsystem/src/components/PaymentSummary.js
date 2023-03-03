@@ -7,14 +7,16 @@ import Container from 'react-bootstrap/esm/Container.js';
 
 export default class PaymentSummary extends Component {
     render(){
-        //grabs email variable out of local storage
-        const email = localStorage.getItem("email");
-        //grabs qty variable out of local storage
-        const quantity = localStorage.getItem("quantity");
-        // grabs location
-        const location = localStorage.getItem("location");
+        //grabs email variable out of session storage
+        
+        const email = sessionStorage.getItem("email");
 
-        const phoneNumber = localStorage.getItem("phoneNumber")
+        //grabs qty variable out of session storage
+        const quantity = sessionStorage.getItem("quantity");
+        // grabs location
+        const location = sessionStorage.getItem("location");
+
+        const phoneNumber = sessionStorage.getItem("phoneNumber")
 
         
 

@@ -50,7 +50,7 @@ const PlaceOrder = () => {
         // error const
     const [errMsg, setErrMsg] = useState('');
 
-    const bundleTotal = localStorage.getItem("quantity");
+    const bundleTotal = sessionStorage.getItem("quantity");
 
     useEffect(() => {
         userRef.current.focus();
@@ -103,11 +103,12 @@ const PlaceOrder = () => {
             handleSubmit();
             orderVal = "true";
             gotoOrder("payment");
-            //set local storage item #qty to value
-            localStorage.setItem("quantity",document.getElementById("quantity").value);
-            localStorage.setItem("location",document.getElementById("location").value);
-            localStorage.setItem("phoneNumber", phoneNumber);
-            localStorage.setItem("email",email);
+            //set session storage item #qty to value
+            sessionStorage.setItem("quantity",document.getElementById("quantity").value);
+            sessionStorage.setItem("location",document.getElementById("location").value);
+            sessionStorage.setItem("phoneNumber", phoneNumber);
+            //sessionStorage.setItem("email",email);
+            sessionStorage.setItem("email",email);
         } else {
             orderVal = "false";
         }
