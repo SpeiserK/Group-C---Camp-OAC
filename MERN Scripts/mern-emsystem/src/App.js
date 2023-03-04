@@ -16,6 +16,12 @@ import SquarePay from './pages/SquarePay';
 import SquareReceipt from './pages/SquareReceipt';
 import SuperAdmin from './pages/SuperAdmin';
 import Bootstrap from './pages/Bootstrap';
+import ProtectedRoutes from './components/hooks/protectedRoutes';
+import FrontProtectedRoutes from './components/hooks/frontProtectedRoutes';
+
+
+//let isAuth = sessionStorage.getItem("auth");
+
 
 function App() {
   return (
@@ -27,15 +33,27 @@ function App() {
           <Route path="login" element={<Emplogin/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/bootstrap" element={<Bootstrap/>} />
-          <Route path="order/payment" element={<Payment/>} />
-          <Route path="order/payment/cashConfirmation" element={<CashConfirmation/>} />
-          <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
-          <Route path="order/payment/SquarePay" element={<SquarePay/>} />
-          <Route path="order/payment/SquareReceipt" element={<SquareReceipt/>} />
-          <Route path="login/emp" element={<Emp/>}/>
-          <Route path="login/emp/inventory" element={<Inventory/>} />
-          <Route path="login/emp/history" element={<OrderHistory/>} />
-          <Route path="login/emp/employee" element={<SuperAdmin/>} />
+
+
+          {/*frontend protected routes*/}
+          <Route element={<FrontProtectedRoutes />}>
+            <Route path="order/payment" element={<Payment/>} />
+            <Route path="order/payment/cashConfirmation" element={<CashConfirmation/>} />
+            <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
+            <Route path="order/payment/SquarePay" element={<SquarePay/>} />
+            <Route path="order/payment/SquareReceipt" element={<SquareReceipt/>} />
+          </Route>
+          
+          {/*admin protected routes*/}
+          <Route element={<ProtectedRoutes />}>
+            <Route path="login/emp" element={<Emp/>}/>
+            <Route path="login/emp/inventory" element={<Inventory/>} />
+            <Route path="login/emp/history" element={<OrderHistory/>} />
+            <Route path="login/emp/employee" element={<SuperAdmin/>} />
+          </Route>
+
+          
+
         </Routes>
         
       </div>
