@@ -1232,9 +1232,9 @@ New CSS using bootstrap
   background-color: #557a65;
   font-size: calc(7px + 2vmin);
   color: white;
-  padding: 2em 5em 26.5em 0em;
-  margin-right: 2em;
-  margin-top: 0.75em;
+  padding: 2em 1em 2em 0em;
+  margin-right: 0em;
+  margin-top: 1em;
   min-height: 800px;
 }
 
@@ -1297,6 +1297,30 @@ New CSS using bootstrap
   color: white;
   margin-top: 2em;
   padding-left: 12%;
+}
+
+/*blue box in SquareRecepit.js*/
+.recepitBox {
+  background-color: #2c4356;
+  box-shadow: 5px 10px black;
+  border-radius: 2em;
+  margin: 2em 2em 2em 2em;
+  padding: 1.5em 1.5em 1.5em 1.5em;
+  height: 20em;
+  width: 90%;
+  text-align: center;
+  color: white;
+}
+/*smallerblue box in sidebar*/
+.smallSideBox {
+  display: flex;
+  justify-content: center;
+  margin: em 1em 1em 1em;
+}
+/*For the text inside the .receiptBox on SquareReceipt.js*/
+.receiptText {
+ font-family: "RobotoSlab";
+  text-align: left;
 }
 
 .bottomBorder {

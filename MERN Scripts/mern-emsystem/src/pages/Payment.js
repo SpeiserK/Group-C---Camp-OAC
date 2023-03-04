@@ -134,7 +134,7 @@ function post2DB(type) {
                             <Button variant="primary" size="lg" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash</Button>
                         </Col>
                         <Col xl={{ span: 8, offset: 9 }} lg={{ span: 8, offset: 6 }} md={{ span: 1, offset: 1 }} sm={{ span: 8, offset: 11 }} xs={{ span: 8, offset: 11 }}>
-                            <Button variant="primary" size="lg" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer</Button>
+                            <Button variant="primary" size="lg" onClick={() => {post2DB("E-Transfer"); navigate("CashConfirmation")}}>E-Transfer</Button>
                         </Col>
                     </div>
                 </Row>

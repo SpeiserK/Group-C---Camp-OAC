@@ -10,19 +10,12 @@ import Button from 'react-bootstrap/Button';
 import Banner from "../components/Banner.js";
 import Collapse from "react-bootstrap/Collapse";
 
-
-
-
 function Startpage(){
     const gotoOrder = useNavigate();
 
     function handleClick(){
         gotoOrder("order");
     }
-
-    
-        
-
     return(
     <div className="bContainer">
         <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
