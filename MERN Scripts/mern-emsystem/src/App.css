@@ -1167,8 +1167,7 @@ New CSS using bootstrap
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 0.5em 2em 0.5em 1em;
+  padding: 0.5em 1em 0.5em 1em;
   color: white;
 }
 /*Div for logo in nav bar*/
@@ -1261,6 +1260,7 @@ New CSS using bootstrap
 /*in use on start page*/
 .bSidebar1{
     background-image: url('components/pictures/Bundles1.svg');
+    border-radius: 0.25em;
     background-size: cover;
     border: solid 0.25em #926d4c;
     color: white;
@@ -1274,6 +1274,7 @@ New CSS using bootstrap
 .bSidebar2{
     background-image: url('components/pictures/Wood1.svg');
     background-size: cover;
+    border-radius: 0.25em;
     border: solid 0.25em #926d4c;
     color: white;
     margin: 0em 0em 1em 0em;
@@ -1285,6 +1286,7 @@ New CSS using bootstrap
 .bSidebar3{
     background-image: url('components/pictures/FirewoodTeam.jpg');
     background-size: cover;
+    border-radius: 0.25em;
     border: solid 0.25em #926d4c;
     color: white;
     margin: 0em 0em 1em 0em;
