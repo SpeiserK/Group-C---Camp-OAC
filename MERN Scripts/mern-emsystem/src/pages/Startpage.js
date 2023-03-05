@@ -29,19 +29,19 @@ function Startpage(){
                             <br></br>
                             <p className="robotoSlab">This website is designed to act as a firewood purchasing portal for Camp OAC in coordination with Kelowna Rotary Ogopogo, all proceeds go to Camp OAC.
                             </p><br></br>
-                            <p className="robotoSlab">To get started, use the Place Order button below!</p>
+                            <p className="robotoSlab">To get started, use the Order button below!</p>
                     </div>
                     <div className="bMainFill">
 
                     </div>
                     <div>
-                        <Collapse>
+                        <Col className="d-none d-xl-block">
                             <FireAnimation />
-                        </Collapse>
+                        </Col>
                     </div>
                     <div className="bMain2">
-                        <Col md={{ span: 5, offset: 5 }} xs={{span: 5, offset: 5}}>             
-                                <Button variant="start" onClick={() => handleClick()}>PLACE ORDER</Button>{' '} 
+                        <Col xl={{ span: 5, offset: 6 }} md={{ span: 5, offset: 5 }} xs={{span: 5, offset: 5}}>             
+                                <Button variant="start" onClick={() => handleClick()}>ORDER</Button>{' '} 
                         </Col>
                     </div>
                     <div>

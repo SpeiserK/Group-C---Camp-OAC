@@ -19,7 +19,7 @@ export default class Banner extends Component {
                         <Button variant="outline-light" size="sm" href="/about" style={{marginRight: 7, border: 0}}>About</Button>{' '}
                         <Button variant="outline-light" size="sm" href="https://www.facebook.com/ogopogorotary/" target="_blank" style={{marginRight: 7,border: 0}}>Facebook</Button>{' '}
                         <Button variant="outline-light" size="sm" href="https://portal.clubrunner.ca/824" target="_blank" style={{marginRight: 7,border: 0}}>Kelowna Rotary</Button>{' '}
-                        <Button variant="outline-light" size="sm" href="https://portal.clubrunner.ca/824" target="_blank" style={{marginRight: 7,border: 0}}>Camp OAC</Button>{' '}
+                        <Button variant="outline-light" size="sm" href="https://www.campoac.com" target="_blank" style={{marginRight: 7,border: 0}}>Camp OAC</Button>{' '}
                         <Button variant="outline-light" size="sm" href="/login" style={{border: 0}}>Admin Portal</Button>{' '}
                     </Col>
                     <Col xl={{span:1, offset:0}} lg={{span:1,offset:0}}  md={{span:1,offset:0}} className="d-none d-lg-block d-md-block">
