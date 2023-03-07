@@ -103,7 +103,9 @@ export default class LocationLiveDisp extends React.Component {
   
   render() {
     return (
-      <div>      
+      
+      <div>  
+        <h1>MANAGE LOCATIONS</h1>    
       <table className="dblist">
         <tr id="listHeader" className="listHeader">
           <td id="headerID"  className="listHeaderItem">
