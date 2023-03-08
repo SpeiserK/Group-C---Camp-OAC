@@ -43,7 +43,7 @@ class SMSForm extends Component {
     async onSubmit(event) {
       event.preventDefault();
       this.setState({ submitting: true });
-      await fetch('http://localhost:5001/api/messages', {
+      const mark = await fetch('http://localhost:5001/api/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -67,10 +67,14 @@ class SMSForm extends Component {
               submitting: false
             });
           }
+        }).then(() => {
+          if (this.state.error)return;
         });
-      if (this.state.error)return;
+      console.log("flag1: " + this.state.error);
+      console.log("flag2");
 
       if (this.props.approve) {
+        console.log("approved");
         //get date of approval
         var dateApprove = new Date();
         var offset = dateApprove.getTimezoneOffset();
@@ -81,7 +85,6 @@ class SMSForm extends Component {
         let datePickup = dateApprove.toString();
         //delete timezone details
         datePickup = datePickup.slice(0,11);
-
         axios.post('http://localhost:5001/statuschange', {
             id: this.props.userData._id,
             status: "Approved",
@@ -96,6 +99,7 @@ class SMSForm extends Component {
           window.location.reload();
         })
       } else {
+        console.log("denied");
         axios.post('http://localhost:5001/statuschange', {
           id: this.props.userData._id,
           status: "Denied",
@@ -109,7 +113,6 @@ class SMSForm extends Component {
     }
 
     render() {
-      console.log(this.props.userData);
       return (
         <form
           onSubmit={this.onSubmit}
