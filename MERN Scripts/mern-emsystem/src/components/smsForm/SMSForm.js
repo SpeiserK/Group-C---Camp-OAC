@@ -67,14 +67,12 @@ class SMSForm extends Component {
               submitting: false
             });
           }
-        }).then(() => {
+        })
+        .then(() => {
           if (this.state.error)return;
         });
-      console.log("flag1: " + this.state.error);
-      console.log("flag2");
 
       if (this.props.approve) {
-        console.log("approved");
         //get date of approval
         var dateApprove = new Date();
         var offset = dateApprove.getTimezoneOffset();
@@ -99,7 +97,6 @@ class SMSForm extends Component {
           window.location.reload();
         })
       } else {
-        console.log("denied");
         axios.post('http://localhost:5001/statuschange', {
           id: this.props.userData._id,
           status: "Denied",

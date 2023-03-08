@@ -29,6 +29,7 @@ function post2DB(type) {
 
 
     axios.post('http://localhost:5001/send', newOrder);
+    
 }
 
     return(
