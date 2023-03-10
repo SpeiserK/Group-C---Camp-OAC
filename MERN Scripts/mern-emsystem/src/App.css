@@ -1421,7 +1421,10 @@ Customer Order History table styling
   border-right: none;
   border-bottom: 1px solid black;
 }
-
-.custBox button {
-  width: 25%;
+/****Sort by selecor in CustomerHistory****/
+.custBox select{
+  width: 20%;
+  color: white;
+  background-color: grey;
+  margin-left: 80%;
 }

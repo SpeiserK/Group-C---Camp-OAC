@@ -110,7 +110,7 @@ app.get("/employee", (req, res)=> {
 });
 
 app.get("/orderCust", (req, res)=> {
-    Models.Order.find(req.query)
+    Models.Order.find(req.query).sort({Datetime: req.query.order})
     .then((data) => {
         console.log( 'Order read data available');
         res.json(data);

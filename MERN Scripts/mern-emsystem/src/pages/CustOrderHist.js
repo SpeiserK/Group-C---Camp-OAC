@@ -16,6 +16,10 @@ const navigate = useNavigate();
 
 var number = "";
 var data =  sessionStorage.getItem("pNum");
+var sort = -1;
+if(sessionStorage.getItem("sortKey") != null){
+    sort = sessionStorage.getItem("sortKey");
+}
 var msg = "";
 var table = true;
 if(data==null){
@@ -37,6 +41,15 @@ const handleReload = () => {
 
 const handleLeave = () => {
     sessionStorage.removeItem("pNum");
+    sessionStorage.removeItem("sortKey");
+}
+
+const handleSort = (i) => {
+    if(i == 2){
+        i = -1;
+    }
+    sessionStorage.setItem("sortKey",i);
+    handleReload();
 }
 
     return(
@@ -51,15 +64,34 @@ const handleLeave = () => {
                 <div className="bOrder">
                     <Row>
                         <Col className="custBox" align="center">
-                        <p id="topMsg" className="robotoSlab">{msg}</p>
-                            <Form.Control type="text" id="phoneNum" placeholder="Phone Number" onChange={handleClick}/>
-                            <br></br>
-                            <Button 
-                                onClick={handleReload}
-                                aria-controls="collapse-table"
-                                aria-expanded={open}
-                            >See Orders
-                            </Button>
+                            <Row>
+                                <Col>
+                                    <p id="topMsg" className="robotoSlab">{msg}</p>
+                                </Col>
+                            </Row>
+                            <Row>
+                                <Form.Control type="text" id="phoneNum" placeholder="Phone Number" onChange={handleClick}/>
+                            </Row>
+                            <br></br>             
+                                <Button 
+                                    onClick={handleReload}
+                                    aria-controls="collapse-table"
+                                    aria-expanded={open}
+                                >See Orders
+                                </Button>
+                                <Row>
+                                <Col>
+                                <Collapse in={open}>
+                                    <div id="collapse-table">
+                                    <Form.Select onChange={(e) => handleSort(e.target.value)}  size="sm" id="sort-selector" name="sorting">
+                                        <option disabled selected>Sort By</option>
+                                        <option value="1">Oldest</option>
+                                        <option value="2">Newest</option>
+                                    </Form.Select>
+                                    </div>
+                                </Collapse>
+                                </Col>
+                                </Row>
                         </Col>
                     </Row>
                     <br></br>
@@ -67,10 +99,10 @@ const handleLeave = () => {
                       <Col>
                       <Collapse in={open} onEnter={handleClick}>
                         <div id="collapse-table">
-                            <CustomerHistory query1={data}/>
+                            <CustomerHistory query1={data} query2={sort}/>
                         </div>
                       </Collapse>
-                        
+
                       </Col>
                     </Row> 
                     <Row>

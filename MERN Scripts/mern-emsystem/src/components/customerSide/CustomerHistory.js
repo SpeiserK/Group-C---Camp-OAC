@@ -13,7 +13,8 @@ export default class CustomerHistory extends React.Component {
     componentDidMount() {
         axios.get(`http://localhost:5001/orderCust`, { 
             params: {
-              phoneNumber: this.props.query1
+              phoneNumber: this.props.query1,
+              order: this.props.query2
             }
           })
             .then(res => {
