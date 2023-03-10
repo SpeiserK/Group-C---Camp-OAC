@@ -18,10 +18,6 @@ function Emplogin(){
             <EmpLogin />
             
             </Row>
-            <br/><br/><br/>
-            <Row>
-                <SMSForm />
-            </Row>
         </Container>
     </div>
     );
