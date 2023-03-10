@@ -12,7 +12,7 @@ import CustomerHistory from '../components/customerSide/CustomerHistory.js';
 
 function CustOrderHist (){
 
-const navigate = useNavigate();
+//const navigate = useNavigate();
 
 var number = "";
 var data =  sessionStorage.getItem("pNum");
