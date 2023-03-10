@@ -316,7 +316,7 @@ background-color: #17458f;
   color: white; /*text color*/
   margin: 1em 0em 0em 0em;
   font-size: 24px;
-  font-family: "Arial";
+  font-family: "RobotoSlab";
   border-radius: 4px;
   width: 60%;
   height: 40px;
@@ -362,7 +362,9 @@ background-color: #17458f;
   padding: 0em 0em 0em 0em;
 }
 
-
+.orderFormWrapper{
+  font-family: "RobotoSlab";
+}
 .orderFormWrapper hr{
   width: 90%;
 }
@@ -370,7 +372,7 @@ background-color: #17458f;
 
 /*Location drop down style*/
 .locationStyle {
-  width: 30%;
+  width: 45%;
   padding: 16x 20px;
   margin: 8px 0;
   border: 2px solid #17458f;
@@ -524,24 +526,24 @@ background-color: #17458f;
 /*Place Order Title*/
 /* used in orderqty.js*/
 .orderTitle {
-  font-family: "Frutiger";
+  font-family: "RobotoSlab";
   font-weight: bolder;
 }
 .mainOrderTitle{
   padding-left: 30x;
   text-align: center;
-  font-family: "Frutiger";
+  font-family: "RobotoSlab";
   font-weight: bolder;
 }
 .payOrderTitle{
-  font-family: "Frutiger";
+  font-family: "RobotoSlab";
   font-weight: bolder;
   text-align: center;
 }
 /*Text for bundle size info, in */
 .bundleText{
   padding: 30px;
-  font-family: "Frutiger";
+  font-family: "RobotoSlab";
   font-size: large;
 }
 
