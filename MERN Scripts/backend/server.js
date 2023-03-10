@@ -6,12 +6,12 @@ const nodeMailer = require('nodemailer');
 require('dotenv').config();
 const Models = require("./models.js");
 const pino = require('express-pino-logger')();
-/*
+
 const client = require('twilio')(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
 );
-*/
+
 const app  = express();
 const port = process.env.PORT || 5001;
 
@@ -109,6 +109,16 @@ app.get("/employee", (req, res)=> {
     })
 });
 
+app.get("/orderCust", (req, res)=> {
+    Models.Order.find(req.query)
+    .then((data) => {
+        console.log( 'Order read data available');
+        res.json(data);
+    })
+    .catch(() => {
+        console.log( 'error: ', daerrorta);
+    })
+});
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

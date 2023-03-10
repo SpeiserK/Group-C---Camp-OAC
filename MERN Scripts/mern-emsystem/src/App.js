@@ -15,6 +15,7 @@ import ETransferConfirmation from './pages/ETransferConfirmation';
 import SquarePay from './pages/SquarePay';
 import SquareReceipt from './pages/SquareReceipt';
 import SuperAdmin from './pages/SuperAdmin';
+import CustOrderHist from './pages/CustOrderHist';
 import Bootstrap from './pages/Bootstrap';
 
 function App() {
@@ -26,12 +27,12 @@ function App() {
           <Route path="order" element={<Orderqty/>} />
           <Route path="login" element={<Emplogin/>} />
           <Route path="/about" element={<About/>} />
-          <Route path="/bootstrap" element={<Bootstrap/>} />
           <Route path="order/payment" element={<Payment/>} />
           <Route path="order/payment/cashConfirmation" element={<CashConfirmation/>} />
           <Route path="order/payment/ETransferConfirmation" element={<ETransferConfirmation/>} />
           <Route path="order/payment/SquarePay" element={<SquarePay/>} />
           <Route path="order/payment/SquareReceipt" element={<SquareReceipt/>} />
+          <Route path="/custhistory" element={<CustOrderHist/>} />
           <Route path="login/emp" element={<Emp/>}/>
           <Route path="login/emp/inventory" element={<Inventory/>} />
           <Route path="login/emp/history" element={<OrderHistory/>} />

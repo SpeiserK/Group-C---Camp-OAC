@@ -1391,4 +1391,42 @@ TODO: make dropdown display on hover
   background: none;
 }
 
+/***********************************
+Customer Order History table styling
+************************************/
+
+.custTable {
+  font-size: 14px;
+  border-radius: 0.5em;
+  font-family: "RobotoSlab";
+  text-align: center;
+  border: 1px solid black;
+}
+
+.custTable thead {
+  font-family: "BearHug";
+  font-size: 20px;
+}
+
+.custTable th {
+  border-top: 1px solid black;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+
+.custTable td{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+
+.custBox button {
+  width: 15%;
+}
+
+
+
+
 

@@ -19,9 +19,9 @@ export default class Drop extends Component {
       
             <Dropdown.Menu>
               <Dropdown.Item href="/about">About</Dropdown.Item>
-              <Dropdown.Item href="https://www.facebook.com/ogopogorotary/" target="_blank">Facebook</Dropdown.Item>
               <Dropdown.Item href="https://portal.clubrunner.ca/824" target="_blank">Kelowna Rotary</Dropdown.Item>
               <Dropdown.Item href="https://www.campoac.com" target="_blank">Camp OAC</Dropdown.Item>
+              <Dropdown.Item href="/custhistory">View Orders</Dropdown.Item>
               <Dropdown.Item href="/login">Admin Portal</Dropdown.Item>
             </Dropdown.Menu>
                 </Dropdown>
