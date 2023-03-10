@@ -7,7 +7,7 @@ const NewLocation = () => {
         name: "",
         address: "",
         stock: 0,
-        open: true
+        open: false
     })
     const[error, setError] = useState("");
 
