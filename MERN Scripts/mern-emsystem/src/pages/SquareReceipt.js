@@ -6,6 +6,8 @@ import CampLogo from '../components/CampLogo.js';
 import Row from 'react-bootstrap/esm/Row.js';
 import Container from 'react-bootstrap/esm/Container.js';
 import Col from 'react-bootstrap/esm/Col.js';
+import Button from 'react-bootstrap/esm/Button.js';
+import cabin from '../components/pictures/Camp-OAC-Logo_Cabin.png';
 
 function SquareReceipt(){
 const navigate = useNavigate();
@@ -16,21 +18,41 @@ const navigate = useNavigate();
             <Banner /> 
             </Row>
             <Row>
-            <Col lg={9} md={10} sm={11} xs={11} style={{ paddingLeft: 0, paddingRight: 0 }}>
-            <div className="bOrder">
-                <p> Your order has successfully been processed!
-                    Check your email for the pickup location of your firewood, it should be ready for you when you get there!
-                    </p>
-                    <div className="buttonBox">
-                            <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
-                    </div>
+            <Col className="whiteSideBar"></Col> 
+            <Col xl={8} lg={8} md={8} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
+                <div className="bOrder">
+                    <Row>
+                        <Col>
+                        <div className="recepitBox">
+                            <h1 className="bearHug">thank you</h1>
+                            <br></br>
+                                <div className="receiptText">
+                                    <p>Your order has been successfully processed!</p>
+                                    <p>Check your phone number/email for the order receipt, and pick-up instructions!</p>
+                                </div>
+                                <br></br>
+                                <br></br>
+                                <div className="buttonBox">
+                                        <Button variant="primary" size="lg" onClick={() => {navigate("/")}}>Continue Shopping</Button>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row> 
+                    <Row>
+                        <Col>                       
+                            <div className="smallSideBox">
+                                <img src={cabin} alt="cabin" height="30%" width="40%"></img>
+                            </div>
+                        </Col>
+                    </Row>  
                 </div>
             </Col>
-            <Col lg={3} md={2} sm={1} xs={1} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <Col xl={3} lg={3} md={3} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
                 <div className="bOrder2">
                     
                 </div>
             </Col>  
+            <Col className="whiteSideBar"></Col> 
         </Row>
     </Container>
     </div>

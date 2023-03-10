@@ -4,35 +4,56 @@ import Banner from '../components/Banner.js';
 import Container from 'react-bootstrap/esm/Container.js';
 import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
+import Button from 'react-bootstrap/esm/Button.js';
+import cabin from '../components/pictures/Camp-OAC-Logo_Cabin.png';
 
 function CashConfirmation(){
 const navigate = useNavigate();
     return(
-    <div className="bContainer">
-    <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
-        <Row>
-        <Banner /> 
-        </Row>
-        <Row>
-            <Col lg={9} md={10} sm={11} xs={11} style={{ paddingLeft: 0, paddingRight: 0 }}>
-                <div className="bOrder">
-                <p> Because you have selected cash payment your order is under review , please check your email for updates from our team!
-                    (WIP, email confirmation not functioning yet)
-                    </p>
-                    <div className="buttonBox">
-                        <button className="buttonStyle" onClick={() => {navigate("/")}}>homepage</button>
+        <div className="bContainer">
+            <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
+                <Row>
+                <Banner /> 
+                </Row>
+                <Row>
+                <Col className="whiteSideBar"></Col> 
+                <Col xl={8} lg={8} md={8} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
+                    <div className="bOrder">
+                        <Row>
+                            <Col>
+                            <div className="recepitBox">
+                                <h1 className="bearHug">thank you</h1>
+                                <br></br>
+                                    <div className="receiptText">
+                                        <p>Your order request has been successfully sent!</p>
+                                        <p>Our team review your order within 2-3 days.</p>
+                                        <p>Wait to hear back from us on your phone/email for payment and pick-up instructions!</p>
+                                    </div>
+                                    <br></br>
+                                    <div className="buttonBox">
+                                            <Button variant="primary" size="lg" onClick={() => {navigate("/")}}>Continue Shopping</Button>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row> 
+                        <Row>
+                            <Col>                       
+                                <div className="smallSideBox">
+                                    <img src={cabin} alt="cabin" height="30%" width="40%"></img>
+                                </div>
+                            </Col>
+                        </Row>  
                     </div>
-                    
-                </div>
-            </Col>
-            <Col lg={3} md={2} sm={1} xs={1} style={{ paddingLeft: 0, paddingRight: 0 }}>
-                <div className="bOrder2">
-                    
-                </div>
-            </Col>  
-        </Row>
-    </Container>
-    </div>                        
+                </Col>
+                <Col xl={3} lg={3} md={3} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
+                    <div className="bOrder2">
+                        
+                    </div>
+                </Col>  
+                <Col className="whiteSideBar"></Col> 
+            </Row>
+        </Container>
+    </div>                       
     );
 }
 

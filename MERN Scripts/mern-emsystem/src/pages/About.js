@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Banner from '../components/Banner.js';
-import FireAnimation from "../components/FireAnimation.js";
+
 
 function About(){
     const q1 = "What is this website for?";
@@ -32,7 +32,9 @@ function About(){
                             <h3 className="robotoSlab">{q1}</h3>
                             <p className="robotoSlab">{a1}</p><br></br>
                             <h3 className="robotoSlab">{q2}</h3>
-                            <p className="robotoSlab">{a2}</p><br></br>
+                            <p className="robotoSlab">{a2}</p>
+                            <a href="https://rotarykelowna.org" target="_blank">Facebook</a><br></br>
+                            <br></br>
                             <h3 className="robotoSlab">{q3}</h3>
                             <p className="robotoSlab">{a3}</p><br></br>
                             <h3 className="robotoSlab">{q4}</h3>
