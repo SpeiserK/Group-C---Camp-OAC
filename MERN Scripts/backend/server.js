@@ -152,21 +152,24 @@ app.post("/adminlocupdate", (req, res) => {
 
 //new location 
 app.post("/newLocation", (req, res) => {
+    console.log('!!!!!!!NEW LOCATION WORKING!!!!!!');
     try {
-        const id = req.body.id;
         const name = req.body.name;
         const address = req.body.address;
         const stock = req.body.stock;
         const open = req.body.open;
-        if (!address||!name||!id||!stock||typeof open !== typeof true){
+        if (!address||!name){
+            
+            console.log("bad")
             return res.status(422).send({message:"Missing/Bad field types"});
         }res.status(200).send({message: "Posted successfully"});
-        /* need to change this to post a new location
-        Models.Location.findByIdAndUpdate(id,
-            {Name: name, Address: address, Stock: stock, Open: open},
-            (err, doc) => {
-            if(err) return console.log(err);
-        });*/
+        const newLocation = new Models.Location({
+            Name: name, Address: address, Stock: stock, Open:open}
+            );
+            newLocation.save()
+            .then(order => {
+                res.json({message: `${order} location saved succesfully`})
+            }).catch (err =>{ console.log(err)});
     } catch (error) {
         res.status(500).send({message: "Location update failed, internal server error"});
     }

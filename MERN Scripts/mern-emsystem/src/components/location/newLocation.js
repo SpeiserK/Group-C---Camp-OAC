@@ -2,13 +2,12 @@ import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 import axios from 'axios';
 
-const newLocation = () => {
+const NewLocation = () => {
     const[data, setData] = useState({
-        id: "",
         name: "",
         address: "",
-        stock: "",
-        open: ""
+        stock: 0,
+        open: true
     })
     const[error, setError] = useState("");
 
@@ -33,7 +32,7 @@ const newLocation = () => {
 
     }
     return(
-        <div>
+        <div className='newLocation'>
             <form onSubmit={handleSubmit}>
                 <input
                    type="text"
@@ -45,15 +44,18 @@ const newLocation = () => {
                    />
                 <input
                    type="text"
-                   placeholder='Location Name'
-                   name="adress"
+                   placeholder='Address'
+                   name="address"
                    onChange={handleChange}
                    value={data.address}
                    required
                    />
+                   <button type="submit">
+                            Create Location
+                    </button>
             </form>
         </div>
     )
 
 }
-export default newLocation;
+export default NewLocation;

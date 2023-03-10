@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+
 export default class LocationLiveDisp extends React.Component {
   constructor(props){
     super(props);
@@ -161,6 +162,7 @@ export default class LocationLiveDisp extends React.Component {
             )
         }
       </table>
+      
       </div>
     )
   }
