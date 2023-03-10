@@ -40,6 +40,7 @@ function post2DB(type) {
 
 
     axios.post('http://localhost:5001/send', newOrder);
+    
 }
 
     return(
@@ -129,14 +130,12 @@ function post2DB(type) {
                         </Col>
                 </Row>
                 <Row>
-                    <div className="buttonBox"> 
-                        <Col xl={{ span: 1, offset: 11 }} lg={{ span: 1, offset: 8 }} md={{ span: 1, offset: 0 }} sm={{ span: 4, offset: 11 }} xs={{ span: 4, offset: 11 }}>
-                            <Button variant="primary" size="lg" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash</Button>
-                        </Col>
-                        <Col xl={{ span: 8, offset: 9 }} lg={{ span: 8, offset: 6 }} md={{ span: 1, offset: 1 }} sm={{ span: 8, offset: 11 }} xs={{ span: 8, offset: 11 }}>
-                            <Button variant="primary" size="lg" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer</Button>
-                        </Col>
-                    </div>
+                    <Col span={6} align="center">
+                        <Button variant="primary" size="lg" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash</Button>
+                    </Col>
+                    <Col span={6} align="center">
+                        <Button variant="primary" size="lg" onClick={() => {post2DB("E-Transfer"); navigate("CashConfirmation")}}>E-Transfer</Button>
+                    </Col>
                 </Row>
             </div>
         </Col> 

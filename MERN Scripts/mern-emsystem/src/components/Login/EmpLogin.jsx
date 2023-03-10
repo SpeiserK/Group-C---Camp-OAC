@@ -22,6 +22,7 @@ const EmpLogin = () => {
             //TODO: Change this to Session storage - not sure where we grab this
             sessionStorage.setItem("token", res.data);
             window.location= "login/emp";
+            sessionStorage.setItem("auth", "true");
         } catch (error) {
             if (error.response && error.response.status >= 400 && error.response.status <= 500) {
                 setError(error.response.data.message);
