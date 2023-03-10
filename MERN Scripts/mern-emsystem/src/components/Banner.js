@@ -10,7 +10,7 @@ import Button from 'react-bootstrap/esm/Button';
 export default class Banner extends Component {
     render(){
         return(
-            <Container fluid>
+            <Container fluid style={{paddingRight: 0}}>
                     <div className="bHeader">
                     <Col xl={{span:1,offset:0}} lg={1} className="d-none d-lg-block d-md-block"><Logo2 fluid /></Col>
                     <Col xl={{span: 5, offset:0}} lg={{span: 7, offset:1}} md={{span: 7, offset:1}} ><Link to="/" className="Link" style={{textDecoration: 'none', padding: 20 }}><h1 className="bearHug">rotary club of kelowna ogopogo</h1></Link> </Col>
