@@ -35,8 +35,6 @@ function App() {
           <Route path="/about" element={<About/>} />
           <Route path="/custhistory" element={<CustOrderHist/>} />
 
-
-
           {/*frontend protected routes*/}
           <Route element={<FrontProtectedRoutes />}>
             <Route path="order/payment" element={<Payment/>} />
