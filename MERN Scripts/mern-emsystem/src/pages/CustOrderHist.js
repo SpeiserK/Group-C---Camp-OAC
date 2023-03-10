@@ -35,6 +35,10 @@ const handleReload = () => {
     window.location.reload();
 }
 
+const handleLeave = () => {
+    sessionStorage.removeItem("pNum");
+}
+
     return(
         <div className="bContainer">
         <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
@@ -78,9 +82,9 @@ const handleReload = () => {
                     </Row>  
                 </div>
             </Col>
-            <Col xl={2} lg={2} md={2} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
+            <Col xl={2} lg={2} md={2} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }} align="center">
                 <div className="bOrder2">
-                    
+                <Button variant="outline-dark" size="lg" href="/" onClick={handleLeave} style={{border: 0, marginLeft: 18}}>Return Home</Button>{' '}
                 </div>
             </Col>  
             <Col className="whiteSideBar"></Col> 
