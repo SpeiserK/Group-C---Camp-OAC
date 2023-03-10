@@ -1233,7 +1233,7 @@ New CSS using bootstrap
   padding: 2em 5em 1.5em 0em;
   width: 100%;
   margin-left: 0.5em;
-  margin-bottom: 2em;
+  margin-bottom: 1em;
   margin-right: 0.5em;
 }
 
@@ -1280,7 +1280,7 @@ New CSS using bootstrap
 /*Sidebar div used in Starrpage*/
 /*in use on start page*/
 .bSide {
-  margin: 2em 1.5em 0.1em 1.25em;
+  margin: 1.25em 1.5em 0.5em 1.25em;
 }
 
 /*First picture div used in Start page*/
@@ -1329,13 +1329,13 @@ New CSS using bootstrap
 }
 
 /*blue box in SquareRecepit.js*/
-.recepitBox {
+.receiptBox {
   background-color: #2c4356;
   box-shadow: 5px 10px black;
   border-radius: 2em;
   margin: 2em 2em 2em 1.5em;
   padding: 1.5em 1.5em 1.5em 1.5em;
-  height: 20em;
+  height: 82%;
   width: 90%;
   text-align: center;
   color: white;
@@ -1350,6 +1350,9 @@ New CSS using bootstrap
 .receiptText {
  font-family: "RobotoSlab";
   text-align: left;
+}
+.receiptText a {
+  color:#f7a81b;
 }
 
 .bottomBorder {

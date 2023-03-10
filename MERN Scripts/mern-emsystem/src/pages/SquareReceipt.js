@@ -23,12 +23,13 @@ const navigate = useNavigate();
                 <div className="bOrder">
                     <Row>
                         <Col>
-                        <div className="recepitBox">
+                        <div className="receiptBox">
                             <h1 className="bearHug">thank you</h1>
                             <br></br>
                                 <div className="receiptText">
                                     <p>Your order has been successfully processed!</p>
                                     <p>Check your phone number/email for the order receipt, and pick-up instructions!</p>
+                                    <p>Click <a href="/custhistory">here</a> to view your order(s).</p>
                                 </div>
                                 <br></br>
                                 <br></br>
