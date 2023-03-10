@@ -40,7 +40,7 @@ const handleReload = () => {
 }
 
 const handleLeave = () => {
-    sessionStorage.removeItem("pNum");
+    //sessionStorage.removeItem("pNum");
     sessionStorage.removeItem("sortKey");
 }
 

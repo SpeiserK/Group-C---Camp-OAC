@@ -13,7 +13,9 @@ function Orderqty(){
     <Banner /> 
     </Row>
     <Row>
-        <Col lg={9} md={10} sm={11} xs={11} style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <Col className="whiteSideBar">
+        </Col>
+        <Col xl={8} lg={8} md={8} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
             <div className="bOrder">
             <h2 className="orderTitle">Enter Order Details</h2>
                 <Col lg={{span:12,offset: 1}}>
@@ -21,10 +23,12 @@ function Orderqty(){
                 </Col>
             </div>
         </Col>
-        <Col lg={3} md={2} sm={1} xs={1} style={{ paddingLeft: 0, paddingRight: 0 }}>
+        <Col xl={3} lg={3} md={3} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
             <div className="bOrder2">
                 
             </div>
+        </Col>
+        <Col className="whiteSideBar">
         </Col>  
     </Row>
 </Container>

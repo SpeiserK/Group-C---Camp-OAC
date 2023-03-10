@@ -124,7 +124,7 @@ const PlaceOrder = () => {
         <div className="orderFormWrapper">     
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form classname="orderForm" onSubmit={(e) => handleSubmit()}> 
-                
+                <Row>
                 <label htmlFor="email">Email: </label>  
                 <br />
                 <input
@@ -179,7 +179,7 @@ const PlaceOrder = () => {
                         type="text"
                         id="phoneNumber"
                         class="required"
-                        className="textboxStyle"
+                        className="textboxStyleP"
                         ref={userRef}
                         required
                         autoComplete="off"
@@ -194,6 +194,11 @@ const PlaceOrder = () => {
                         Invalid phone number
                     </p>
                 </div>
+                </Row>
+                <br></br>
+                <Row align="center">
+                <hr></hr>
+                <Col span={5}>
                     <label htmlFor="quantity">Quantity: (Max 20)   $9.99 per bundle</label> 
                     <br></br>    
                     <input
@@ -212,7 +217,9 @@ const PlaceOrder = () => {
                         <FontAwesomeIcon icon={faInfoCircle} />
                         *Order size must be between 1-20*
                     </p> 
-                    
+
+                </Col>
+                <Col span={7}>
                     <div className="Location-List">
                         <label>Select Pickup Location: </label>
                         <br></br>
@@ -228,7 +235,13 @@ const PlaceOrder = () => {
                             <option value="Kelowna Central"> Kelowna Central </option>
                         </select>  
                     </div>
-                <input type="submit" className="orderSubmit" disabled={!validValue || !validPhone || !locValue ? true : false}/>
+                    </Col>
+                </Row>
+                <Row align="left">
+                    <Col xl={{span: 8, offset: 3}} lg={{span: 8, offset: 3}} md={{span: 8, offset: 3}} sm={{span: 8, offset: 3}} xs={{span: 8, offset: 3}}>
+                        <input type="submit" className="orderSubmit" disabled={!validMatch || !emailFocus || !email || !validEmail || !validValue || !validPhone || !locValue ? true : false}/>
+                    </Col>
+                </Row>
             </form>
         </div>
     )
