@@ -8,7 +8,6 @@ import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
 import Container from 'react-bootstrap/esm/Container.js';
 import Form from 'react-bootstrap/Form';
-import FloatingLabel from "react-bootstrap/esm/FloatingLabel";
 
 //Very important component 
 //TODO: need to go through and document with cam - what are the classnames for 
