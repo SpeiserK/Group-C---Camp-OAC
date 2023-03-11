@@ -142,16 +142,17 @@ background-color: #17458f;
   justify-content:center;
   font-size: calc(7px + 2vmin);
 }
-/*used in Empbanner*/
+/*used in Empbanner
+  */
 .empBanner {
   background-color: #17458f;
   min-height: 50px;
   top: 0;
   left: 0;
-  margin-bottom: 0px;
+  margin: 0em;
+  padding: 1em 0em 1em 1em;
   z-index: 2;
   width: 100%;
-  padding-left: 10px;
   display: flex;
   flex-direction:row;
   align-items: center;
@@ -575,27 +576,32 @@ background-color: #17458f;
   z-index: 0;
 }
 
-/*App Header*/
+/*App Header
+display: flex;
+  flex-direction: column;
+*/
 /*Used in EmpLogin.js*/
 .appHeader {
-  display: flex;
-  flex-direction: column;
+  padding:0em 0em 0em 0em;
+  margin: 0em 0em 0em 0em;
+  
   
 }
+
 /*Admin Nav bar, used in Employee pages* top: 100;left: 0;*/
 .empHeader {
   background-color: #2c4356;
-  left: 0;
+  /*left: 0;
   top: 12%;
-  padding-top: 0.5em;
-  padding-bottom: 0.25em;
-    
-  z-index: 2;
-  width: 100%;
-  display: flex;
+   z-index: 2;
+    display: flex;
   flex-direction:column;  
   align-items: center;
-  justify-content:center;
+  justify-content:center;*/
+  padding-top: 0.5em;
+  padding-bottom: 0.25em;
+  width: 100%;
+ 
 }
 
 /*App Container*/
@@ -817,10 +823,10 @@ background-color: #17458f;
 }
 
 .viewOrders {
-  font-family: "Frutiger";
+  font-family: "RobotoSlab";
   height: 50px;
   background-color: white;
-  border-radius: 30px;
+  border-radius: 1em;
   border-color: #2c4356;
 }
 
@@ -929,7 +935,7 @@ background-color: #17458f;
 }
 
 .inventoryByLoc {
-  font-family: "Frutiger";
+  font-family: "RobotoSlab";
   height: 50px;
   background-color: white;
   border-radius: 30px;
@@ -938,26 +944,37 @@ background-color: #17458f;
 
 /*used in Empbanner*/
 .orderHistory {
-  font-family: "Frutiger";
+  font-family: "RobotoSlab";
   height: 50px;
   background-color: white;
-  border-radius: 30px;
+  border-radius: 1em;
   border-color: #2c4356;
 }
 
 /*used in Empbanner*/
 .employeeList {
-  font-family: "Frutiger";
+  font-family: "RobotoSlab";
   height: 50px;
   background-color: white;
-  border-radius: 30px;
+  border-radius: 1em;
   border-color: #2c4356;
 }
 
-.viewOrders:hover {background-color: #2c4356;}
-.inventoryByLoc:hover {background-color: #2c4356;}
-.orderHistory:hover {background-color: #2c4356;}
-.employeeList:hover {background-color: #2c4356;}
+/*used in Empbanner*/
+.exitButton {
+  font-family: "RobotoSlab";
+  height: 50px;
+  background-color: white;
+  border-radius: 1em;
+  border-color: #2c4356;
+  color: #f4f3ef;
+}
+
+.viewOrders:hover {box-shadow: #f4f3ef 0px 0px 40px;}
+.inventoryByLoc:hover {box-shadow: #f4f3ef 0px 0px 40px;}
+.orderHistory:hover {box-shadow: #f4f3ef 0px 0px 40px;}
+.employeeList:hover {box-shadow: #f4f3ef 0px 0px 40px;}
+.exitButton:hover { box-shadow: red 0px 0px 40px;}
 
 .inventoryTable, th, td {
   border: 1px solid black;
@@ -1418,10 +1435,6 @@ TODO: make dropdown display on hover
   background: none;
 }
 
-.newLocation{
-  margin-bottom: 2em;
-  margin-top: 1em;
-}
 /***********************************
 Customer Order History table styling
 ************************************/
