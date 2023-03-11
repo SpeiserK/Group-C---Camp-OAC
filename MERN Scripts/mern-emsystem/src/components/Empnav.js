@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import LocationSelect from "./LocationSelect";
+
+import LocationSelect from './location/locationSelect';
 
 export default class Empnav extends Component {
     render(){

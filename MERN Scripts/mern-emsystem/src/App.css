@@ -1418,6 +1418,10 @@ TODO: make dropdown display on hover
   background: none;
 }
 
+.newLocation{
+  margin-bottom: 2em;
+  margin-top: 1em;
+}
 /***********************************
 Customer Order History table styling
 ************************************/
