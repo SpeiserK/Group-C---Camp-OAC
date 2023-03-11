@@ -58,6 +58,7 @@ export default class LocationLiveDisp extends React.Component {
             else return "";
           })});
       })
+      window.location.reload();
     }
 
     //state change functions

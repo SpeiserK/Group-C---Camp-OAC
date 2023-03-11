@@ -29,6 +29,7 @@ const NewLocation = () => {
             }
 
         }
+        window.location.reload();
 
     }
     return(

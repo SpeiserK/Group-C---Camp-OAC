@@ -3,7 +3,7 @@ import { useRef, useState, useEffect } from "react";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes, } from "@fortawesome/free-solid-svg-icons";
-import FrontLocationSelect from "../location/frontLocationSelect";
+
 import axios from 'axios';
 //Bootstrap libs
 import Row from 'react-bootstrap/esm/Row.js';
