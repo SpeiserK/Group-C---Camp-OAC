@@ -15,7 +15,14 @@ function CustOrderHist (){
 //const navigate = useNavigate();
 
 var number = "";
-var data =  sessionStorage.getItem("pNum");
+var data;
+if(sessionStorage.getItem("phoneNumber") != null){
+   data = sessionStorage.getItem("phoneNumber");
+}else{
+   data =  sessionStorage.getItem("pNum");
+}
+
+
 var sort = -1;
 if(sessionStorage.getItem("sortKey") != null){
     sort = sessionStorage.getItem("sortKey");
