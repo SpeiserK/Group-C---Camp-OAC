@@ -3,6 +3,8 @@ import { useRef, useState, useEffect } from "react";
 import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck, faTimes, } from "@fortawesome/free-solid-svg-icons";
+
+import axios from 'axios';
 //Bootstrap libs
 import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
@@ -20,6 +22,39 @@ const phoneREGEX = /^[(]?[0-9]{3}[)]?[ ,-]?[0-9]{3}[ ,-]?[0-9]{4}$/;
 
 
 const PlaceOrder = () => {
+    //location read
+    
+    
+        const [location, setLocation] = useState([]);
+        const [openStatus, setOpenStatus] = useState([]);
+        const [stock, setStock] = useState([]);
+        const [error, setError] = useState([]);
+      
+        const handleChange = (event) => {
+          sessionStorage.setItem('location', event.target.value);
+        }
+ 
+        useEffect(() => {
+            axios.get(`http://localhost:5001/location`, { 
+              params: {
+                Open: true
+              }
+            })
+            .then(res => {
+              const locationData = res.data;
+              setLocation(locationData);
+        
+              const cleanStock = locationData.map((item) => item.Stock);
+              setStock(cleanStock);
+        
+              const cleanOpenStatus = locationData.map((item) => item.Open);
+              setOpenStatus(cleanOpenStatus);
+        
+              const cleanErrorMessage = locationData.map(() => "");
+              setError(cleanErrorMessage);
+            });
+          }, []);
+//end location read
 
     const navigate = useNavigate();
 
@@ -120,6 +155,11 @@ const PlaceOrder = () => {
 
     // Order input form
     // Includes email, confirm email, phone, quantity, location
+
+    //code for location select start! -- 
+    
+    
+      
 
     return (
         <div className="orderFormWrapper">     
@@ -229,19 +269,15 @@ const PlaceOrder = () => {
                     <div className="Location-List">
                         <label>Select Pickup Location: </label>
                         <br></br>
-                        
-                        <Form.Select size="md" onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" class="required">
-                        {// TODO: change location selection to pull from DB
-                        }
-                            <option value="select" disabled selected>Select a location</option>
-                            <option value="West Kelowna">West Kelowna</option>
-                            <option value="Rutland">Rutland</option>
-                            <option value="Mission">Mission</option>
-                            <option value="Lake Country">Lake Country</option>
-                            <option value="Glenmore"> Glenmore </option>
-                            <option value="Kelowna Central"> Kelowna Central </option>
+
+                        <Form.Select size="md" onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" class="required" >
+                        // TODO: change location selection to pull from DB
+                        {location.map((content, index) =>
+                                <option value={content.Name} key={content._id} Name={`buttons-${index}`} >{content.Name}</option>
+                        )}
                         </Form.Select>
                          
+
                     </div>
                     </Col>
                 </Row>
