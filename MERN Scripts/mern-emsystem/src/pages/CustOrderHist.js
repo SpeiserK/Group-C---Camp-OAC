@@ -16,10 +16,10 @@ function CustOrderHist (){
 
 var number = "";
 var data;
-if(sessionStorage.getItem("phoneNumber") != null){
-   data = sessionStorage.getItem("phoneNumber");
+if(sessionStorage.getItem("pNum") != null){
+   data = sessionStorage.getItem("pNum")
 }else{
-   data =  sessionStorage.getItem("pNum");
+   data =  sessionStorage.getItem("phoneNumber");
 }
 
 
