@@ -163,7 +163,7 @@ app.post("/adminlocupdate", (req, res) => {
 
 //new location 
 app.post("/newLocation", (req, res) => {
-    console.log('!!!!!!!NEW LOCATION WORKING!!!!!!');
+    
     try {
         const name = req.body.name;
         const address = req.body.address;
@@ -171,7 +171,7 @@ app.post("/newLocation", (req, res) => {
         const open = req.body.open;
         if (!address||!name){
             
-            console.log("bad")
+            
             return res.status(422).send({message:"Missing/Bad field types"});
         }res.status(200).send({message: "Posted successfully"});
         const newLocation = new Models.Location({

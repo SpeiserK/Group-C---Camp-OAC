@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+//THIS CLASS IS ONLY USED IN BACKEND DROPDOWN SELECT 
 
   const handleChange = (event) => {
     //setSelectedLocation(event.target.value);
