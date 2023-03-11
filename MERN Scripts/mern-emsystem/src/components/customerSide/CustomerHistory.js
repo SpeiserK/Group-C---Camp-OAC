@@ -40,7 +40,7 @@ export default class CustomerHistory extends React.Component {
                     contact
                     </th>
                     <th>
-                    location / date
+                    location / order date
                     </th>
                     <th colSpan={2}>
                     order details

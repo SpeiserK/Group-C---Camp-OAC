@@ -26,8 +26,8 @@ export default class PaymentSummary extends Component {
                 <Col>
                     <p className="orderTitle"><strong>Contact Information</strong></p>
                     <div className="loggedIn">
-                        <label>Email:  </label> {email} <br></br><br></br>
-                        <label>Number:  </label> {phoneNumber}<br></br><br></br>
+                        <label className="orderTitle">Email:  </label> {email} <br></br><br></br>
+                        <label className="orderTitle">Number:  </label> {phoneNumber}<br></br><br></br>
                     </div>
                 </Col>
             </Row>
@@ -35,9 +35,9 @@ export default class PaymentSummary extends Component {
                 <Col>
                     <p className="orderTitle"><strong>Order Details</strong></p>
                     <div className="loggedIn">
-                        <label>Pickup location:  </label> {location}<br></br><br></br>
-                        <label>Firewood Ordered:  </label> {quantity}<br></br><br></br>
-                        <label>Total Price:  </label> ${quantity*9.99}<br></br><br></br>
+                        <label className="orderTitle">Pickup location:  </label> {location}<br></br><br></br>
+                        <label className="orderTitle">Firewood Ordered:  </label> {quantity}<br></br><br></br>
+                        <label className="orderTitle">Total Price:  </label> ${quantity*9.99}<br></br><br></br>
                     </div>
                 </Col>
             </Row>
