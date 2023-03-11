@@ -145,7 +145,7 @@ background-color: #17458f;
 /*used in Empbanner
   */
 .empBanner {
-  background-color: #17458f;
+  background-color: #557a65;
   min-height: 50px;
   top: 0;
   left: 0;
@@ -1471,4 +1471,13 @@ Customer Order History table styling
   color: white;
   background-color: grey;
   margin-left: 80%;
+}
+
+.bEmp{
+  padding: 0;
+  background-color: #f4f3ef;
+}
+
+.bEmp table{
+  background-color: white;
 }

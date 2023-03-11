@@ -11,7 +11,7 @@ const empLocation = sessionStorage.getItem('selectedLocation');
 
 function Emp(){
     return(
-        <Container fluid style={{ padding: 0 }}>
+        <Container fluid className="bEmp">
             <Row style={{padding: 0}}>
                 <Col style={{padding: 0}} >
                     <Empbanner />
@@ -22,7 +22,7 @@ function Emp(){
                 <Empnav />
                 </Col>
             </Row>
-            <Row style={{padding: 10}}>
+            <Row style={{padding: 20}}>
                 <Col>
                 <Row align="center">
                 <h2 className="robotoSlab">{empLocation}</h2>
