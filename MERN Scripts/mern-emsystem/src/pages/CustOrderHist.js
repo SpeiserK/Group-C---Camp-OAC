@@ -12,10 +12,17 @@ import CustomerHistory from '../components/customerSide/CustomerHistory.js';
 
 function CustOrderHist (){
 
-const navigate = useNavigate();
+//const navigate = useNavigate();
 
 var number = "";
-var data =  sessionStorage.getItem("pNum");
+var data;
+if(sessionStorage.getItem("pNum") != null){
+   data = sessionStorage.getItem("pNum")
+}else{
+   data =  sessionStorage.getItem("phoneNumber");
+}
+
+
 var sort = -1;
 if(sessionStorage.getItem("sortKey") != null){
     sort = sessionStorage.getItem("sortKey");

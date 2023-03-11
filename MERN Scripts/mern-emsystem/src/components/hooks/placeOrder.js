@@ -7,10 +7,11 @@ import { faCheck, faTimes, } from "@fortawesome/free-solid-svg-icons";
 import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
 import Container from 'react-bootstrap/esm/Container.js';
+import Form from 'react-bootstrap/Form';
 
 //Very important component 
 //TODO: need to go through and document with cam - what are the classnames for 
-
+//<select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" class="required" >
 
 
 //Used to verify if email is valid (will need to include more verification)
@@ -124,7 +125,7 @@ const PlaceOrder = () => {
         <div className="orderFormWrapper">     
             <p ref={errRef} className={errMsg ? "errmsg" : "offscreen"} aria-live="assertive">{errMsg}</p>
             <form classname="orderForm" onSubmit={(e) => handleSubmit()}> 
-                
+                <Row>
                 <label htmlFor="email">Email: </label>  
                 <br />
                 <input
@@ -145,13 +146,17 @@ const PlaceOrder = () => {
                     Please enter a valid email.
                 </p>
                 <br />
-                <label htmlFor="confirmEmail">Confirm Email: </label>
-                <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
-                    <FontAwesomeIcon icon={faCheck} />
-                </span>
-                <span className={validMatch || !matchEmail || !email ? "offscreen" : "invalid"}>
-                    <FontAwesomeIcon icon={faTimes} />
-                </span>
+                <Row>
+                    <Col>
+                    <label htmlFor="confirmEmail">Confirm Email: </label>
+                    <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
+                        <FontAwesomeIcon icon={faCheck} />
+                    </span>
+                    <span className={validMatch || !matchEmail || !email ? "offscreen" : "invalid"}>
+                        <FontAwesomeIcon icon={faTimes} />
+                    </span>
+                    </Col>
+                </Row>
                 <br />
                 
                 <input
@@ -173,13 +178,13 @@ const PlaceOrder = () => {
                 </p>
                 <br></br>
                 <div className="phone-number">
-                    <label>Phone Number: </label>
+                    <label htmlFor="phoneNumber" style={{paddingLeft: 12}}>Phone Number: </label>
                     <br></br>
                     <input
                         type="text"
                         id="phoneNumber"
                         class="required"
-                        className="textboxStyle"
+                        className="textboxStyleP"
                         ref={userRef}
                         required
                         autoComplete="off"
@@ -194,13 +199,19 @@ const PlaceOrder = () => {
                         Invalid phone number
                     </p>
                 </div>
-                    <label htmlFor="quantity">Quantity: (Max 20)   $9.99 per bundle</label> 
+                </Row>
+                <br></br>
+                <Row align="left">
+                <hr></hr>
+                <Col span={6}>
+                    <label htmlFor="quantity">Quantity: $9.99/bundle</label> 
                     <br></br>    
                     <input
                         type="number"
                         id="quantity"
                         class="required"
                         className="locationStyle"
+                        placeholder="1-20"
                         ref={userRef}
                         min="1"
                         max="20"
@@ -212,11 +223,14 @@ const PlaceOrder = () => {
                         <FontAwesomeIcon icon={faInfoCircle} />
                         *Order size must be between 1-20*
                     </p> 
-                    
+
+                </Col>
+                <Col span={6}>
                     <div className="Location-List">
                         <label>Select Pickup Location: </label>
                         <br></br>
-                        <select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" class="required" >
+                        
+                        <Form.Select size="md" onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" class="required">
                         {// TODO: change location selection to pull from DB
                         }
                             <option value="select" disabled selected>Select a location</option>
@@ -226,9 +240,16 @@ const PlaceOrder = () => {
                             <option value="Lake Country">Lake Country</option>
                             <option value="Glenmore"> Glenmore </option>
                             <option value="Kelowna Central"> Kelowna Central </option>
-                        </select>  
+                        </Form.Select>
+                         
                     </div>
-                <input type="submit" className="orderSubmit" disabled={!validValue || !validPhone || !locValue ? true : false}/>
+                    </Col>
+                </Row>
+                <Row align="left">
+                    <Col xl={{span: 8, offset: 3}} lg={{span: 8, offset: 3}} md={{span: 8, offset: 3}} sm={{span: 8, offset: 3}} xs={{span: 8, offset: 3}}>
+                        <input type="submit" className="orderSubmit" disabled={!validMatch || !emailFocus || !email || !validEmail || !validValue || !validPhone || !locValue ? true : false}/>
+                    </Col>
+                </Row>
             </form>
         </div>
     )
