@@ -101,6 +101,7 @@ function post2DB(type) {
                             }
                         } else {
                             onSuccess()
+                            post2DB("Credit/Debit");
                         }
                     }
                     statusCheck(() => navigate("SquareReceipt"));
