@@ -28,7 +28,7 @@ const navigate = useNavigate();
                                         <p>Your order request has been successfully sent!</p>
                                         <p>Our team review your order within 2-3 days.</p>
                                         <p>Wait to hear back from us on your phone/email for payment and pick-up instructions!</p>
-                                        <p>Click <a href="/custhistory" className="receiptLink">here</a> to view your order(s).</p>
+                                        <p>Click <a href="/custhistory">here</a> to view your order(s).</p>
                                     </div>
                                     <br></br>
                                     <div className="buttonBox">
