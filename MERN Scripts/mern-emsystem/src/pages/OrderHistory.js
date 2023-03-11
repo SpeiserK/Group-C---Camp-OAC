@@ -15,8 +15,9 @@ function OrderHistory(){
                     <Empbanner />
                 </Col>
             </Row>
-            <Row>
-                {/*Search Component or something*/}
+            <Row align="center" style={{paddingTop: 10}}>
+                <h2 className="robotoSlab">Order History</h2>
+                 {/*Search Component or something here*/}
             </Row>
             <Row style={{padding: 30}}>
                 <Col>
