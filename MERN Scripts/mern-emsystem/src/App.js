@@ -15,6 +15,7 @@ import ETransferConfirmation from './pages/ETransferConfirmation';
 import SquarePay from './pages/SquarePay';
 import SquareReceipt from './pages/SquareReceipt';
 import SuperAdmin from './pages/SuperAdmin';
+import CustOrderHist from './pages/CustOrderHist';
 import Bootstrap from './pages/Bootstrap';
 import ProtectedRoutes from './components/hooks/protectedRoutes';
 import FrontProtectedRoutes from './components/hooks/frontProtectedRoutes';
@@ -32,8 +33,7 @@ function App() {
           <Route path="order" element={<Orderqty/>} />
           <Route path="login" element={<Emplogin/>} />
           <Route path="/about" element={<About/>} />
-          <Route path="/bootstrap" element={<Bootstrap/>} />
-
+          <Route path="/custhistory" element={<CustOrderHist/>} />
 
           {/*frontend protected routes*/}
           <Route element={<FrontProtectedRoutes />}>
@@ -51,9 +51,6 @@ function App() {
             <Route path="login/emp/history" element={<OrderHistory/>} />
             <Route path="login/emp/employee" element={<SuperAdmin/>} />
           </Route>
-
-          
-
         </Routes>
         
       </div>

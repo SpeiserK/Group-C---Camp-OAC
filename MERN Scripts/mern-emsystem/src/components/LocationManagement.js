@@ -139,8 +139,7 @@ export default class LocationLiveDisp extends React.Component {
                 <span>{content._id}</span>&emsp;
               </td>         
               <td id="current-locationName" className ="orderChild">
-                <span><input type="text" defaultValue={`${content.Name}`} onBlur={(e) => this.changeName(index, e.target.value)}>
-                </input></span>&emsp;
+                <span>{content.Name}</span>&emsp;
               </td>
               <td id="current-orderAddress" className ="orderChild">
               <span><input type="text" defaultValue={`${content.Address}`} onBlur={(e) => this.changeAddress(index, e.target.value)}>

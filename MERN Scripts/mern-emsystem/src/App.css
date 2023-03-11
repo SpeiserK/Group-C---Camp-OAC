@@ -955,7 +955,7 @@ background-color: #17458f;
   width:200px;
   height:100px;
   position: absolute;
-  right: 178px;
+  right: 300px;
   bottom: 90px;
 }
 .fire-containerRight{
@@ -1167,8 +1167,7 @@ New CSS using bootstrap
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-evenly;
-  padding: 0.5em 2em 0.5em 1em;
+  padding: 0.5em 1em 0.5em 1em;
   color: white;
 }
 /*Div for logo in nav bar*/
@@ -1185,6 +1184,7 @@ New CSS using bootstrap
   background-color: #f4f3ef;
   font-size: calc(7px + 2vmin);
   color: black;
+  width: 100%;
   padding: 1em 2em 1em 2em;
   margin-top: 0.75em;
   margin-left: 0.5em;
@@ -1195,8 +1195,10 @@ New CSS using bootstrap
 /*in use on start page*/
 .bMainFill {
   background-color: #f4f3ef;
+  width: 100%;
   padding: 1em 2em 9.5em 2em;
   margin-right: 0.5em;
+  margin-left: 0.7em;
 }
 
 /*Green div used on Startpage*/
@@ -1206,6 +1208,7 @@ New CSS using bootstrap
   font-size: calc(7px + 2vmin);
   color: white;
   padding: 2em 5em 1.5em 0em;
+  width: 100%;
   margin-left: 0.5em;
   margin-bottom: 2em;
   margin-right: 0.5em;
@@ -1225,17 +1228,17 @@ New CSS using bootstrap
   margin-left: 0em;
   margin-top: 1em;
   margin-bottom: 1em;
-  min-height: 800px;
+  min-height: 95%;
 }
 /*used in ETransfer Confirmation*/
 .bOrder2 {
   background-color: #557a65;
   font-size: calc(7px + 2vmin);
   color: white;
-  padding: 2em 5em 26.5em 0em;
-  margin-right: 2em;
-  margin-top: 0.75em;
-  min-height: 800px;
+  padding: 2em 1em 2em 0em;
+  margin-right: 0em;
+  margin-top: 1em;
+  height: 95%;
 }
 
 /*Used on the payment page*/
@@ -1248,24 +1251,25 @@ New CSS using bootstrap
   padding: 2em 0.5em 10em 0.5em;
   margin-right: 0em;
   margin-top: 1em;
-  min-height: 800px;
+  height: 95%;
 }
 
 /*Sidebar div used in Starrpage*/
 /*in use on start page*/
 .bSide {
-  margin: 1.1em 2.5em 0.1em 1.5em;
+  margin: 2em 1.5em 0.1em 1.25em;
 }
 
 /*First picture div used in Start page*/
 /*in use on start page*/
 .bSidebar1{
     background-image: url('components/pictures/Bundles1.svg');
+    border-radius: 0.25em;
     background-size: cover;
     border: solid 0.25em #926d4c;
     color: white;
     margin: 0em 0em 1em 0em;
-    padding: 3.5em 5.5em 3.5em 5.5em;
+    padding: 3.5em 5.5m 3.5em 5.5em;
     min-height: 190px;
 }
 
@@ -1274,6 +1278,7 @@ New CSS using bootstrap
 .bSidebar2{
     background-image: url('components/pictures/Wood1.svg');
     background-size: cover;
+    border-radius: 0.25em;
     border: solid 0.25em #926d4c;
     color: white;
     margin: 0em 0em 1em 0em;
@@ -1285,6 +1290,7 @@ New CSS using bootstrap
 .bSidebar3{
     background-image: url('components/pictures/FirewoodTeam.jpg');
     background-size: cover;
+    border-radius: 0.25em;
     border: solid 0.25em #926d4c;
     color: white;
     margin: 0em 0em 1em 0em;
@@ -1297,6 +1303,30 @@ New CSS using bootstrap
   color: white;
   margin-top: 2em;
   padding-left: 12%;
+}
+
+/*blue box in SquareRecepit.js*/
+.recepitBox {
+  background-color: #2c4356;
+  box-shadow: 5px 10px black;
+  border-radius: 2em;
+  margin: 2em 2em 2em 1.5em;
+  padding: 1.5em 1.5em 1.5em 1.5em;
+  height: 20em;
+  width: 90%;
+  text-align: center;
+  color: white;
+}
+/*smallerblue box in sidebar*/
+.smallSideBox {
+  display: flex;
+  justify-content: center;
+  margin: 3.5em 1em 1em 1em;
+}
+/*For the text inside the .receiptBox on SquareReceipt.js*/
+.receiptText {
+ font-family: "RobotoSlab";
+  text-align: left;
 }
 
 .bottomBorder {
@@ -1322,6 +1352,7 @@ New CSS using bootstrap
   padding: 0.1em 0.25em 0.1em 0.25em;
   font-size: 1.75em;
   border-radius: 1em;
+  box-shadow: 5px 5px 5px black;
 }
 
 .btn-start:hover {
@@ -1364,4 +1395,40 @@ TODO: make dropdown display on hover
   margin-bottom: 2em;
   margin-top: 1em;
 }
+/***********************************
+Customer Order History table styling
+************************************/
 
+.custTable {
+  font-size: 14px;
+  border-radius: 0.5em;
+  font-family: "RobotoSlab";
+  text-align: center;
+  border: 1px solid black;
+}
+
+.custTable thead {
+  font-family: "BearHug";
+  font-size: 20px;
+}
+
+.custTable th {
+  border-top: 1px solid black;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+
+.custTable td{
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+}
+/****Sort by selecor in CustomerHistory****/
+.custBox select{
+  width: 20%;
+  color: white;
+  background-color: grey;
+  margin-left: 80%;
+}
