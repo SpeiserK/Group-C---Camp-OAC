@@ -41,7 +41,7 @@ const EmpSignup = () => {
                 
                 <div>
                     <form onSubmit={handleSubmit}>
-                        <h1>Create Account</h1>
+                        <p className="robotoSlab">Create Account</p>
                         <input
                             type="text"
                             placeholder='Username'

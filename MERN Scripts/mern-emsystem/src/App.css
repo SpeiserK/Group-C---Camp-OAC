@@ -1481,3 +1481,16 @@ Customer Order History table styling
 .bEmp table{
   background-color: white;
 }
+
+.bEmp hr{
+  margin-top: 2em;
+}
+
+.adminPanel{
+  padding: 0;
+  margin: 0;
+}
+.locationPanel{
+  padding: 0;
+  margin: 0;
+}
