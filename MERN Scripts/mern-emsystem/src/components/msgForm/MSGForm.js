@@ -28,8 +28,7 @@ class MSGForm extends Component {
             \nTHIS IS AN AUTOMATIC MESSAGE, PLEASE DO NOT REPLY`
           },
           submitting: false,
-          error: null,
-          success: ""
+          error: true
         };
         this.onHandleChange = this.onHandleChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -42,10 +41,10 @@ class MSGForm extends Component {
         });
     }
 
-    async onSubmit(event) {
+    onSubmit(event) {
       event.preventDefault();
       this.setState({ submitting: true });
-      const mark = await fetch('http://localhost:5001/api/messages', {
+      const mark = fetch('http://localhost:5001/api/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -70,50 +69,51 @@ class MSGForm extends Component {
               to: '',
               body: ''
             }
-          });
+            });
         } else {
           this.setState({
             error: true,
             submitting: false
-          });
+            });
         }
-      })
-        console.log(this.state.error);
-        if (this.state.error) return;
-        if (this.props.approve) {
-          //get date of approval
-          var dateApprove = new Date();
-          var offset = dateApprove.getTimezoneOffset();
-          //get date of approval in pst
-          dateApprove.setMinutes(dateApprove.getMinutes()-offset);
-          //add two days to date of approval for pickup time limit
-          dateApprove.setMinutes(dateApprove.getMinutes() + 2880);
-          let datePickup = dateApprove.toString();
-          //delete timezone details
-          datePickup = datePickup.slice(0,11);
-          axios.post('http://localhost:5001/statuschange', {
-              id: this.props.userData._id,
-              status: "Approved",
-              pickup: 'false',
-              quantity: this.props.userData.Quantity,
-              location: this.props.userData.Location,
-              date: datePickup,
-              price: this.props.userData.Price,
-              email: this.props.userData.Name
-          })
-          .then( response => {
-            window.location.reload();
-          })
-        } else {
-          axios.post('http://localhost:5001/statuschange', {
+      });
+    }
+
+    updateDB() {
+      if (this.props.approve) {
+        //get date of approval
+        var dateApprove = new Date();
+        var offset = dateApprove.getTimezoneOffset();
+        //get date of approval in pst
+        dateApprove.setMinutes(dateApprove.getMinutes()-offset);
+        //add two days to date of approval for pickup time limit
+        dateApprove.setMinutes(dateApprove.getMinutes() + 2880);
+        let datePickup = dateApprove.toString();
+        //delete timezone details
+        datePickup = datePickup.slice(0,11);
+        axios.post('http://localhost:5001/statuschange', {
             id: this.props.userData._id,
-            status: "Denied",
-            pickup: 'false'
-          })
-          .then( response => {
-            window.location.reload();
-          })
-        }
+            status: "Approved",
+            pickup: 'false',
+            quantity: this.props.userData.Quantity,
+            location: this.props.userData.Location,
+            date: datePickup,
+            price: this.props.userData.Price,
+            email: this.props.userData.Name
+        })
+        .then( response => {
+          window.location.reload();
+        })
+      } else {
+        axios.post('http://localhost:5001/statuschange', {
+          id: this.props.userData._id,
+          status: "Denied",
+          pickup: 'false'
+        })
+        .then( response => {
+          window.location.reload();
+        })
+      }
     }
 
     render() {
@@ -145,9 +145,10 @@ class MSGForm extends Component {
             />
           </div>
           <button type="submit" disabled={this.state.submitting}>
-            Send message and {this.props.approve ? "Approve" : "Deny"}
-          </button><br/>
-            {this.state.error ? "message has not been sent" : "Message successfully sent"}
+            Send text and email to customer
+          </button>
+          <br/>
+            {this.state.error ? "Message has not been delivered" : "Message has been delivered"}
          </form>
       );
     }
