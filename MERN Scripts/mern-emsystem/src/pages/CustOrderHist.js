@@ -13,7 +13,7 @@ import CustomerHistory from '../components/customerSide/CustomerHistory.js';
 function CustOrderHist (){
 
 //const navigate = useNavigate();
-
+var sortLabel ="";
 var number = "";
 var data;
 if(sessionStorage.getItem("pNum") != null){
@@ -51,9 +51,12 @@ const handleLeave = () => {
     sessionStorage.removeItem("sortKey");
 }
 
-const handleSort = (i) => {
-    if(i == 2){
+const handleSort = (e) => {
+    var i;
+    if(e.target.value == 2){
         i = -1;
+    }else{
+        i = e.target.value;
     }
     sessionStorage.setItem("sortKey",i);
     handleReload();
@@ -90,10 +93,11 @@ const handleSort = (i) => {
                                 <Col>
                                 <Collapse in={open}>
                                     <div id="collapse-table">
-                                    <Form.Select onChange={(e) => handleSort(e.target.value)}  size="sm" id="sort-selector" name="sorting">
-                                        <option disabled selected>Sort By</option>
-                                        <option value="1">Oldest</option>
+                                    <Form.Select onChange={handleSort}  value={sessionStorage.getItem("sortKey")} size="sm" id="sort-selector" aria-lavel="sortSelector">
+                                       {/* <option disabled selected>Sort by:</option>*/}
                                         <option value="2">Newest</option>
+                                        <option value="1">Oldest</option>
+                                        
                                     </Form.Select>
                                     </div>
                                 </Collapse>
