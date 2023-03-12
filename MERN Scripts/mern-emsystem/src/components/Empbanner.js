@@ -13,19 +13,19 @@ export default class Empbanner extends Component {
                     <Col md>
                     <Link to="/login/emp" style={{textDecoration: 'none' }}>
             <button className="viewOrders" style={{textDecoration: 'none' , color: 'black'}}>
-            View Live Orders and Stock
+            View Live Orders
             </button> </Link>
                     </Col>
                     <Col md>   
             <Link to="/login/emp/history" style={{textDecoration: 'none' }}>
             <button className="orderHistory" style={{textDecoration: 'none' , color: 'black'}}>
-            Order History
+            View Order History
             </button> </Link>
                     </Col>
                     <Col md>
             <Link to="/login/emp/employee" style={{textDecoration: 'none' }}>
             <button className="employeeList" style={{textDecoration: 'none' , color: 'black'}}>
-            Employee Login List
+            Volunteers & Locations
             </button> </Link>
                     </Col>
                     <Col sm>

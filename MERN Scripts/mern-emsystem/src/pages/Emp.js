@@ -24,8 +24,9 @@ function Emp(){
             </Row>
             <Row style={{padding: 20}}>
                 <Col>
-                <Row align="center">
-                <h2 className="robotoSlab">{empLocation}</h2>
+                <Row>
+                <h2 className="robotoSlab" align="center">{empLocation}</h2>
+                <h4 className="robotoSlab">Location Managment</h4>
                 <LocationLiveDisp queryLoc={empLocation} />
                 </Row>
                 <Row  style={{padding: 10, marginTop: 10}}>
