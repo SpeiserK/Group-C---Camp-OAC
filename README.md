@@ -85,8 +85,9 @@ click [here](https://nodemailer.com/about/) for node mailer documentation
 In the backend folder, install nodemailer
 ```
 npm install nodemailer
-npm i express-pino-logger
-npm i twilio --save-dev
+npm install express-pino-logger
+npm install twilio --save-dev
+npm install --save @sendgrid/mail
 ```
 2.
 You will need to add necessary token to .env file

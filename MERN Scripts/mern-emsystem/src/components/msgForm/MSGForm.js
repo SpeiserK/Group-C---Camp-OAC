@@ -3,12 +3,14 @@ import axios from 'axios';
 
 
 // twilio recovery: N4y2RRDuQ3WNqO2MpbwQRIcs1-n4q8SDpn2rvMZx
-class SMSForm extends Component {
+class MSGForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
           message: {
             to: props.userData.phoneNumber,
+            toEmail: props.userData.Name,
+            subjectEmail: "Firewood notice",
             // accepted message template
             body: props.approve ? `Hello there!\nYour order for firewood bundles from Ogopogo Rotary and Camp OAC has been approved, You can now pickup your order from ${props.userData.Location}:
             \nOrder Number: ${props.userData._id}
@@ -26,7 +28,7 @@ class SMSForm extends Component {
             \nTHIS IS AN AUTOMATIC MESSAGE, PLEASE DO NOT REPLY`
           },
           submitting: false,
-          error: true,
+          error: null,
           success: ""
         };
         this.onHandleChange = this.onHandleChange.bind(this);
@@ -50,63 +52,68 @@ class SMSForm extends Component {
         },
         body: JSON.stringify(this.state.message)
       })
-        .then(res => res.json())
-        .then(data => {
-          if (data.success) {
-            this.setState({
-              error: false,
-              submitting: false,
-              message: {
-                to: '',
-                body: ''
-              }
-            });
-          } else {
-            this.setState({
-              error: true,
-              submitting: false
-            });
-          }
-        })
-        .then(() => {
-          if (this.state.error)return;
-        });
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          // send email aswell
+          axios.post('http://localhost:5001/api/email', {
+            to: this.state.message.toEmail,
+            subject: this.state.message.subjectEmail,
+            text: this.state.message.body,
+            html: "",
+          });
 
-      if (this.props.approve) {
-        //get date of approval
-        var dateApprove = new Date();
-        var offset = dateApprove.getTimezoneOffset();
-        //get date of approval in pst
-        dateApprove.setMinutes(dateApprove.getMinutes()-offset);
-        //add two days to date of approval for pickup time limit
-        dateApprove.setMinutes(dateApprove.getMinutes() + 2880);
-        let datePickup = dateApprove.toString();
-        //delete timezone details
-        datePickup = datePickup.slice(0,11);
-        axios.post('http://localhost:5001/statuschange', {
+          this.setState({
+            error: false,
+            submitting: false,
+            message: {
+              to: '',
+              body: ''
+            }
+          });
+        } else {
+          this.setState({
+            error: true,
+            submitting: false
+          });
+        }
+      })
+        console.log(this.state.error);
+        if (this.state.error) return;
+        if (this.props.approve) {
+          //get date of approval
+          var dateApprove = new Date();
+          var offset = dateApprove.getTimezoneOffset();
+          //get date of approval in pst
+          dateApprove.setMinutes(dateApprove.getMinutes()-offset);
+          //add two days to date of approval for pickup time limit
+          dateApprove.setMinutes(dateApprove.getMinutes() + 2880);
+          let datePickup = dateApprove.toString();
+          //delete timezone details
+          datePickup = datePickup.slice(0,11);
+          axios.post('http://localhost:5001/statuschange', {
+              id: this.props.userData._id,
+              status: "Approved",
+              pickup: 'false',
+              quantity: this.props.userData.Quantity,
+              location: this.props.userData.Location,
+              date: datePickup,
+              price: this.props.userData.Price,
+              email: this.props.userData.Name
+          })
+          .then( response => {
+            window.location.reload();
+          })
+        } else {
+          axios.post('http://localhost:5001/statuschange', {
             id: this.props.userData._id,
-            status: "Approved",
-            pickup: 'false',
-            quantity: this.props.userData.Quantity,
-            location: this.props.userData.Location,
-            date: datePickup,
-            price: this.props.userData.Price,
-            email: this.props.userData.Name
-        })
-        .then( response => {
-          window.location.reload();
-        })
-      } else {
-        axios.post('http://localhost:5001/statuschange', {
-          id: this.props.userData._id,
-          status: "Denied",
-          pickup: 'false'
-        })
-        .then( response => {
-          window.location.reload();
-        } )
-      }
-
+            status: "Denied",
+            pickup: 'false'
+          })
+          .then( response => {
+            window.location.reload();
+          })
+        }
     }
 
     render() {
@@ -146,4 +153,4 @@ class SMSForm extends Component {
     }
 }
 
-export default SMSForm;
+export default MSGForm;

@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Popover from 'react-bootstrap/Popover';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import SMSForm from './smsForm/SMSForm';
+import MSGForm from './msgForm/MSGForm';
 import Button from 'react-bootstrap/Button';
 
 
@@ -31,53 +31,6 @@ export default class OrderLiveDisp extends React.Component {
       this.setState({color: new Array(this.state.orders.length).fill("green")});
   }
 
-
-
-  // //approve order post
-  // approve(id,quantity,location,price,email) {
-  //   //get date of approval
-  //     var dateApprove = new Date();
-  //     var offset = dateApprove.getTimezoneOffset();
-  //   //get date of approval in pst
-  //     dateApprove.setMinutes(dateApprove.getMinutes()-offset);
-  //   //add two days to date of approval for pickup time limit
-  //     dateApprove.setMinutes(dateApprove.getMinutes() + 2880);
-  //     let datePickup = dateApprove.toString();
-  //   //delete timezone details
-  //     datePickup = datePickup.slice(0,11);
-
-
-  //   axios.post('http://localhost:5001/statuschange', {
-  //       id: id,
-  //       status: "Approved",
-  //       pickup: 'false',
-  //       quantity: quantity,
-  //       location: location,
-  //       date: datePickup,
-  //       price: price,
-  //       email: email,
-
-  //     })
-  //     .then( response => {
-  //       window.location.reload();
-  //     })
-  // }
-
-  // //decline order post
-  // decline(id) {
-
-  //   axios.post('http://localhost:5001/statuschange', {
-  //     id: id,
-  //     status: "Denied",
-  //     pickup: 'false'
-  //   })
-  //   .then( response => {
-  //     window.location.reload();
-  //   } )
-  // }
-
-  //confirm pickup post
-
   confirmPickup(id,orderStatus) {
     axios.post('http://localhost:5001/statuschange',{
       id: id,
@@ -93,7 +46,7 @@ export default class OrderLiveDisp extends React.Component {
     return (
     <Popover id={"popover" + data._id + approve} title={(approve ? "Approve Order": "Deny Order")} style={{width: '300px', maxWidth: 'None', padding: '7px', height: '600px'}}>
       <strong>{approve ? "Approve Order" : "Deny Order" }</strong><br/>Please check the message before Sending
-      <SMSForm userData={data} approve={approve}/>
+      <MSGForm userData={data} approve={approve}/>
     </Popover>
     
   );

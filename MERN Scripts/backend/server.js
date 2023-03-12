@@ -7,6 +7,11 @@ require('dotenv').config();
 const Models = require("./models.js");
 const pino = require('express-pino-logger')();
 
+// twilio mail
+const sgMail = require('@sendgrid/mail');
+require('dotenv').config();
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
+
 const client = require('twilio')(
   process.env.TWILIO_ACCOUNT_SID,
   process.env.TWILIO_AUTH_TOKEN
@@ -288,7 +293,25 @@ app.post('/api/messages', (req, res) => {
       res.send(JSON.stringify({ success: false }));
     });
   
-  });
+});
+
+app.post('/api/email', (req, res) => {
+    const msg = {
+        to: req.body.to,
+        from: process.env.EMAIL,
+        subject: req.body.subject,
+        text: req.body.text
+      }
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log('Email sent')
+        })
+        .catch((error) => {
+          console.error("THERE WAS AN ERROR" + error)
+        });
+        console.log("");
+});
 
 app.use("/charge", require("./routes/api/charge.js"));
 
