@@ -86,6 +86,31 @@ app.get("/order", (req, res)=> {
         console.log( 'error: ', daerrorta);
     })
 });
+/*Order history sorting test */
+app.get("/orderHist", (req, res)=> {
+    var searchFor = {}
+    if(req.query.phoneNumber!="" && req.query.email!=""){
+        searchFor = {$and: [{phoneNumber: req.query.phoneNumber, Name: req.query.email}]};
+    }else if(req.query.phoneNumber!="" && req.query.email==""){
+        searchFor = {phoneNumber: req.query.phoneNumber};
+    }else if(req.query.phoneNumber=="" && req.query.email!=""){
+        searchFor = {Name: req.query.email};
+    }
+    var options = {Datetime: req.query.order};
+    if(req.query.loc!=0){
+        options = { Location: req.query.loc , Datetime: req.query.order};
+    }else if(req.query.status!=0){
+        options = { Status: req.query.status , Datetime: req.query.order};
+    }
+    Models.Order.find(searchFor).sort(options)
+    .then((data) => {
+        console.log( 'Order read data available');
+        res.json(data);
+    })
+    .catch(() => {
+        console.log( 'error: ', daerrorta);
+    })
+});
 
 app.get("/location", (req, res)=> {
     Models.Location.find(req.query)

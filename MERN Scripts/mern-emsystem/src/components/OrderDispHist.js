@@ -10,7 +10,15 @@ export default class OrderDispHist extends React.Component {
   }
   
   componentDidMount() {
-    axios.get(`http://localhost:5001/order`)
+    axios.get(`http://localhost:5001/orderHist`, {
+      params: {
+        phoneNumber: this.props.phonNum,
+        email: this.props.email,
+        order: this.props.queryDate,
+        loc: this.props.queryLoc,
+        status: this.props.queryStat
+      }
+    })
       .then(res => {
         const orderData = res.data;
         this.setState({ orders: orderData });
