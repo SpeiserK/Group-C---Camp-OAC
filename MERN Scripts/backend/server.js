@@ -186,6 +186,18 @@ app.post("/newLocation", (req, res) => {
     }
 });
 
+app.post("/deleteLocation", (req, res) => {
+    const id = req.body.id;
+    //console.log(id);
+    if (!id){
+        return res.status(422).json({error: "Missing Fields"})
+    }res.json("Posted successfully");
+    //console.log("test2");
+    Models.Location.findByIdAndDelete({ _id: id}).exec();
+    //console.log("test3");
+    
+});
+
 //status change post request
 app.post("/statuschange", (req, res) => {
     const idS = req.body.id;
