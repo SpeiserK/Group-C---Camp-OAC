@@ -19,7 +19,7 @@ import CustOrderHist from './pages/CustOrderHist';
 import Bootstrap from './pages/Bootstrap';
 import ProtectedRoutes from './components/hooks/protectedRoutes';
 import FrontProtectedRoutes from './components/hooks/frontProtectedRoutes';
-
+import ResetPassword from './pages/ResetPassword.js';
 
 //let isAuth = sessionStorage.getItem("auth");
 
@@ -34,6 +34,7 @@ function App() {
           <Route path="login" element={<Emplogin/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/custhistory" element={<CustOrderHist/>} />
+          <Route path="/reset-password" element={<ResetPassword/>} />
 
           {/*frontend protected routes*/}
           <Route element={<FrontProtectedRoutes />}>
