@@ -3,12 +3,14 @@ import axios from 'axios';
 
 
 // twilio recovery: N4y2RRDuQ3WNqO2MpbwQRIcs1-n4q8SDpn2rvMZx
-class SMSForm extends Component {
+class MSGForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
           message: {
             to: props.userData.phoneNumber,
+            toEmail: props.userData.Name,
+            subjectEmail: "Firewood notice",
             // accepted message template
             body: props.approve ? `Hello there!\nYour order for firewood bundles from Ogopogo Rotary and Camp OAC has been approved, You can now pickup your order from ${props.userData.Location}:
             \nOrder Number: ${props.userData._id}
@@ -26,8 +28,7 @@ class SMSForm extends Component {
             \nTHIS IS AN AUTOMATIC MESSAGE, PLEASE DO NOT REPLY`
           },
           submitting: false,
-          error: true,
-          success: ""
+          error: true
         };
         this.onHandleChange = this.onHandleChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -40,38 +41,45 @@ class SMSForm extends Component {
         });
     }
 
-    async onSubmit(event) {
+    onSubmit(event) {
       event.preventDefault();
       this.setState({ submitting: true });
-      const mark = await fetch('http://localhost:5001/api/messages', {
+      const mark = fetch('http://localhost:5001/api/messages', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(this.state.message)
       })
-        .then(res => res.json())
-        .then(data => {
-          if (data.success) {
-            this.setState({
-              error: false,
-              submitting: false,
-              message: {
-                to: '',
-                body: ''
-              }
-            });
-          } else {
-            this.setState({
-              error: true,
-              submitting: false
-            });
-          }
-        })
-        .then(() => {
-          if (this.state.error)return;
-        });
+      .then(res => res.json())
+      .then(data => {
+        if (data.success) {
+          // send email aswell
+          axios.post('http://localhost:5001/api/email', {
+            to: this.state.message.toEmail,
+            subject: this.state.message.subjectEmail,
+            text: this.state.message.body,
+            html: "",
+          });
 
+          this.setState({
+            error: false,
+            submitting: false,
+            message: {
+              to: '',
+              body: ''
+            }
+            });
+        } else {
+          this.setState({
+            error: true,
+            submitting: false
+            });
+        }
+      });
+    }
+
+    updateDB() {
       if (this.props.approve) {
         //get date of approval
         var dateApprove = new Date();
@@ -104,9 +112,8 @@ class SMSForm extends Component {
         })
         .then( response => {
           window.location.reload();
-        } )
+        })
       }
-
     }
 
     render() {
@@ -138,12 +145,13 @@ class SMSForm extends Component {
             />
           </div>
           <button type="submit" disabled={this.state.submitting}>
-            Send message and {this.props.approve ? "Approve" : "Deny"}
-          </button><br/>
-            {this.state.error ? "message has not been sent" : "Message successfully sent"}
+            Send text and email to customer
+          </button>
+          <br/>
+            {this.state.error ? "Message has not been delivered" : "Message has been delivered"}
          </form>
       );
     }
 }
 
-export default SMSForm;
+export default MSGForm;

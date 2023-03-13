@@ -4,8 +4,13 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const nodeMailer = require('nodemailer');
 require('dotenv').config();
-const Models = require("./models.js");
+const Models = require("./models/models.js");
 const pino = require('express-pino-logger')();
+
+// twilio mail
+const sgMail = require('@sendgrid/mail');
+require('dotenv').config();
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 const client = require('twilio')(
   process.env.TWILIO_ACCOUNT_SID,
@@ -211,6 +216,18 @@ app.post("/newLocation", (req, res) => {
     }
 });
 
+app.post("/deleteLocation", (req, res) => {
+    const id = req.body.id;
+    //console.log(id);
+    if (!id){
+        return res.status(422).json({error: "Missing Fields"})
+    }res.json("Posted successfully");
+    //console.log("test2");
+    Models.Location.findByIdAndDelete({ _id: id}).exec();
+    //console.log("test3");
+    
+});
+
 //status change post request
 app.post("/statuschange", (req, res) => {
     const idS = req.body.id;
@@ -313,12 +330,34 @@ app.post('/api/messages', (req, res) => {
       res.send(JSON.stringify({ success: false }));
     });
   
-  });
+});
+
+app.post('/api/email', (req, res) => {
+    const msg = {
+        to: req.body.to,
+        from: process.env.EMAIL,
+        subject: req.body.subject,
+        text: req.body.text
+      }
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log('Email sent');
+          console.log(msg);
+        })
+        .catch((error) => {
+          console.error("THERE WAS AN ERROR" + error)
+        });
+});
 
 app.use("/charge", require("./routes/api/charge.js"));
 
 app.use("/", require("./routes/OrderRoute.js"));
 //emp creation
 app.use("/api/emp", require("./routes/EmpRoute.js"));
-//emp auth
+//emp authorization/login
 app.use("/api/auth", require("./routes/Auth.js"));
+//emp password reset generator
+app.use("/api/pwreset", require("./routes/pwReset.js"));
+//emp password reset authenticator
+app.use("/api/pwresetauth", require("./routes/pwResetAuth.js"));
