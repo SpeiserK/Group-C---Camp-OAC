@@ -3,17 +3,12 @@ const router = express.Router();
 const Models = require("../models/models.js");
 const Employee = Models.Employee;
 const ResetToken = require('../models/ResetToken');
-const promise = require('promise');
 const Joi = require("joi");
 const bcrypt = require("bcrypt");
 const { sendError, createRandomBytes } = require('../models/helper');
 
 router.post("/", async (req, res) => {
     const username  = req.body.Username;
-    console.log("mark 1");
-    console.log("req: " + req);
-    console.log("username: " + username);
-    console.log("mark 2");
     if(!username)
         return res.status(401).json({success: false, message: "Please provide a valid username"});
 
