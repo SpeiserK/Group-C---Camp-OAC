@@ -102,6 +102,19 @@ export default class LocationLiveDisp extends React.Component {
         return item;
       })});
     }
+
+    deleteLocation(id, locationName){
+      const confirmDelete = window.confirm(`Are you sure you want to delete ${locationName}?`);
+      if (confirmDelete) {
+      axios.post('http://localhost:5001/deleteLocation', {
+        id: id
+      })
+      .then( response => {
+          this.setState({ error: response.message})
+      })
+      window.location.reload();
+    }
+  }
   
   render() {
     return (
@@ -128,6 +141,9 @@ export default class LocationLiveDisp extends React.Component {
           </td>
           <td id="headerUpdate" className="listHeaderUpdate">
             <span> Location Status </span>
+          </td>
+          <td id="headerUpdate" className="listHeaderUpdate">
+            <span> Delete Location </span>
           </td>
         </tr> 
         
@@ -157,7 +173,10 @@ export default class LocationLiveDisp extends React.Component {
               <td id="current-orderUpdate" className ="orderChild">
                 <span><button onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
                 {this.state.error[index]}
-              </td>        
+              </td>  
+              <td id="current-orderUpdate" className ="orderChild">
+                <span><button onClick={() => this.deleteLocation(content._id, content.Name)}> DELETE </button></span>&emsp;
+              </td>
           </tr>
             )
         }

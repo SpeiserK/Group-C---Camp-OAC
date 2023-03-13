@@ -19,14 +19,18 @@ export default class LocationLiveDisp extends React.Component {
   }
 
     //single doc post request
-    deleteUser(id) {
+    deleteUser(id, UserName) {
+      const confirmDelete = window.confirm(`Are you sure you want to delete ${UserName}?`);
+      if (confirmDelete) {
       axios.post('http://localhost:5001/deleteuser', {
         id: id
       })
       .then( response => {
           this.setState({ error: response.message})
       })
+      window.location.reload();
     }
+  }
   
   render() {
     return (
@@ -47,7 +51,7 @@ export default class LocationLiveDisp extends React.Component {
             <span> Location/Access Restriction</span>
           </td>
           <td id="headerRemove" className="listHeaderRemove">
-            <span> tools </span>
+            <span> Delete User </span>
           </td>
         </tr> 
         
@@ -68,7 +72,7 @@ export default class LocationLiveDisp extends React.Component {
                 <span>{content.Location}</span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button onClick={() => this.deleteUser(content._id)}> DELETE USER </button></span>&emsp;
+                <span><button onClick={() => this.deleteUser(content._id,content.Username)}>DELETE</button></span>&emsp;
               </td> 
           </tr>
             )
