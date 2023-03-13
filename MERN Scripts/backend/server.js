@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const nodeMailer = require('nodemailer');
 require('dotenv').config();
-const Models = require("./models.js");
+const Models = require("./models/models.js");
 const pino = require('express-pino-logger')();
 
 // twilio mail
@@ -318,5 +318,7 @@ app.use("/charge", require("./routes/api/charge.js"));
 app.use("/", require("./routes/OrderRoute.js"));
 //emp creation
 app.use("/api/emp", require("./routes/EmpRoute.js"));
-//emp auth
+//emp authorization/login
 app.use("/api/auth", require("./routes/Auth.js"));
+//emp password reset
+app.use("/api/pwreset", require("./routes/pwReset.js"));

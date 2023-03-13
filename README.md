@@ -88,6 +88,7 @@ npm install nodemailer
 npm install express-pino-logger
 npm install twilio --save-dev
 npm install --save @sendgrid/mail
+npm install promise
 ```
 2.
 You will need to add necessary token to .env file

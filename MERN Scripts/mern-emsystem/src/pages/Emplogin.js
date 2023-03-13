@@ -3,6 +3,7 @@ import Banner from '../components/Banner.js';
 import EmpLogin from '../components/Login/EmpLogin.jsx';
 import Row from 'react-bootstrap/esm/Row.js';
 import Container from 'react-bootstrap/esm/Container.js';
+import PwReset from '../components/Login/PwReset'
 
 function Emplogin(){
     return( 
@@ -15,6 +16,11 @@ function Emplogin(){
                 
             <EmpLogin />
             
+            </Row>
+            <Row>
+
+            <PwReset />
+
             </Row>
         </Container>
     </div>
