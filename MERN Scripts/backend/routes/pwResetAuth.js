@@ -35,7 +35,7 @@ router.post("/", async (req, res, next) => {
 
     const employee = await Employee.findById(req.employee._id);
     if(!employee)
-        return sendError(res, "employee not found");
+        return sendError(res, "user not found");
 
     if(password.trim().length < 8 || password.trim().length > 20)
         return sendError(res, "new password must be 8-20 characters in length (no spaces)");

@@ -305,12 +305,12 @@ app.post('/api/email', (req, res) => {
       sgMail
         .send(msg)
         .then(() => {
-          console.log('Email sent')
+          console.log('Email sent');
+          console.log(msg);
         })
         .catch((error) => {
           console.error("THERE WAS AN ERROR" + error)
         });
-        console.log("");
 });
 
 app.use("/charge", require("./routes/api/charge.js"));
@@ -323,4 +323,4 @@ app.use("/api/auth", require("./routes/Auth.js"));
 //emp password reset generator
 app.use("/api/pwreset", require("./routes/pwReset.js"));
 //emp password reset authenticator
-app.use("/api/pwreset", require("./routes/pwResetAuth.js"));
+app.use("/api/pwresetauth", require("./routes/pwResetAuth.js"));
