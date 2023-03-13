@@ -8,25 +8,26 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 function OrderHistory(){
-
+console.log(statData);
 var phoneData = "";
 var emailData = "";
-if(sessionStorage.getItem("searchNum")!=null){
+if(sessionStorage.getItem("searchNum")!==null){
     phoneData = sessionStorage.getItem("searchNum");
 }
-if(sessionStorage.getItem("searchEmail")!=null){
+if(sessionStorage.getItem("searchEmail")!==null){
     emailData = sessionStorage.getItem("searchEmail");
 }
+
 var dateData = -1;
 var locData = 0;
 var statData = 0;
-if(sessionStorage.getItem("dateKey")!=null){
+if(sessionStorage.getItem("dateKey")!==null){
     dateData = sessionStorage.getItem("dateKey");
 }
-if(sessionStorage.getItem("locKey")!=null){
+if(sessionStorage.getItem("locKey")!==null){
     locData = sessionStorage.getItem("locKey");
 }
-if(sessionStorage.getItem("statKey")!=null){
+if(sessionStorage.getItem("statKey")!==null){
     statData = sessionStorage.getItem("statKey");
 }
     
@@ -75,8 +76,9 @@ const handleEmail = () => {
 }
 
 function handleReset() {
-    sessionStorage.clear("searchNum");
-    sessionStorage.clear("searchEmail");
+    sessionStorage.removeItem("searchNum");
+    sessionStorage.removeItem("searchEmail");
+    handleSubmit();
 }
 
 function handleSubmit() {
@@ -99,20 +101,39 @@ function handleSubmit() {
                 <Col>
                 </Col>
                 <Col align="right">
-                    <Form.Control type="text" id="phoneNum" placeholder={sessionStorage.getItem("searchNum")} onChange={handlePhone}/>
+                    <Form.Control type="text" id="phoneNum" onChange={handlePhone} placeholder="Search by Phone #"/>
                 </Col>  
                 <Col align="right">
-                    <Form.Control type="text" id="Vemail" placeholder={sessionStorage.getItem("searchEmail")} onChange={handleEmail}/>
+                    <Form.Control type="text" id="Vemail"  onChange={handleEmail} placeholder="Search by Email"/>
                 </Col>
                 <Col align="left">
                     <Button type="submit">Search</Button>
                     &nbsp;
                     &nbsp;
-                    <Button type="button" variant="danger">Clear</Button>
+                    <Button type="button" variant="danger" onClick={handleReset}>Clear</Button>
                 </Col>
             </Row>
             <Row style={{paddingTop: 20,paddingRight: 40}}>
-                <Form.Select onChange={handleSort} value={sessionStorage.getItem("labelKey")} size="sm" id="sort-selector" aria-lavel="sortSelector">
+                <Col xl={{span:7,offset:0}} style={{paddingLeft: 40}}>
+                { phoneData !== "" && emailData === "" ?(
+                    <h4 className="robotoSlab">Showing Results for Phone #:&emsp;{phoneData}</h4>
+                    ): (<></>)
+                }
+                { phoneData === "" && emailData!== "" ?(
+                    <h4 className="robotoSlab">Showing Results for Email:&emsp;{emailData}</h4>
+                    ): (<></>)
+                }
+                { phoneData !== "" && emailData !== "" ?(
+                    <h4 className="robotoSlab">Showing Results for Phone #:&emsp;{phoneData}&emsp; Email:&emsp; {emailData}</h4>
+                    ): (<></>)
+                }
+                {  phoneData === "" && emailData === "" ?(
+                    <h4 className="robotoSlab">Showing All Results</h4>
+                    ): (<></>)
+                }
+                </Col>
+                <Col xl={{span: 5,offset:0}}>
+                <Form.Select onChange={handleSort} value={sessionStorage.getItem("labelKey")} size="sm" id="sort-selector">
                     <option value="0">Newest</option>
                     <option value="5">Oldest</option>
                     <option value="1">Location (New)</option>
@@ -120,6 +141,7 @@ function handleSubmit() {
                     <option value="3">Status (New)</option>
                     <option value="4">Status (Old)</option>                     
                 </Form.Select>
+                </Col>  
             </Row>
             </form>
             <Row style={{padding: 30}}>
