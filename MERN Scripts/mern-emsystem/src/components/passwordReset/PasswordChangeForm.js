@@ -32,11 +32,10 @@ const PasswordChangeForm = () => {
     }
     return (
         <div className="empLoginDiv ">
-            {searchParams.get("id") + " " + searchParams.get("token")}
                 <form onSubmit={handleSubmit}>
                         <h1>Reset password</h1>
                         <input
-                            type="text"
+                            type="password"
                             className="textboxStyle"
                             placeholder='password'
                             name='password'
@@ -46,7 +45,7 @@ const PasswordChangeForm = () => {
                         /><br></br>
                         {error && <div>{error}</div>}
                         <button type="submit">
-                            Sign In
+                            Change password
                         </button>
                     </form>
         </div>

@@ -14,7 +14,7 @@ class MSGForm extends Component {
             // accepted message template
             body: props.approve ? `Hello there!\nYour order for firewood bundles from Ogopogo Rotary and Camp OAC has been approved, You can now pickup your order from ${props.userData.Location}:
             \nOrder Number: ${props.userData._id}
-            \nPickup Address: ADDRESS
+            \nPickup Address: ${props.userData.LocationAddress}
             \nPickup Location: ${props.userData.Location}
             \nQuantity/price: ${props.userData.Quantity}/\$${props.userData.Price}
             \nOther Notes: 

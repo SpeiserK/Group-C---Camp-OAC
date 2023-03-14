@@ -72,11 +72,15 @@ const OrderSchema = new mongoose.Schema ({
     },
     Quantity:  {
         type: Number,
-
     },
     Location:  {
         type: String,
-
+    },
+    LocationId: {
+        type: mongoose.Schema.Types.ObjectId,
+    },
+    LocationAddress: {
+        type: String,
     },
     Datetime:   {
         type: Date,

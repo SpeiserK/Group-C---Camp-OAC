@@ -43,7 +43,7 @@ const PwReset = () => {
                         /><br></br>
                         {error && <div>{error}</div>}
                         <button type="submit">
-                            Sign In
+                            Reset Password
                         </button>
                     </form> 
                

@@ -153,7 +153,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content.Quantity}</span>&emsp;
               </td>
               <td id="current-orderLoc" className ="orderChild">
-                <span>{content.Location}</span>&emsp;
+                <span>{content.LocationId}<br></br>{content.Location}<br></br>Address: {content.LocationAddress}</span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
                 <span>{content.Datetime}</span>&emsp;
@@ -164,10 +164,10 @@ export default class OrderLiveDisp extends React.Component {
           { this.props.query1 === "Pending" ?(
               <td id="current-approve-deny"className ="orderChild"> 
               <span>{content.Status}</span>&emsp;
-                <OverlayTrigger trigger="click" placement="right" overlay={this.popOver(content, true)}>
+                <OverlayTrigger trigger="click" placement="top" overlay={this.popOver(content, true)}>
                   <button class='btn btn-primary'>Approve</button>
                 </OverlayTrigger>
-                <OverlayTrigger trigger="click" placement="right" overlay={this.popOver(content, false)}>
+                <OverlayTrigger trigger="click" placement="top" overlay={this.popOver(content, false)}>
                   <button class='btn btn-danger'>Deny</button>
                 </OverlayTrigger>
               </td> ): (<></>)
