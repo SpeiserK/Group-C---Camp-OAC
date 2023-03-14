@@ -37,7 +37,9 @@ const EmployeeSchema = new mongoose.Schema ({
     },
     Username: {
         type: String,
+        unique: true,
         required: true,
+        dropDups: true 
     },
     Password: {
         type: String,

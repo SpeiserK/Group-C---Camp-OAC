@@ -32,6 +32,7 @@ const PwReset = () => {
         <div className="empLoginDiv ">
                 <form onSubmit={handleSubmit}>
                         <h1>Reset password</h1>
+                        <p>Please enter your username, if it matches one of the admin accounts on record an email will be sent with a password reset link</p>
                         <input
                             type="text"
                             className="textboxStyle"
