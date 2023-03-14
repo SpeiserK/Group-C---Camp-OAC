@@ -18,7 +18,7 @@ if(sessionStorage.getItem("searchNum")!==null){
 if(sessionStorage.getItem("searchEmail")!==null){
     emailData = sessionStorage.getItem("searchEmail");
 }
-if(sessionStorage.getItem('selectedLocation')!==null){
+if(sessionStorage.getItem('selectedLocation')!=="All"){
     locData = sessionStorage.getItem('selectedLocation');
 }
 
@@ -61,7 +61,7 @@ const handleEmail = () => {
 function handleReset() {
     sessionStorage.removeItem("searchNum");
     sessionStorage.removeItem("searchEmail");
-    sessionStorage.removeItem('selectedLocation');
+    sessionStorage.setItem('selectedLocation',"All");
     handleSubmit();
 }
 
@@ -104,7 +104,7 @@ function handleSubmit() {
                 </Col>
             </Row>
             <Row style={{paddingTop: 20,paddingRight: 40}}>
-                <Col xl={{span:6,offset:0}} style={{paddingLeft: 40}}>
+                <Col xl={{span:7,offset:0}} style={{paddingLeft: 40}}>
                 { phoneData !== "" && emailData === "" ?(
                     <h4 className="robotoSlab">Showing Results for Phone #:&emsp;{phoneData}</h4>
                     ): (<></>)
@@ -127,15 +127,19 @@ function handleSubmit() {
                 }
 
                 </Col>
-                <Col xl={{span: 1,offset:0}}>
-                <LocationSelect/>
-                </Col>
-                <Col xl={{span: 4,offset:0}}>
-                <Form.Select onChange={handleSort} value={sessionStorage.getItem("labelKey")} size="sm" id="sort-selector">
-                    <option value="0">Newest</option>
-                    <option value="1">Oldest</option>
-                    <option value="2">Status </option>                     
-                </Form.Select>
+                <Col  style={{paddingTop: 20, paddingLeft: 100}} xl={{span: 5,offset:0}}>
+                    <Row>
+                        <Col align="right">
+                            <LocationSelect/>
+                        </Col>
+                        <Col align="left">
+                        <Form.Select onChange={handleSort} value={sessionStorage.getItem("labelKey")} size="md" id="sort-selector2">
+                            <option value="0">Newest</option>
+                            <option value="1">Oldest</option>
+                            <option value="2">Status </option>                     
+                        </Form.Select>
+                        </Col>
+                    </Row>
                 </Col>  
             </Row>
             </form>

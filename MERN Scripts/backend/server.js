@@ -82,7 +82,13 @@ app.get("/mongo", (req, res)=> {
 
 
 app.get("/order", (req, res)=> {
-    Models.Order.find(req.query)
+    var query;
+    if(req.query.Location=="All"){
+       query = {$and: [{Status: req.query.Status, Pickup: req.query.Pickup}]};
+    }else{
+        query = req.query;
+    }
+    Models.Order.find(query)
     .then((data) => {
         console.log( 'Order read data available');
         res.json(data);
@@ -110,8 +116,6 @@ app.get("/orderHist", (req, res)=> {
         searchFor = {Location: req.query.loc};
     }
 
-    console.log(searchFor);
-
     var options = {Datetime: req.query.order};
     if(req.query.status!=0){
         options = { Status: req.query.status , Datetime: req.query.order};
@@ -127,7 +131,13 @@ app.get("/orderHist", (req, res)=> {
 });
 
 app.get("/location", (req, res)=> {
-    Models.Location.find(req.query)
+    
+    var query = {};
+    if(req.query.Name!=="All"){
+        query = req.query;
+    }
+    
+    Models.Location.find(query)
     .then((data) => {
         console.log( 'Location read data available');
         res.json(data);
