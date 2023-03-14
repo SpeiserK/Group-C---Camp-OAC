@@ -2,6 +2,8 @@ const mongoose = require('mongoose');
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
 const passwordComplexity = require('joi-password-complexity');
+const crypto = require('crypto');
+const { sendError, createRandomBytes } = require('./helper');
 
 const UserSchema = new mongoose.Schema({
     email: {
@@ -60,7 +62,7 @@ const validate = (data) => {
         Location: Joi.string().required().label('Location')
     });
     return schema.validate(data);
-}
+};
 
 const OrderSchema = new mongoose.Schema ({
 

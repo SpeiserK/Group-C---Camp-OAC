@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
     "bcrypt": "^5.1.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
@@ -22,6 +23,7 @@
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.6.7",
     "nodemailer": "^6.9.1",
+    "promise": "^8.3.0",
     "square": "^25.0.0"
   },
   "devDependencies": {
