@@ -94,17 +94,26 @@ app.get("/order", (req, res)=> {
 /*Order history sorting test */
 app.get("/orderHist", (req, res)=> {
     var searchFor = {}
-    if(req.query.phoneNumber!="" && req.query.email!=""){
+    if(req.query.phoneNumber!="" && req.query.email!="" && req.query.loc!=""){
+        searchFor = {$and: [{phoneNumber: req.query.phoneNumber, Name: req.query.email, Location: req.query.loc}]};
+    } else if(req.query.phoneNumber!="" && req.query.email!="" && req.query.loc==""){
         searchFor = {$and: [{phoneNumber: req.query.phoneNumber, Name: req.query.email}]};
-    }else if(req.query.phoneNumber!="" && req.query.email==""){
+    }else if(req.query.phoneNumber!="" && req.query.email=="" && req.query.loc==""){
         searchFor = {phoneNumber: req.query.phoneNumber};
-    }else if(req.query.phoneNumber=="" && req.query.email!=""){
+    }else if(req.query.phoneNumber=="" && req.query.email!="" && req.query.loc==""){
         searchFor = {Name: req.query.email};
+    }else if(req.query.phoneNumber!="" && req.query.email=="" && req.query.loc!=""){
+        searchFor = {$and: [{phoneNumber: req.query.phoneNumber, Location: req.query.loc}]};
+    }else if(req.query.phoneNumber=="" && req.query.email!="" && req.query.loc!=""){
+        searchFor = {$and: [{Name: req.query.email, Location: req.query.loc}]};
+    }else if(req.query.phoneNumber=="" && req.query.email=="" && req.query.loc!=""){
+        searchFor = {Location: req.query.loc};
     }
+
+    console.log(searchFor);
+
     var options = {Datetime: req.query.order};
-    if(req.query.loc!=0){
-        options = { Location: req.query.loc , Datetime: req.query.order};
-    }else if(req.query.status!=0){
+    if(req.query.status!=0){
         options = { Status: req.query.status , Datetime: req.query.order};
     }
     Models.Order.find(searchFor).sort(options)

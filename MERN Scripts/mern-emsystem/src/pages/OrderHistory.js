@@ -6,26 +6,26 @@ import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import LocationSelect from '../components/location/locationSelect.js';
 
 function OrderHistory(){
-console.log(statData);
 var phoneData = "";
 var emailData = "";
+var locData = "";
 if(sessionStorage.getItem("searchNum")!==null){
     phoneData = sessionStorage.getItem("searchNum");
 }
 if(sessionStorage.getItem("searchEmail")!==null){
     emailData = sessionStorage.getItem("searchEmail");
 }
+if(sessionStorage.getItem('selectedLocation')!==null){
+    locData = sessionStorage.getItem('selectedLocation');
+}
 
 var dateData = -1;
-var locData = 0;
 var statData = 0;
 if(sessionStorage.getItem("dateKey")!==null){
     dateData = sessionStorage.getItem("dateKey");
-}
-if(sessionStorage.getItem("locKey")!==null){
-    locData = sessionStorage.getItem("locKey");
 }
 if(sessionStorage.getItem("statKey")!==null){
     statData = sessionStorage.getItem("statKey");
@@ -33,35 +33,18 @@ if(sessionStorage.getItem("statKey")!==null){
     
 const handleSort = (e) => {
     var i;
-    var j;
     var k;
     if(e.target.value == 0){
         i = -1;
-        j = 0;
         k = 0;
     }else if(e.target.value == 1){
-        i = -1;
-        j = 1;
+        i = 1;
         k = 0;
     }else if(e.target.value == 2){
         i = 1;
-        j = 1;
-        k = 0;
-    }else if(e.target.value == 3){
-        i = -1;
-        j = 0;
         k = -1;
-    }else if(e.target.value == 4){
-        i = 1;
-        j = 0;
-        k = -1;
-    }else if(e.target.value == 5){
-        i = 1;
-        j = 0;
-        k = 0;
     }
     sessionStorage.setItem("dateKey",i);
-    sessionStorage.setItem("locKey",j);
     sessionStorage.setItem("statKey",k);
     sessionStorage.setItem("labelKey",e.target.value);
     window.location.reload();
@@ -78,10 +61,17 @@ const handleEmail = () => {
 function handleReset() {
     sessionStorage.removeItem("searchNum");
     sessionStorage.removeItem("searchEmail");
+    sessionStorage.removeItem('selectedLocation');
     handleSubmit();
 }
 
 function handleSubmit() {
+    if(document.getElementById("Vemail").value===""){
+        sessionStorage.removeItem("searchEmail");
+    }
+    if(document.getElementById("phoneNum").value===""){
+        sessionStorage.removeItem("searchNum");
+    }
     window.location.reload();
 }
 
@@ -114,7 +104,7 @@ function handleSubmit() {
                 </Col>
             </Row>
             <Row style={{paddingTop: 20,paddingRight: 40}}>
-                <Col xl={{span:7,offset:0}} style={{paddingLeft: 40}}>
+                <Col xl={{span:6,offset:0}} style={{paddingLeft: 40}}>
                 { phoneData !== "" && emailData === "" ?(
                     <h4 className="robotoSlab">Showing Results for Phone #:&emsp;{phoneData}</h4>
                     ): (<></>)
@@ -131,15 +121,20 @@ function handleSubmit() {
                     <h4 className="robotoSlab">Showing All Results</h4>
                     ): (<></>)
                 }
+                {  locData !== "" ?(
+                    <h4 className="robotoSlab"> in {locData}</h4>
+                    ): (<></>)
+                }
+
                 </Col>
-                <Col xl={{span: 5,offset:0}}>
+                <Col xl={{span: 1,offset:0}}>
+                <LocationSelect/>
+                </Col>
+                <Col xl={{span: 4,offset:0}}>
                 <Form.Select onChange={handleSort} value={sessionStorage.getItem("labelKey")} size="sm" id="sort-selector">
                     <option value="0">Newest</option>
-                    <option value="5">Oldest</option>
-                    <option value="1">Location (New)</option>
-                    <option value="2">Location (Old)</option>
-                    <option value="3">Status (New)</option>
-                    <option value="4">Status (Old)</option>                     
+                    <option value="1">Oldest</option>
+                    <option value="2">Status </option>                     
                 </Form.Select>
                 </Col>  
             </Row>
