@@ -79,6 +79,7 @@ router.route("/send").post(async (req, res) => {
     newOrder.save()
     .then(order => {
         res.json({message: `${order} order saved successfully`});
+        
         // need to test if this works this is for sending texts for credit card customers
         // if(Payment == "Credit/Debit"){
         //     client.messages
