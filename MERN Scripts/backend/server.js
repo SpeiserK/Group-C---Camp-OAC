@@ -82,7 +82,49 @@ app.get("/mongo", (req, res)=> {
 
 
 app.get("/order", (req, res)=> {
-    Models.Order.find(req.query)
+    var query;
+    if(req.query.Location=="All"){
+       query = {$and: [{Status: req.query.Status, Pickup: req.query.Pickup}]};
+    }else{
+        query = req.query;
+    }
+    Models.Order.find(query)
+    .then((data) => {
+        console.log( 'Order read data available');
+        res.json(data);
+    })
+    .catch(() => {
+        console.log( 'error: ', daerrorta);
+    })
+});
+/*Order history sorting test */
+app.get("/orderHist", (req, res)=> {
+    var searchFor = {};
+    //Check if fields have a value
+    var isPhone = (req.query.phoneNumber!="");
+    var isEmail = (req.query.email!="");
+    var isLoc = (req.query.loc!="");
+    var isStat = (req.query.status!="");
+
+    if(isPhone){
+        var phoneQ = {phoneNumber: req.query.phoneNumber};
+        searchFor = Object.assign({},searchFor,phoneQ);
+    }
+    if(isEmail){
+        var emailQ = {Name: req.query.email};
+        searchFor = Object.assign({},searchFor,emailQ);
+    }
+    if(isLoc){
+        var locQ = {Location: req.query.loc};
+        searchFor = Object.assign({},searchFor,locQ);
+    }
+    if(isStat){
+        var statQ = {Status: req.query.status};
+        searchFor = Object.assign({},searchFor,statQ);
+    }
+
+    var options = {Datetime: req.query.order};
+    Models.Order.find(searchFor).sort(options)
     .then((data) => {
         console.log( 'Order read data available');
         res.json(data);
@@ -93,7 +135,12 @@ app.get("/order", (req, res)=> {
 });
 
 app.get("/location", (req, res)=> {
-    Models.Location.find(req.query)
+    var query = {};
+    if(req.query.Name!=="All"){
+        query = req.query;
+    }
+    
+    Models.Location.find(query)
     .then((data) => {
         console.log( 'Location read data available');
         res.json(data);
