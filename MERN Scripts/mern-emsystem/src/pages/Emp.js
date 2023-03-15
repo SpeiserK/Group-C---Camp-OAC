@@ -26,7 +26,7 @@ function Emp(){
                 <Col>
                 <Row>
                 <h1 className="robotoSlab" align="center">Live Orders</h1>
-                <h3 className="robotoSlab" align="center">{empLocation}</h3>
+                <br></br>
                 <h4 className="robotoSlab">Location Managment</h4>
                 <LocationLiveDisp queryLoc={empLocation} />
                 </Row>

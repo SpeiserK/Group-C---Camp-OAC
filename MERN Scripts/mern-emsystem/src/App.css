@@ -816,6 +816,7 @@ display: flex;
   padding-bottom: 5px;
   align-items: center;
   justify-content: center;
+  
 }
 
 .adminTools a {
@@ -1476,6 +1477,25 @@ Customer Order History table styling
   background-color: grey;
   margin-left: 80%;
 }
+
+#sort-selector {
+  width: 20%;
+  color: white;
+  background-color: grey;
+  margin-left: 80%;
+}
+#sort-selector2 {
+  width: 100%;
+  color: white;
+  background-color: grey;
+}
+#sort-selector3 {
+  width: 100%;
+  color: white;
+  background-color: grey;
+}
+
+
 
 .bEmp{
   padding: 0;
