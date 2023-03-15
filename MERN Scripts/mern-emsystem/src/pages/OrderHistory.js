@@ -12,6 +12,7 @@ function OrderHistory(){
 var phoneData = "";
 var emailData = "";
 var locData = "";
+var statusData = "";
 if(sessionStorage.getItem("searchNum")!==null){
     phoneData = sessionStorage.getItem("searchNum");
 }
@@ -21,32 +22,39 @@ if(sessionStorage.getItem("searchEmail")!==null){
 if(sessionStorage.getItem('selectedLocation')!=="All"){
     locData = sessionStorage.getItem('selectedLocation');
 }
+if(sessionStorage.getItem("statusKey")!==null){
+    statusData = sessionStorage.getItem("statusKey");
+}
 
 var dateData = -1;
-var statData = 0;
 if(sessionStorage.getItem("dateKey")!==null){
     dateData = sessionStorage.getItem("dateKey");
 }
-if(sessionStorage.getItem("statKey")!==null){
-    statData = sessionStorage.getItem("statKey");
-}
+
     
 const handleSort = (e) => {
     var i;
-    var k;
     if(e.target.value == 0){
         i = -1;
-        k = 0;
     }else if(e.target.value == 1){
         i = 1;
-        k = 0;
-    }else if(e.target.value == 2){
-        i = 1;
-        k = -1;
-    }
+    } 
     sessionStorage.setItem("dateKey",i);
-    sessionStorage.setItem("statKey",k);
     sessionStorage.setItem("labelKey",e.target.value);
+    window.location.reload();
+}
+
+const handleStatus = (e) => {
+    if(e.target.value == 0){
+        sessionStorage.setItem("statusKey","");
+    }else if(e.target.value == 1){
+        sessionStorage.setItem("statusKey","Approved");
+    }else if(e.target.value == 2){
+        sessionStorage.setItem("statusKey","Denied");
+    }else if(e.target.value == 3){
+        sessionStorage.setItem("statusKey","Pending");
+    }
+    sessionStorage.setItem("statusLabel",e.target.value);
     window.location.reload();
 }
 
@@ -61,6 +69,8 @@ const handleEmail = () => {
 function handleReset() {
     sessionStorage.removeItem("searchNum");
     sessionStorage.removeItem("searchEmail");
+    sessionStorage.removeItem("statusKey");
+    sessionStorage.setItem("statusLabel",0);
     sessionStorage.setItem('selectedLocation',"All");
     handleSubmit();
 }
@@ -104,7 +114,7 @@ function handleSubmit() {
                 </Col>
             </Row>
             <Row style={{paddingTop: 20,paddingRight: 40}}>
-                <Col xl={{span:7,offset:0}} style={{paddingLeft: 40}}>
+                <Col xl={{span:6,offset:0}} style={{paddingLeft: 40}}>
                 { phoneData !== "" && emailData === "" ?(
                     <h4 className="robotoSlab">Showing Results for Phone #:&emsp;{phoneData}</h4>
                     ): (<></>)
@@ -127,16 +137,23 @@ function handleSubmit() {
                 }
 
                 </Col>
-                <Col  style={{paddingTop: 20, paddingLeft: 100}} xl={{span: 5,offset:0}}>
+                <Col  style={{paddingTop: 20, paddingLeft: 100}} xl={{span: 6,offset:0}}>
                     <Row>
-                        <Col align="right">
+                        <Col align="left">
+                            <Form.Select onChange={handleStatus} value={sessionStorage.getItem("statusLabel")} size="md" id="sort-selector2">
+                                <option value="0">Status: All</option>
+                                <option value="1">Status: Approved</option>
+                                <option value="2">Status: Denied</option>       
+                                <option value="3">Status: Pending</option>               
+                            </Form.Select>
+                        </Col>
+                        <Col align="center">
                             <LocationSelect/>
                         </Col>
                         <Col align="left">
                         <Form.Select onChange={handleSort} value={sessionStorage.getItem("labelKey")} size="md" id="sort-selector2">
                             <option value="0">Newest</option>
-                            <option value="1">Oldest</option>
-                            <option value="2">Status </option>                     
+                            <option value="1">Oldest</option>                   
                         </Form.Select>
                         </Col>
                     </Row>
@@ -145,7 +162,7 @@ function handleSubmit() {
             </form>
             <Row style={{padding: 30}}>
                 <Col>
-                <OrderDispHist phonNum={phoneData} email={emailData} queryDate={dateData} queryLoc={locData} queryStat={statData}/>
+                <OrderDispHist phonNum={phoneData} email={emailData} queryDate={dateData} queryLoc={locData} queryStat={statusData}/>
                 </Col>
             </Row>
         </Container>

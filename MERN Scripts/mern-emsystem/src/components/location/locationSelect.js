@@ -12,7 +12,6 @@ import Form from 'react-bootstrap/Form';
 
 export default class LocationSelect extends React.Component {
 
-    
 
   constructor(props){
     super(props);
@@ -25,6 +24,9 @@ export default class LocationSelect extends React.Component {
   }
   //loads the db values
   componentDidMount() {
+    if(sessionStorage.getItem('selectedLocation')===null){
+      sessionStorage.setItem('selectedLocation',"All");
+    }
     axios.get(`http://localhost:5001/location`, { 
       params: {
         Name: this.props.queryLoc
