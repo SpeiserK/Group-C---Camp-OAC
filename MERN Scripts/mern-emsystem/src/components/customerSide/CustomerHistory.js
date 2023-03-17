@@ -37,13 +37,13 @@ export default class CustomerHistory extends React.Component {
             <thead>
                 <tr >
                     <th>
-                    contact
+                    phone #
                     </th>
                     <th>
                     location / order date
                     </th>
                     <th colSpan={2}>
-                    order details
+                    status
                     </th>
                 </tr> 
             </thead>
@@ -55,13 +55,13 @@ export default class CustomerHistory extends React.Component {
             <tbody>
                 <tr key={content._id} Name={`buttons-${index}`}>  
                   <td>
-                     {content.Name}<br></br>{content.phoneNumber}
+                     {content.phoneNumber}
                   </td>
                   <td>
-                      {content.Location}<br></br> {handleDate(content.Datetime)}
+                      {content.Location}  |  {handleDate(content.Datetime)}
                   </td>
                   <td colSpan={2}>
-                  Bundles: {content.Quantity} &nbsp; ${content.Price} &nbsp; {content.Payment} <br></br> Status: {content.Status} &nbsp;|  Pickup: {content.Pickup ? "Complete" : "Incomplete"}&emsp;
+                   Status: {content.Status} | Pickup: {content.Pickup ? "Complete" : "Incomplete"}
                   </td>      
                 </tr>
             </tbody>

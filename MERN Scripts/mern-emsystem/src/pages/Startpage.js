@@ -50,7 +50,7 @@ function Startpage(){
                 </Col>   
                 <Col lg={4} md={3} sm={12} xs={12}>
                     <div className="bSide">
-                        {/*<Row><div className="bSidebar1"></div></Row>*/}
+                        <Row><div className="bSidebar1"></div></Row>
                         <Row><div className="bSidebar2"></div></Row>
                         <Row><div className="bSidebar3"></div></Row>
                     </div>
