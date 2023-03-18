@@ -17,7 +17,7 @@ import Form from 'react-bootstrap/Form';
 
 
 //Used to verify if email is valid (will need to include more verification)
-const REGEX = /^[a-zA-Z0-9_.-]{3,48}@[a-zA-Z0-9.]{2,28}\.(com|ca|net)$/;
+const REGEX = /^[a-zA-Z0-9_.-]{2,48}@[a-zA-Z0-9.]{2,28}\.(com|ca|net)$/;
 const phoneREGEX = /^[(]?[0-9]{3}[)]?[ ,-]?[0-9]{3}[ ,-]?[0-9]{4}$/;
 
 
@@ -271,6 +271,7 @@ const PlaceOrder = () => {
                         <br></br>
 
                         <Form.Select size="md" onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" class="required" >
+                        <option value="">Select Location</option>
                         // TODO: change location selection to pull from DB
                         {location.map((content, index) =>
                                 <option value={content.Name} key={content._id} Name={`buttons-${index}`} >{content.Name}</option>
