@@ -271,6 +271,7 @@ const PlaceOrder = () => {
                         <br></br>
 
                         <Form.Select size="md" onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" class="required" >
+                        <option value="">Select Location</option>
                         // TODO: change location selection to pull from DB
                         {location.map((content, index) =>
                                 <option value={content.Name} key={content._id} Name={`buttons-${index}`} >{content.Name}</option>
