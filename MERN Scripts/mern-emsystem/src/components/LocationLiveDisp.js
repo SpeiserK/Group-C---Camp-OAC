@@ -117,7 +117,7 @@ export default class LocationLiveDisp extends React.Component {
                 </input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
-                <span><button onClick={() => this.changeOpenStatus(index)} >
+                <span><button id={this.state.openStatus[index]? "LocOpen" : "LocClosed"} onClick={() => this.changeOpenStatus(index)} >
                   {this.state.openStatus[index]? "OPEN": "CLOSED"}
                 </button></span>&emsp;
               </td>
