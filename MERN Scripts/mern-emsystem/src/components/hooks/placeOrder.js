@@ -17,7 +17,7 @@ import Form from 'react-bootstrap/Form';
 
 
 //Used to verify if email is valid (will need to include more verification)
-const REGEX = /^[a-zA-Z0-9_.-]{3,48}@[a-zA-Z0-9.]{2,28}\.(com|ca|net)$/;
+const REGEX = /^[a-zA-Z0-9_.-]{2,48}@[a-zA-Z0-9.]{2,28}\.(com|ca|net)$/;
 const phoneREGEX = /^[(]?[0-9]{3}[)]?[ ,-]?[0-9]{3}[ ,-]?[0-9]{4}$/;
 
 
