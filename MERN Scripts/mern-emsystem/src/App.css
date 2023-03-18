@@ -832,6 +832,26 @@ display: flex;
   border-color: #2c4356;
 }
 
+/* Used in SuperAdmin.js 
+   Styling for location management buttons
+*/
+
+#LocUpdateBttn {
+  background-color: #557a65;
+}
+
+#LocDeleteBttn {
+  background-color: rgb(199, 47, 47);
+}
+
+#LocOpen {
+  background-color: #557a65;
+}
+
+#LocClosed {
+  background-color: rgb(185, 185, 56);
+}
+
 /* order list styling*/
 /*
 #list-orderList{
