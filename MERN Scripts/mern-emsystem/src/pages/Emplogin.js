@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import Banner from '../components/Banner.js';
 import EmpLogin from '../components/Login/EmpLogin.jsx';
 import Row from 'react-bootstrap/esm/Row.js';
@@ -12,15 +13,14 @@ function Emplogin(){
             <Row>
             <Banner /> 
             </Row>
-            <Row>
+            <Row className="text-center">
                 
             <EmpLogin />
             
             </Row>
-            <Row>
+            <Row className="text-center">
 
-            <PwReset />
-
+            <Link to="/login/request-password-reset" >I forgot my password</Link>
             </Row>
         </Container>
     </div>
