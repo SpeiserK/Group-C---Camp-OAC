@@ -72,7 +72,7 @@ export default class LocationLiveDisp extends React.Component {
                 <span>{content.Location}</span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button onClick={() => this.deleteUser(content._id,content.Username)}>DELETE</button></span>&emsp;
+                <span><button id="AccDeleteBttn" onClick={() => this.deleteUser(content._id,content.Username)}>DELETE</button></span>&emsp;
               </td> 
           </tr>
             )

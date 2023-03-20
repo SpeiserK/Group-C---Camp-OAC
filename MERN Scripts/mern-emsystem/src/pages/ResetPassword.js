@@ -13,7 +13,7 @@ function ResetPassword(){
             <Row>
             <Banner /> 
             </Row>
-            <Row>
+            <Row className="text-center">
 
             <PasswordChangeForm />
 

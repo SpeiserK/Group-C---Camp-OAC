@@ -166,16 +166,16 @@ export default class LocationLiveDisp extends React.Component {
                 </input></span>&emsp;
               </td>
               <td id="current-orderDate" className ="orderChild">
-                <span><button onClick={() => this.changeOpenStatus(index)}>
-                  {this.state.openStatus[index]? "OPEN": "CLOSED"}
+                <span><button id={this.state.openStatus[index]? "LocOpen" : "LocClosed"} onClick={() => this.changeOpenStatus(index)}>
+                  {this.state.openStatus[index]? "OPEN" : "CLOSED"}
                 </button></span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
+                <span><button className="updateLocButton" onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
                 {this.state.error[index]}
               </td>  
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button onClick={() => this.deleteLocation(content._id, content.Name)}> DELETE </button></span>&emsp;
+                <span><button id="LocDeleteBttn" onClick={() => this.deleteLocation(content._id, content.Name)}> DELETE </button></span>&emsp;
               </td>
           </tr>
             )

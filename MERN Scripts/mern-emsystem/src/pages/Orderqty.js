@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/esm/Container.js';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
+import Bundles2 from '../components/Bundles2.js';
 
 function Orderqty(){
 
@@ -40,7 +41,7 @@ function Orderqty(){
         </Col>
         <Col xl={3} lg={3} md={3} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
             <div className="bOrder2">
-                
+                <Bundles2 />
             </div>
         </Col>
         <Col className="whiteSideBar">
