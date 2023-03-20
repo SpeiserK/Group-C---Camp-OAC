@@ -17,14 +17,17 @@ import { useState } from "react";
 function Emp(){
 
     const empLocation = sessionStorage.getItem("selectedLocation");
-    const [query1, setQuery1] = useState("Approved");
+    
+    const [query1, setQuery1] = useState(sessionStorage.getItem("currentLiveQuery"));
   
     const handleApprovedClick = () => {
       setQuery1("Approved");
+      sessionStorage.setItem("currentLiveQuery", "Approved");
     };
   
     const handlePendingClick = () => {
       setQuery1("Pending");
+      sessionStorage.setItem("currentLiveQuery", "Pending");
     };
 
     return(
