@@ -171,7 +171,7 @@ export default class LocationLiveDisp extends React.Component {
                 </button></span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button id="LocUpdateBttn" onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
+                <span><button className="updateLocButton" onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
                 {this.state.error[index]}
               </td>  
               <td id="current-orderUpdate" className ="orderChild">

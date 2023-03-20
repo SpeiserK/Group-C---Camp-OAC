@@ -47,6 +47,7 @@ export default class LocationLiveDisp extends React.Component {
             else return "";
           })});
       })
+      window.location.reload();
     }
 
     //state change functions
@@ -78,12 +79,15 @@ export default class LocationLiveDisp extends React.Component {
       <table className="dblist">
         
         <tr id="listHeader" className="listHeader">
+          {/* 
           <td id="headerID"  className="listHeaderItem">
             <span> Location id </span>
           </td>
+          
           <td id="headerName"  className="listHeaderName">
             <span> Name </span>
           </td>
+          */}
           <td id="headerAddress" className="listHeaderAddress">
             <span> Address </span>
           </td>
@@ -95,7 +99,7 @@ export default class LocationLiveDisp extends React.Component {
             <span> Location Status </span>
           </td>
           <td id="headerUpdate" className="listHeaderUpdate">
-            <span> Location Status </span>
+            <span>  </span>
           </td>
         </tr> 
         
@@ -103,12 +107,7 @@ export default class LocationLiveDisp extends React.Component {
           this.state.location
             .map((content, index) =>
               <tr id="list-locationList" key={content._id} Name={`buttons-${index}`}>  
-              <td id="current-locationID" className ="orderChild">
-                <span>{content._id}</span>&emsp;
-              </td>         
-              <td id="current-locationName" className ="orderChild">
-                <span>{content.Name}</span>&emsp;
-              </td>
+
               <td id="current-orderAddress" className ="orderChild">
                 <span>{content.Address}</span>&emsp;
               </td>
@@ -122,7 +121,7 @@ export default class LocationLiveDisp extends React.Component {
                 </button></span>&emsp;
               </td>
               <td id="current-orderUpdate" className ="orderChild">
-                <span><button onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
+                <span><button className="updateLocButton" onClick={() => this.locUpdate(index, content._id)}> UPDATE </button></span>&emsp;
                 {this.state.error[index]}
                 
               </td>        
