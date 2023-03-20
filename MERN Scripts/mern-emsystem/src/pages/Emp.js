@@ -17,14 +17,14 @@ import { useState } from "react";
 function Emp(){
 
     const empLocation = sessionStorage.getItem("selectedLocation");
-    const [query1, setQuery1] = useState("Approved");
+    const [query1, setQuery1] = useState('Approved');
   
     const handleApprovedClick = () => {
-      setQuery1("Approved");
+      setQuery1('Approved');
     };
   
     const handlePendingClick = () => {
-      setQuery1("Pending");
+      setQuery1('Pending');
     };
 
     return(
@@ -44,7 +44,7 @@ function Emp(){
                 <Row>
                 <h1 className="robotoSlab" align="center">Live Orders For {empLocation}</h1>
                 <br></br>
-                
+
                 <LocationLiveDisp queryLoc={empLocation} />
                 </Row >
                 <Row align="center">
