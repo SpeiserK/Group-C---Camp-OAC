@@ -169,10 +169,10 @@ export default class OrderLiveDisp extends React.Component {
               <td id="current-approve-deny"className ="orderChild"> 
               
                 <OverlayTrigger trigger="click" placement="top" overlay={this.popOver(content, true)}>
-                  <button class='btn btn-success'>Approve</button>
+                  <button className='approveButton'>Approve</button>
                 </OverlayTrigger>
                 <OverlayTrigger trigger="click" placement="top" overlay={this.popOver(content, false)}>
-                  <button class='btn btn-danger'>Deny</button>
+                  <button className='denyButton'>Deny</button>
                 </OverlayTrigger>
               </td> ): (<></>)
           }
