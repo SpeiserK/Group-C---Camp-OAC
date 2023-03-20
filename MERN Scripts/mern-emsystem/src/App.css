@@ -169,18 +169,16 @@ background-color: #17458f;
 /*Bundle1 image on startpage, in Bundles1.js*/
 .bundles1 img {
   position: relative;
- 
+  width: 60%;
+  height: 60%;
 }
 /*Bundle2 image on order page, in Bundles2.js*/
 .bundles2 img {
   position: relative;
-  margin: auto;
   display: flex;
-  justify-content: center;
-  padding-top: 40px;
-  padding-left: 80px;
-  width: 500px;
-  height: 350px;
+  padding-left: 1em;
+  width: 100%;
+  height: 100%;
 }
 /*Woodimg image on startpage right div, in Woodimg.js*/
 .woodimg img {
