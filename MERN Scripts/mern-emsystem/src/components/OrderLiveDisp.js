@@ -4,7 +4,8 @@ import Popover from 'react-bootstrap/Popover';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import MSGForm from './msgForm/MSGForm';
 import Button from 'react-bootstrap/Button';
-
+import Row from 'react-bootstrap/esm/Row';
+import Table from 'react-bootstrap/Table';
 
 export default class OrderLiveDisp extends React.Component {
   constructor(props){
@@ -117,9 +118,10 @@ export default class OrderLiveDisp extends React.Component {
           <td id="headerQuantity" className="listHeaderItem">
             <span> Quantity </span>
           </td>
+          {/* 
           <td id="headerLocation" className="listHeaderItem">
             <span> Location </span>
-          </td>
+          </td>*/}
           <td id="headerDate" className="listHeaderItem">
             <span> Date </span>
           </td>
@@ -138,6 +140,7 @@ export default class OrderLiveDisp extends React.Component {
           }
         </tr> 
 
+          
         {
           this.state.orders
             .map((content, index) =>
@@ -147,25 +150,26 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content._id}</span>&emsp;
               </td>         
               <td id="current-orderEmail" className ="orderChild">
-                <span>{content.Name}<br></br>{content.phoneNumber}</span>&emsp;
+                <span>{content.Name}{/*<br></br>{/*content.phoneNumber*/}</span>&emsp;
               </td>
               <td id="current-orderQty" className ="orderChild">
                 <span>{content.Quantity}</span>&emsp;
               </td>
+              {/*
               <td id="current-orderLoc" className ="orderChild">
                 <span>{content.LocationId}<br></br>{content.Location}<br></br>Address: {content.LocationAddress}</span>&emsp;
-              </td>
+              </td>*/}
               <td id="current-orderDate" className ="orderChild">
-                <span>{content.Datetime}</span>&emsp;
+                <span>{new Date(content.Datetime).toLocaleString()}</span>&emsp;
               </td>
               <td id="current-orderPrice" className ="orderChild">
                 <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
               </td>
           { this.props.query1 === "Pending" ?(
               <td id="current-approve-deny"className ="orderChild"> 
-              <span>{content.Status}</span>&emsp;
+              
                 <OverlayTrigger trigger="click" placement="top" overlay={this.popOver(content, true)}>
-                  <button class='btn btn-primary'>Approve</button>
+                  <button class='btn btn-success'>Approve</button>
                 </OverlayTrigger>
                 <OverlayTrigger trigger="click" placement="top" overlay={this.popOver(content, false)}>
                   <button class='btn btn-danger'>Deny</button>
@@ -182,6 +186,7 @@ export default class OrderLiveDisp extends React.Component {
               
             )
         }
+       
       </table>
     )
 
