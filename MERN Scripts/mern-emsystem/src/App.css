@@ -839,7 +839,7 @@ display: flex;
   font-family: "RobotoSlab";
   font-size: 90%;
   height: 40px;
-  background-color: white;
+  background-color: lightgrey;
   border-radius: 1em;
   border-color: #2c4356;
   width: 80%;
@@ -874,7 +874,7 @@ font-family: "RobotoSlab";
   }
 
 #LocDeleteBttn, #AccDeleteBttn {
-  background-color:  rgb(209, 131, 103);
+  background-color:  lightgray;
   font-family: "RobotoSlab";
   font-size: 100%;
   height: 40px;
