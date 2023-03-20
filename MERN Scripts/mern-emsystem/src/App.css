@@ -369,6 +369,10 @@ background-color: #17458f;
   margin-bottom: 1em;
 }
 
+.orderFormWrapper p {
+  font-size: 16px;
+}
+
 
 /*Location drop down style*/
 .locationStyle {
