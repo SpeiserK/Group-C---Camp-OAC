@@ -7,6 +7,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 
 //const empLocation = sessionStorage.getItem('selectedLocation');
@@ -17,7 +18,10 @@ import { useState } from "react";
 
 function Emp(){
 
-    const empLocation = sessionStorage.getItem("selectedLocation");
+    var empLocation = sessionStorage.getItem("selectedLocation");
+    if(empLocation===null){
+        empLocation = "All";
+    }
     
 
     const [query1, setQuery1] = useState(sessionStorage.getItem("currentLiveQuery"));
@@ -48,6 +52,11 @@ function Emp(){
         window.location.reload();
     };
 
+    function handleReset() {
+        sessionStorage.removeItem("searchNum");
+        handleSubmit();
+    }
+
     const handlePhone = () => {
         sessionStorage.setItem("searchNum",document.getElementById("phoneNum").value);
     };
@@ -67,7 +76,7 @@ function Emp(){
             <Row style={{padding: 20}}>
                 <Col>
                 <Row>
-                <h1 className="robotoSlab" align="center">Live Orders For {empLocation} {phoneData}</h1>
+                <h1 className="robotoSlab" align="center">Live Orders For {empLocation}</h1>
                 <br></br>
 
                 <LocationLiveDisp queryLoc={empLocation} />
@@ -82,6 +91,13 @@ function Emp(){
                     <Col align="right">
                         <form onSubmit={(e) => handleSubmit()}> 
                             <Form.Control type="text" id="phoneNum" onChange={handlePhone} placeholder="Search by Phone #" className="liveorderPhone"/>
+                        {  phoneData !== "" ?(
+                            <div className="phoneSearchBox">
+                                <p className="robotoSlab">Searching for : {phoneData}</p>
+                                <Button type="button" variant="danger" size="sm" onClick={handleReset}>Clear</Button>
+                            </div>
+                            ): (<></>)
+                        }
                         </form>
                     </Col>
                 </Row>

@@ -1631,9 +1631,21 @@ Customer Order History table styling
   color: white;
   font-weight: bold;
 }
-
+/*Phone Number Input on live order page*/
 .liveorderPhone{
   width: 75%;
-  margin-top: 1em;
+  margin-top: 1.5em;
   margin-right: 3em;
+}
+.phoneSearchBox{
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  width: 100%;
+  margin-top: 0.5em;
+  padding-right: 3em;
+}
+.phoneSearchBox p{
+  margin-right:2em;
+  margin-top: 0.5em;
 }
