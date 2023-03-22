@@ -1632,3 +1632,8 @@ Customer Order History table styling
   font-weight: bold;
 }
 
+.liveorderPhone{
+  width: 75%;
+  margin-top: 1em;
+  margin-right: 3em;
+}

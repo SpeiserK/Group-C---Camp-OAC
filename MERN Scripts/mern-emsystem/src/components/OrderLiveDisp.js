@@ -22,7 +22,8 @@ export default class OrderLiveDisp extends React.Component {
       params: {
         Status: this.props.query1,
         Pickup: 'false', 
-        Location: this.props.queryLoc
+        Location: this.props.queryLoc,
+        phoneNum: this.props.queryPhone
       }
     })
       .then(res => {
