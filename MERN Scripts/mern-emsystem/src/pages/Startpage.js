@@ -8,7 +8,7 @@ import FireAnimation from "../components/FireAnimation";
 import FireAnimationRight from "../components/FireAnimationRight";
 import Button from 'react-bootstrap/Button';
 import Banner from "../components/Banner.js";
-import Collapse from "react-bootstrap/Collapse";
+
 
 function Startpage(){
     const gotoOrder = useNavigate();

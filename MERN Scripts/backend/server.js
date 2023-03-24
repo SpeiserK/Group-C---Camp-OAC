@@ -83,7 +83,6 @@ app.get("/mongo", (req, res)=> {
 
 app.get("/order", (req, res)=> {
     var query = {Status: req.query.Status, Pickup: req.query.Pickup};
-    console.log(req.query.Location);
     if(req.query.Location!="All" && req.query.Location!=null){
         var locQ = {Location: req.query.Location};
         query = Object.assign({},query,locQ);
