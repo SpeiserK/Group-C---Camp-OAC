@@ -251,7 +251,7 @@ app.post("/deleteLocation", (req, res) => {
 });
 
 //status change post request
-app.post("/statuschange", (req, res) => {
+app.post("/statuschange", async (req, res) => {
     const idS = req.body.id;
     const status = req.body.status;
     const pickup = req.body.pickup;
@@ -260,6 +260,7 @@ app.post("/statuschange", (req, res) => {
     const date = req.body.date;
     const price = req.body.price;
     const email = req.body.email;
+    const locationId = req.body.locationId;
 
     if (!idS||!status || !pickup){
         return res.status(422).json({error:"Missing Fields"})
@@ -268,6 +269,17 @@ app.post("/statuschange", (req, res) => {
     Models.Order.findByIdAndUpdate(idS, {Status: status, Pickup: pickup}, (err, doc) => {
         if(err) return console.log(err);
     });
+
+    const loc1 = Models.Location.findById(locationId);
+    console.log(loc1);
+    
+    const loc = await Models.Location.findById(locationId);
+    console.log(loc);
+    if (status === "Denied") {
+        Models.Location.findByIdAndUpdate(locationId, {Stock: loc.Stock + quantity}, (err, doc) => {
+            if (err) console.log(err);
+        });
+    }
 
     //email strings, to be used as email inputs
     let emailSub = "";

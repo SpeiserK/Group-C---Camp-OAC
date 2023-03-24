@@ -65,12 +65,14 @@ export default class OrderLiveDisp extends React.Component {
   }
 
   //decline order post
-  decline(id) {
+  decline(id, LocationId, quantity) {
 
     axios.post('http://localhost:5001/statuschange', {
       id: id,
       status: "Denied",
-      pickup: 'false'
+      pickup: 'false',
+      locationId: LocationId,
+      quantity: quantity
     })
     .then( response => {
       window.location.reload();
@@ -94,7 +96,7 @@ export default class OrderLiveDisp extends React.Component {
       <strong>{approve ? "Approve Order" : "Deny Order" }</strong><br/>Please check the message before Sending
       <MSGForm userData={data} approve={approve}/>
 
-      <button onClick={() => {approve ? this.approve(data._id,data.Quantity,data.Location,data.Price,data.Name) : this.decline(data._id)}}>
+      <button onClick={() => {approve ? this.approve(data._id,data.Quantity,data.Location,data.Price,data.Name) : this.decline(data._id, data.LocationId, data.Quantity)}}>
         {approve ? "Approve (update DB)": "Deny (update DB)" }
       </button>
       

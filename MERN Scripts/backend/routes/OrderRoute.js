@@ -103,7 +103,11 @@ router.route("/send").post(async (req, res) => {
     })
     .catch(err => {
         console.log(err);
-    }) 
+    });
+
+    Models.Location.findByIdAndUpdate(LocationId, {Stock: loc.Stock - Quantity}, (err, doc) => {
+        if (err) console.log(err);
+    });
 
 });
 
