@@ -151,7 +151,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content._id}</span>&emsp;
               </td>         
               <td id="current-orderEmail" className ="orderChild">
-                <span>{content.Name}{/*<br></br>{/*content.phoneNumber*/}</span>&emsp;
+                <span>{content.Name}<br></br>{content.phoneNumber}</span>&emsp;
               </td>
               <td id="current-orderQty" className ="orderChild">
                 <span>{content.Quantity}</span>&emsp;

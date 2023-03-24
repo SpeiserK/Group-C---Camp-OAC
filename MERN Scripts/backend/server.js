@@ -93,14 +93,6 @@ app.get("/order", (req, res)=> {
         query = Object.assign({},query,phoneQ);
     }
 
-    /*
-    if(req.query.Location=="All"){
-       query = {$and: [{Status: req.query.Status, Pickup: req.query.Pickup}]};
-    }else{
-        query = req.query;
-    }
-    */
-
     Models.Order.find(query)
     .then((data) => {
         console.log( 'Order read data available');
