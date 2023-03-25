@@ -82,12 +82,16 @@ app.get("/mongo", (req, res)=> {
 
 
 app.get("/order", (req, res)=> {
-    var query;
-    if(req.query.Location=="All"){
-       query = {$and: [{Status: req.query.Status, Pickup: req.query.Pickup}]};
-    }else{
-        query = req.query;
+    var query = {Status: req.query.Status, Pickup: req.query.Pickup};
+    if(req.query.Location!="All" && req.query.Location!=null){
+        var locQ = {Location: req.query.Location};
+        query = Object.assign({},query,locQ);
     }
+    if(req.query.phoneNum!=""){
+        var phoneQ = {phoneNumber: req.query.phoneNum};
+        query = Object.assign({},query,phoneQ);
+    }
+
     Models.Order.find(query)
     .then((data) => {
         console.log( 'Order read data available');

@@ -184,7 +184,7 @@ const PlaceOrder = () => {
                 />
                 <p id="uidnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"} >
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    Please enter a valid email.
+                    &nbsp;Please enter a valid email.
                 </p>
                 <br />
                 <Row>
@@ -212,7 +212,7 @@ const PlaceOrder = () => {
                 />
                 <p id="emailNote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    Must match the first email input field.<br />
+                    &nbsp;Must match the first email input field.<br />
                 </p>
                 <br></br>
                 <div className="phone-number">
@@ -234,7 +234,7 @@ const PlaceOrder = () => {
                     />
                     <p id="phoneNote" className={phoneFocus && phoneNumber && !validPhone ? "instructions" : "offscreen"} >
                     <FontAwesomeIcon icon={faInfoCircle} />
-                        Invalid phone number
+                    &nbsp;Invalid phone number
                     </p>
                 </div>
                 </Row>
@@ -259,7 +259,7 @@ const PlaceOrder = () => {
                     />
                     <p id="uidnote" className={orderValue && !validValue ? "instructions" : "offscreen"}>
                         <FontAwesomeIcon icon={faInfoCircle} />
-                        *Order size must be between 1-20*
+                        &nbsp;Order size must be between 1-20
                     </p> 
 
                 </Col>

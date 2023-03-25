@@ -22,7 +22,8 @@ export default class OrderLiveDisp extends React.Component {
       params: {
         Status: this.props.query1,
         Pickup: 'false', 
-        Location: this.props.queryLoc
+        Location: this.props.queryLoc,
+        phoneNum: this.props.queryPhone
       }
     })
       .then(res => {
@@ -152,7 +153,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content._id}</span>&emsp;
               </td>         
               <td id="current-orderEmail" className ="orderChild">
-                <span>{content.Name}{/*<br></br>{/*content.phoneNumber*/}</span>&emsp;
+                <span>{content.Name}<br></br>{content.phoneNumber}</span>&emsp;
               </td>
               <td id="current-orderQty" className ="orderChild">
                 <span>{content.Quantity}</span>&emsp;
