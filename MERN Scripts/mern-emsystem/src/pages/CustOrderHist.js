@@ -109,9 +109,12 @@ const handleSort = (e) => {
                     <Row>
                       <Col>
                       <Collapse in={open} onEnter={handleClick}>
-                        <div id="collapse-table">
+                      {  data !== "" && data!==null ?(
+                         <div id="collapse-table">
                             <CustomerHistory query1={data} query2={sort}/>
-                        </div>
+                         </div>
+                            ): (<></>)
+                        }
                       </Collapse>
 
                       </Col>

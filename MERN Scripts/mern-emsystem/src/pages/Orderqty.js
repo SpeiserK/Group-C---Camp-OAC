@@ -40,8 +40,8 @@ function Orderqty(){
             </div>
         </Col>
         <Col xl={3} lg={3} md={3} sm={12} xs={12} style={{ paddingLeft: 0, paddingRight: 0 }}>
-            <div className="bOrder2">
-                <Bundles2 />
+            <div className="bOrder2">      
+                <Bundles2 />    
             </div>
         </Col>
         <Col className="whiteSideBar">

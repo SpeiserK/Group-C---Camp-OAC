@@ -1,6 +1,5 @@
 import { useNavigate } from "react-router-dom";
 import React from 'react'
-
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -8,7 +7,7 @@ import FireAnimation from "../components/FireAnimation";
 import FireAnimationRight from "../components/FireAnimationRight";
 import Button from 'react-bootstrap/Button';
 import Banner from "../components/Banner.js";
-import Collapse from "react-bootstrap/Collapse";
+
 
 function Startpage(){
     const gotoOrder = useNavigate();
@@ -50,7 +49,7 @@ function Startpage(){
                 </Col>   
                 <Col lg={4} md={3} sm={12} xs={12}>
                     <div className="bSide">
-                        {/*<Row><div className="bSidebar1"></div></Row>*/}
+                        <Row><div className="bSidebar1"></div></Row>
                         <Row><div className="bSidebar2"></div></Row>
                         <Row><div className="bSidebar3"></div></Row>
                     </div>

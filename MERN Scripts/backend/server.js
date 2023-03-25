@@ -82,12 +82,16 @@ app.get("/mongo", (req, res)=> {
 
 
 app.get("/order", (req, res)=> {
-    var query;
-    if(req.query.Location=="All"){
-       query = {$and: [{Status: req.query.Status, Pickup: req.query.Pickup}]};
-    }else{
-        query = req.query;
+    var query = {Status: req.query.Status, Pickup: req.query.Pickup};
+    if(req.query.Location!="All" && req.query.Location!=null){
+        var locQ = {Location: req.query.Location};
+        query = Object.assign({},query,locQ);
     }
+    if(req.query.phoneNum!=""){
+        var phoneQ = {phoneNumber: req.query.phoneNum};
+        query = Object.assign({},query,phoneQ);
+    }
+
     Models.Order.find(query)
     .then((data) => {
         console.log( 'Order read data available');
@@ -251,7 +255,7 @@ app.post("/deleteLocation", (req, res) => {
 });
 
 //status change post request
-app.post("/statuschange", (req, res) => {
+app.post("/statuschange", async (req, res) => {
     const idS = req.body.id;
     const status = req.body.status;
     const pickup = req.body.pickup;
@@ -260,6 +264,7 @@ app.post("/statuschange", (req, res) => {
     const date = req.body.date;
     const price = req.body.price;
     const email = req.body.email;
+    const locationId = req.body.locationId;
 
     if (!idS||!status || !pickup){
         return res.status(422).json({error:"Missing Fields"})
@@ -268,6 +273,17 @@ app.post("/statuschange", (req, res) => {
     Models.Order.findByIdAndUpdate(idS, {Status: status, Pickup: pickup}, (err, doc) => {
         if(err) return console.log(err);
     });
+
+    const loc1 = Models.Location.findById(locationId);
+    console.log(loc1);
+    
+    const loc = await Models.Location.findById(locationId);
+    console.log(loc);
+    if (status === "Denied") {
+        Models.Location.findByIdAndUpdate(locationId, {Stock: loc.Stock + quantity}, (err, doc) => {
+            if (err) console.log(err);
+        });
+    }
 
     //email strings, to be used as email inputs
     let emailSub = "";

@@ -85,7 +85,7 @@ const PlaceOrder = () => {
     const [validEmail, setValidEmail] = useState(false);
     const [emailFocus, setEmailFocus] = useState(false);
         //confirm email input
-    const [matchEmail, setMatchEmail] = useState(' ');
+    const [matchEmail, setMatchEmail] = useState('');
     const [validMatch, setValidMatch] = useState(false);
     const [matchFocus, setMatchFocus] = useState(false);
         // error const
@@ -173,7 +173,7 @@ const PlaceOrder = () => {
                     type="text"
                     id="email"
                     class="required"
-                    className="textboxStyle"
+                    className={email && !validEmail ? "textboxStyleError" : "textboxStyle"}
                     ref={userRef}
                     autoComplete="off"
                     onInput={(e) => setEmail(e.target.value)}
@@ -184,7 +184,7 @@ const PlaceOrder = () => {
                 />
                 <p id="uidnote" className={emailFocus && email && !validEmail ? "instructions" : "offscreen"} >
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    Please enter a valid email.
+                    &nbsp;Please enter a valid email.
                 </p>
                 <br />
                 <Row>
@@ -192,9 +192,6 @@ const PlaceOrder = () => {
                     <label htmlFor="confirmEmail">Confirm Email: </label>
                     <span className={validMatch && matchEmail ? "valid" : "offscreen"}>
                         <FontAwesomeIcon icon={faCheck} />
-                    </span>
-                    <span className={validMatch || !matchEmail || !email ? "offscreen" : "invalid"}>
-                        <FontAwesomeIcon icon={faTimes} />
                     </span>
                     </Col>
                 </Row>
@@ -204,7 +201,7 @@ const PlaceOrder = () => {
                     type="text"
                     id="confirmEmail"
                     class="required"
-                    className="textboxStyle"
+                    className={matchEmail && !validMatch ? "textboxStyleError" : "textboxStyle"}
                     autoComplete="off"
                     onInput={(e) => setMatchEmail(e.target.value)}
                     required
@@ -215,7 +212,7 @@ const PlaceOrder = () => {
                 />
                 <p id="emailNote" className={matchFocus && !validMatch ? "instructions" : "offscreen"}>
                     <FontAwesomeIcon icon={faInfoCircle} />
-                    Must match the first email input field.<br />
+                    &nbsp;Must match the first email input field.<br />
                 </p>
                 <br></br>
                 <div className="phone-number">
@@ -225,7 +222,7 @@ const PlaceOrder = () => {
                         type="text"
                         id="phoneNumber"
                         class="required"
-                        className="textboxStyleP"
+                        className={phoneNumber && !validPhone ? "textboxStylePError" : "textboxStyleP"}
                         ref={userRef}
                         required
                         autoComplete="off"
@@ -237,7 +234,7 @@ const PlaceOrder = () => {
                     />
                     <p id="phoneNote" className={phoneFocus && phoneNumber && !validPhone ? "instructions" : "offscreen"} >
                     <FontAwesomeIcon icon={faInfoCircle} />
-                        Invalid phone number
+                    &nbsp;Invalid phone number
                     </p>
                 </div>
                 </Row>
@@ -251,7 +248,7 @@ const PlaceOrder = () => {
                         type="number"
                         id="quantity"
                         class="required"
-                        className="locationStyle"
+                        className={orderValue && !validValue ? "locationStyleError" : "locationStyle"}
                         placeholder="1-20"
                         ref={userRef}
                         min="1"
@@ -260,9 +257,9 @@ const PlaceOrder = () => {
                         onChange={e => setOrderValue(e.target.value)}
                         aria-describedby="uidnote"
                     />
-                    <p id="uidnote" className={!validValue ? "instructions" : "offscreen"}>
+                    <p id="uidnote" className={orderValue && !validValue ? "instructions" : "offscreen"}>
                         <FontAwesomeIcon icon={faInfoCircle} />
-                        *Order size must be between 1-20*
+                        &nbsp;Order size must be between 1-20
                     </p> 
 
                 </Col>

@@ -22,7 +22,8 @@ export default class OrderLiveDisp extends React.Component {
       params: {
         Status: this.props.query1,
         Pickup: 'false', 
-        Location: this.props.queryLoc
+        Location: this.props.queryLoc,
+        phoneNum: this.props.queryPhone
       }
     })
       .then(res => {
@@ -65,12 +66,14 @@ export default class OrderLiveDisp extends React.Component {
   }
 
   //decline order post
-  decline(id) {
+  decline(id, LocationId, quantity) {
 
     axios.post('http://localhost:5001/statuschange', {
       id: id,
       status: "Denied",
-      pickup: 'false'
+      pickup: 'false',
+      locationId: LocationId,
+      quantity: quantity
     })
     .then( response => {
       window.location.reload();
@@ -94,7 +97,7 @@ export default class OrderLiveDisp extends React.Component {
       <strong>{approve ? "Approve Order" : "Deny Order" }</strong><br/>Please check the message before Sending
       <MSGForm userData={data} approve={approve}/>
 
-      <button onClick={() => {approve ? this.approve(data._id,data.Quantity,data.Location,data.Price,data.Name) : this.decline(data._id)}}>
+      <button onClick={() => {approve ? this.approve(data._id,data.Quantity,data.Location,data.Price,data.Name) : this.decline(data._id, data.LocationId, data.Quantity)}}>
         {approve ? "Approve (update DB)": "Deny (update DB)" }
       </button>
       
@@ -150,7 +153,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content._id}</span>&emsp;
               </td>         
               <td id="current-orderEmail" className ="orderChild">
-                <span>{content.Name}{/*<br></br>{/*content.phoneNumber*/}</span>&emsp;
+                <span>{content.Name}<br></br>{content.phoneNumber}</span>&emsp;
               </td>
               <td id="current-orderQty" className ="orderChild">
                 <span>{content.Quantity}</span>&emsp;
