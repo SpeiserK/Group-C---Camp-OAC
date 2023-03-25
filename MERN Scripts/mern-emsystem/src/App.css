@@ -345,6 +345,17 @@ background-color: #17458f;
   outline: none;
 }
 
+.textboxStyleError{
+  width: 70%;
+  padding: 8px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #17458f;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0.25px 0.25px 2px 2px #ff6666;
+}
+
 /*Textbox styling for phone number input*/
 .textboxStyleP{
   width: 50%;
@@ -354,6 +365,17 @@ background-color: #17458f;
   border: 2px solid #17458f;
   border-radius: 4px;
   outline: none;
+}
+
+.textboxStylePError {
+  width: 50%;
+  padding: 8px 20px;
+  margin: 8px 0px;
+  box-sizing: border-box;
+  border: 2px solid #17458f;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0.25px 0.25px 2px 2px #ff6666;
 }
 /***Phone Number Box***/
 .phone-number {
@@ -373,7 +395,6 @@ background-color: #17458f;
   font-size: 16px;
 }
 
-
 /*Location drop down style*/
 .locationStyle {
   width: 45%;
@@ -382,6 +403,15 @@ background-color: #17458f;
   border: 2px solid #17458f;
   border-radius: 4px;
   outline: none;
+}
+.locationStyleError {
+  width: 45%;
+  padding: 16x 20px;
+  margin: 8px 0;
+  border: 2px solid #17458f;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 0.25px 0.25px 2px 2px #ff6666;
 }
 .locationLabel {
   color: #17458f;
