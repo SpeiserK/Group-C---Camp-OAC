@@ -34,6 +34,14 @@ async function getRandomLocation(query) {
    return randomItem;
 }
 
+function formatPhoneNumber(phoneNum) {
+    phoneNum = phoneNum.replaceAll("-", "");
+    phoneNum = phoneNum.replaceAll("(", "");
+    phoneNum = phoneNum.replaceAll(")", "");
+    phoneNum = phoneNum.replaceAll(" ", "");
+    return phoneNum;
+}
+
 router.route("/send").post(async (req, res) => {
     //select address for order
     const loc = await getRandomLocation({Name: req.body.Location});
@@ -44,7 +52,9 @@ router.route("/send").post(async (req, res) => {
     const LocationId = loc._id;
     const LocationAddress = loc.Address;
     const Quantity = Number(req.body.Quantity);
-    const phoneNumber = req.body.phoneNumber;
+    var phoneNumber = req.body.phoneNumber;
+    phoneNumber = formatPhoneNumber(phoneNumber);
+
     var Datetime = new Date();
     const Price = Quantity * 9.99;
     Payment = req.body.Payment;
