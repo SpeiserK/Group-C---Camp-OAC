@@ -13,7 +13,7 @@ function SuperAdmin(){
     return(
 
         <Container fluid className="bEmp">
-            <Row style={{padding: 0}}>
+            <Row style={{padding: 0, margin: 0}}>
                 <Col style={{padding: 0}} >
                     <Empbanner />
                 </Col>
@@ -21,7 +21,7 @@ function SuperAdmin(){
             <Row>
                 {/*Search Component or something*/}
             </Row>
-            <Row style={{padding: 30}}>
+            <Row style={{padding: 0, margin: 0}}>
                 <Row className="adminPanel">
                 <h2 className="robotoSlab"> Rotarian Volunteer List</h2>
                         <Col>
