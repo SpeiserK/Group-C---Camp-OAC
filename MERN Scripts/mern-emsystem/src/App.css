@@ -1353,20 +1353,14 @@ New CSS using bootstrap
   max-width: 75;
 }
 
-/*Footer used in startpage
-display: flex;
-  flex-direction: row;
-  align-items: center;
-*/
+/*Footer used in startpage*/
 .bFooter{
   background-color: #f4f3ef;
   
   padding: 1em 1em 0.5em 2.5em;
   color: black;
 }
-/*display: flex;
-  flex-direction: row;
-  vertical-align: top;*/
+/*Used in footer*/
 .bFooterBlock{
   background-color: #f4f3ef;
   color: black;

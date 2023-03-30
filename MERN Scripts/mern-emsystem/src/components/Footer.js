@@ -16,34 +16,29 @@ export default class Footer extends Component {
                     </div>  
                 </Row>
                 <Row>
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} style={{margin: 0, padding: 0}}>
+                        <div className="bFooterBlock">
+                            <p className="bFooterText">Email </p><p className="robotoSlab"> example@example.com</p>
+                        </div>
+                    </Col>
                 
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} style={{margin: 0, padding: 0}}>
+                        <div className="bFooterBlock">
+                            <p className="bFooterText">Phone </p><p className="robotoSlab"> (XXX)-XXX-XXXX</p>
+                        </div>
+                    </Col>
                 
-                <Col xs={12} sm={12} md={3} lg={3} xl={3} style={{margin: 0, padding: 0}}>
-                <div className="bFooterBlock">
-                <p className="bFooterText">Email </p><p className="robotoSlab"> example@example.com</p>
-                </div>
-                </Col>
-               
-                <Col xs={12} sm={12} md={3} lg={3} xl={3} style={{margin: 0, padding: 0}}>
-                <div className="bFooterBlock">
-                <p className="bFooterText">Phone </p><p className="robotoSlab"> (XXX)-XXX-XXXX</p>
-                </div>
-                </Col>
-             
-                <Col xs={12} sm={12} md={3} lg={3} xl={3} style={{margin: 0, padding: 0}}>
-                <div className="bFooterBlock">
-                <p className="bFooterText">Fax </p><p className="robotoSlab"> (XXX)-XXX-XXXX</p>
-                </div>
-                </Col>
-                
-                <Col xs={12} sm={12} md={3} lg={3} xl={3} style={{margin: 0, padding: 0}}>
-                <div className="bFooterBlock">
-                <p className="bFooterText">Address </p><p className="robotoSlab"> 123 Example Road</p>
-                </div>
-                </Col>
-                
-
-                
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} style={{margin: 0, padding: 0}}>
+                        <div className="bFooterBlock">
+                            <p className="bFooterText">Fax </p><p className="robotoSlab"> (XXX)-XXX-XXXX</p>
+                        </div>
+                    </Col>
+                    
+                    <Col xs={12} sm={12} md={3} lg={3} xl={3} style={{margin: 0, padding: 0}}>
+                        <div className="bFooterBlock">
+                            <p className="bFooterText">Address </p><p className="robotoSlab"> 123 Example Road</p>
+                        </div>
+                    </Col>
                 </Row>
             </Container>
         );            
