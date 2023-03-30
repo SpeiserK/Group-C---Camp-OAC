@@ -1376,6 +1376,7 @@ display: flex;
 .bFooterText{
   font-family: "RobotoSlab";
   color: #2c4356;
+  margin-bottom: 0;
 }
 
 /*Main White block on user side pages*/
