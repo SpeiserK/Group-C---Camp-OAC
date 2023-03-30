@@ -56,8 +56,8 @@ function Startpage(){
                     </div>
                 </Col>
             </Row>
-            <Row style={{marginLeft: 1, marginRight: 15}}>
-                
+            <Row style={{marginLeft: 10, marginRight: 25, marginBottom: 20}}>
+                <Footer />
             </Row>
         </Container>
     </div>
