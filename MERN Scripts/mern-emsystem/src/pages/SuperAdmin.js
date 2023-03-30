@@ -21,7 +21,7 @@ function SuperAdmin(){
             <Row>
                 {/*Search Component or something*/}
             </Row>
-            <Row style={{padding: 0, margin: 0}}>
+            <Row style={{paddingTop: 20, margin: 0}}>
                 <Row className="adminPanel">
                 <h2 className="robotoSlab"> Rotarian Volunteer List</h2>
                         <Col>

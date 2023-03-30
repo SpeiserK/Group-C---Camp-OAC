@@ -7,6 +7,7 @@ import FireAnimation from "../components/FireAnimation";
 import FireAnimationRight from "../components/FireAnimationRight";
 import Button from 'react-bootstrap/Button';
 import Banner from "../components/Banner.js";
+import Footer from "../components/Footer.js";
 
 
 function Startpage(){
@@ -54,6 +55,9 @@ function Startpage(){
                         <Row><div className="bSidebar3"></div></Row>
                     </div>
                 </Col>
+            </Row>
+            <Row style={{marginLeft: 1, marginRight: 15}}>
+                
             </Row>
         </Container>
     </div>
