@@ -27,9 +27,9 @@ function Startpage(){
                     <div className="bMain">
                         <h1 className="robotoSlab">Welcome</h1>
                             <br></br>
-                            <p className="robotoSlab">This website is designed to act as a firewood purchasing portal for Camp OAC in coordination with Kelowna Rotary Ogopogo, all proceeds go to Camp OAC.
+                            <p className="robotoSlab">The Rotary Club of Kelowna Ogopogo has partnered with Camp OAC to sell firewood.  100% of the proceeds from your purchase is split 50/50 between the two organizations.  To learn more about the organizations click the about button above.
                             </p><br></br>
-                            <p className="robotoSlab">To get started, use the Order button below!</p>
+                            <p className="robotoSlab">To order your firewood, use the order button below.</p>
                     </div>
                     <div className="bMainFill">
 
