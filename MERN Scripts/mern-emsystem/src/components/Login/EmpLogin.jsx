@@ -32,7 +32,7 @@ const EmpLogin = () => {
 
     }
     return (
-        <div className="empLoginDiv ">
+        <div className="empLoginDiv">
                 <form onSubmit={handleSubmit}>
                         <h1>Rotarian Volunteer Login</h1>
                         <input

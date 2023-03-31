@@ -75,8 +75,8 @@ app.get("/mongo", (req, res)=> {
         console.log( 'Employee read data available');
         res.json(data);
     })
-    .catch(() => {
-        console.log( 'error: ', daerrorta);
+    .catch((err) => {
+        console.log( 'error: ', err);
     })
 });
 
@@ -97,8 +97,8 @@ app.get("/order", (req, res)=> {
         console.log( 'Order read data available');
         res.json(data);
     })
-    .catch(() => {
-        console.log( 'error: ', daerrorta);
+    .catch((err) => {
+        console.log( 'error: ', err);
     })
 });
 /*Order history sorting test */
@@ -133,25 +133,31 @@ app.get("/orderHist", (req, res)=> {
         console.log( 'Order read data available');
         res.json(data);
     })
-    .catch(() => {
-        console.log( 'error: ', daerrorta);
+    .catch((err) => {
+        console.log( 'error: ', err);
     })
 });
 
-app.get("/location", (req, res)=> {
+app.get("/location", async (req, res)=> {
     var query = {};
     if(req.query.Name!=="All"){
         query = req.query;
     }
+
+    //if distinct locations are required
+    if (req.query.distinct === "true") {
+        const dLocations = await Models.Location.distinct("Name", {});
+        res.json(dLocations);
+    }
     
     Models.Location.find(query)
     .then((data) => {
-        console.log( 'Location read data available');
+        //console.log('Location read data available');
         res.json(data);
     })
-    .catch(() => {
-        console.log( 'error: ', daerrorta);
-    })
+    .catch((err) => {
+        console.log( 'error: ', err);
+    });
 });
 
 app.get("/employee", (req, res)=> {
@@ -160,8 +166,8 @@ app.get("/employee", (req, res)=> {
         //console.log( 'Employee read data available');
         res.json(data);
     })
-    .catch(() => {
-        console.log( 'error: ', daerrorta);
+    .catch((err) => {
+        console.log( 'error: ', err);
     })
 });
 
@@ -171,8 +177,8 @@ app.get("/orderCust", (req, res)=> {
         console.log( 'Order read data available');
         res.json(data);
     })
-    .catch(() => {
-        console.log( 'error: ', daerrorta);
+    .catch((err) => {
+        console.log( 'error: ', err);
     })
 });
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -244,13 +250,10 @@ app.post("/newLocation", (req, res) => {
 
 app.post("/deleteLocation", (req, res) => {
     const id = req.body.id;
-    //console.log(id);
     if (!id){
         return res.status(422).json({error: "Missing Fields"})
     }res.json("Posted successfully");
-    //console.log("test2");
     Models.Location.findByIdAndDelete({ _id: id}).exec();
-    //console.log("test3");
     
 });
 
@@ -275,10 +278,8 @@ app.post("/statuschange", async (req, res) => {
     });
 
     const loc1 = Models.Location.findById(locationId);
-    console.log(loc1);
     
     const loc = await Models.Location.findById(locationId);
-    console.log(loc);
     if (status === "Denied") {
         Models.Location.findByIdAndUpdate(locationId, {Stock: loc.Stock + quantity}, (err, doc) => {
             if (err) console.log(err);
@@ -333,7 +334,7 @@ app.post("/statuschange", async (req, res) => {
         
         transporter.sendMail(mailOptions, function (err, data) {
             if(err){
-                console.log("Error"+err);
+                //console.log("Error"+err);
             } else{
                 console.log("Email sent successfully");
             }
@@ -342,14 +343,10 @@ app.post("/statuschange", async (req, res) => {
 
 app.post("/deleteuser", (req, res) => {
     const id = req.body.id;
-    console.log(id);
     if (!id){
         return res.status(422).json({error: "Missing Fields"})
     }res.json("Posted successfully");
-    console.log("test2");
-    Models.Employee.findByIdAndDelete({ _id: id}).exec();
-    console.log("test3");
-    
+    Models.Employee.findByIdAndDelete({ _id: id}).exec();    
 });
 
 app.post('/api/messages', (req, res) => {
@@ -364,7 +361,7 @@ app.post('/api/messages', (req, res) => {
       res.send(JSON.stringify({ success: true }));
     })
     .catch(err => {
-      console.log(err);
+      //console.log(err);
       res.send(JSON.stringify({ success: false }));
     });
   
@@ -381,7 +378,7 @@ app.post('/api/email', (req, res) => {
         .send(msg)
         .then(() => {
           console.log('Email sent');
-          console.log(msg);
+          //console.log(msg);
         })
         .catch((error) => {
           console.error("THERE WAS AN ERROR" + error)
