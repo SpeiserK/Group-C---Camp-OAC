@@ -13,7 +13,7 @@ export default class Empbanner extends Component {
        
 
         return(
-                <Row align="center">
+                <Row align="center" style={{margin: 0}}>
                 <header className="empBanner">
                     <Col md>
 

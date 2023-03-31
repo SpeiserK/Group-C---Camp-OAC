@@ -67,19 +67,18 @@ function Emp(){
 
     return(
         <Container fluid className="bEmp">
-            <Row style={{padding: 0}}>
+            <Row style={{padding: 0, margin: 0}}>
                 <Col style={{padding: 0}} >
                     <Empbanner />
                 </Col>
             </Row>
-            <Row>
-                <Col>
-
+            <Row style={{paddingRight: 0, marginRight: 0}}>
+                <Col style={{margin: 0, padding: 0}}>
                 <Empnav />
 
                 </Col>
             </Row>
-            <Row style={{padding: 20}}>
+            <Row style={{padding: 20, margin: 0}}>
                 <Col>
                 <Row>
                 <h1 className="robotoSlab" align="center">Live Orders For {empLocation}</h1>
@@ -87,7 +86,7 @@ function Emp(){
 
                 <LocationLiveDisp queryLoc={empLocation} />
                 </Row >
-                <Row>
+                <Row style={{margin: 0}}>
                     <Col align="center">
                         <div className='liveOrderButtons'>
                             <button className={`viewOrders ${query1 === 'Approved' ? 'selected' : ''}`} onClick={handleApprovedClick}>Orders that need pickup</button>
@@ -107,7 +106,7 @@ function Emp(){
                         </form>
                     </Col>
                 </Row>
-                <Row>
+                <Row style={{margin: 0}}>
                     <Col style={{ padding: 10, marginTop: 10 }}>
                         
                      <OrderLiveDisp query1={query1} queryLoc={empLocation} queryPhone={phoneData} />
