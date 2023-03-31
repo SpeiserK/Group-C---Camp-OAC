@@ -87,17 +87,17 @@ function handleSubmit() {
 
     return(
         <Container fluid className="bEmp">
-            <Row style={{padding: 0}}>
+            <Row style={{padding: 0, margin: 0}}>
                 <Col style={{padding: 0}} >
                     <Empbanner />
                 </Col>
             </Row>
-            <Row align="center" style={{paddingTop: 10}}>
+            <Row align="center" style={{paddingTop: 10, margin: 0}}>
                 <h2 className="robotoSlab">Order History</h2>
                  {/*Search Component or something here*/}
             </Row>
             <form onSubmit={(e) => handleSubmit()}> 
-            <Row>
+            <Row style={{margin: 0}}>
                 <Col>
                 </Col>
                 <Col align="right">
@@ -113,7 +113,7 @@ function handleSubmit() {
                     <Button type="button" variant="danger" onClick={handleReset}>Clear</Button>
                 </Col>
             </Row>
-            <Row style={{paddingTop: 20,paddingRight: 40}}>
+            <Row style={{paddingTop: 20,paddingRight: 40, margin: 0}}>
                 <Col xl={{span:6,offset:0}} style={{paddingLeft: 40}}>
                 { phoneData !== "" && emailData === "" ?(
                     <h4 className="robotoSlab">Showing Results for Phone #:&emsp;{phoneData}</h4>
@@ -160,8 +160,8 @@ function handleSubmit() {
                 </Col>  
             </Row>
             </form>
-            <Row style={{padding: 30}}>
-                <Col>
+            <Row style={{padding: 30, margin: 0}}>
+                <Col style={{margin: 0}}>
                 <OrderDispHist phonNum={phoneData} email={emailData} queryDate={dateData} queryLoc={locData} queryStat={statusData}/>
                 </Col>
             </Row>

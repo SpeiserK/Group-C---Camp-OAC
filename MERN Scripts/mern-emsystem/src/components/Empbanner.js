@@ -8,7 +8,7 @@ export default class Empbanner extends Component {
     render(){
 
         return(
-                <Row align="center">
+                <Row align="center" style={{margin: 0}}>
                 <header className="empBanner">
                     <Col md>
                     <Link to="/login/emp" style={{textDecoration: 'none' }}>

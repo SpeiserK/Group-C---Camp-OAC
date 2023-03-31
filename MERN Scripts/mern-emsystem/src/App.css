@@ -1353,6 +1353,26 @@ New CSS using bootstrap
   max-width: 75;
 }
 
+/*Footer used in startpage*/
+.bFooter{
+  background-color: #f4f3ef;
+  
+  padding: 1em 1em 0.5em 2.5em;
+  color: black;
+}
+/*Used in footer*/
+.bFooterBlock{
+  background-color: #f4f3ef;
+  color: black;
+  padding: 0em 0em 0.5em 1em;
+}
+
+.bFooterText{
+  font-family: "RobotoSlab";
+  color: #2c4356;
+  margin-bottom: 0;
+}
+
 /*Main White block on user side pages*/
 /*in use on start page*/
 
@@ -1629,6 +1649,7 @@ Customer Order History table styling
 
 .bEmp{
   padding: 0;
+  margin:0;
   background-color: #f4f3ef;
 }
 
