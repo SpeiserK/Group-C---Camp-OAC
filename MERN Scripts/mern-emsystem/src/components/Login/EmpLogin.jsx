@@ -19,10 +19,28 @@ const EmpLogin = () => {
         try {
             const url = "http://localhost:5001/api/auth";
             const {data: res} = await axios.post(url, data);
-            //TODO: Change this to Session storage - not sure where we grab this
-            sessionStorage.setItem("token", res.data);
+            //alert(res.data.toLowerCase());
+            //sessionStorage.setItem("token", res.data);
             window.location= "login/emp";
             sessionStorage.setItem("auth", "true");
+            sessionStorage.setItem("adminLocAccess", res.data.toLowerCase());
+
+            //set the selected location on login
+
+            if (res.data.toLowerCase()=== "admin") {
+                sessionStorage.setItem("selectedLocation", "All");
+            }else{
+                //sessionStorage.setItem("selectedLocation", res.data.toLowerCase());
+                sessionStorage.setItem("selectedLocation", res.data);
+
+            }
+
+            
+
+
+            
+
+
         } catch (error) {
             if (error.response && error.response.status >= 400 && error.response.status <= 500) {
                 setError(error.response.data.message);
@@ -32,7 +50,7 @@ const EmpLogin = () => {
 
     }
     return (
-        <div className="empLoginDiv ">
+        <div className="empLoginDiv">
                 <form onSubmit={handleSubmit}>
                         <h1>Rotarian Volunteer Login</h1>
                         <input

@@ -21,6 +21,7 @@ import ProtectedRoutes from './components/hooks/protectedRoutes';
 import FrontProtectedRoutes from './components/hooks/frontProtectedRoutes';
 import ResetPassword from './pages/ResetPassword.js';
 import RequestPasswordReset from './pages/RequestPasswordReset.js';
+import LocationProtectedRoutes from './components/hooks/locationProtectedRoutes';
 
 //let isAuth = sessionStorage.getItem("auth");
 
@@ -51,9 +52,13 @@ function App() {
           <Route element={<ProtectedRoutes />}>
             <Route path="login/emp" element={<Emp/>}/>
             <Route path="login/emp/inventory" element={<Inventory/>} />
+          </Route>
+
+          <Route element={<LocationProtectedRoutes />}>
             <Route path="login/emp/history" element={<OrderHistory/>} />
             <Route path="login/emp/employee" element={<SuperAdmin/>} />
           </Route>
+          
         </Routes>
         
       </div>
