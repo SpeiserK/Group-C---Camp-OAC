@@ -19,11 +19,24 @@ const EmpLogin = () => {
         try {
             const url = "http://localhost:5001/api/auth";
             const {data: res} = await axios.post(url, data);
-            alert(res.data.toLowerCase());
+            //alert(res.data.toLowerCase());
             //sessionStorage.setItem("token", res.data);
             window.location= "login/emp";
             sessionStorage.setItem("auth", "true");
             sessionStorage.setItem("adminLocAccess", res.data.toLowerCase());
+
+            //set the selected location on login
+
+            if (res.data.toLowerCase()=== "admin") {
+                sessionStorage.setItem("selectedLocation", "All");
+            }else{
+                //sessionStorage.setItem("selectedLocation", res.data.toLowerCase());
+                sessionStorage.setItem("selectedLocation", res.data);
+
+            }
+
+            
+
 
             
 

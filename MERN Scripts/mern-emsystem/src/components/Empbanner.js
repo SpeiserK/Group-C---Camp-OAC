@@ -64,6 +64,10 @@ export default class Empbanner extends Component {
         };
     }
 
+    handleLogout() {
+        sessionStorage.clear();
+    }
+
     render(){
 
         const { adminLocAccess } = this.state;
@@ -78,7 +82,7 @@ export default class Empbanner extends Component {
                                     View Live Orders
                                 </button>
                             </Link>
-                        ) : null }
+                        ) : <h3 className="robotoSlab" align="center"> { adminLocAccess } admin page</h3> }
                     </Col>
                     <Col md>
                         { adminLocAccess === 'admin' ? (
@@ -100,7 +104,7 @@ export default class Empbanner extends Component {
                     </Col>
                     <Col sm>
                         <Link to="/" style={{textDecoration: 'none' }}>
-                            <button className="exitButton" style={{textDecoration: 'none' , color: 'black'}}>
+                            <button className="exitButton" style={{textDecoration: 'none' , color: 'black'}} onClick={this.handleLogout}>
                                 Log out
                             </button>
                         </Link>

@@ -19,9 +19,13 @@ import { useState } from "react";
 function Emp(){
 
     var empLocation = sessionStorage.getItem("selectedLocation");
-    if(empLocation===null){
-        empLocation = "All";
-    }
+    var adminLocAccess = sessionStorage.getItem("adminLocAccess");
+
+   // alert("empLocation:"+ empLocation);
+
+    // if(empLocation===null){   
+    //     empLocation = adminLocAccess; 
+    // }
     
 
     const [query1, setQuery1] = useState(sessionStorage.getItem("currentLiveQuery"));
@@ -70,7 +74,9 @@ function Emp(){
             </Row>
             <Row>
                 <Col>
+
                 <Empnav />
+
                 </Col>
             </Row>
             <Row style={{padding: 20}}>
