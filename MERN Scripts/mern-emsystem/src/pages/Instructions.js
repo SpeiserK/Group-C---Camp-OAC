@@ -1,13 +1,5 @@
 /*
-<?php
-    echo "<h1>How to Use the Admin Tools</h1>";
-    echo "<p>";
-    echo "On your employee page you will be able to see the inventory for your location and all orders that ";
-    echo "need pickup or need approval.";
-    echo "<br></br>";
-    echo "You are able to update the stock at your location by inputting a number into the stock textbox and ";
-    echo "pressing the update button. There is also a Open/Close button which can be used to display/hide the location.";
-    echo "<br></br>";
+
     echo "There is a button for Orders that need pickup and Orders that need approval.";
     echo "Each of these buttons will display the respective orders and their information. These pages will allow you to ";
     echo "change the status of each order to determine if they have been picked up or if they need to be approved/denied ";
@@ -42,42 +34,32 @@ function Instructions(){
             </Row>
             <Row style={{paddingRight: 0, marginRight: 0}}>
                 <Col style={{margin: 0, padding: 0}}>
-                <Empnav />
+                
 
                 </Col>
             </Row>
             <Row style={{padding: 20, margin: 0}}>
                 <Col>
                 <Row>
-                <h1 className="robotoSlab" align="center">Live Orders For {empLocation}</h1>
-                <br></br>
-
-                <LocationLiveDisp queryLoc={empLocation} />
+                
                 </Row >
                 <Row style={{margin: 0}}>
-                    <Col align="center">
-                        <div className='liveOrderButtons'>
-                            <button className={`viewOrders ${query1 === 'Approved' ? 'selected' : ''}`} onClick={handleApprovedClick}>Orders that need pickup</button>
-                            <button className={`viewOrders ${query1 === 'Pending' ? 'selected' : ''}`} onClick={handlePendingClick}>Orders that need approval</button>
-                        </div>
-                    </Col>
-                    <Col align="right">
-                        <form onSubmit={(e) => handleSubmit()}> 
-                            <Form.Control type="text" id="phoneNum" onChange={handlePhone} placeholder="Search by Phone #" className="liveorderPhone"/>
-                        {  phoneData !== "" ?(
-                            <div className="phoneSearchBox">
-                                <p className="robotoSlab">Searching for : {phoneData}</p>
-                                <Button type="button" variant="danger" size="sm" onClick={handleReset}>Clear</Button>
-                            </div>
-                            ): (<></>)
-                        }
-                        </form>
+                    <Col align="left">
+                    <div className="bMain">
+                        <h1 className="robotoSlab">How to Use the Admin Tools</h1><br></br>
+                            <h2 className="robotoSlab">View Live Orders:</h2>
+                            <h3 className="robotoSlab">     - On the "View Live Orders" page you will be able to see the inventory for your location and all the orders that need pickup or need approval.</h3><br/>
+                            <h3 className="robotoSlab">     - You are able to update the stock at your location by inputting a number into the stock textbox and pressing the update button. There is also a Open/Close button which can be used to display/hide the location.</h3><br/>
+                            <h3 className="robotoSlab">     - There is a button for Orders that need pickup and Orders that need approval.</h3><br/>
+                            <h3 className="robotoSlab">     - Each of these buttons will display the respective orders and their information. These pages will allow you to change the status of each order to determine if they have been picked up or if they need to be approved/denied based on if the cash payment was made.</h3><br/>
+                            <h3 className="robotoSlab">     - You can also search by phone number to find an order.</h3><br/>
+                    </div>
                     </Col>
                 </Row>
                 <Row style={{margin: 0}}>
                     <Col style={{ padding: 10, marginTop: 10 }}>
                         
-                     <OrderLiveDisp query1={query1} queryLoc={empLocation} queryPhone={phoneData} />
+                     
                     </Col>
                  </Row>
                  </Col>

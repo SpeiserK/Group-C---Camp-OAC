@@ -20,6 +20,7 @@ export default class Empnav extends Component {
 */
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
 import LocationSelect from './location/locationSelect';
 
@@ -42,7 +43,7 @@ export default class Empnav extends Component {
                     <div className="empHeader">
                         <div className="adminTools">
                             <LocationSelect />
-                            <Button variant="info" href="login/emp/instructions">How to Use</Button>
+                            <Button variant="info" href="/emp/instructions">How to Use</Button>
                         </div>
                     </div>
                 ) : null }
