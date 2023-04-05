@@ -108,6 +108,9 @@ export default class Empbanner extends Component {
                                 Log out
                             </button>
                         </Link>
+                        <Link to="/emp/instructions" style={{textDecoration: 'none' }}>
+                            <button className="exitButton" style={{textDecoration: 'none' , color: 'black', marginLeft: '5px'}}>How to Use</button>
+                        </Link>
                     </Col>
                 </header>
             </Row>
