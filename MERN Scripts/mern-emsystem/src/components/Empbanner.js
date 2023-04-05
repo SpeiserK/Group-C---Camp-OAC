@@ -68,9 +68,13 @@ export default class Empbanner extends Component {
         sessionStorage.clear();
     }
 
+    
+
     render(){
 
         const { adminLocAccess } = this.state;
+
+        //re-do title to uppercase letters
 
         return(
             <Row align="center" style={{margin: 0}}>

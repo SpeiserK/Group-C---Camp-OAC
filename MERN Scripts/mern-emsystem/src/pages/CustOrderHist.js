@@ -17,9 +17,10 @@ var sortLabel ="";
 var number = "";
 var data;
 if(sessionStorage.getItem("pNum") != null){
-   data = sessionStorage.getItem("pNum")
+   data = sessionStorage.getItem("pNum");
 }else{
    data =  sessionStorage.getItem("phoneNumber");
+   data = formatPhoneNumber(data);
 }
 
 
@@ -39,6 +40,7 @@ const [open] = useState(table);
 
 const handleClick = () => {
     number = document.getElementById("phoneNum").value;
+    number = formatPhoneNumber(number);
     sessionStorage.setItem("pNum",number);
 }
 
@@ -60,6 +62,14 @@ const handleSort = (e) => {
     }
     sessionStorage.setItem("sortKey",i);
     handleReload();
+}
+
+function formatPhoneNumber(phoneNum) {
+    phoneNum = phoneNum.replaceAll("-", "");
+    phoneNum = phoneNum.replaceAll("(", "");
+    phoneNum = phoneNum.replaceAll(")", "");
+    phoneNum = phoneNum.replaceAll(" ", "");
+    return phoneNum;
 }
 
     return(
