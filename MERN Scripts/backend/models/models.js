@@ -129,10 +129,21 @@ const LocationSchema = new mongoose.Schema ({
 
 const Location = mongoose.model('Location', LocationSchema);
 
+const MiscSchema = new mongoose.Schema ({
+    Price:  {
+        type: Number,
+
+    }
+    
+
+});
+const Misc = mongoose.model('Misc', MiscSchema);
+
 module.exports = {
     Employee: Employee,
     validate: validate,
     Order: Order,
     Location: Location,
     User: User,
+    Misc: Misc,
 };
