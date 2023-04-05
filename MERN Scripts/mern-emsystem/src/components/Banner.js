@@ -13,7 +13,7 @@ export default class Banner extends Component {
             <Container fluid style={{paddingRight: 0}}>
                     <div className="bHeader">
                     <Col xl={{span:1,offset:0}} lg={1} className="d-none d-lg-block d-md-block"><Logo2 fluid /></Col>
-                    <Col xl={{span: 5, offset:0}} lg={{span: 7, offset:1}} md={{span: 7, offset:1}} ><Link to="/" className="Link" style={{textDecoration: 'none', padding: 20 }}><h1 className="bearHug">ogopogo rotary x camp oac</h1></Link> </Col>
+                    <Col xl={{span: 5, offset:0}} lg={{span: 7, offset:1}} md={{span: 7, offset:1}} ><Link to="/" className="Link" style={{textDecoration: 'none', padding: 20 }}><h1 className="bearHug">rotary club of kelowna ogopogo x camp oac</h1></Link> </Col>
                     <Col lg={{span:1, offset: 0}} md={{span:1, offset: 0}} sm={{span:1, offset: 3}} xs={{span:1, offset: 2}} className="d-xl-none d-block"><Drop/></Col>
                     <Col xl={{span:5,offset:0}} lg={{span: 5, offset:4}} className="d-none d-xl-block" id="headerButton">
                         <Button variant="outline-light" size="sm" href="/about" style={{marginRight: 4, border: 0}}>About</Button>{' '}
