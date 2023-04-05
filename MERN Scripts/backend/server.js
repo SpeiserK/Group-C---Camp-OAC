@@ -181,10 +181,41 @@ app.get("/orderCust", (req, res)=> {
         console.log( 'error: ', err);
     })
 });
+
+app.get("/price", (req, res)=> {
+    Models.Misc.find({ })
+    .then((data) => {
+        //console.log( 'Price read data available');
+        res.json(data);
+    })
+    .catch((err) => {
+        console.log( 'error: ', err);
+    })
+});
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //post requests
+app.post("/priceupdate", (req, res) => {
+    try {
+        const price = req.body.price;
+        const id = req.body.id;
+        if (!price){
+            return res.status(422).send({message:"Missing/Bad field types"});
+        }
+
+        Models.Misc.findByIdAndUpdate(id, {Price: price}, (err, doc) => {
+            if(err) return console.log(err);
+        });
+
+        res.status(200).send({message: "Posted successfully"});
+    } catch (error) {
+        res.status(500).send({message: "Price update failed, internal server error"});
+    }
+});
+
+
+
 app.post("/locupdate", (req, res) => {
     try {
         const id = req.body.id;
