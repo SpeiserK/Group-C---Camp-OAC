@@ -1,31 +1,12 @@
 const express = require("express");
 const router = express.Router();
 const Models = require("../models/models.js");
-const nodeMailer = require('nodemailer');
 require('dotenv').config();
 const client = require('twilio')(
     process.env.TWILIO_ACCOUNT_SID,
     process.env.TWILIO_AUTH_TOKEN
   );
 
-//Nodemailer functions
-let transporter = nodeMailer.createTransport({
-    service: "gmail",
-    auth: {
-        type: "OAuth2",
-        user: process.env.EMAIL,
-        pass: process.env.WORD,
-        clientId: process.env.OAUTH_CLIENTID,
-        clientSecret: process.env.OAUTH_CLIENT_SECRET,
-        refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-    },
-});
-
-transporter.verify((err, success) =>{
-    err
-        ? console.log(err)
-        : console.log(`== Server is  ready to take messages from square: ${success} ===`)
-});
 
 async function getRandomLocation(query) {
    const numItems = await Models.Location.count(query);
