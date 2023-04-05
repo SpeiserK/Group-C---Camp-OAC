@@ -7,6 +7,8 @@ const client = require('twilio')(
     process.env.TWILIO_ACCOUNT_SID,
     process.env.TWILIO_AUTH_TOKEN
   );
+const sgMail = require('@sendgrid/mail');
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 //Nodemailer functions
 let transporter = nodeMailer.createTransport({
@@ -88,28 +90,55 @@ router.route("/send").post(async (req, res) => {
 
     newOrder.save()
     .then(order => {
-        res.json({message: `${order} order saved successfully`});
         
-        // need to test if this works this is for sending texts for credit card customers
-        // if(Payment == "Credit/Debit"){
-        //     client.messages
-        //     .create({
-        //     from: process.env.TWILIO_PHONE_NUMBER,
-        //     to: phoneNumber,
-        //     body: `Hello there!\nYour order for firewood bundles from Ogopogo Rotary and Camp OAC has been approved, You can now pickup your order from ${Location}:
-        //     \nPickup Address: ${LocationAddress}
-        //     \nPickup Location: ${Location}
-        //     \nQuantity/price: ${Quantity}/\$${Price}
-        //     \nOther Notes: 
-        //     \nThank you very much and we will see you soon!
-        //     \nTHIS IS AN AUTOMATIC MESSAGE, PLEASE DO NOT REPLY`
-        //     })
-        //     .then(console.log("success"))
-        //     .catch(err => {
-        //         console.log(err);
-        //         res.send(JSON.stringify({ success: false }));
-        //     });
-        // }
+        //need to test if this works this is for sending texts for credit card customers
+        if(Payment == "Credit/Debit"){
+            client.messages
+            .create({
+            from: process.env.TWILIO_PHONE_NUMBER,
+            to: phoneNumber,
+            body: `Hello there!\nYour order for firewood bundles from Ogopogo Rotary and Camp OAC has been approved, You can now pickup your order from ${Location}:
+            \nPickup Address: ${LocationAddress}
+            \nPickup Location: ${Location}
+            \nQuantity/price: ${Quantity}/\$${Price}
+            \nOrder ID: ${newOrder._id}
+            \nOther Notes:
+            \nThank you very much and we will see you soon!
+            \nTHIS IS AN AUTOMATIC MESSAGE, PLEASE DO NOT REPLY`
+            })
+            .then(() => {
+                console.log("text sent");
+            })
+            .catch(err => {
+                console.log(err);
+                res.send(JSON.stringify({ success: false }));
+            });
+            //email
+            const msg = {
+                to: Name,
+                from: process.env.EMAIL,
+                subject: `Firewood order: ${newOrder._id}`,
+                text: `Hello there!\nYour order for firewood bundles from Ogopogo Rotary and Camp OAC has been approved, You can now pickup your order from ${Location}:
+                \nPickup Address: ${LocationAddress}
+                \nPickup Location: ${Location}
+                \nQuantity/price: ${Quantity}/\$${Price}
+                \nOrder ID: ${newOrder._id}
+                \nOther Notes: 
+                \nThank you very much and we will see you soon!
+                \nTHIS IS AN AUTOMATIC EMAIL, PLEASE DO NOT REPLY`
+              }
+              sgMail
+                .send(msg)
+                .then(() => {
+                  console.log('Email sent');
+                  //console.log(msg);
+                })
+                .catch((error) => {
+                  console.error("THERE WAS AN ERROR" + error)
+                });
+        }
+        
+        res.json({message: `${order} order saved successfully`});
     })
     .catch(err => {
         console.log(err);
