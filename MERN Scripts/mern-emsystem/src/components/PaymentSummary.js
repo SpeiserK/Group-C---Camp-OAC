@@ -7,6 +7,14 @@ import Container from 'react-bootstrap/esm/Container.js';
 
 export default class PaymentSummary extends Component {
     render(){
+
+        function formatPhoneNumber(phoneNum) {
+            phoneNum = phoneNum.replaceAll("-", "");
+            phoneNum = phoneNum.replaceAll("(", "");
+            phoneNum = phoneNum.replaceAll(")", "");
+            phoneNum = phoneNum.replaceAll(" ", "");
+            return phoneNum;
+        }
         //grabs email variable out of session storage
         
         const email = sessionStorage.getItem("email");
@@ -16,7 +24,11 @@ export default class PaymentSummary extends Component {
         // grabs location
         const location = sessionStorage.getItem("location");
 
-        const phoneNumber = sessionStorage.getItem("phoneNumber")
+        var phoneNumber = sessionStorage.getItem("phoneNumber");
+        phoneNumber = formatPhoneNumber(phoneNumber);
+
+
+
 
         
 
