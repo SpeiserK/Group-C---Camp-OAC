@@ -2,7 +2,6 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const nodeMailer = require('nodemailer');
 require('dotenv').config();
 const Models = require("./models/models.js");
 const pino = require('express-pino-logger')();
@@ -43,24 +42,6 @@ app.listen(port, ()=>{
     console.log(`Server is running on port: ${port}`);
 });
 
-//Nodemailer functions
-let transporter = nodeMailer.createTransport({
-    service: "gmail",
-    auth: {
-        type: "OAuth2",
-        user: process.env.EMAIL,
-        pass: process.env.WORD,
-        clientId: process.env.OAUTH_CLIENTID,
-        clientSecret: process.env.OAUTH_CLIENT_SECRET,
-        refreshToken: process.env.OAUTH_REFRESH_TOKEN,
-    },
-});
-
-transporter.verify((err, success) =>{
-    err
-        ? console.log(err)
-        : console.log(`== Server is  ready to take messages: ${success} ===`)
-});
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //get requests
