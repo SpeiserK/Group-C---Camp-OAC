@@ -202,11 +202,13 @@ app.post("/priceupdate", (req, res) => {
         const id = req.body.id;
         if (!price){
             return res.status(422).send({message:"Missing/Bad field types"});
-        }res.status(200).send({message: "Posted successfully"});
+        }
 
-        Models.Price.findByIdAndUpdate(id, {Price: price}, (err, doc) => {
+        Models.Misc.findByIdAndUpdate(id, {Price: price}, (err, doc) => {
             if(err) return console.log(err);
         });
+
+        res.status(200).send({message: "Posted successfully"});
     } catch (error) {
         res.status(500).send({message: "Price update failed, internal server error"});
     }
