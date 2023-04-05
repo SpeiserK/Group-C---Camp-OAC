@@ -58,30 +58,17 @@ export default class LocationLiveDisp extends React.Component {
     return (
       
       <div>  
-        <p className="robotoSlab">Manage Locations</p>    
+        <p className="robotoSlab">Manage Miscellaneous information</p>    
       <table className="dblist">
         <tr id="listHeader" className="listHeader">
           <td id="headerID"  className="listHeaderItem">
             <span> Document id </span>
           </td>
           <td id="headerName"  className="listHeaderName">
-            <span> Name </span>
+            <span> Price per bundle </span>
           </td>
           <td id="headerAddress" className="listHeaderAddress">
-            <span> Address </span>
-          </td>
-          
-          <td id="headerStock" className="listHeaderStock">
-            <span> Stock </span>
-          </td>
-          <td id="headerOpen" className="listHeaderOpen">
-            <span> Location Status </span>
-          </td>
-          <td id="headerUpdate" className="listHeaderUpdate">
-            <span> Update Document </span>
-          </td>
-          <td id="headerUpdate" className="listHeaderUpdate">
-            <span> Delete Location </span>
+            <span> Update </span>
           </td>
         </tr> 
         

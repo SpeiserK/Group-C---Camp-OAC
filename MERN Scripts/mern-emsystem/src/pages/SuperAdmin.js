@@ -45,8 +45,6 @@ function SuperAdmin(){
                 <Row className="locationPanel">
                         <h2 className="robotoSlab"> Misc information</h2>
                         <Col lg>
-                            <p className="robotoSlab"> Change misc info</p>
-                            <br></br>
                             <MiscManagement />
                         </Col>
                 </Row>
