@@ -8,6 +8,7 @@ import Emplogin from './pages/Emplogin';
 import Payment from './pages/Payment.js';
 import Emp from './pages/Emp.js';
 import Inventory from './pages/Inventory.js';
+import Instructions from './pages/Instructions.js';
 import OrderHistory from './pages/OrderHistory.js';
 import About from './pages/About.js';
 import CashConfirmation from './pages/CashConfirmation';
@@ -52,6 +53,7 @@ function App() {
           <Route element={<ProtectedRoutes />}>
             <Route path="login/emp" element={<Emp/>}/>
             <Route path="login/emp/inventory" element={<Inventory/>} />
+            <Route path="login/emp/instructions" element={<Instructions/>} />
           </Route>
 
           <Route element={<LocationProtectedRoutes />}>

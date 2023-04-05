@@ -42,6 +42,7 @@ export default class Empnav extends Component {
                     <div className="empHeader">
                         <div className="adminTools">
                             <LocationSelect />
+                            <Button variant="info" href="login/emp/instructions">How to Use</Button>
                         </div>
                     </div>
                 ) : null }
