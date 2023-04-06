@@ -106,9 +106,15 @@ export default class OrderLiveDisp extends React.Component {
   );
   }
 
-
-
   render() {
+
+    function handleDate(date){
+      date = date.slice(0,16);
+      date = date.replaceAll("-", "/");
+      date = date.replaceAll("T", ", ");
+      return date;
+    }
+
     return (
       <table className="dblist">
         <tr id="listHeader" className="listHeader">
@@ -163,7 +169,7 @@ export default class OrderLiveDisp extends React.Component {
                 <span>{content.LocationId}<br></br>{content.Location}<br></br>Address: {content.LocationAddress}</span>&emsp;
               </td>*/}
               <td id="current-orderDate" className ="orderChild">
-                <span>{new Date(content.Datetime).toLocaleString()}</span>&emsp;
+                <span>{handleDate(content.Datetime)}</span>&emsp;
               </td>
               <td id="current-orderPrice" className ="orderChild">
                 <span>${content.Price} &nbsp; {content.Payment}</span>&emsp;
