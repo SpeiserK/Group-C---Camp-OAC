@@ -7,6 +7,8 @@ import Button from 'react-bootstrap/Button';
 import Row from 'react-bootstrap/esm/Row';
 import Table from 'react-bootstrap/Table';
 
+
+//display live orders by locatiion in emp.js
 export default class OrderLiveDisp extends React.Component {
   constructor(props){
     super(props);

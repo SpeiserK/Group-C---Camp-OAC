@@ -8,6 +8,8 @@ import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import Bundles2 from '../components/Bundles2.js';
 
+
+/* this page is for displaying the plae order form */
 function Orderqty(){
 
     

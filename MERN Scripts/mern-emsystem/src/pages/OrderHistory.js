@@ -8,6 +8,8 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import LocationSelect from '../components/location/locationSelect.js';
 
+
+/* this page is where we can search for orders that hav already been made */
 function OrderHistory(){
 var phoneData = "";
 var emailData = "";

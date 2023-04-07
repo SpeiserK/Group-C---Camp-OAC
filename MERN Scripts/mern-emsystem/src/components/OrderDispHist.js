@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+//used in the order history page
+
 export default class OrderDispHist extends React.Component {
   constructor(props){
     super(props);

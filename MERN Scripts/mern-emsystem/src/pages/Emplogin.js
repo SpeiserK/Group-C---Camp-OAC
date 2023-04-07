@@ -6,6 +6,8 @@ import Row from 'react-bootstrap/esm/Row.js';
 import Container from 'react-bootstrap/esm/Container.js';
 import PwReset from '../components/Login/PwReset'
 
+
+//employee login form
 function Emplogin(){
     return( 
     <div className="bContainer">

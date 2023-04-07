@@ -7,6 +7,8 @@ import Col from 'react-bootstrap/esm/Col.js';
 import Button from 'react-bootstrap/esm/Button.js';
 import cabin from '../components/pictures/Camp-OAC-Logo_Cabin.png';
 
+//the cash confirmation screen
+
 function CashConfirmation(){
 const navigate = useNavigate();
     return(

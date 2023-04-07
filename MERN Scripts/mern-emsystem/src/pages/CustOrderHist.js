@@ -10,6 +10,8 @@ import Button from 'react-bootstrap/esm/Button.js';
 import cabin from '../components/pictures/Camp-OAC-Logo_Cabin.png';
 import CustomerHistory from '../components/customerSide/CustomerHistory.js';
 
+//this page is our order history search
+
 function CustOrderHist (){
 
 //const navigate = useNavigate();

@@ -2,6 +2,7 @@ import React from 'react'
 import Banner from '../components/Banner.js';
 import InvByLoc from '../components/hooks/InvByLoc.js';
 
+/* this is a page that displays inventory however there is currently no way to route to it but could be used later if developers wanted */
 
 function ViewOrders(){
     return(

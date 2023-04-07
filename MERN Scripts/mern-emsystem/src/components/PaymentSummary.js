@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
 import Container from 'react-bootstrap/esm/Container.js';
 
+//used in payment to display payment info
 
 export default class PaymentSummary extends Component {
     render(){

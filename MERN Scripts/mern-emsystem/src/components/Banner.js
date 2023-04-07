@@ -7,6 +7,8 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/esm/Button';
 
+//main banner
+
 export default class Banner extends Component {
     render(){
         return(

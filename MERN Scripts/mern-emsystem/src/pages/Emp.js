@@ -10,9 +10,9 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { useState } from "react";
 
-//const empLocation = sessionStorage.getItem('selectedLocation');
 
 
+// main employee page
     
 
 
@@ -21,12 +21,7 @@ function Emp(){
     var empLocation = sessionStorage.getItem("selectedLocation");
     var adminLocAccess = sessionStorage.getItem("adminLocAccess");
 
-   // alert("empLocation:"+ empLocation);
 
-    // if(empLocation===null){   
-    //     empLocation = adminLocAccess; 
-    // }
-    
 
     const [query1, setQuery1] = useState(sessionStorage.getItem("currentLiveQuery"));
     if(query1==null){

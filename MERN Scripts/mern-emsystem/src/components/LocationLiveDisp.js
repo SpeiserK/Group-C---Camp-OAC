@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 
+//restricted admin location management only used in emp
+
 export default class LocationLiveDisp extends React.Component {
   constructor(props){
     super(props);

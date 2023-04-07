@@ -10,6 +10,8 @@ import Banner from "../components/Banner.js";
 import Footer from "../components/Footer.js";
 
 
+/* HOMEPAGE */
+
 function Startpage(){
     const gotoOrder = useNavigate();
 
