@@ -4,6 +4,7 @@ import Empnav from '../components/Empnav.js';
 import EmployeeLiveDisp from '../components/EmployeeLiveDisp';
 import EmployeeCreation from '../components/Signup/EmpSignup';
 import LocationManagement from '../components/LocationManagement';
+import MiscManagement from '../components/MiscManagement';
 import NewLocation from '../components/location/newLocation.js';
 import Container from 'react-bootstrap/esm/Container.js';
 import Row from 'react-bootstrap/esm/Row.js';
@@ -45,6 +46,13 @@ function SuperAdmin(){
                             <NewLocation />
                             <br></br>
                             <LocationManagement />
+                        </Col>
+                </Row>
+                <hr></hr>
+                <Row className="locationPanel">
+                        <h2 className="robotoSlab"> Misc information</h2>
+                        <Col lg>
+                            <MiscManagement />
                         </Col>
                 </Row>
             </Row>

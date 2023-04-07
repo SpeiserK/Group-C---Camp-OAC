@@ -1464,7 +1464,7 @@ New CSS using bootstrap
     background-size: cover;
     border: solid 0.25em #926d4c;
     color: white;
-    margin: 0em 0em 1em 0em;
+    margin: 0em 0em 1.5em 0em;
     padding: 0em 0em 0em 0em;
     min-height: 190px;
 }
@@ -1477,7 +1477,7 @@ New CSS using bootstrap
     border-radius: 0.25em;
     border: solid 0.25em #926d4c;
     color: white;
-    margin: 0em 0em 1em 0em;
+    margin: 0em 0em 1.5em 0em;
     padding: 3.5em 5.5em 3.5em 5.5em;
     min-height: 190px;
 }
