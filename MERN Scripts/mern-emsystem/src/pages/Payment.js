@@ -11,11 +11,7 @@ import Col from 'react-bootstrap/esm/Col.js';
 import Container from 'react-bootstrap/esm/Container.js';
 import Button from 'react-bootstrap/Button';
 
-/* OLD BUTTONS IN CASE WE SWITCH BACK
-<button className="buttonStyle" onClick={() => {post2DB("Square"); navigate("SquarePay")}}>Square Pay Page</button>
-<button className="buttonStyle" onClick={() => {post2DB("Cash"); navigate("CashConfirmation")}}>Cash </button>
-<button className="buttonStyle" onClick={() => {post2DB("E-Transfer"); navigate("ETransferConfirmation")}}>E-Transfer </button>
-*/
+/* payment display info page */
 
 
 function Payment(){

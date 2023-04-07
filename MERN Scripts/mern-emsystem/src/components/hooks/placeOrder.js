@@ -12,8 +12,7 @@ import Container from 'react-bootstrap/esm/Container.js';
 import Form from 'react-bootstrap/Form';
 
 //Very important component 
-//TODO: need to go through and document with cam - what are the classnames for 
-//<select onChange={(e) => setLocValue(e.target.value)} aria-invalid={locValue ? "false" : "true"} id="location" className="locationStyle" class="required" >
+
 
 
 //Used to verify if email is valid (will need to include more verification)
@@ -21,8 +20,10 @@ const REGEX = /^[a-zA-Z0-9_.-]{2,48}@[a-zA-Z0-9.]{2,28}\.(com|ca|net)$/;
 const phoneREGEX = /^[(]?[0-9]{3}[)]?[ ,-]?[0-9]{3}[ ,-]?[0-9]{4}$/;
 
 
+
+
 const PlaceOrder = () => {
-    //location read
+    
     
     
         const [location, setLocation] = useState([]);

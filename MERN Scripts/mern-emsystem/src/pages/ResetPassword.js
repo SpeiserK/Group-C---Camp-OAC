@@ -6,6 +6,8 @@ import Container from 'react-bootstrap/esm/Container.js';
 import PwReset from '../components/Login/PwReset'
 import PasswordChangeForm from '../components/passwordReset/PasswordChangeForm';
 
+
+/* component that resets passwords */
 function ResetPassword(){
     return( 
     <div className="bContainer">

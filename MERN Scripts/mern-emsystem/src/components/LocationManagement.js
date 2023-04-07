@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 
 
+//admin location management
+
 export default class LocationLiveDisp extends React.Component {
   constructor(props){
     super(props);

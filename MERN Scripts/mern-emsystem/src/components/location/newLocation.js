@@ -18,7 +18,7 @@ const NewLocation = () => {
         
         e.preventDefault();
         try {
-            //need to set up this url correctly
+            
             const url = "http://localhost:5001/newLocation";
             const {data: res} = await axios.post(url, data);
             setError("location successfully created!");

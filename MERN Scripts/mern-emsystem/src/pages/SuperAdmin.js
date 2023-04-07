@@ -9,6 +9,13 @@ import Container from 'react-bootstrap/esm/Container.js';
 import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
 
+
+/*
+
+this page is the admin page where admins can do location management and edit profile info
+*/
+
+
 function SuperAdmin(){
     return(
 

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import { text } from '@fortawesome/fontawesome-svg-core';
 
-
+//optional dev tools for developers, removed from final version
 export default class Navbar extends Component {
     render(){
         return (

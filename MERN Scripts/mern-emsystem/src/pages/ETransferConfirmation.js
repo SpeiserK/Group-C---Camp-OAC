@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/esm/Container.js';
 import Row from 'react-bootstrap/esm/Row.js';
 import Col from 'react-bootstrap/esm/Col.js';
 
-
+// e transfer confirmation page 
 //import PlaceOrder from '..components/hooks/placeOrder.js';
 
 function ETransferConfirmation(){
