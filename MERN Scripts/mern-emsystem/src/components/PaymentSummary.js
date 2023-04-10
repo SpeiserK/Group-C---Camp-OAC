@@ -50,7 +50,7 @@ export default class PaymentSummary extends Component {
                     <div className="loggedIn">
                         <label className="orderTitle">Pickup location:  </label> {location}<br></br><br></br>
                         <label className="orderTitle">Firewood Ordered:  </label> {quantity}<br></br><br></br>
-                        <label className="orderTitle">Total Price:  </label> ${quantity*9.99}<br></br><br></br>
+                        <label className="orderTitle">Total Price:  </label> ${quantity*sessionStorage.getItem("price")}<br></br><br></br>
                     </div>
                 </Col>
             </Row>

@@ -17,6 +17,12 @@ async function getRandomLocation(query) {
    return randomItem;
 }
 
+async function getPrice() {
+    const Misc = await Models.Misc.findOne();
+    return Misc.Price;
+}
+
+
 function formatPhoneNumber(phoneNum) {
     phoneNum = phoneNum.replaceAll("-", "");
     phoneNum = phoneNum.replaceAll("(", "");
@@ -26,6 +32,10 @@ function formatPhoneNumber(phoneNum) {
 }
 
 router.route("/send").post(async (req, res) => {
+
+    const unitPrice = await getPrice();
+
+    console.log("----------------------TEST!!!!!!!!!!"+ unitPrice);
     //select address for order
     const loc = await getRandomLocation({Name: req.body.Location});
 
@@ -39,7 +49,8 @@ router.route("/send").post(async (req, res) => {
     phoneNumber = formatPhoneNumber(phoneNumber);
 
     var Datetime = new Date();
-    const Price = Quantity * 9.99;
+    const Price = Quantity * unitPrice;
+    //const Price = Quantity * 9.99;
     Payment = req.body.Payment;
     let Status = "Pending";
     if(Payment == "Credit/Debit"){

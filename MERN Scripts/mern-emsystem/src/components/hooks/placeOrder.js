@@ -243,7 +243,7 @@ const PlaceOrder = () => {
                 <Row align="left">
                 <hr></hr>
                 <Col span={6}>
-                    <label htmlFor="quantity">Quantity: $9.99/bundle</label> 
+                    <label htmlFor="quantity">Quantity: ${sessionStorage.getItem("price")}/bundle</label> 
                     <br></br>    
                     <input
                         type="number"
