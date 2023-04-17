@@ -17,7 +17,6 @@ import SquarePay from './pages/SquarePay';
 import SquareReceipt from './pages/SquareReceipt';
 import SuperAdmin from './pages/SuperAdmin';
 import CustOrderHist from './pages/CustOrderHist';
-import Bootstrap from './pages/Bootstrap';
 import ProtectedRoutes from './components/hooks/protectedRoutes';
 import FrontProtectedRoutes from './components/hooks/frontProtectedRoutes';
 import ResetPassword from './pages/ResetPassword.js';

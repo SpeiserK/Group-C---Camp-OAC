@@ -7,10 +7,32 @@ import Container from 'react-bootstrap/esm/Container.js';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Tooltip from 'react-bootstrap/Tooltip';
 import Bundles2 from '../components/Bundles2.js';
+import axios from 'axios';
 
 
-/* this page is for displaying the plae order form */
+
+/* this page is for displaying the place order form */
 function Orderqty(){
+
+
+    
+    axios.get(`http://localhost:5001/price`)
+    .then(res => {
+  
+      const docData = res.data;
+  
+      const prices = docData.map((item) => item.Price);
+  
+      // Set the first price from the prices array into session storage
+      if (prices.length > 0) {
+        sessionStorage.setItem("price", prices[0]);
+      }
+  
+      const cleanErrorMessage = docData.map(() => "");
+  
+    });
+      
+    
 
     
    const renderTooltip = (props) => (
@@ -22,6 +44,7 @@ function Orderqty(){
 <div className="bContainer">
 <Container fluid style={{ paddingLeft: 0, paddingRight: 0 }}>
     <Row>
+        
     <Banner /> 
     </Row>
     <Row>

@@ -349,7 +349,7 @@ app.use("/", require("./routes/OrderRoute.js"));
 //emp creation
 app.use("/api/emp", require("./routes/EmpRoute.js"));
 //emp authorization/login
-app.use("/api/auth", require("./routes/Auth.js"));
+app.use("/api/auth", require("./routes/auth.js"));
 //emp password reset generator
 app.use("/api/pwreset", require("./routes/pwReset.js"));
 //emp password reset authenticator
