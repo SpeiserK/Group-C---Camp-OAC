@@ -151,3 +151,9 @@ Links to create developer accounts for each API:
 1. Square: https://squareup.com/signup?v=developers&country_code=ca&lang_code=en-CA 
 2. Twilio: https://www.twilio.com/try-twilio 
 3. SendGrid: https://signup.sendgrid.com/
+
+## Populating MongoDB employees collection
+
+The following document contains BSON which will be used to create a new document in the Employees collection inside of the MongoDB database.
+
+[super-admin-login.txt](https://github.com/SpeiserK/Group-C---Camp-OAC/files/11256518/super-admin-login.txt)
